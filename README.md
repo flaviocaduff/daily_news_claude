@@ -25,7 +25,7 @@ Tests: `uv run pytest -q`
 3. **Summarise** (`summarize.py`). Items go to `models.summarize`, through `claude -p` or the API depending on `llm_backend`, in batches of 25. Each comes back with a headline, one sentence and an importance score from 1 to 5, in `settings.language`. The best `max_items` per source are kept.
 4. **Rank**. One call to `models.rank` picks the Top N and flags the same story across languages, for example Handelsblatt and TLDR.
 5. **Thumbnails** (`images.py`). og:image or twitter:image is fetched concurrently. If it fails, the item has no image.
-6. **Full text + key points** (`articles.py`). For every story on the page, the article is read from each source that carried it (up to 3) with trafilatura, and Claude (`models.article`) writes 3–6 key points combining them. Tapping a card opens these points on the page; the original articles are linked at the bottom. Paywalled or JavaScript-only pages (e.g. SCMP) fall back to the teaser and say so. Turn off with `fetch_articles: false`.
+6. **Full text + key points** (`articles.py`). For every story on the page, the article is read from each source that carried it (up to 3) with trafilatura, and Claude (`models.article`) writes 3–6 key points combining them. Tapping a card opens these points on the page; the original articles are linked at the bottom. Paywalled or blocked pages (e.g. SCMP returns 403) fall back to the teaser and say so. Turn off with `fetch_articles: false`.
 7. **Render** (`templates/brief.html.j2`). A single HTML file with inline CSS and no scripts beyond a tiny `onerror` that hides broken thumbnails. It works on mobile and supports light and dark mode.
 
 ## Configure

@@ -16,7 +16,7 @@ log = logging.getLogger(__name__)
 
 MAX_BYTES = 2_000_000    # stop reading huge pages
 MAX_CHARS = 6000         # text per source sent to Claude
-MIN_CHARS = 500          # less than this is a teaser/paywall stub, not an article
+MIN_CHARS = 1000         # less than this is a teaser/paywall stub, not an article
 MAX_SOURCES = 3          # per story: the main item + up to 2 duplicates
 
 
