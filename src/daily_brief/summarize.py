@@ -66,7 +66,7 @@ def _parse_json(text: str):
     end = max(text.rfind("]"), text.rfind("}"))
     if start < 0 or end < start:
         raise ValueError("no JSON found")
-    return json.loads(text[start : end + 1])
+    return json.loads(text[start : end + 1], strict=False)  # tolerate raw newlines inside strings
 
 
 def find_claude_cli(settings: dict) -> str:

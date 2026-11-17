@@ -117,7 +117,7 @@ def is_tldr_non_news(title: str, link: str) -> bool:
 
 
 def fetch_rss(client: httpx.Client, source: dict, now: datetime, window_hours: int) -> list[Item]:
-    r = client.get(source["url"])
+    r = client.get(source["url"], timeout=float(source.get("timeout") or client.timeout.read or 10))
     r.raise_for_status()
     feed = feedparser.parse(r.content)
     cutoff = now - timedelta(hours=window_hours)

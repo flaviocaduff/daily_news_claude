@@ -1,6 +1,6 @@
 # Daily Brief
 
-Builds a one-page HTML news brief each day at 06:30 Europe/Zurich. It covers all 14 TLDR newsletters, Handelsblatt and Inside Paradeplatz, with one sentence per story from Claude and a Top 3 across all sources.
+Builds a one-page HTML news brief each day at 06:30 Europe/Zurich. It covers all 14 TLDR newsletters, Handelsblatt, Inside Paradeplatz, SRF, Swiss federal press releases, SCMP and BelTA, with one sentence per story from Claude and a Top 3 across all sources.
 
 ## Run it (manual, current setup)
 
