@@ -72,8 +72,10 @@ sources:
   - {id: srf, name: SRF News, type: rss, url: https://www.srf.ch/news/bnf/rss/1646}
 
   # Swiss federal administration press releases (News Service Bund, all offices), English.
-  # The feed is slow (often 30-60 s), hence the long timeout.
-  - {id: admin-ch, name: Swiss Federal Government, type: rss, timeout: 120, url: 'https://www.newsd.admin.ch/newsd/feeds/rss?lang=en&org-nr=1&kind=M'}
+  # end_index keeps the feed fast (the full feed of 499 items takes 60+ s). Items carry only a date (00:00 UTC),
+  # so yesterday's releases are ~30 h old at 06:30: hence the 36 h window.
+  - {id: admin-ch, name: Swiss Federal Government, type: rss, timeout: 60, window_hours: 36,
+     url: 'https://www.newsd.admin.ch/newsd/feeds/rss?lang=en&org-nr=1&kind=M&end_index=50'}
 
   # South China Morning Post: main news feed + business (overlap is deduplicated)
   - {id: scmp-news,     name: South China Morning Post, section: South China Morning Post, type: rss, url: https://www.scmp.com/rss/91/feed}

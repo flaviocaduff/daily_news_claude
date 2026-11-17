@@ -120,7 +120,7 @@ def fetch_rss(client: httpx.Client, source: dict, now: datetime, window_hours: i
     r = client.get(source["url"], timeout=float(source.get("timeout") or client.timeout.read or 10))
     r.raise_for_status()
     feed = feedparser.parse(r.content)
-    cutoff = now - timedelta(hours=window_hours)
+    cutoff = now - timedelta(hours=int(source.get("window_hours") or window_hours))
     items: list[Item] = []
     for e in feed.entries:
         ts = e.get("published_parsed") or e.get("updated_parsed")
