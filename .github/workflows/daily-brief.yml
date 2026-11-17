@@ -61,6 +61,19 @@ jobs:
         if: steps.gate.outputs.run == 'true' && !inputs.dry_run
         run: npm install -g @anthropic-ai/claude-code
 
+      # Fails in seconds on a bad/expired token; prints only non-secret facts about it.
+      - name: Check Claude token
+        if: steps.gate.outputs.run == 'true' && !inputs.dry_run
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          t="$CLAUDE_CODE_OAUTH_TOKEN"
+          echo "length: ${#t}"
+          case "$t" in sk-ant-oat*) echo "prefix: ok";; *) echo "prefix: NOT sk-ant-oat";; esac
+          bad=$(printf '%s' "$t" | tr -d 'A-Za-z0-9_-' | wc -c); echo "unexpected chars: $bad"
+          claude --version
+          cd "$(mktemp -d)" && claude -p "say ok" --tools "" --no-session-persistence
+
       - name: Build brief
         if: steps.gate.outputs.run == 'true' && !inputs.dry_run
         env:
