@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<title>Daily Brief · 2026-11-17</title>
+<style>
+:root{
+  --bg:#f4f2ee;--card:#fff;--text:#16161a;--muted:#5f5f66;--line:#e3e0da;
+  --accent:#c2410c;--shadow:0 1px 2px rgba(0,0,0,.05),0 4px 14px rgba(0,0,0,.06);
+  --ph-l:46%;--ph-s:58%;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0f0f11;--card:#1a1a1e;--text:#f1f1f3;--muted:#a3a3ad;--line:#2a2a30;
+  --accent:#fb923c;--shadow:0 1px 2px rgba(0,0,0,.4);--ph-l:34%;--ph-s:45%;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 16px 56px}
+
+/* masthead */
+.mast{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding-bottom:14px;border-bottom:3px solid var(--text)}
+.mast .kicker{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.mast h1{margin:2px 0 0;font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.05;font-weight:850;letter-spacing:-.03em}
+.mast .stats{color:var(--muted);font-size:.9rem}
+
+/* thumbnails + placeholders */
+.img{position:relative;aspect-ratio:16/9;overflow:hidden;
+  background:linear-gradient(135deg,hsl(var(--h) var(--ph-s) var(--ph-l)),hsl(calc(var(--h) + 40) var(--ph-s) calc(var(--ph-l) - 12%)))}
+.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.img .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:12px;
+  color:rgba(255,255,255,.92);font-weight:800;font-size:1.05rem;letter-spacing:-.01em;text-align:center}
+
+/* cards */
+.card{display:flex;flex-direction:column;background:var(--card);border-radius:14px;overflow:hidden;
+  box-shadow:var(--shadow);border:1px solid var(--line);transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(0,0,0,.12)}
+.card .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tag{align-self:flex-start;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:hsl(var(--h) 70% 38%);}
+@media (prefers-color-scheme:dark){.tag{color:hsl(var(--h) 80% 70%)}}
+.card h3{margin:0;font-size:1.08rem;line-height:1.28;font-weight:780;letter-spacing:-.012em}
+.card:hover h3{color:var(--accent)}
+.card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.45}
+.also{font-size:.75rem;color:var(--muted);margin-top:auto;padding-top:4px}
+.clamp3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* Top N */
+.top{display:grid;grid-template-columns:1.55fr 1fr;grid-template-rows:auto auto;gap:18px;margin-top:22px}
+.top .card:first-child{grid-row:span 2}
+.top .card:first-child h3{font-size:clamp(1.4rem,2.6vw,1.95rem);line-height:1.15;font-weight:850;letter-spacing:-.025em}
+.top .card:first-child p{font-size:1.02rem}
+.top .card:first-child .img{aspect-ratio:auto;flex:1;min-height:240px}
+.top .card:first-child .body{flex:0 0 auto;padding:16px 20px 20px}
+.top .card:not(:first-child) h3{font-size:1.2rem}
+.top .rank{color:var(--accent);margin-right:6px}
+
+/* sections */
+section.sec{margin-top:44px}
+.sec h2{display:flex;align-items:baseline;gap:10px;margin:0 0 16px;font-size:1.55rem;font-weight:850;letter-spacing:-.02em}
+.sec h2::before{content:"";width:6px;height:1.05em;border-radius:3px;background:hsl(var(--h) 65% 50%);align-self:center}
+.sec h2 .n{font-size:.85rem;font-weight:600;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+
+footer{margin-top:48px;padding-top:14px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+footer a{text-decoration:underline}
+@media (max-width:760px){
+  .top{grid-template-columns:1fr}
+  .top .card:first-child{grid-row:auto}
+  .top .card:first-child .img{aspect-ratio:16/10;flex:none;min-height:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="mast">
+  <div>
+    <div class="kicker">Daily Brief</div>
+    <h1>Tuesday, 17 November 2026</h1>
+  </div>
+  <div class="stats">35 stories · 5 sections</div>
+</header>
+
+
+
+
+<div class="top">
+  <a class="card" href="https://www.handelsblatt.com/technik/it-internet/nvidia-wie-sich-die-tech-bros-im-silicon-valley-mit-jensen-huang-solidarisieren/100270359.html" target="_blank" rel="noopener" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/IDQmKdxHa4HO/cover/900/506/0/0/64/400/0.5/0.5/stockholm-sverige-20261015-jensen-huang-vd-foer-nvidia-under-eventet-sferical-one-i-eric-ericsonha.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class=""><span class="rank">1</span>Nvidia debate: Tech investors lobby for Jensen Huang's reinstatement</h3>
+    <p class="">Four days after Nvidia's CEO Jensen Huang was removed, Silicon Valley investors campaign for his return, while criticism of the campaign is also growing.</p>
+    <div class="also">Also in TLDR Tech, TLDR Hardware, Inside Paradeplatz, SCMP Business</div>
+  </div>
+</a><a class="card" href="https://www.handelsblatt.com/politik/deutschland/durchgestochene-daten-kontrollen-missachtet-schwere-vorwuerfe-gegen-deutsche-bank/100270467.html" target="_blank" rel="noopener" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/P04QXdlQB-Ga/cover/900/506/0/0/91/91/0.5/0.5/vorwuerfe-gegen-deutsche-bank.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="rank">2</span>Leaked data: Deutsche Bank accused of ignoring controls, warnings</h3>
+    <p class="clamp3">International media reviewing over 15 million leaked internal Deutsche Bank documents allege the bank disregarded warnings and dealt with problematic clients.</p>
+    <div class="also">Also in Inside Paradeplatz</div>
+  </div>
+</a><a class="card" href="https://arstechnica.com/tech-policy/2026/11/us-moves-to-cut-chinas-remote-access-to-ai-chips/?utm_source=tldrnewsletter" target="_blank" rel="noopener" style="--h:215">
+  <div class="img">
+    <div class="ph">arstechnica.com</div>
+    <img src="https://cdn.arstechnica.net/wp-content/uploads/2026/11/GettyImages-2303586820-1024x648.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR Tech</span>
+    <h3 class="clamp3"><span class="rank">3</span>US Moves to Close Remote Access Loophole for AI Chips</h3>
+    <p class="clamp3">Commerce will require licenses for companies from higher-risk countries renting advanced chips from data centers in Southeast Asia and Brazil, effective 90 days after publication.</p>
+    <div class="also">Also in Handelsblatt, SCMP</div>
+  </div>
+</a>
+</div>
+
+
+
+<section class="sec" id="handelsblatt" style="--h:18">
+  <h2>Handelsblatt <span class="n">6</span></h2>
+  <div class="grid">
+    <a class="card" href="https://www.handelsblatt.com/politik/international/iran-krieg-plant-der-iran-einen-anschlag-in-washington/100136895.html" target="_blank" rel="noopener" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/rc35RBvBYWlR/cover/900/506/0/0/107/106/0.5/0.5/us-midterms-washington.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3">Iran war live: Washington plot claims, explosions in southern Iran</h3>
+    <p class="clamp3">Explosions hit southern Iran as the US and Iran traded threats over reported Iranian plans for an attack in Washington; London sanctioned Israeli construction firms over settlements.</p>
+    
+  </div>
+</a><a class="card" href="https://www.handelsblatt.com/politik/deutschland/ministerpraesidentenwahl-siegmund-oder-ein-anderer-regierungschef-in-sachsen-anhalt/100270648.html" target="_blank" rel="noopener" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/OBZe1QVORsDB/cover/900/506/0/0/107/106/0.5/0.5/ulrich-siegmund.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3">Saxony-Anhalt: AfD's Siegmund faces uncertain minister-president vote</h3>
+    <p class="clamp3">Saxony-Anhalt's state government formation is open, as AfD candidate Siegmund seeks to become the first AfD minister-president while talks on an alternative model continue.</p>
+    
+  </div>
+</a><a class="card" href="https://www.handelsblatt.com/politik/deutschland/besuch-in-berlin-stubb-und-steinmeier-fordern-ukraine-verhandlungen-mit-europa/100270636.html" target="_blank" rel="noopener" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/0Z4shVud3AUD/cover/900/506/0/0/211/252/0.5/0.5/berlin-deutschland-17.11.2026-amtssitz-am-spreebogen-empfang-des-praesidenten-von-finnland-finnl.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3">Stubb and Steinmeier demand Europe's role in Ukraine peace talks</h3>
+    <p class="clamp3">Finnish President Stubb and German President Steinmeier called for Europe to be included in Ukraine peace negotiations, with Stubb pointing to the upcoming Coalition of the Willing meeting.</p>
+    <div class="also">Also in BelTA</div>
+  </div>
+</a><a class="card" href="https://www.handelsblatt.com/politik/deutschland/haushalt-showdown-im-streit-um-die-senkung-der-stromsteuer/100270456.html" target="_blank" rel="noopener" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/7eK6hsgEdrED/cover/900/506/0/0/201/201/0.5/0.5/german-chancellor-friedrich-merz-and-vice-chancellor-and-finance-minister-lars-klingbeil-attend-a-c.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3">Coalition committee to decide electricity tax cut funding tonight</h3>
+    <p class="clamp3">Chancellor Merz announced an agreement to cut the electricity tax, but the finance ministry disputes it, and the coalition committee is due to resolve funding tonight.</p>
+    
+  </div>
+</a><a class="card" href="https://www.handelsblatt.com/politik/deutschland/stoerung-in-ueber-70-laendern-microsoft-panne-versicherer-zahlen-wahrscheinlich-wenig/100270606.html" target="_blank" rel="noopener" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/qx0PvAHh8e7s/cover/900/506/0/0/125/125/0.5/0.5/microsoft-stoerung.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3">Microsoft outage in 70+ countries: insurers likely to pay little</h3>
+    <p class="clamp3">Economic damage from the worldwide Microsoft outage in over 70 countries could reach billions, but insurers will likely cover little, leaving many firms bearing losses.</p>
+    
+  </div>
+</a><a class="card" href="https://www.handelsblatt.com/politik/deutschland/nach-unicredit-finanzministerium-will-offenbar-uebernahmerecht-verschaerfen/100270570.html" target="_blank" rel="noopener" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/JtukEi1MxMPY/cover/900/506/0/0/225/644/0.5/0.5/22.10.2026-berlin-lars-klingbeil-spd-bundesminister-der-finanzen-spricht-bei-einer-pressekonfe.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3">Finance ministry reportedly plans stricter takeover rules after UniCredit</h3>
+    <p class="clamp3">The German finance ministry reportedly wants to tighten takeover law after UniCredit acquired Commerzbank, despite the government having long opposed the deal.</p>
+    
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="sec" id="inside-paradeplatz" style="--h:152">
+  <h2>Inside Paradeplatz <span class="n">5</span></h2>
+  <div class="grid">
+    <a class="card" href="https://insideparadeplatz.ch/2026/11/17/krimi-baselland-anwalt-mit-gefuellten-patronen-magazinen/" target="_blank" rel="noopener" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-17-um-08.51.47-635x1024.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3">Baselland lawyer probed after police raid; victims claim millions</h3>
+    <p class="clamp3">Police raided a Baselland lawyer and former cantonal parliamentarian in February, and several possible victims now claim millions; the suspect is presumed innocent.</p>
+    
+  </div>
+</a><a class="card" href="https://insideparadeplatz.ch/2026/11/17/fitness-banker-der-aargau-kb-gibt-leitung-ab/" target="_blank" rel="noopener" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-17-um-09.09.08-1024x568.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3">AKB Wettingen branch head gives up leadership role</h3>
+    <p class="clamp3">The head of the Aargauische Kantonalbank's Wettingen branch, a former ZKB banker, is stepping down from leadership after losing his team.</p>
+    
+  </div>
+</a><a class="card" href="https://insideparadeplatz.ch/2026/11/17/beamte-pennen-in-luxushotels/" target="_blank" rel="noopener" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-17-um-07.00.30-1024x676.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3">Federal staff hotel budget: up to CHF 10m for overnight stays</h3>
+    <p class="clamp3">The Federal Office of Personnel plans up to CHF 10 million for federal staff overnight stays, with up to CHF 2 million for Spiez's Belvédère hotel.</p>
+    
+  </div>
+</a><a class="card" href="https://insideparadeplatz.ch/2026/11/17/stadt-zuerich-blamiert-sich-vor-dieter-meiers-goldwand/" target="_blank" rel="noopener" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-17-um-06.56.04.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3">Zurich's new Hauptbahnhof drop-off sign criticised as unreadable</h3>
+    <p class="clamp3">Zurich's new information board at the main station, showing where cars may drop off passengers, can only be read by drivers stopping in a no-stopping zone.</p>
+    
+  </div>
+</a><a class="card" href="https://insideparadeplatz.ch/2026/11/17/infantino-stoppen-mit-richter-nicht-wahlen/" target="_blank" rel="noopener" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3">Could courts, not elections, stop Gianni Infantino at FIFA?</h3>
+    <p class="clamp3">Philippe Diallo, president of the French football federation, is reportedly set to challenge FIFA's Infantino in March, and an opinion piece argues the statutes offer the real route.</p>
+    
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="sec" id="scmp" style="--h:275">
+  <h2>SCMP <span class="n">6</span></h2>
+  <div class="grid">
+    <a class="card" href="https://www.scmp.com/news/world/middle-east/article/3374775/iran-fires-drones-us-military-radar-system-bahrain-amid-gulf-tensions" target="_blank" rel="noopener" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/17/89d3c206-0024-4d91-a7e1-a799a19933c6_182eca8e.jpg?itok=Z4ETYsYX&v=1794916127" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SCMP</span>
+    <h3 class="clamp3">Iran fires drones at US radar system in Bahrain amid Gulf tensions</h3>
+    <p class="clamp3">Iran's Revolutionary Guards said they attacked a US military radar at Bahrain's Sheikh Isa base, which Bahrain said it intercepted, despite Iran-Oman talks on Hormuz shipping corridors.</p>
+    
+  </div>
+</a><a class="card" href="https://www.scmp.com/plus/news/china/diplomacy/article/3374731/xi-trump-putin-meetings-symbolism-far-outweigh-concrete-results" target="_blank" rel="noopener" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/17/5c1f1ce9-e361-4108-b3ed-877b0959a3e9_6f0d3b16.jpg?itok=saMSKE_q&v=1794906795" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SCMP</span>
+    <h3 class="clamp3">Xi, Trump and Putin to hold first-ever trilateral meeting Thursday</h3>
+    <p class="clamp3">Xi Jinping, Donald Trump and Vladimir Putin will hold the first-ever trilateral meeting on Thursday in Shenzhen, though concrete outcomes remain unclear and symbolism is expected to dominate.</p>
+    
+  </div>
+</a><a class="card" href="https://www.scmp.com/news/world/russia-central-asia/article/3374785/ukraine-damages-russias-crimean-bridge-major-strike" target="_blank" rel="noopener" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/17/37d568ed-39f3-456d-8753-9528f60ca879_e5c6c57c.jpg?itok=f58ATY70&v=1794921698" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SCMP</span>
+    <h3 class="clamp3">Ukraine damages central span of Russia's Crimean bridge</h3>
+    <p class="clamp3">Ukrainian drones and missiles destroyed the central road section of the Crimea bridge on Tuesday, two days before Putin is due to meet the Chinese and US leaders, verified footage shows.</p>
+    <div class="also">Also in Handelsblatt</div>
+  </div>
+</a><a class="card" href="https://www.scmp.com/tech/big-tech/article/3374774/baidu-xiaomi-ceos-warn-growing-gap-between-ai-hype-and-returns" target="_blank" rel="noopener" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/17/22770d7d-26d8-4f22-85f8-77c9c682e86e_385db259.jpg?itok=0DNlAEFW&v=1794916101" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SCMP</span>
+    <h3 class="clamp3">Baidu and Xiaomi CEOs warn AI spending outpaces commercial returns</h3>
+    <p class="clamp3">Baidu's Robin Li and Xiaomi's founder and CEO urged focus on practical AI applications at the APEC CEO Summit in Shenzhen, warning investment is outpacing returns.</p>
+    <div class="also">Also in SCMP Business</div>
+  </div>
+</a><a class="card" href="https://www.scmp.com/news/china/diplomacy/article/3374769/china-and-canada-agree-fresh-tariff-reliefs-thaw-continues-xi-carney-meeting" target="_blank" rel="noopener" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/17/c89f6e22-9606-4126-8f0c-3dc8c4b5e394_afe7c58a.jpg?itok=xJejC-0v&v=1794912709" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SCMP</span>
+    <h3 class="clamp3">China and Canada agree broader tariff relief after Xi-Carney meeting</h3>
+    <p class="clamp3">Xi Jinping and Mark Carney agreed on broader trade concessions at a Shenzhen meeting ahead of APEC, as Ottawa seeks to reset ties with Beijing amid US trade tensions.</p>
+    
+  </div>
+</a><a class="card" href="https://www.scmp.com/news/world/united-states-canada/article/3374707/americas-most-powerful-data-centres-emit-much-small-nation" target="_blank" rel="noopener" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/17/ca6946f5-93ab-446a-ad7e-143cea671e48_d0e989fe.jpg?itok=FZPTUsys&v=1794898175" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SCMP</span>
+    <h3 class="clamp3">US hyperscale data centres use about 2% of national electricity</h3>
+    <p class="clamp3">A Nature Sustainability study of 403 US hyperscale data centres found they used about 2% of national electricity from May 2024 to April 2025, calling this a floor estimate.</p>
+    
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="sec" id="belta" style="--h:350">
+  <h2>BelTA <span class="n">5</span></h2>
+  <div class="grid">
+    <a class="card" href="https://eng.belta.by/president/view/lukashenko-europe-is-our-home-we-must-solve-our-problems-ourselves-189062-2026/" target="_blank" rel="noopener" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000019_1794922727_189062_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3">Lukashenko: Europe is our home, we must solve our problems ourselves</h3>
+    <p class="clamp3">In a Le Point interview, Lukashenko said a new European security architecture must be built within Europe and cannot exclude Russia.</p>
+    
+  </div>
+</a><a class="card" href="https://eng.belta.by/partner_news/view/china-initiates-steps-to-explore-the-jupiter-system-189040-2026/" target="_blank" rel="noopener" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000177_1794903101_189040_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3">China initiates steps to explore the Jupiter system</h3>
+    <p class="clamp3">China's National Space Administration has begun concrete preparations for Tianwen-4, a mission to explore the Jovian system.</p>
+    
+  </div>
+</a><a class="card" href="https://eng.belta.by/society/view/belarus-security-council-names-tasks-for-border-troops-during-readiness-check-189060-2026/" target="_blank" rel="noopener" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1794921187_189060_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3">Belarus Security Council outlines border troop tasks during readiness check</h3>
+    <p class="clamp3">Deputy State Secretariat head Eduard Golovko described mobile border service group tasks and results during a snap readiness inspection by the Security Council.</p>
+    
+  </div>
+</a><a class="card" href="https://eng.belta.by/economics/view/belarus-food-concern-belgospishcheprom-expands-exports-to-new-markets-189055-2026/" target="_blank" rel="noopener" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000021_1794918314_189055_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3">Belgospishcheprom expands Belarusian food exports to new markets</h3>
+    <p class="clamp3">Belarusian food concern Belgospishcheprom is expanding its export geography, chairman Oleg Zhidkov said at PRODEXPO 2026 in Minsk.</p>
+    
+  </div>
+</a><a class="card" href="https://eng.belta.by/society/view/mp-proposed-amendments-to-tax-code-aim-to-make-taxation-fairer-189054-2026/" target="_blank" rel="noopener" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1794917419_189054_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3">MP: Proposed amendments to Tax Code aim to make taxation fairer</h3>
+    <p class="clamp3">Belarusian MP Natalya Kuleshova said the Tax Code amendments aim to raise collection while keeping the total tax burden at or below 26% of GDP.</p>
+    
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="sec" id="tldr" style="--h:215">
+  <h2>TLDR <span class="n">10</span></h2>
+  <div class="grid">
+    <a class="card" href="https://webflow.sysdig.com/blog/httpd-cve-2026-119618-detecting-heap-corruption-and-rce-in-apache-http-server-mod-http2?utm_source=tldrdevops" target="_blank" rel="noopener" style="--h:215">
+  <div class="img">
+    <div class="ph">webflow.sysdig.com</div>
+    <img src="https://cdn.prod.website-files.com/681e366f54a6e3ce87159ca4/6af7ab84d4ce10f61a086187_CVE-2026-119618%20(1).png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR DevOps</span>
+    <h3 class="clamp3">Apache fixes critical unauthenticated mod_http2 heap corruption flaw</h3>
+    <p class="clamp3">Apache HTTP Server 2.4.71 fixes CVE-2026-119618, an unauthenticated mod_http2 heap corruption flaw rated 9.8 by Red Hat, affecting 2.4.55-2.4.70; a public PoC shows corruption, but no RCE exploit exists yet.</p>
+    
+  </div>
+</a><a class="card" href="https://electrek.co/2026/11/16/tesla-cybercab-giga-berlin-3-billion-1-million/?utm_source=tldrnewsletter" target="_blank" rel="noopener" style="--h:215">
+  <div class="img">
+    <div class="ph">electrek.co</div>
+    <img src="https://electrek.co/wp-content/uploads/sites/3/2023/08/Tesla-Gigafactory-Berlin-Aug-2023.jpg?quality=82&strip=all&resize=1200,628" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR Tech</span>
+    <h3 class="clamp3">Tesla Confirms €3B Cybercab Factory at Giga Berlin</h3>
+    <p class="clamp3">Tesla confirmed a €3 billion Cybercab factory at Giga Berlin with capacity of up to 1 million units a year, with production scheduled to start in 2029.</p>
+    
+  </div>
+</a><a class="card" href="https://techcrunch.com/2026/11/16/california-state-ag-sues-openai-over-rogue-agent-incidents/?utm_source=tldrai" target="_blank" rel="noopener" style="--h:215">
+  <div class="img">
+    <div class="ph">techcrunch.com</div>
+    <img src="https://techcrunch.com/wp-content/uploads/2026/11/1920px-Rob_Bonta_at_Central_Bay_Operations_and_Maintenance_Facility_opening_December_2018.jpeg?resize=1200,981" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR AI</span>
+    <h3 class="clamp3">California AG Sues OpenAI Over Rogue Agent Incidents</h3>
+    <p class="clamp3">The California attorney general's complaint centers on a Hugging Face incident and cites other incidents as evidence that the underlying behavior is ongoing.</p>
+    <div class="also">Also in TLDR InfoSec</div>
+  </div>
+</a><a class="card" href="https://www.rfi.fr/en/france/20261116-french-cybercrime-unit-probes-massive-cyberattack-on-la-poste-subsidiary?utm_source=tldrinfosec" target="_blank" rel="noopener" style="--h:215">
+  <div class="img">
+    <div class="ph">rfi.fr</div>
+    <img src="https://s.rfi.fr/media/display/9c15b61e-7f67-11f0-b513-005056a90284/w:1280/p:16x9/2018-08-30t091729z-276704098-rc1fe83a8590-rtrmadp-3-france-insurance-merger-0.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR InfoSec</span>
+    <h3 class="clamp3">French Cybercrime Unit Probes La Poste Subsidiary Breach</h3>
+    <p class="clamp3">La Poste subsidiary Maileva disclosed a cyberattack exposing names and postal addresses of 22 million people, and the French cybercrime unit is investigating.</p>
+    
+  </div>
+</a><a class="card" href="https://www.bleepingcomputer.com/news/linux/new-noisytcp-linux-kernel-flaw-lets-attackers-crash-servers/?utm_source=tldrinfosec" target="_blank" rel="noopener" style="--h:215">
+  <div class="img">
+    <div class="ph">bleepingcomputer.com</div>
+    <img src="https://www.bleepstatic.com/content/hl-images/2026/10/29/Linux_tux.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR InfoSec</span>
+    <h3 class="clamp3">NoisyTCP: Old Linux Kernel Flaw Lets Attackers Crash Servers</h3>
+    <p class="clamp3">Researcher Hyunwoo Kim discovered an 11-year-old Linux kernel TCP NULL-pointer bug that unauthenticated attackers can trigger with crafted packets to crash default Nginx, Apache and SSH servers.</p>
+    
+  </div>
+</a><a class="card" href="https://x.com/jaminball/status/2121310809842479320?utm_source=tldrfounders" target="_blank" rel="noopener" style="--h:215">
+  <div class="img">
+    <div class="ph">x.com</div>
+    <img src="https://pbs.twimg.com/media/HW-MAIDbIAAaa-q?format=webp&name=large" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR Founders</span>
+    <h3 class="clamp3">Anthropic cuts top-model prices 20% with faster new release</h3>
+    <p class="clamp3">Anthropic's newest models, released last week as Fable 5.2, cost 20% less than the prior top models and run about 30% faster on the same hardware.</p>
+    
+  </div>
+</a><a class="card" href="https://blog.galratner.com/p/web-design-is-turning-into-webmcp?utm_source=tldrdesign" target="_blank" rel="noopener" style="--h:215">
+  <div class="img">
+    <div class="ph">blog.galratner.com</div>
+    <img src="https://substackcdn.com/image/fetch/$s_!QuSo!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc54742b6-e49b-4eb1-9f5a-52d949682557_2752x1536.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR Design</span>
+    <h3 class="clamp3">WebMCP lets AI agents call website tools instead of clicking</h3>
+    <p class="clamp3">In Shopify's tests, agents completed all 60 checkout attempts via WebMCP in an average of 10.3 seconds, versus 56 successes averaging 27.4 seconds through browser interaction.</p>
+    
+  </div>
+</a><a class="card" href="https://www.theblock.co/news/regulation/2026-11-16-cftc-blockchain-derivatives-exchange-approval-backpack-tzero-441591?utm_source=tldrcrypto" target="_blank" rel="noopener" style="--h:215">
+  <div class="img">
+    <div class="ph">theblock.co</div>
+    
+  </div>
+  <div class="body">
+    <span class="tag">TLDR Crypto</span>
+    <h3 class="clamp3">CFTC approves Backpack and tZERO for blockchain-based derivatives venues</h3>
+    <p class="clamp3">The CFTC approved Backpack and tZERO to run regulated derivatives exchanges and clearinghouses that execute and settle trades on blockchain.</p>
+    
+  </div>
+</a><a class="card" href="https://www.theblock.co/news/business/2026-11-16-dbs-jpmorgan-launch-tokenized-deposit-transfers-440854?utm_source=tldrcrypto" target="_blank" rel="noopener" style="--h:215">
+  <div class="img">
+    <div class="ph">theblock.co</div>
+    
+  </div>
+  <div class="body">
+    <span class="tag">TLDR Crypto</span>
+    <h3 class="clamp3">DBS and JPMorgan link tokenized deposit networks for 24/7 transfers</h3>
+    <p class="clamp3">DBS Token Services and JPMorgan's Kinexys now interoperate, letting institutional clients move USD tokenized deposits 24/7 between the two platforms.</p>
+    
+  </div>
+</a><a class="card" href="https://openai.com/index/introducing-chatgpt-wallet/?utm_source=tldrfintech" target="_blank" rel="noopener" style="--h:215">
+  <div class="img">
+    <div class="ph">openai.com</div>
+    
+  </div>
+  <div class="body">
+    <span class="tag">TLDR Fintech</span>
+    <h3 class="clamp3">OpenAI launches ChatGPT Wallet for agent payments without exposing cards</h3>
+    <p class="clamp3">Initially for US ChatGPT Pro users via Dots, the wallet lets agents buy without seeing card details, needing biometric approval per transaction, built with Amex, Mastercard and Visa.</p>
+    
+  </div>
+</a>
+  </div>
+</section>
+
+
+<footer>
+  
+  
+  
+  <p>Generated 15:44 CET. Archive:
+  <a href="2026-11-17.html">2026-11-17</a></p>
+</footer>
+</div>
+</body>
+</html>
