@@ -82,13 +82,17 @@ jobs:
 
       - name: Publish to GitHub Pages
         if: steps.gate.outputs.run == 'true' && !inputs.dry_run
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
-          exclude_assets: ".git,.github"
-          keep_files: false   # archive is restored into site/ by the gh-pages checkout above
-          commit_message: "brief ${{ github.run_id }}"
+        # One-commit gh-pages branch; the archive survives because the checkout above restored it into site/.
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd site
+          rm -rf .git
+          touch .nojekyll
+          git init -q -b gh-pages
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "brief ${{ github.run_id }}"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" gh-pages
 
       - name: Notify
         if: steps.gate.outputs.run == 'true' && !inputs.dry_run
