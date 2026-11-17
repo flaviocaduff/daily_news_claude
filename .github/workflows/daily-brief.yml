@@ -7,6 +7,11 @@ on:
     - cron: "0 5 * * *"   # 07:00 CEST (summer, UTC+2)
     - cron: "0 6 * * *"   # 07:00 CET  (winter, UTC+1)
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Test only: no Claude, no publish, no notification"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -47,14 +52,23 @@ jobs:
       - uses: astral-sh/setup-uv@v5
         if: steps.gate.outputs.run == 'true'
 
+      - name: Test build (no Claude)
+        if: steps.gate.outputs.run == 'true' && inputs.dry_run
+        run: uv run daily-brief --no-llm
+
+      # Summaries run on the Claude subscription: token from `claude setup-token`.
+      - name: Install Claude Code
+        if: steps.gate.outputs.run == 'true' && !inputs.dry_run
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: Build brief
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && !inputs.dry_run
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: uv run daily-brief
 
       - name: Publish to GitHub Pages
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && !inputs.dry_run
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -64,7 +78,7 @@ jobs:
           commit_message: "brief ${{ github.run_id }}"
 
       - name: Notify
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && !inputs.dry_run
         env:
           SITE_URL_OVERRIDE: ${{ vars.SITE_URL }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}

@@ -55,16 +55,18 @@ For a site without a feed, use `type: html`. It collects article links from a li
     timezone: Europe/Minsk   # for published times without a zone
 ```
 
-## Cloud (GitHub Actions + Pages): currently disabled
+## Cloud (GitHub Actions + Pages + ntfy)
 
-The workflow is disabled in the repo (`gh workflow enable daily-brief.yml` to turn it back on). To run it in the cloud, either set `llm_backend: api` and add an `ANTHROPIC_API_KEY` secret (billed per token), or install Claude Code in the job with a subscription token from `claude setup-token`.
+The workflow installs Claude Code and runs on your Claude subscription: run `claude setup-token` and save the token as the repo secret `CLAUDE_CODE_OAUTH_TOKEN`. The push notification lists the Top 3 headlines; tapping it opens the page.
+
+Test without Claude, publishing or notifying: `gh workflow run daily-brief.yml -f dry_run=true`, then compare the per-source counts in the log with a local run.
 
 
 `.github/workflows/daily-brief.yml` runs at 05:00 and 06:00 UTC. A gate step lets exactly one of the two runs through, whichever matches 07:00 in Zurich (CET or CEST). The workflow builds the site, pushes it to the `gh-pages` branch (keeping the archive) and then sends the notification.
 
 Setup:
 1. Push this folder to a GitHub repo. Pages on a private repo needs a paid plan.
-2. Settings → Secrets → Actions: add `ANTHROPIC_API_KEY` and one notification channel (below).
+2. Settings → Secrets → Actions: add `CLAUDE_CODE_OAUTH_TOKEN` and one notification channel (below).
 3. Run the workflow once by hand (Actions → Daily Brief → Run workflow). Then go to Settings → Pages → Source: *Deploy from branch* → `gh-pages` / root.
 4. The stable URL is `https://<user>.github.io/<repo>/`. You can override it with the repo variable `SITE_URL`.
 

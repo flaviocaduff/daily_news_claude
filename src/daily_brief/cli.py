@@ -54,10 +54,10 @@ def main(argv: list[str] | None = None) -> int:
 
         webbrowser.open(path.resolve().as_uri())
 
-    lead = brief.top[0].display_headline() if brief.top else ""
+    top = "\n".join(f"• {it.display_headline()}" for it in brief.top)
     msg = {
         "title": f"{cfg.get('title', 'Daily Brief')} · {brief.now.strftime('%a %-d %b')}",
-        "text": f"{brief.item_count} stories. Top: {lead}" if lead else f"{brief.item_count} stories.",
+        "text": f"{top}\n{brief.item_count} stories" if top else f"{brief.item_count} stories",
     }
     latest.write_text(json.dumps(msg, ensure_ascii=False), encoding="utf-8")
     return _send(msg) if args.notify else 0
