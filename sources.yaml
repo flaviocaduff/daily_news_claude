@@ -1,0 +1,53 @@
+# Daily Brief configuration.
+# Add a source by appending to `sources:`. Supported types:
+#   tldr  -> newsletter: <slug>   (issues at https://tldr.tech/<slug>/<YYYY-MM-DD>)
+#   rss   -> url: <feed url>      (any RSS/Atom feed)
+# Optional per source: max_items (overrides settings.max_items_per_source), enabled: false
+
+settings:
+  title: Daily Brief
+  timezone: Europe/Zurich
+  language: English            # language of headlines + summaries
+  window_hours: 24             # RSS items older than this are dropped
+  tldr_lookback_days: 1        # TLDR issues are dated: newest of today/yesterday. Set 3 to get Friday's on Monday.
+  max_items_per_source: 5      # after ranking by importance
+  top_n: 3
+  reader_profile: >-
+    A Zurich-based software engineer interested in tech, AI, security, startups,
+    Swiss/German business and finance. Values concrete facts over hype.
+  models:
+    summarize: claude-haiku-5-5   # per-item one-sentence summaries (batched)
+    rank: claude-sonnet-5-5       # Top-N pick + cross-source duplicate detection
+  summarize_batch_size: 25
+  dedup_threshold: 90          # rapidfuzz token_set_ratio on normalised titles (0-100)
+  fetch_images: true
+  http_timeout: 10
+  output_dir: site
+
+sources:
+  - {id: tldr-tech,      name: TLDR Tech,      type: tldr, newsletter: tech}
+  - {id: tldr-ai,        name: TLDR AI,        type: tldr, newsletter: ai}
+  - {id: tldr-dev,       name: TLDR Dev,       type: tldr, newsletter: dev}
+  - {id: tldr-infosec,   name: TLDR InfoSec,   type: tldr, newsletter: infosec}
+  - {id: tldr-product,   name: TLDR Product,   type: tldr, newsletter: product}
+  - {id: tldr-devops,    name: TLDR DevOps,    type: tldr, newsletter: devops}
+  - {id: tldr-founders,  name: TLDR Founders,  type: tldr, newsletter: founders}
+  - {id: tldr-design,    name: TLDR Design,    type: tldr, newsletter: design}
+  - {id: tldr-marketing, name: TLDR Marketing, type: tldr, newsletter: marketing}
+  - {id: tldr-crypto,    name: TLDR Crypto,    type: tldr, newsletter: crypto}
+  - {id: tldr-fintech,   name: TLDR Fintech,   type: tldr, newsletter: fintech}
+  - {id: tldr-it,        name: TLDR IT,        type: tldr, newsletter: it}
+  - {id: tldr-data,      name: TLDR Data,      type: tldr, newsletter: data}
+  - {id: tldr-hardware,  name: TLDR Hardware,  type: tldr, newsletter: hardware}
+
+  - id: handelsblatt
+    name: Handelsblatt
+    type: rss
+    url: https://www.handelsblatt.com/contentexport/feed/schlagzeilen
+    max_items: 8
+
+  - id: insideparadeplatz
+    name: Inside Paradeplatz
+    type: rss
+    url: https://insideparadeplatz.ch/feed/
+    max_items: 6
