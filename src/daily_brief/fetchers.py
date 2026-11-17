@@ -5,6 +5,8 @@ import html as htmllib
 import logging
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor
+from urllib.parse import urljoin
 from datetime import date, datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
@@ -161,6 +163,79 @@ def _feed_image(e) -> str | None:
     return m.group(1) if m else None
 
 
+# --------------------------------------------------------------------------- HTML (no feed)
+
+
+def fetch_html(client: httpx.Client, source: dict, now: datetime, window_hours: int) -> list[Item]:
+    """For sites without a feed: collect article links from `list_url` matching `link_pattern`,
+    then read each article's meta tags (og:title, og:description, og:image, article:published_time).
+    Naive published times are interpreted in `source.timezone` (default UTC)."""
+    r = client.get(source["list_url"])
+    r.raise_for_status()
+    pattern = re.compile(source["link_pattern"])
+    links: list[str] = []
+    for href in re.findall(r'href="([^"]+)"', r.text):
+        url = urljoin(str(r.url), htmllib.unescape(href))
+        if pattern.search(url) and url not in links:
+            links.append(url)
+    links = links[: int(source.get("max_links", 40))]
+    tz = ZoneInfo(source.get("timezone", "UTC"))
+    cutoff = now - timedelta(hours=window_hours)
+
+    def one(url: str) -> Item | None:
+        try:
+            page = client.get(url)
+            page.raise_for_status()
+        except Exception as e:
+            log.debug("html %s: %s failed: %s", source["id"], url, e)
+            return None
+        meta = parse_meta(page.text)
+        published = _parse_time(meta.get("article:published_time", ""), tz)
+        title = meta.get("og:title") or ""
+        if not title or (published and published < cutoff):
+            return None
+        return Item(
+            source_id=source["id"],
+            source_name=source["name"],
+            title=title,
+            link=url,
+            teaser=meta.get("og:description") or meta.get("description", ""),
+            published=published,
+            image=meta.get("og:image"),
+        )
+
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        items = [i for i in ex.map(one, links) if i]
+    log.info("html %s: %d items in window (of %d links)", source["id"], len(items), len(links))
+    return items
+
+
+_META_TAG_RE = re.compile(r"<meta\b[^>]*>", re.I)
+_META_KEY_RE = re.compile(r'(?:property|name)\s*=\s*["\']([^"\']+)["\']', re.I)
+_META_VAL_RE = re.compile(r'content\s*=\s*["\']([^"\']*)["\']', re.I)
+
+
+def parse_meta(page: str) -> dict[str, str]:
+    out: dict[str, str] = {}
+    for tag in _META_TAG_RE.findall(page.split("</head>", 1)[0]):
+        k, v = _META_KEY_RE.search(tag), _META_VAL_RE.search(tag)
+        if k and v:
+            # some sites double-escape entities (&amp;rsquo;)
+            out.setdefault(k.group(1).lower(), htmllib.unescape(htmllib.unescape(v.group(1))).strip())
+    return out
+
+
+def _parse_time(s: str, tz) -> datetime | None:
+    s = s.strip().replace("Z", "+00:00")
+    if not s:
+        return None
+    try:
+        dt = datetime.fromisoformat(s)
+    except ValueError:
+        return None
+    return dt if dt.tzinfo else dt.replace(tzinfo=tz)
+
+
 # --------------------------------------------------------------------------- dispatch
 
 
@@ -170,6 +245,8 @@ def fetch_source(client: httpx.Client, source: dict, now: datetime, window_hours
         return fetch_tldr(client, source, now, tldr_lookback)
     if kind == "rss":
         return fetch_rss(client, source, now, window_hours)
+    if kind == "html":
+        return fetch_html(client, source, now, window_hours)
     raise ValueError(f"unknown source type {kind!r} for {source['id']}")
 
 

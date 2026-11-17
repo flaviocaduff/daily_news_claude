@@ -61,3 +61,18 @@ def test_og_image():
 
 def test_first_sentence():
     assert first_sentence("One thing happened. Then another.") == "One thing happened."
+
+
+def test_parse_meta_and_time():
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+
+    from daily_brief.fetchers import _parse_time, parse_meta
+
+    page = ('<head><meta property="og:title" content="Belarus &amp;rsquo;s trade up" />'
+            '<meta property="article:published_time" content="2026-11-17 09:53:00" /></head>')
+    m = parse_meta(page)
+    assert m["og:title"] == "Belarus ’s trade up"
+    t = _parse_time(m["article:published_time"], ZoneInfo("Europe/Minsk"))
+    assert t == datetime(2026, 11, 17, 6, 53, tzinfo=ZoneInfo("UTC"))
+    assert _parse_time("garbage", ZoneInfo("UTC")) is None

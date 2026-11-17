@@ -19,7 +19,7 @@ def _domain(url: str) -> str:
 
 
 # Fixed hues for the default sections; anything else gets a stable hash-based hue.
-_HUES = {"TLDR": 215, "Handelsblatt": 18, "Inside Paradeplatz": 152}
+_HUES = {"TLDR": 215, "Handelsblatt": 18, "Inside Paradeplatz": 152, "SCMP": 275, "BelTA": 350}
 
 
 def _hue(name: str) -> int:

@@ -44,6 +44,17 @@ To add a feed:
     max_items: 5
 ```
 
+For a site without a feed, use `type: html`. It collects article links from a list page, then reads each article's meta tags (`og:title`, `og:description`, `og:image`, `article:published_time`):
+
+```yaml
+  - id: belta
+    name: BelTA
+    type: html
+    list_url: https://eng.belta.by/all_news/
+    link_pattern: '^https://eng\.belta\.by/[a-z_]+/view/[^/]+-\d+-\d{4}/$'
+    timezone: Europe/Minsk   # for published times without a zone
+```
+
 ## Cloud (GitHub Actions + Pages): currently disabled
 
 The workflow is disabled in the repo (`gh workflow enable daily-brief.yml` to turn it back on). To run it in the cloud, either set `llm_backend: api` and add an `ANTHROPIC_API_KEY` secret (billed per token), or install Claude Code in the job with a subscription token from `claude setup-token`.

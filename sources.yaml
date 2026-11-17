@@ -2,6 +2,8 @@
 # Add a source by appending to `sources:`. Supported types:
 #   tldr  -> newsletter: <slug>   (issues at https://tldr.tech/<slug>/<YYYY-MM-DD>)
 #   rss   -> url: <feed url>      (any RSS/Atom feed)
+#   html  -> list_url + link_pattern (sites without a feed; reads each article's meta tags)
+#            optional: timezone (for naive published times), max_links
 # Optional per source: section (groups sources into one page section; default = source name),
 #                      max_items (cap for this source), enabled: false
 
@@ -15,9 +17,11 @@ settings:
   # Page sections, in order. Sources point to one with `section:`.
   # max_items = stories shown (excluding the Top N); max_per_source keeps variety inside a group.
   sections:
-    - {name: TLDR, max_items: 10, max_per_source: 2}
     - {name: Handelsblatt, max_items: 6}
     - {name: Inside Paradeplatz, max_items: 5}
+    - {name: SCMP, max_items: 6}
+    - {name: BelTA, max_items: 5}
+    - {name: TLDR, max_items: 10, max_per_source: 2}
   top_n: 3
   reader_profile: >-
     A Zurich-based software engineer interested in tech, AI, security, startups,
@@ -59,3 +63,16 @@ sources:
     name: Inside Paradeplatz
     type: rss
     url: https://insideparadeplatz.ch/feed/
+
+  # South China Morning Post: main news feed + business (overlap is deduplicated)
+  - {id: scmp-news,     name: SCMP,          section: SCMP, type: rss, url: https://www.scmp.com/rss/91/feed}
+  - {id: scmp-business, name: SCMP Business, section: SCMP, type: rss, url: https://www.scmp.com/rss/92/feed}
+
+  # BelTA (Belarusian state news agency), English edition. No working RSS on eng.belta.by.
+  - id: belta
+    name: BelTA
+    type: html
+    list_url: https://eng.belta.by/all_news/
+    link_pattern: '^https://eng\.belta\.by/[a-z_]+/view/[^/]+-\d+-\d{4}/$'
+    timezone: Europe/Minsk
+    max_links: 40
