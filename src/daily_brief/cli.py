@@ -20,6 +20,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--no-llm", action="store_true", help="skip Claude; use source teasers")
     p.add_argument("--no-images", action="store_true", help="skip og:image lookups")
     p.add_argument("--notify", action="store_true", help="send the link via configured channels")
+    p.add_argument("--open", action="store_true", help="open the page in the browser when done")
     p.add_argument("--notify-only", action="store_true", help="only send the notification for the last build")
     p.add_argument("--only", help="comma-separated source ids to include (for testing)")
     p.add_argument("-v", "--verbose", action="store_true")
@@ -48,6 +49,10 @@ def main(argv: list[str] | None = None) -> int:
     brief = build_brief(cfg, use_llm=use_llm)
     path = write_site(brief, cfg.settings)
     print(f"wrote {path} ({brief.item_count} stories)")
+    if args.open:
+        import webbrowser
+
+        webbrowser.open(path.resolve().as_uri())
 
     lead = brief.top[0].display_headline() if brief.top else ""
     msg = {

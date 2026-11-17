@@ -2,34 +2,21 @@
 
 Builds a one-page HTML news brief each day at 07:00 Europe/Zurich. It covers all 14 TLDR newsletters, Handelsblatt and Inside Paradeplatz, with one sentence per story from Claude and a Top 3 across all sources.
 
-## Run locally (current setup)
+## Run it (manual, current setup)
 
 Summaries come from **Claude Code in headless mode** (`claude -p`) on your Claude subscription. There is no API key and no per-token billing (`llm_backend: claude-cli` in `sources.yaml`).
 
 ```bash
-uv run daily-brief            # writes site/index.html + site/archive/YYYY-MM-DD.html
-open site/index.html
+uv run daily-brief --open     # ~2 min; writes site/index.html + site/archive/YYYY-MM-DD.html and opens it
 ```
 
 Useful flags: `--no-llm` (use the source teasers), `--no-images`, `--only tldr-ai,handelsblatt`, `--notify`, `-v`.
 
 Tests: `uv run pytest -q`
 
-### Daily on the Mac (launchd)
+### Later: daily on the Mac (launchd, not installed)
 
-```bash
-./scripts/install_launchd.sh
-```
-
-- The job runs at 07:00. If the Mac is asleep or off at 07:00, it runs as soon as you wake it or log in. It also re-checks every 30 minutes.
-- It builds at most once per day and never before 07:00 Zurich time. It then opens the page and shows a notification.
-- macOS doesn't let background jobs read `~/Documents`, so the installer deploys a snapshot:
-  - code: a uv tool
-  - `sources.yaml` and the runner: `~/Library/Application Support/daily-brief/`
-  - pages: `~/Library/Application Support/daily-brief/site/`
-- **Re-run the installer after changing code or `sources.yaml`.**
-- Log: `~/Library/Logs/daily-brief.log`. Force a rebuild: `~/Library/Application\ Support/daily-brief/run_daily.sh --force`.
-- Uninstall: `launchctl bootout gui/$(id -u)/local.daily-brief; rm ~/Library/LaunchAgents/local.daily-brief.plist`
+`./scripts/install_launchd.sh` installs a job that runs at 07:00, or on wake/login if the Mac was asleep, once per day. macOS blocks background jobs from reading `~/Documents`, so it deploys a snapshot to `~/Library/Application Support/daily-brief/`. Re-run it after changes. Uninstall: `launchctl bootout gui/$(id -u)/local.daily-brief; rm ~/Library/LaunchAgents/local.daily-brief.plist`.
 
 ## Pipeline
 
