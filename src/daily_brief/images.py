@@ -32,7 +32,19 @@ def extract_og_image(page: str, base_url: str) -> str | None:
     return url if url.startswith(("https://", "http://")) else None
 
 
+_YT_RE = re.compile(r"(?:youtube\.com/watch\?(?:.*&)?v=|youtu\.be/|youtube\.com/shorts/)([\w-]{11})")
+
+
+def known_thumbnail(url: str) -> str | None:
+    """Thumbnails derivable from the URL alone (no page fetch)."""
+    m = _YT_RE.search(url)
+    return f"https://i.ytimg.com/vi/{m.group(1)}/hqdefault.jpg" if m else None
+
+
 def _fetch_one(client: httpx.Client, item: Item) -> None:
+    if (thumb := known_thumbnail(item.link)):
+        item.image = thumb
+        return
     try:
         with client.stream("GET", item.link) as r:
             if r.status_code != 200 or "html" not in r.headers.get("content-type", ""):

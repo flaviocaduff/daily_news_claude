@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import hashlib
 import re
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from jinja2 import Environment, PackageLoader, select_autoescape
 
@@ -12,9 +14,23 @@ def _slug(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 
+def _domain(url: str) -> str:
+    return urlsplit(url).netloc.lower().removeprefix("www.")
+
+
+# Fixed hues for the default sections; anything else gets a stable hash-based hue.
+_HUES = {"TLDR": 215, "Handelsblatt": 18, "Inside Paradeplatz": 152}
+
+
+def _hue(name: str) -> int:
+    return _HUES.get(name, int(hashlib.md5(name.encode()).hexdigest()[:4], 16) % 360)
+
+
 def render(brief: Brief, settings: dict, archive_dates: list[str] | None = None) -> str:
     env = Environment(loader=PackageLoader("daily_brief", "templates"), autoescape=select_autoescape(["html"]))
     env.filters["slug"] = _slug
+    env.filters["domain"] = _domain
+    env.filters["hue"] = _hue
     tpl = env.get_template("brief.html.j2")
     return tpl.render(
         b=brief,

@@ -14,6 +14,7 @@ class Item:
     published: datetime | None = None
     image: str | None = None
     # filled by the pipeline
+    section: str = ""
     canonical: str = ""
     headline: str = ""   # display headline (possibly translated)
     summary: str = ""    # one sentence

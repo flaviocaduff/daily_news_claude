@@ -68,8 +68,27 @@ def test_llm_path_trims_dedups_and_backfills(run):
     assert all(i.score != 1 for i in shown)
     assert all(i.summary.startswith("S ") for i in shown)
     assert len({i.uid for i in shown}) == len(shown)
-    per_source = {s["id"]: [i for i in shown if i.source_id == s["id"]] for s in SOURCES}
-    assert all(len(v) <= 2 for v in per_source.values())
+    # section caps exclude the Top-N picks
+    assert all(len(lst) <= 2 for _, lst in b.sections)
+
+
+def test_grouped_section_caps_per_source(monkeypatch):
+    srcs = [{"id": f"t{k}", "name": f"TLDR {k}", "section": "TLDR", "type": "rss"} for k in range(3)]
+    titles = iter([
+        "Apple ships new laptop chip", "Rust 2.0 roadmap published", "Kubernetes adds gang scheduling",
+        "Bitcoin ETF inflows surge", "Postgres 19 beta released", "Figma launches AI layouts",
+        "Ransomware hits Swiss hospital", "Stripe raises at record valuation", "Linux kernel drops i486",
+        "Nvidia unveils datacenter GPU", "Google settles antitrust case", "SpaceX catches Starship booster"])
+    monkeypatch.setattr(pl, "fetch_source", lambda c, src, now, w, lb=1: [
+        Item(source_id=src["id"], source_name=src["name"], title=next(titles), link=f"https://{src['id']}.com/{k}")
+        for k in range(4)])
+    cfg = Config(settings={"top_n": 1, "fetch_images": False,
+                           "sections": [{"name": "TLDR", "max_items": 4, "max_per_source": 2}]}, sources=srcs)
+    b = pl.build_brief(cfg, use_llm=False, now=datetime(2026, 11, 16, 7, tzinfo=timezone.utc))
+    assert [s["name"] for s, _ in b.sections] == ["TLDR"]
+    items = b.sections[0][1]
+    assert len(items) == 4 and len(b.top) == 1
+    assert all(sum(1 for i in items if i.source_id == s["id"]) <= 2 for s in srcs)
 
 
 def test_total_llm_failure_is_loud(run):

@@ -62,22 +62,35 @@ def build_brief(cfg: Config, use_llm: bool = True, now: datetime | None = None) 
             # wrong model id, bad key, outage... don't silently publish raw teasers
             raise RuntimeError("LLM produced no summaries; check ANTHROPIC_API_KEY and models in sources.yaml")
 
-    # 4. keep the best N per source
-    per_source: dict[str, list[Item]] = {s["id"]: [] for s in cfg.sources}
-    for it in items:
-        per_source[it.source_id].append(it)
-    for src in cfg.sources:
-        lst = sorted(per_source[src["id"]], key=lambda i: -i.score)  # stable: keeps feed order on ties
-        per_source[src["id"]] = [i for i in lst if not summarizer or i.score != 1][: cfg.max_items(src)]
-    kept = [i for s in cfg.sources for i in per_source[s["id"]]]
 
-    # 5. Top-N + cross-language duplicates
+    sections_conf = cfg.sections()
+    src_section = {s["id"]: cfg.section_of(s) for s in cfg.sources}
+    for it in items:
+        it.section = src_section[it.source_id]
     top_n = int(cfg.get("top_n", 3))
+
+    def by_importance(lst: list[Item]) -> list[Item]:
+        # score first, then items with a thumbnail; stable, so feed order breaks remaining ties
+        return sorted(lst, key=lambda i: (-i.score, i.image is None))
+
+    # 4. candidate pool per section (enough for the section + possible Top-N picks)
+    pool: dict[str, list[Item]] = {}
+    for sec in sections_conf:
+        lst = [i for i in items if i.section == sec["name"] and not (summarizer and i.score == 1)]
+        pool[sec["name"]] = by_importance(lst)[: 2 * (sec["max_items"] + top_n)]
+    candidates = [i for sec in sections_conf for i in pool[sec["name"]]]
+
+    # 5. thumbnails for candidates, so ties can prefer stories with an image
+    if cfg.get("fetch_images", True):
+        add_images(client, candidates)
+    client.close()
+
+    # 6. Top-N + cross-language duplicates (LLM), then backfill by score
     top_ids: list[str] = []
-    if summarizer and kept:
-        top_ids, dup_groups = summarizer.rank(kept, top_n)
-        by_id = {i.uid: i for i in kept}
-        drop: set[str] = set()
+    by_id = {i.uid: i for i in candidates}
+    drop: set[str] = set()
+    if summarizer and candidates:
+        top_ids, dup_groups = summarizer.rank(candidates, top_n)
         for group in dup_groups:
             members = [by_id[g] for g in group if g in by_id]
             if len(members) < 2:
@@ -88,29 +101,36 @@ def build_brief(cfg: Config, use_llm: bool = True, now: datetime | None = None) 
                 if other.source_name != keeper.source_name and other.source_name not in keeper.also_in:
                     keeper.also_in.append(other.source_name)
                 keeper.image = keeper.image or other.image
-        top_ids = [t for t in top_ids if t not in drop and t in by_id]
-        for sid in per_source:
-            per_source[sid] = [i for i in per_source[sid] if i.uid not in drop]
-        kept = [i for i in kept if i.uid not in drop]
-    # backfill (rank failed, returned too few, or picks were duplicates): highest score,
-    # or without LLM the first item of the first sources
-    ranked = sorted(kept, key=lambda i: -i.score) if summarizer else [l[0] for l in per_source.values() if l]
-    for it in ranked:
+        top_ids = [t for t in dict.fromkeys(top_ids) if t in by_id and t not in drop]
+    alive = [i for i in candidates if i.uid not in drop]
+    if summarizer:
+        fallback = by_importance(alive)
+    else:  # no scores: the first story of each section, round-robin
+        fallback = [lst[0] for lst in ([i for i in alive if i.section == s["name"]] for s in sections_conf) if lst]
+    for it in fallback:
         if len(top_ids) >= top_n:
             break
         if it.uid not in top_ids:
             top_ids.append(it.uid)
+    top = [by_id[t] for t in top_ids]
+    taken = set(top_ids)
 
-    by_id = {i.uid: i for i in kept}
-    top = [by_id[t] for t in top_ids if t in by_id]
-    top_set = {i.uid for i in top}
+    # 7. fill each section: best first, capped per source for variety
+    sections: list[tuple[dict, list[Item]]] = []
+    for sec in sections_conf:
+        per_src_cap = int(sec.get("max_per_source") or 10**6)
+        counts: dict[str, int] = {}
+        chosen: list[Item] = []
+        for it in pool[sec["name"]]:
+            if it.uid in taken or it.uid in drop or counts.get(it.source_id, 0) >= per_src_cap:
+                continue
+            chosen.append(it)
+            counts[it.source_id] = counts.get(it.source_id, 0) + 1
+            if len(chosen) >= sec["max_items"]:
+                break
+        if chosen:
+            sections.append((sec, chosen))
 
-    # 6. thumbnails for everything that will be shown
-    if cfg.get("fetch_images", True):
-        add_images(client, kept)
-    client.close()
-
-    sections = [(s, [i for i in per_source[s["id"]] if i.uid not in top_set]) for s in cfg.sources]
-    empty = [s["name"] for s, lst in sections if not lst and s["name"] not in failed and not any(t.source_id == s["id"] for t in top)]
-    sections = [(s, lst) for s, lst in sections if lst]
+    with_items = {i.source_id for i in items}
+    empty = [s["name"] for s in cfg.sources if s["id"] not in with_items and s["name"] not in failed]
     return Brief(now=now, top=top, sections=sections, empty_sources=empty, failed_sources=failed, llm=bool(summarizer))

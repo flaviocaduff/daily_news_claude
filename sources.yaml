@@ -2,7 +2,8 @@
 # Add a source by appending to `sources:`. Supported types:
 #   tldr  -> newsletter: <slug>   (issues at https://tldr.tech/<slug>/<YYYY-MM-DD>)
 #   rss   -> url: <feed url>      (any RSS/Atom feed)
-# Optional per source: max_items (overrides settings.max_items_per_source), enabled: false
+# Optional per source: section (groups sources into one page section; default = source name),
+#                      max_items (cap for this source), enabled: false
 
 settings:
   title: Daily Brief
@@ -10,7 +11,13 @@ settings:
   language: English            # language of headlines + summaries
   window_hours: 24             # RSS items older than this are dropped
   tldr_lookback_days: 1        # TLDR issues are dated: newest of today/yesterday. Set 3 to get Friday's on Monday.
-  max_items_per_source: 5      # after ranking by importance
+  max_items_per_source: 5      # default cap for a section without its own max_items
+  # Page sections, in order. Sources point to one with `section:`.
+  # max_items = stories shown (excluding the Top N); max_per_source keeps variety inside a group.
+  sections:
+    - {name: TLDR, max_items: 10, max_per_source: 2}
+    - {name: Handelsblatt, max_items: 6}
+    - {name: Inside Paradeplatz, max_items: 5}
   top_n: 3
   reader_profile: >-
     A Zurich-based software engineer interested in tech, AI, security, startups,
@@ -28,29 +35,27 @@ settings:
   output_dir: site
 
 sources:
-  - {id: tldr-tech,      name: TLDR Tech,      type: tldr, newsletter: tech}
-  - {id: tldr-ai,        name: TLDR AI,        type: tldr, newsletter: ai}
-  - {id: tldr-dev,       name: TLDR Dev,       type: tldr, newsletter: dev}
-  - {id: tldr-infosec,   name: TLDR InfoSec,   type: tldr, newsletter: infosec}
-  - {id: tldr-product,   name: TLDR Product,   type: tldr, newsletter: product}
-  - {id: tldr-devops,    name: TLDR DevOps,    type: tldr, newsletter: devops}
-  - {id: tldr-founders,  name: TLDR Founders,  type: tldr, newsletter: founders}
-  - {id: tldr-design,    name: TLDR Design,    type: tldr, newsletter: design}
-  - {id: tldr-marketing, name: TLDR Marketing, type: tldr, newsletter: marketing}
-  - {id: tldr-crypto,    name: TLDR Crypto,    type: tldr, newsletter: crypto}
-  - {id: tldr-fintech,   name: TLDR Fintech,   type: tldr, newsletter: fintech}
-  - {id: tldr-it,        name: TLDR IT,        type: tldr, newsletter: it}
-  - {id: tldr-data,      name: TLDR Data,      type: tldr, newsletter: data}
-  - {id: tldr-hardware,  name: TLDR Hardware,  type: tldr, newsletter: hardware}
+  - {id: tldr-tech,      name: TLDR Tech,      section: TLDR, type: tldr, newsletter: tech}
+  - {id: tldr-ai,        name: TLDR AI,        section: TLDR, type: tldr, newsletter: ai}
+  - {id: tldr-dev,       name: TLDR Dev,       section: TLDR, type: tldr, newsletter: dev}
+  - {id: tldr-infosec,   name: TLDR InfoSec,   section: TLDR, type: tldr, newsletter: infosec}
+  - {id: tldr-product,   name: TLDR Product,   section: TLDR, type: tldr, newsletter: product}
+  - {id: tldr-devops,    name: TLDR DevOps,    section: TLDR, type: tldr, newsletter: devops}
+  - {id: tldr-founders,  name: TLDR Founders,  section: TLDR, type: tldr, newsletter: founders}
+  - {id: tldr-design,    name: TLDR Design,    section: TLDR, type: tldr, newsletter: design}
+  - {id: tldr-marketing, name: TLDR Marketing, section: TLDR, type: tldr, newsletter: marketing}
+  - {id: tldr-crypto,    name: TLDR Crypto,    section: TLDR, type: tldr, newsletter: crypto}
+  - {id: tldr-fintech,   name: TLDR Fintech,   section: TLDR, type: tldr, newsletter: fintech}
+  - {id: tldr-it,        name: TLDR IT,        section: TLDR, type: tldr, newsletter: it}
+  - {id: tldr-data,      name: TLDR Data,      section: TLDR, type: tldr, newsletter: data}
+  - {id: tldr-hardware,  name: TLDR Hardware,  section: TLDR, type: tldr, newsletter: hardware}
 
   - id: handelsblatt
     name: Handelsblatt
     type: rss
     url: https://www.handelsblatt.com/contentexport/feed/schlagzeilen
-    max_items: 8
 
   - id: insideparadeplatz
     name: Inside Paradeplatz
     type: rss
     url: https://insideparadeplatz.ch/feed/
-    max_items: 6

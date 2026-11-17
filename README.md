@@ -29,7 +29,12 @@ Tests: `uv run pytest -q`
 
 ## Configure
 
-Everything lives in `sources.yaml`: language, models, items per source, reader profile and sources. To add a feed:
+Everything lives in `sources.yaml`: language, models, reader profile, sources and page sections.
+
+- **Sections:** sources with the same `section:` share one section on the page. For example, all 14 TLDR newsletters appear under "TLDR". Each section in `settings.sections` sets `max_items`, the number of cards not counting the Top 3. It can also set `max_per_source`, which keeps a mix of newsletters.
+- **Images:** stories with a thumbnail win ties. YouTube links use the video thumbnail. Sites that block automated requests get a colored tile showing the site name.
+
+To add a feed:
 
 ```yaml
   - id: nzz

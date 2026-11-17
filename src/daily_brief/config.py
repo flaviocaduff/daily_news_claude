@@ -15,8 +15,25 @@ class Config:
     def get(self, key: str, default: Any = None) -> Any:
         return self.settings.get(key, default)
 
-    def max_items(self, source: dict[str, Any]) -> int:
-        return int(source.get("max_items", self.get("max_items_per_source", 5)))
+    def section_of(self, source: dict[str, Any]) -> str:
+        return source.get("section", source["name"])
+
+    def sections(self) -> list[dict[str, Any]]:
+        """Page sections in display order: configured ones first, then any a source introduces."""
+        conf = {s["name"]: dict(s) for s in self.get("sections", []) or []}
+        order = [s["name"] for s in self.get("sections", []) or []]
+        for src in self.sources:
+            name = self.section_of(src)
+            if name not in conf:
+                conf[name] = {"name": name, "max_items": src.get("max_items")}
+                order.append(name)
+        out = []
+        for name in order:
+            if any(self.section_of(s) == name for s in self.sources):
+                c = conf[name]
+                c["max_items"] = int(c.get("max_items") or self.get("max_items_per_source", 5))
+                out.append(c)
+        return out
 
 
 def load_config(path: str | Path) -> Config:
