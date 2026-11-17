@@ -87,7 +87,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
           exclude_assets: ".git,.github"
-          keep_files: true
+          keep_files: false   # archive is restored into site/ by the gh-pages checkout above
           commit_message: "brief ${{ github.run_id }}"
 
       - name: Notify
