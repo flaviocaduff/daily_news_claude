@@ -70,7 +70,7 @@ def test_render_escapes_feed_text():
 def test_extract_text_min_length():
     from daily_brief.articles import extract_text
 
-    para = "<p>" + "The central bank raised rates by half a point on Tuesday, citing inflation. " * 12 + "</p>"
+    para = "<p>" + "The central bank raised rates by half a point on Tuesday, citing inflation. " * 20 + "</p>"
     assert "central bank" in extract_text(f"<html><body><article>{para}</article></body></html>", "https://a.com/x")
     assert extract_text("<html><body><p>Subscribe to read.</p></body></html>", "https://a.com/x") == ""
 
