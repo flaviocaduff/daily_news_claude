@@ -19,6 +19,7 @@ settings:
   sections:
     - {name: Handelsblatt, max_items: 6}
     - {name: Inside Paradeplatz, max_items: 5}
+    - {name: SRF News, max_items: 6}
     - {name: South China Morning Post, max_items: 6}
     - {name: BelTA, max_items: 5}
     - {name: TLDR, max_items: 10, max_per_source: 2}
@@ -32,9 +33,11 @@ settings:
   models:
     summarize: claude-haiku-5-5   # per-item one-sentence summaries (batched)
     rank: claude-sonnet-5-5       # Top-N pick + cross-source duplicate detection
+    article: claude-haiku-5-5     # key points per story from the full article text (all sources)
   summarize_batch_size: 25
   dedup_threshold: 90          # rapidfuzz token_set_ratio on normalised titles (0-100)
   fetch_images: true
+  fetch_articles: true         # read the full text of shown stories for the tap-to-open summary
   http_timeout: 10
   output_dir: site
 
@@ -63,6 +66,9 @@ sources:
     name: Inside Paradeplatz
     type: rss
     url: https://insideparadeplatz.ch/feed/
+
+  # SRF (Swiss public broadcaster): latest news, in German
+  - {id: srf, name: SRF News, type: rss, url: https://www.srf.ch/news/bnf/rss/1646}
 
   # South China Morning Post: main news feed + business (overlap is deduplicated)
   - {id: scmp-news,     name: South China Morning Post, section: South China Morning Post, type: rss, url: https://www.scmp.com/rss/91/feed}

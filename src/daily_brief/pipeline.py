@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 
 from .config import Config
-from .dedup import dedupe
+from .dedup import add_dupe, dedupe
 from .fetchers import fetch_source, local_now, make_client
 from .images import add_images
 from .models import Item
@@ -22,6 +22,10 @@ class Brief:
     empty_sources: list[str] = field(default_factory=list)
     failed_sources: list[str] = field(default_factory=list)
     llm: bool = True
+
+    @property
+    def stories(self) -> list[Item]:
+        return self.top + [i for _, lst in self.sections for i in lst]
 
     @property
     def item_count(self) -> int:
@@ -83,7 +87,6 @@ def build_brief(cfg: Config, use_llm: bool = True, now: datetime | None = None) 
     # 5. thumbnails for candidates, so ties can prefer stories with an image
     if cfg.get("fetch_images", True):
         add_images(client, candidates)
-    client.close()
 
     # 6. Top-N + cross-language duplicates (LLM), then backfill by score
     top_ids: list[str] = []
@@ -98,6 +101,7 @@ def build_brief(cfg: Config, use_llm: bool = True, now: datetime | None = None) 
             keeper = members[0]
             for other in members[1:]:
                 drop.add(other.uid)
+                add_dupe(keeper, other)
                 if other.source_name != keeper.source_name and other.source_name not in keeper.also_in:
                     keeper.also_in.append(other.source_name)
                 keeper.image = keeper.image or other.image
@@ -130,6 +134,19 @@ def build_brief(cfg: Config, use_llm: bool = True, now: datetime | None = None) 
                 break
         if chosen:
             sections.append((sec, chosen))
+
+    # 8. full article text (all sources of each shown story) -> key points for the tap-to-open view
+    if cfg.get("fetch_articles", True):
+        from .articles import add_texts
+
+        shown = top + [i for _, lst in sections for i in lst]
+        try:
+            add_texts(client, shown)
+            if summarizer:
+                summarizer.key_points(shown)
+        except Exception as e:  # never lose the brief over the extra detail
+            log.error("article step failed: %s", e)
+    client.close()
 
     with_items = {i.source_id for i in items}
     empty = [s["name"] for s in cfg.sources if s["id"] not in with_items and s["name"] not in failed]

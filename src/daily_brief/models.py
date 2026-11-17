@@ -21,6 +21,10 @@ class Item:
     score: int = 0       # 1-5 importance
     also_in: list[str] = field(default_factory=list)  # other sources that carried the story
     uid: str = ""
+    dupes: list[Item] = field(default_factory=list)  # same story from other URLs/sources
+    text: str = ""       # full article text, when it could be read
+    points: list[str] = field(default_factory=list)  # key points across all sources
+    points_from_preview: bool = False  # no full text was readable; points come from teasers
 
     def display_headline(self) -> str:
         return self.headline or self.title

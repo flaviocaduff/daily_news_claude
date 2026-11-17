@@ -54,7 +54,7 @@ def run(monkeypatch):
 
     def _run(mode):
         monkeypatch.setattr(sm, "Summarizer", lambda s: FakeSummarizer(s, mode))
-        cfg = Config(settings={"max_items_per_source": 2, "top_n": 3, "fetch_images": False, "summarize_batch_size": 3},
+        cfg = Config(settings={"max_items_per_source": 2, "top_n": 3, "fetch_images": False, "fetch_articles": False, "summarize_batch_size": 3},
                      sources=SOURCES)
         return pl.build_brief(cfg, use_llm=True, now=datetime(2026, 11, 16, 7, tzinfo=timezone.utc))
     return _run
@@ -82,7 +82,7 @@ def test_grouped_section_caps_per_source(monkeypatch):
     monkeypatch.setattr(pl, "fetch_source", lambda c, src, now, w, lb=1: [
         Item(source_id=src["id"], source_name=src["name"], title=next(titles), link=f"https://{src['id']}.com/{k}")
         for k in range(4)])
-    cfg = Config(settings={"top_n": 1, "fetch_images": False,
+    cfg = Config(settings={"top_n": 1, "fetch_images": False, "fetch_articles": False,
                            "sections": [{"name": "TLDR", "max_items": 4, "max_per_source": 2}]}, sources=srcs)
     b = pl.build_brief(cfg, use_llm=False, now=datetime(2026, 11, 16, 7, tzinfo=timezone.utc))
     assert [s["name"] for s, _ in b.sections] == ["TLDR"]

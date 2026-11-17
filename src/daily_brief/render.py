@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from jinja2 import Environment, PackageLoader, select_autoescape
+from jinja2 import Environment, PackageLoader
 
 from .pipeline import Brief
 
@@ -19,7 +19,7 @@ def _domain(url: str) -> str:
 
 
 # Fixed hues for the default sections; anything else gets a stable hash-based hue.
-_HUES = {"TLDR": 215, "Handelsblatt": 18, "Inside Paradeplatz": 152, "South China Morning Post": 275, "BelTA": 350}
+_HUES = {"TLDR": 215, "Handelsblatt": 18, "Inside Paradeplatz": 152, "South China Morning Post": 275, "SRF News": 0, "BelTA": 350}
 
 
 def _hue(name: str) -> int:
@@ -27,7 +27,7 @@ def _hue(name: str) -> int:
 
 
 def render(brief: Brief, settings: dict, archive_dates: list[str] | None = None) -> str:
-    env = Environment(loader=PackageLoader("daily_brief", "templates"), autoescape=select_autoescape(["html"]))
+    env = Environment(loader=PackageLoader("daily_brief", "templates"), autoescape=True)
     env.filters["slug"] = _slug
     env.filters["domain"] = _domain
     env.filters["hue"] = _hue

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
 <title>{{ title }} · {{ b.now.strftime('%Y-%m-%d') }}</title>
 <style>
 :root{
@@ -75,6 +76,20 @@ footer a{text-decoration:underline}
   .top .card:first-child{grid-row:auto}
   .top .card:first-child .img{aspect-ratio:16/10;flex:none;min-height:0}
 }
+
+/* story view: opens when a card is tapped (#s-<id>), no JS needed */
+.story{display:none}
+.story:target{display:block;position:fixed;inset:0;z-index:10;overflow-y:auto;background:var(--bg)}
+.story .in{max-width:720px;margin:0 auto;padding:20px 16px 56px}
+.story .back{display:inline-block;margin-bottom:18px;font-weight:700;color:var(--accent)}
+.story h2{margin:6px 0 14px;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.15;font-weight:850;letter-spacing:-.02em}
+.story img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin-bottom:16px;background:var(--line)}
+.story ul{margin:0 0 18px;padding-left:1.2em;font-size:1.08rem}
+.story li{margin:0 0 10px}
+.story .note{font-size:.85rem;color:var(--muted)}
+.story .srcs{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+.story .srcs a{text-decoration:underline;color:var(--text)}
+body:has(.story:target){overflow:hidden}
 </style>
 </head>
 <body>
@@ -88,7 +103,7 @@ footer a{text-decoration:underline}
 </header>
 
 {% macro card(it, rank=None) -%}
-<a class="card" href="{{ it.link }}" target="_blank" rel="noopener" style="--h:{{ it.section | hue }}">
+<a class="card" href="#s-{{ it.uid }}" style="--h:{{ it.section | hue }}">
   <div class="img">
     <div class="ph">{{ it.link | domain }}</div>
     {% if it.image %}<img src="{{ it.image }}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">{% endif %}
@@ -125,5 +140,25 @@ footer a{text-decoration:underline}
   {% for d in archive_dates %}<a href="archive/{{ d }}.html">{{ d }}</a>{% if not loop.last %} · {% endif %}{% endfor %}{% endif %}</p>
 </footer>
 </div>
+
+{% for it in b.stories %}
+<article class="story" id="s-{{ it.uid }}" style="--h:{{ it.section | hue }}">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">{{ it.source_name }}</span></div>
+    <h2>{{ it.display_headline() }}</h2>
+    {% if it.image %}<img src="{{ it.image }}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">{% endif %}
+    {% if it.points %}
+    <ul>{% for p in it.points %}<li>{{ p }}</li>{% endfor %}</ul>
+    {% else %}
+    <p>{{ it.display_summary() }}</p>
+    {% endif %}
+    {% if it.points_from_preview %}<p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>{% endif %}
+    <div class="srcs">Sources:
+      {% for src in [it] + it.dupes %}<a href="{{ src.link }}" target="_blank" rel="noopener">{{ src.source_name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
+    </div>
+  </div>
+</article>
+{% endfor %}
 </body>
 </html>

@@ -27,6 +27,16 @@ def norm_title(title: str) -> str:
     return " ".join(t.split())
 
 
+def add_dupe(keeper: Item, other: Item) -> None:
+    """Remember `other` (and its own duplicates) as another article on keeper's story; one per URL."""
+    seen = {keeper.canonical} | {d.canonical for d in keeper.dupes}
+    for d in [other, *other.dupes]:
+        if d.canonical not in seen:
+            seen.add(d.canonical)
+            keeper.dupes.append(d)
+    other.dupes = []
+
+
 def dedupe(items: list[Item], threshold: int = 90) -> list[Item]:
     """Drop items with the same canonical URL or a near-identical headline.
 
@@ -50,6 +60,7 @@ def dedupe(items: list[Item], threshold: int = 90) -> list[Item]:
         if dup is not None:
             if it.source_name != dup.source_name and it.source_name not in dup.also_in:
                 dup.also_in.append(it.source_name)
+            add_dupe(dup, it)
             if not dup.image and it.image:
                 dup.image = it.image
             continue

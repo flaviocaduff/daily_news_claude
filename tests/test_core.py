@@ -51,6 +51,28 @@ def test_dedupe_by_url_and_title():
     out = dedupe(items)
     assert [i.source_id for i in out] == ["a", "d"]
     assert out[0].also_in == ["B", "C"]
+    # same URL is not kept twice; the other article on the story is kept for the full-text summary
+    assert [d.source_id for d in out[0].dupes] == ["c"]
+
+
+def test_render_escapes_feed_text():
+    from datetime import datetime
+
+    from daily_brief.pipeline import Brief
+    from daily_brief.render import render
+
+    it = Item("x", "X", "<b>x</b>", "https://a.com", section="TLDR", uid="u1", points=["<script>1</script>"])
+    html = render(Brief(now=datetime(2026, 11, 17), top=[it], sections=[]), {})
+    assert "<b>x</b>" not in html and "<script>1</script>" not in html
+    assert 'href="#s-u1"' in html and 'id="s-u1"' in html
+
+
+def test_extract_text_min_length():
+    from daily_brief.articles import extract_text
+
+    para = "<p>" + "The central bank raised rates by half a point on Tuesday, citing inflation. " * 12 + "</p>"
+    assert "central bank" in extract_text(f"<html><body><article>{para}</article></body></html>", "https://a.com/x")
+    assert extract_text("<html><body><p>Subscribe to read.</p></body></html>", "https://a.com/x") == ""
 
 
 def test_og_image():
