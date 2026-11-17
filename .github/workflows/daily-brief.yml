@@ -91,7 +91,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
-          exclude_assets: ".git,.github"
+          exclude_assets: ".github"   # .git is removed in the step above
           keep_files: true
           commit_message: "brief ${{ github.run_id }}"
 
