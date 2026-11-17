@@ -3,8 +3,13 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import re
+import shutil
+import subprocess
+import tempfile
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 
 from .models import Item
 
@@ -47,11 +52,31 @@ def _parse_json(text: str):
     return json.loads(text[start : end + 1])
 
 
-class Summarizer:
-    def __init__(self, settings: dict):
-        import anthropic  # imported lazily so --no-llm works without a key
+def find_claude_cli(settings: dict) -> str:
+    path = settings.get("claude_cli_path") or shutil.which("claude")
+    if not path:  # launchd has a minimal PATH
+        for cand in (Path.home() / ".local/bin/claude", Path("/opt/homebrew/bin/claude"), Path("/usr/local/bin/claude")):
+            if cand.exists():
+                path = str(cand)
+                break
+    if not path:
+        raise RuntimeError("claude CLI not found; install Claude Code or set settings.claude_cli_path")
+    return path
 
-        self.client = anthropic.Anthropic(max_retries=4)
+
+class Summarizer:
+    """backend 'claude-cli': headless Claude Code (`claude -p`) on your Claude subscription, no API key.
+    backend 'api': Anthropic API with ANTHROPIC_API_KEY (billed per token)."""
+
+    def __init__(self, settings: dict):
+        self.backend = settings.get("llm_backend", "claude-cli")
+        if self.backend == "api":
+            import anthropic  # imported lazily so other backends work without the key
+
+            self.client = anthropic.Anthropic(max_retries=4)
+        else:
+            self.cli = find_claude_cli(settings)
+            self.workdir = tempfile.mkdtemp(prefix="daily-brief-")  # no project CLAUDE.md in cwd
         self.settings = settings
         self.language = settings.get("language", "English")
         self.system = SUMMARY_SYSTEM.format(profile=settings.get("reader_profile", "").strip(), language=self.language)
@@ -60,6 +85,8 @@ class Summarizer:
         self.rank_model = models.get("rank", "claude-sonnet-5-5")
 
     def _ask(self, model: str, prompt: str, max_tokens: int) -> str:
+        if self.backend != "api":
+            return self._ask_cli(model, prompt)
         msg = self.client.messages.create(
             model=model,
             max_tokens=max_tokens,
@@ -69,6 +96,27 @@ class Summarizer:
         if msg.stop_reason == "max_tokens":
             log.warning("%s hit max_tokens (%d); reply may be truncated", model, max_tokens)
         return "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
+
+    def _ask_cli(self, model: str, prompt: str) -> str:
+        cmd = [
+            self.cli, "-p",
+            "--model", model,
+            "--output-format", "json",
+            "--system-prompt", self.system,
+            "--tools", "",               # plain text completion, no tool use
+            "--strict-mcp-config",       # don't start the user's MCP servers
+            "--no-session-persistence",
+        ]
+        # Drop any API key so the CLI uses the subscription login, never per-token billing.
+        env = {k: v for k, v in os.environ.items() if k != "ANTHROPIC_API_KEY"}
+        r = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=600, cwd=self.workdir, env=env)
+        try:
+            out = json.loads(r.stdout)
+        except json.JSONDecodeError:
+            raise RuntimeError(f"claude CLI failed (exit {r.returncode}): {(r.stderr or r.stdout)[:300]}")
+        if out.get("is_error") or r.returncode != 0:
+            raise RuntimeError(f"claude CLI error: {str(out.get('result'))[:300]}")
+        return out.get("result", "")
 
     def _summarize_batch(self, batch: list[Item]) -> None:
         payload = [

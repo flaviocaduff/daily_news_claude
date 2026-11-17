@@ -15,6 +15,9 @@ settings:
   reader_profile: >-
     A Zurich-based software engineer interested in tech, AI, security, startups,
     Swiss/German business and finance. Values concrete facts over hype.
+  # claude-cli: headless Claude Code on your Claude subscription (no API key, no extra cost)
+  # api: Anthropic API, needs ANTHROPIC_API_KEY, billed per token
+  llm_backend: claude-cli
   models:
     summarize: claude-haiku-5-5   # per-item one-sentence summaries (batched)
     rank: claude-sonnet-5-5       # Top-N pick + cross-source duplicate detection

@@ -41,8 +41,8 @@ def main(argv: list[str] | None = None) -> int:
         cfg.settings["fetch_images"] = False
 
     use_llm = not args.no_llm
-    if use_llm and not os.getenv("ANTHROPIC_API_KEY"):
-        logging.error("ANTHROPIC_API_KEY is not set (add it to .env) or run with --no-llm")
+    if use_llm and cfg.get("llm_backend", "claude-cli") == "api" and not os.getenv("ANTHROPIC_API_KEY"):
+        logging.error("llm_backend is 'api' but ANTHROPIC_API_KEY is not set; use claude-cli or --no-llm")
         return 2
 
     brief = build_brief(cfg, use_llm=use_llm)
