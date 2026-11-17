@@ -3,9 +3,9 @@ name: Daily Brief
 on:
   schedule:
     # GitHub cron is UTC only. Both slots are registered; the gate below lets
-    # exactly one through so the brief lands at 07:00 Europe/Zurich all year.
-    - cron: "0 5 * * *"   # 07:00 CEST (summer, UTC+2)
-    - cron: "0 6 * * *"   # 07:00 CET  (winter, UTC+1)
+    # exactly one through so the brief starts at 06:30 Europe/Zurich all year.
+    - cron: "30 4 * * *"  # 06:30 CEST (summer, UTC+2)
+    - cron: "30 5 * * *"  # 06:30 CET  (winter, UTC+1)
   workflow_dispatch:
     inputs:
       dry_run:
@@ -31,7 +31,7 @@ jobs:
           if [ "${{ github.event_name }}" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
           off=$(TZ=Europe/Zurich date +%z)
           sched="${{ github.event.schedule }}"
-          if { [ "$off" = "+0200" ] && [ "$sched" = "0 5 * * *" ]; } || { [ "$off" = "+0100" ] && [ "$sched" = "0 6 * * *" ]; }; then
+          if { [ "$off" = "+0200" ] && [ "$sched" = "30 4 * * *" ]; } || { [ "$off" = "+0100" ] && [ "$sched" = "30 5 * * *" ]; }; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
             echo "Skipping: Zurich offset $off does not match slot '$sched'"

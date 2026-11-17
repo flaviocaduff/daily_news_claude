@@ -1,6 +1,6 @@
 # Daily Brief
 
-Builds a one-page HTML news brief each day at 07:00 Europe/Zurich. It covers all 14 TLDR newsletters, Handelsblatt and Inside Paradeplatz, with one sentence per story from Claude and a Top 3 across all sources.
+Builds a one-page HTML news brief each day at 06:30 Europe/Zurich. It covers all 14 TLDR newsletters, Handelsblatt and Inside Paradeplatz, with one sentence per story from Claude and a Top 3 across all sources.
 
 ## Run it (manual, current setup)
 
@@ -63,7 +63,7 @@ The workflow installs Claude Code and runs on your Claude subscription: run `cla
 Test without Claude, publishing or notifying: `gh workflow run daily-brief.yml -f dry_run=true`, then compare the per-source counts in the log with a local run.
 
 
-`.github/workflows/daily-brief.yml` runs at 05:00 and 06:00 UTC. A gate step lets exactly one of the two runs through, whichever matches 07:00 in Zurich (CET or CEST). The workflow builds the site, pushes it to the `gh-pages` branch (keeping the archive) and then sends the notification.
+`.github/workflows/daily-brief.yml` runs at 04:30 and 05:30 UTC. A gate step lets exactly one of the two runs through, whichever matches 06:30 in Zurich (CET or CEST). The workflow builds the site, pushes it to the `gh-pages` branch (keeping the archive) and then sends the notification.
 
 Setup:
 1. Push this folder to a GitHub repo. Pages on a private repo needs a paid plan.
