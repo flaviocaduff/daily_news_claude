@@ -86,6 +86,8 @@ footer a{text-decoration:underline}
 .story img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin-bottom:16px;background:var(--line)}
 .story ul{margin:0 0 18px;padding-left:1.2em;font-size:1.08rem}
 .story li{margin:0 0 10px}
+.story .gist{font-size:1.15rem;line-height:1.5;margin:0 0 16px}
+.story .why{margin:0 0 18px;padding:10px 14px;border-left:3px solid var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:0 8px 8px 0}
 .story .note{font-size:.85rem;color:var(--muted)}
 .story .srcs{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
 .story .srcs a{text-decoration:underline;color:var(--text)}
@@ -106,26 +108,26 @@ body:has(.story:target){overflow:hidden}
 
 
 <div class="top">
-  <a class="card" href="#s-86aeaafbc0" style="--h:215">
-  <div class="img">
-    <div class="ph">calif.io</div>
-    <img src="https://calif.io/java4shell/poster.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-  </div>
-  <div class="body">
-    <span class="tag">TLDR InfoSec</span>
-    <h3 class=""><span class="rank">1</span>Java4Shell: Critical OpenJDK Base64 Decoder Flaw Enables RCE</h3>
-    <p class="">A CVSS 4.0 9.2 memory-corruption flaw in OpenJDK&#39;s AVX-512 Base64 decoder assembly can enable remote code execution, affecting Confluence, Jira, Elasticsearch, and Keycloak.</p>
-    
-  </div>
-</a><a class="card" href="#s-2549cf8240" style="--h:152">
+  <a class="card" href="#s-2549cf8240" style="--h:152">
   <div class="img">
     <div class="ph">insideparadeplatz.ch</div>
     <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-18-um-08.25.43.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
   </div>
   <div class="body">
     <span class="tag">Inside Paradeplatz</span>
-    <h3 class="clamp3"><span class="rank">2</span>UBS reportedly concedes capital fight with government, per Reuters</h3>
-    <p class="clamp3">Reuters reports UBS is accepting defeat in its dispute with the Finance Minister over capital rules, days before a National Council committee decides on the Lex UBS.</p>
+    <h3 class=""><span class="rank">1</span>Reuters: UBS concedes capital fight with finance ministry</h3>
+    <p class="">According to Reuters, UBS is conceding its dispute with Finance Minister Keller-Sutter over capital rules, days before a parliamentary committee decides on the Lex UBS.</p>
+    
+  </div>
+</a><a class="card" href="#s-86aeaafbc0" style="--h:215">
+  <div class="img">
+    <div class="ph">calif.io</div>
+    <img src="https://calif.io/java4shell/poster.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR InfoSec</span>
+    <h3 class="clamp3"><span class="rank">2</span>Java4Shell: Critical OpenJDK Base64 Decoder Flaw (CVSS 9.2)</h3>
+    <p class="clamp3">OpenJDK&#39;s Base64 decoder has a CVSS 4.0 9.2 flaw enabling remote code execution on x86-64 CPUs with AVX-512 VBMI; Confluence and Jira are affected.</p>
     
   </div>
 </a><a class="card" href="#s-74bc6f2436" style="--h:18">
@@ -135,8 +137,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">Handelsblatt</span>
-    <h3 class="clamp3"><span class="rank">3</span>Deutsche Bank CEO Sewing admits failures after 15-million-document leak</h3>
-    <p class="clamp3">Deutsche Bank CEO Sewing acknowledges failures, including his own, after more than 15 million internal documents leaked, and says customers need not worry.</p>
+    <h3 class="clamp3"><span class="rank">3</span>Deutsche Bank CEO admits errors after 15 million-document leak</h3>
+    <p class="clamp3">CEO Christian Sewing admits failures, including his own, after more than 15 million internal documents leaked, while saying customers need not worry.</p>
     <div class="also">Also in SRF News</div>
   </div>
 </a>
@@ -147,27 +149,60 @@ body:has(.story:target){overflow:hidden}
 <section class="sec" id="handelsblatt" style="--h:18">
   <h2>Handelsblatt <span class="n">6</span></h2>
   <div class="grid">
-    <a class="card" href="#s-af543bf28d" style="--h:18">
+    <a class="card" href="#s-b820e11e4b" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/q-Nw80KsniJh/cover/900/506/0/0/62/61/0.5/0.5/archiv-23.05.2019-iran-hormus-fischerboote-am-hafen-der-gheschm-insel-in-suediran-am-22.-mail-20.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3">US military confirms attack on Iranian island Gheschm</h3>
+    <p class="clamp3">The US military confirmed an attack on Iran&#39;s Gheschm island, while Saudi Arabia reportedly fends off new attacks on Riyadh.</p>
+    <div class="also">Also in South China Morning Post</div>
+  </div>
+</a><a class="card" href="#s-7977751738" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/PKfpuRbedfVA/cover/900/506/0/0/0/533/0.5/0.5/koalitionsrunde-in-berlin.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3">German coalition tax deal: what taxpayers gain in 2027</h3>
+    <p class="clamp3">Union and SPD agreed on tax measures; Handelsblatt calculations show how taxpayers and electricity consumers will be relieved in 2027.</p>
+    
+  </div>
+</a><a class="card" href="#s-d7ed48eca0" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/bckzfpdOn42n/cover/900/506/0/1/0/0/0.5/0.5/graph-aktienkurs-aktienchart-dax-online-dax-bericht.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3">DAX closes lower; bank shares fall over 3% on inflation data</h3>
+    <p class="clamp3">The DAX closed down again after Tuesday&#39;s losses, with a bank stock falling more than 3% amid new inflation figures and geopolitical talks around APEC.</p>
+    
+  </div>
+</a><a class="card" href="#s-af543bf28d" style="--h:18">
   <div class="img">
     <div class="ph">handelsblatt.com</div>
     <img src="https://images.handelsblatt.com/Sn0HD86z2cny/cover/900/506/0/0/498/0/0.5/0.5/bei-der-montage-des-gle-spielt-die-nahtlose-logistik-eine-schluesselrolle-die-produktion-erfolgt-jus.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
   </div>
   <div class="body">
     <span class="tag">Handelsblatt</span>
-    <h3 class="clamp3">US pressure builds for Mercedes ban over Chinese shareholders</h3>
-    <p class="clamp3">Republicans and Democrats are pressuring Mercedes-Benz over Chinese shareholders, and its Stuttgart headquarters has a fallback plan if a US ban comes.</p>
+    <h3 class="clamp3">US debate over Mercedes ban over Chinese shareholders escalates</h3>
+    <p class="clamp3">Republicans and Democrats are pressuring Mercedes-Benz over its Chinese shareholders, and Stuttgart has a fallback plan should a US ban occur.</p>
     
   </div>
-</a><a class="card" href="#s-9e89bd582f" style="--h:18">
+</a><a class="card" href="#s-b6bc635bd8" style="--h:18">
   <div class="img">
     <div class="ph">handelsblatt.com</div>
-    <img src="https://images.handelsblatt.com/nFXDDzH17rQp/cover/900/506/0/0/209/208/0.5/0.5/archiv-29042024-brandenburg-gruenheide-mark-werksleiter-andre-thierig-aufgenommen-waehrend-e.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://images.handelsblatt.com/lP6TJCCIGQo0/cover/900/506/0/0/107/106/0.5/0.5/oel-raffinerie-russland.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
   </div>
   <div class="body">
     <span class="tag">Handelsblatt</span>
-    <h3 class="clamp3">Court fines Tesla Grünheide plant chief over claimed secret recording</h3>
-    <p class="clamp3">A court issued a penal order fining Tesla Grünheide plant chief André Thierig over a claimed secret recording; no evidence exists, and he contests it.</p>
-    
+    <h3 class="clamp3">Ukrainian refinery strikes; Russia reportedly imports record petrol</h3>
+    <p class="clamp3">Ukrainian strikes on refineries have reportedly pushed Russia to record petrol imports, while von der Leyen presents a plan for a new Ukraine loan.</p>
+    <div class="also">Also in South China Morning Post</div>
   </div>
 </a><a class="card" href="#s-5a07630ff1" style="--h:18">
   <div class="img">
@@ -176,41 +211,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">Handelsblatt</span>
-    <h3 class="clamp3">GLS and rival DPD join forces, narrowing German parcel options</h3>
-    <p class="clamp3">Parcel carriers GLS and DPD are combining, which will likely narrow the range of parcel shipping options in Germany.</p>
-    
-  </div>
-</a><a class="card" href="#s-9148e09028" style="--h:18">
-  <div class="img">
-    <div class="ph">handelsblatt.com</div>
-    <img src="https://images.handelsblatt.com/3MQAPtte8GWv/cover/900/506/0/0/0/0/0.5/0.5/anthropic.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-  </div>
-  <div class="body">
-    <span class="tag">Handelsblatt</span>
-    <h3 class="clamp3">Who profits most from Anthropic&#39;s record IPO: investors and suppliers</h3>
-    <p class="clamp3">Anthropic&#39;s record IPO is set to benefit a network of investors, service providers and suppliers, some of whose stakes could grow beyond the listing.</p>
-    <div class="also">Also in SRF News</div>
-  </div>
-</a><a class="card" href="#s-925b07bdf5" style="--h:18">
-  <div class="img">
-    <div class="ph">handelsblatt.com</div>
-    <img src="https://images.handelsblatt.com/Bo0qbAVse4yk/cover/900/506/0/0/9/11/0.5/0.5/gif.gif" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-  </div>
-  <div class="body">
-    <span class="tag">Handelsblatt</span>
-    <h3 class="clamp3">Trump, Putin and Xi meet at APEC summit before group photo</h3>
-    <p class="clamp3">Trump and Putin confirmed one-on-one talks alongside the APEC summit in Shenzhen, where they meet Xi, and Foreign Minister Wadephul says Europe must be at the Ukraine table.</p>
-    <div class="also">Also in SRF News, South China Morning Post</div>
-  </div>
-</a><a class="card" href="#s-737f60b6d9" style="--h:18">
-  <div class="img">
-    <div class="ph">handelsblatt.com</div>
-    <img src="https://images.handelsblatt.com/rpgS6PrWUuIh/cover/900/506/0/0/62/355/0.5/0.5/europaeische-zentralbank-ezb-29.10.2026-beschilderung-der-europaeischen-zentralbank-ezb-in-frankfurt.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-  </div>
-  <div class="body">
-    <span class="tag">Handelsblatt</span>
-    <h3 class="clamp3">ECB may discuss higher minimum reserve requirement next week</h3>
-    <p class="clamp3">According to a report, ECB governors could discuss raising the minimum reserve requirement for banks as early as next week, an option under consideration for months.</p>
+    <h3 class="clamp3">Parcel firm GLS to merge with rival DPD</h3>
+    <p class="clamp3">Parcel carrier GLS is joining forces with rival DPD, likely narrowing parcel choice in Germany, according to Handelsblatt.</p>
     
   </div>
 </a>
@@ -227,8 +229,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">Inside Paradeplatz</span>
-    <h3 class="clamp3">UBS faces lawsuits over Credit Suisse&#39;s alleged past misrepresentations</h3>
-    <p class="clamp3">UBS took over Credit Suisse&#39;s potential liabilities for alleged misrepresentations by former management, exposing it to direct claims.</p>
+    <h3 class="clamp3">UBS may face lawsuits over Credit Suisse liabilities it took on</h3>
+    <p class="clamp3">UBS took over Credit Suisse&#39;s potential damage-claim liabilities and may face lawsuits over alleged misrepresentation by former CS management.</p>
     
   </div>
 </a><a class="card" href="#s-a821236cfc" style="--h:152">
@@ -238,19 +240,30 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">Inside Paradeplatz</span>
-    <h3 class="clamp3">IIHF challenges two CAS judges over Russian team return</h3>
-    <p class="clamp3">The IIHF has filed a motion at the Court of Arbitration for Sport questioning the independence of two judges who enabled Russian national teams&#39; return in late October.</p>
+    <h3 class="clamp3">IIHF challenges two CAS judges&#39; independence over Russia decision</h3>
+    <p class="clamp3">The IIHF has filed a motion at the Court of Arbitration for Sport questioning two judges who paved the way for Russian national teams&#39; return.</p>
     
   </div>
-</a><a class="card" href="#s-cb835afff9" style="--h:152">
+</a><a class="card" href="#s-d13d721a63" style="--h:152">
   <div class="img">
     <div class="ph">insideparadeplatz.ch</div>
-    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-18-um-08.33.12-1.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Cannerald.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
   </div>
   <div class="body">
     <span class="tag">Inside Paradeplatz</span>
-    <h3 class="clamp3">Bär+Karrer and NKF in dispute over client data misuse</h3>
-    <p class="clamp3">Zurich law firms Bär+Karrer and NKF are in a bitter dispute after a partner allegedly took thousands of client records and used them for client acquisition.</p>
+    <h3 class="clamp3">Bern cannabis firm Cannerald goes bankrupt after last-minute sale</h3>
+    <p class="clamp3">Cannerald AG, based in Fraubrunnen near Bern, is heading into bankruptcy after selling its production at the last minute to an undisclosed buyer.</p>
+    
+  </div>
+</a><a class="card" href="#s-7d3721ea84" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-18-um-07.14.35.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3">SBB to redevelop Wollishofen site by 2029, displacing cultural venue</h3>
+    <p class="clamp3">SBB plans to convert a 6,500 m² area beside Wollishofen station into housing by 2029, displacing the &#39;Wellenlänge&#39; cultural venue.</p>
     
   </div>
 </a><a class="card" href="#s-31e1d84acb" style="--h:152">
@@ -260,19 +273,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">Inside Paradeplatz</span>
-    <h3 class="clamp3">Swiss Post&#39;s &#39;Klara&#39; reportedly sends dunning notices to wrong recipients</h3>
-    <p class="clamp3">Inside Paradeplatz reports Swiss Post&#39;s &#39;Klara&#39; is sending dunning notices to wrong recipients; customers no longer receive scans.</p>
-    
-  </div>
-</a><a class="card" href="#s-7d171d9395" style="--h:152">
-  <div class="img">
-    <div class="ph">insideparadeplatz.ch</div>
-    
-  </div>
-  <div class="body">
-    <span class="tag">Inside Paradeplatz</span>
-    <h3 class="clamp3">Inside Paradeplatz attacks University of Zurich media quality yearbook</h3>
-    <p class="clamp3">Inside Paradeplatz accuses the University of Zurich&#39;s Fög of violating scientific integrity with its 2026 media quality yearbook, which is co-funded by Swiss media firms, SRG and the Confederation.</p>
+    <h3 class="clamp3">Swiss Post faces problems with mail processing and customer scans</h3>
+    <p class="clamp3">Swiss Post reportedly sent reminders to wrong recipients and stopped providing scans of incoming mail to customers.</p>
     
   </div>
 </a>
@@ -289,8 +291,19 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">SRF News</span>
-    <h3 class="clamp3">BLS paid ex-CEO CHF 185,000 bonuses under secret agreement</h3>
-    <p class="clamp3">Swiss railway BLS paid its former CEO almost CHF 185,000 in bonuses under a secret agreement, despite an ongoing subsidy scandal.</p>
+    <h3 class="clamp3">BLS paid ex-CEO nearly CHF 185,000 in bonuses via secret deal</h3>
+    <p class="clamp3">Despite a subsidy scandal, BLS&#39;s former CEO received nearly CHF 185,000 in bonuses under a secret agreement, according to SRF.</p>
+    
+  </div>
+</a><a class="card" href="#s-6148018473" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/c1a305c.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3">Anthropic IPO: who are the Amodei siblings running the AI firm?</h3>
+    <p class="clamp3">SRF profiles Dario and Daniela Amodei, who lead Anthropic as the AI company prepares a stock market listing.</p>
     
   </div>
 </a><a class="card" href="#s-df0b194c5c" style="--h:0">
@@ -300,8 +313,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">SRF News</span>
-    <h3 class="clamp3">SVP group board recommends two candidates for Federal Council seat</h3>
-    <p class="clamp3">The SVP parliamentary group&#39;s board recommends nominating two candidates for the Federal Council election on 9 December to succeed Guy Parmelin.</p>
+    <h3 class="clamp3">SVP faction board recommends two-candidate ticket for Federal Council</h3>
+    <p class="clamp3">The SVP parliamentary group&#39;s board recommends nominating two candidates for the Federal Council election on 9 December.</p>
     
   </div>
 </a><a class="card" href="#s-5517afcfef" style="--h:0">
@@ -311,8 +324,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">SRF News</span>
-    <h3 class="clamp3">Second SRG poll shows likely defeats for the Federal Council</h3>
-    <p class="clamp3">The second SRG poll indicates the VAT increase for AHV and the Mitte initiative would both be rejected if voted on in early November.</p>
+    <h3 class="clamp3">SRG poll: VAT rise for AHV and Mitte initiative would both fail</h3>
+    <p class="clamp3">A second SRG poll shows the VAT increase for AHV and the Mitte initiative would both be rejected if voted on in early November.</p>
     
   </div>
 </a><a class="card" href="#s-2b6a0bdbf9" style="--h:0">
@@ -323,7 +336,7 @@ body:has(.story:target){overflow:hidden}
   <div class="body">
     <span class="tag">SRF News</span>
     <h3 class="clamp3">National Council committee opposes cantonal majority for EU package</h3>
-    <p class="clamp3">The National Council&#39;s Foreign Affairs Committee (APK-N) has completed detailed deliberations on the EU package and rejects requiring a cantonal majority (Ständemehr).</p>
+    <p class="clamp3">The National Council foreign affairs committee (APK-N) has finished detailed deliberations on the EU package and rejects the cantonal majority requirement, against the Council of States.</p>
     
   </div>
 </a><a class="card" href="#s-ba1791ddca" style="--h:0">
@@ -333,19 +346,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">SRF News</span>
-    <h3 class="clamp3">Israeli tanks advance into Gaza, first ground push since ceasefire</h3>
-    <p class="clamp3">Israeli tanks have advanced into the Gaza Strip, residents said, marking the first ground offensive since the ceasefire agreed in 2025.</p>
-    
-  </div>
-</a><a class="card" href="#s-a1ffd247b5" style="--h:0">
-  <div class="img">
-    <div class="ph">srf.ch</div>
-    <img src="https://www.srf.ch/static/cms/images//320ws/c9ca08.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-  </div>
-  <div class="body">
-    <span class="tag">SRF News</span>
-    <h3 class="clamp3">Democrat wins Alaska Senate seat from Republicans</h3>
-    <p class="clamp3">A Democratic candidate has won Alaska&#39;s Senate seat from the Republicans, completing all Senate races with Democrats set to hold 56 of 100 seats.</p>
+    <h3 class="clamp3">Israeli tanks advance into Gaza, first ground push since 2025 ceasefire</h3>
+    <p class="clamp3">Israeli tanks have advanced into the Gaza Strip, according to residents, in the first ground offensive since the ceasefire agreed in 2025.</p>
     
   </div>
 </a>
@@ -362,8 +364,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">Swiss Federal Government</span>
-    <h3 class="clamp3">Qatar&#39;s Amir pays state visit to Switzerland</h3>
-    <p class="clamp3">Qatar&#39;s Amir Sheikh Tamim bin Hamad Al Thani made a state visit to Bern, hosted by President Guy Parmelin, focusing on business and science cooperation.</p>
+    <h3 class="clamp3">Qatar&#39;s Emir Sheikh Tamim makes state visit to Switzerland</h3>
+    <p class="clamp3">Qatar&#39;s Emir Sheikh Tamim bin Hamad Al Thani was welcomed in Bern on 18 November by the Federal Council, led by President Guy Parmelin, with talks on business and science.</p>
     
   </div>
 </a><a class="card" href="#s-5eef6a944f" style="--h:120">
@@ -373,8 +375,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">Swiss Federal Government</span>
-    <h3 class="clamp3">Cassis convenes OSCE special meeting in Vienna on future chairpersonship</h3>
-    <p class="clamp3">Ignazio Cassis, OSCE chair-in-office, convenes a 19 November Vienna meeting to seek consensus among 57 states on the future chairpersonship.</p>
+    <h3 class="clamp3">Cassis convenes special OSCE meeting in Vienna on future chairmanship</h3>
+    <p class="clamp3">On 19 November 2026 Federal Councillor Ignazio Cassis, OSCE chair-in-office, will convene a special OSCE Permanent Council meeting in Vienna on the organisation&#39;s future chairmanship.</p>
     
   </div>
 </a><a class="card" href="#s-df5a365b72" style="--h:120">
@@ -384,30 +386,30 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">Swiss Federal Government</span>
-    <h3 class="clamp3">Federal Council reviews EU cooperation on medicine supply security</h3>
-    <p class="clamp3">The Federal Council&#39;s report names the Bilaterals III health agreement as the main basis for EU cooperation on securing medicine supply in crises.</p>
+    <h3 class="clamp3">Federal Council reports on EU cooperation to secure medicine supply</h3>
+    <p class="clamp3">The Federal Council approved a report on EU cooperation to secure medicine supply, pointing to the health agreement within the Bilaterals III package.</p>
     
   </div>
-</a><a class="card" href="#s-6290b87816" style="--h:120">
+</a><a class="card" href="#s-1137049e95" style="--h:120">
   <div class="img">
     <div class="ph">admin.ch</div>
     
   </div>
   <div class="body">
     <span class="tag">Swiss Federal Government</span>
-    <h3 class="clamp3">Confederation to subsidise early newspaper delivery from 2027</h3>
-    <p class="clamp3">From 2027 the Confederation will subsidise early delivery of regional and local newspapers, with CHF 25 million a year for seven years.</p>
+    <h3 class="clamp3">Federal Council sends Finland double taxation agreement amendment to Parliament</h3>
+    <p class="clamp3">The Federal Council adopted the dispatch on a protocol amending the Switzerland-Finland double taxation agreement, implementing OECD minimum standards.</p>
     
   </div>
-</a><a class="card" href="#s-7bcfe7e9a7" style="--h:120">
+</a><a class="card" href="#s-aad6b2c93b" style="--h:120">
   <div class="img">
     <div class="ph">admin.ch</div>
     
   </div>
   <div class="body">
     <span class="tag">Swiss Federal Government</span>
-    <h3 class="clamp3">Federal legal framework for CERN construction projects takes effect 2027</h3>
-    <p class="clamp3">The amended RIPA act, its ordinance and a CERN sectoral plan take effect 1 January 2027, shifting spatial planning responsibility to the Confederation.</p>
+    <h3 class="clamp3">Federal Council approves sixth report on protection of national minorities</h3>
+    <p class="clamp3">The Federal Council approved Switzerland&#39;s sixth report on protecting national minorities, citing significant progress in the field.</p>
     
   </div>
 </a>
@@ -424,8 +426,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">South China Morning Post</span>
-    <h3 class="clamp3">Israeli parliament elects anti-Netanyahu speaker, moves to undo his legacy</h3>
-    <p class="clamp3">Israeli parliament elected Matan Kahana as speaker by 66 of 120 votes, and the anti-Netanyahu bloc has begun legislation to roll back his legacy.</p>
+    <h3 class="clamp3">Israeli parliament elects Eisenkot ally as speaker, moves to roll back Netanyahu</h3>
+    <p class="clamp3">Israel&#39;s parliament elected Matan Kahana, an ally of Gadi Eisenkot, as speaker with 66 of 120 votes, launching legislative moves against Netanyahu&#39;s legacy.</p>
     
   </div>
 </a><a class="card" href="#s-27db1032a6" style="--h:275">
@@ -436,7 +438,18 @@ body:has(.story:target){overflow:hidden}
   <div class="body">
     <span class="tag">South China Morning Post</span>
     <h3 class="clamp3">IAEA: North Korean enrichment facility extension externally complete</h3>
-    <p class="clamp3">IAEA chief Rafael Grossi says a further extension to North Korea&#39;s Yongbyon enrichment facility has been externally complete since last month, monitored only by satellite.</p>
+    <p class="clamp3">IAEA chief Rafael Grossi says a further extension to Yongbyon&#39;s enrichment facility has been externally complete since last month, with no inspector access since 2009.</p>
+    
+  </div>
+</a><a class="card" href="#s-baf922395c" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/18/51f00c88-b9d6-4b27-8d29-05f482089adc_78844d1e.jpg?itok=n3lx4fT2&amp;v=1795009021" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post</span>
+    <h3 class="clamp3">Xi and Takaichi exchange greeting in Shenzhen without words</h3>
+    <p class="clamp3">Xi Jinping and Sanae Takaichi shook hands at an Apec dinner in Shenzhen, their first in-person meeting since ties froze last autumn over her Taiwan remarks.</p>
     
   </div>
 </a><a class="card" href="#s-6ff4450487" style="--h:275">
@@ -446,19 +459,19 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">South China Morning Post</span>
-    <h3 class="clamp3">Hong Kong faces multiple data breaches as AI enables targeted scams</h3>
-    <p class="clamp3">Organisations in Hong Kong, including a department store, a jeweller, a university and airlines, suffered data breaches in recent weeks, with experts saying AI has made attacks more targeted.</p>
+    <h3 class="clamp3">Multiple Hong Kong organisations hit by data breaches in recent weeks</h3>
+    <p class="clamp3">Data breaches at a department store, jeweller, university and airlines in Hong Kong in recent weeks have occurred, and experts say AI has enabled more targeted attacks.</p>
     
   </div>
-</a><a class="card" href="#s-ef2aa1ef4f" style="--h:275">
+</a><a class="card" href="#s-02a68b0d3b" style="--h:275">
   <div class="img">
     <div class="ph">scmp.com</div>
-    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/18/f0be32f2-b8aa-4837-8d82-8d5fafa2fe79_7d70c8c6.jpg?itok=3ENgpLF4&amp;v=1795001354" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/18/a887c887-c10b-4716-917b-3612052a1233_849805da.jpg?itok=H6ySX5c3&amp;v=1795005186" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
   </div>
   <div class="body">
     <span class="tag">South China Morning Post</span>
-    <h3 class="clamp3">EU proposes €45 billion loan to Ukraine for 2027 budget gap</h3>
-    <p class="clamp3">The European Union proposed a €45 billion (US$49 billion) loan for Ukraine to cover two-thirds of its projected €70 billion 2027 budget shortfall, with Brussels seeking other backers to fund the rest.</p>
+    <h3 class="clamp3">Xi personally greets Trump on tarmac in Shenzhen before Apec talks</h3>
+    <p class="clamp3">Xi Jinping personally greeted US President Donald Trump on the Shenzhen tarmac on Wednesday, the first such red-carpet welcome in nearly seven decades, ahead of high-stakes Apec talks.</p>
     
   </div>
 </a><a class="card" href="#s-e28b2a6397" style="--h:275">
@@ -468,20 +481,9 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">South China Morning Post</span>
-    <h3 class="clamp3">US commission proposes certification rules for AI chip exports to China</h3>
-    <p class="clamp3">The bipartisan US-China Economic and Security Review Commission urged Congress to require AI chip exporters to China to certify that shipments will not divert manufacturing capacity from the US market.</p>
+    <h3 class="clamp3">US panel urges chip export certification before Xi-Trump talks</h3>
+    <p class="clamp3">The bipartisan US-China Economic and Security Review Commission urged Congress on Wednesday to require AI chip exporters to China to certify shipments won&#39;t divert capacity from the US market.</p>
     
-  </div>
-</a><a class="card" href="#s-8d300aabfb" style="--h:275">
-  <div class="img">
-    <div class="ph">scmp.com</div>
-    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/18/1e359baa-99b9-41cd-b45c-15abfc938cee_17485612.jpg?itok=IGDVs3iU&amp;v=1794995373" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-  </div>
-  <div class="body">
-    <span class="tag">South China Morning Post</span>
-    <h3 class="clamp3">Tencent Q3 profit dips 6% as AI capex rises sixfold</h3>
-    <p class="clamp3">Tencent&#39;s Q3 capital spending rose more than sixfold to over US$12 billion, cutting adjusted net income 6% year on year to 66.5 billion yuan, in line with estimates.</p>
-    <div class="also">Also in South China Morning Post Business</div>
   </div>
 </a>
   </div>
@@ -490,37 +492,15 @@ body:has(.story:target){overflow:hidden}
 <section class="sec" id="belta" style="--h:350">
   <h2>BelTA <span class="n">5</span></h2>
   <div class="grid">
-    <a class="card" href="#s-c1a263bd80" style="--h:350">
+    <a class="card" href="#s-2e1c8d3282" style="--h:350">
   <div class="img">
     <div class="ph">eng.belta.by</div>
-    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000177_1794984876_189086_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000020_1795023268_189130_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
   </div>
   <div class="body">
     <span class="tag">BelTA</span>
-    <h3 class="clamp3">China tests Q/V-band wireless reaching 6.75 Gbps per channel</h3>
-    <p class="clamp3">Chinese researchers achieved 6.75 Gbps bidirectional transmission on a single channel in the Q/V band, supporting 6G and satellite internet development.</p>
-    
-  </div>
-</a><a class="card" href="#s-d39a81ae76" style="--h:350">
-  <div class="img">
-    <div class="ph">eng.belta.by</div>
-    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000021_1795004715_189107_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-  </div>
-  <div class="body">
-    <span class="tag">BelTA</span>
-    <h3 class="clamp3">Belarusian MAZ uses neural networks to speed vehicle design</h3>
-    <p class="clamp3">MAZ&#39;s design centre uses neural networks to collect and process information and accelerate vehicle design, with young engineers reporting good results this year.</p>
-    
-  </div>
-</a><a class="card" href="#s-1459e94fe8" style="--h:350">
-  <div class="img">
-    <div class="ph">eng.belta.by</div>
-    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000019_1794937240_189071_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-  </div>
-  <div class="body">
-    <span class="tag">BelTA</span>
-    <h3 class="clamp3">Lukashenko condoles with Putin over military transport aircraft crash</h3>
-    <p class="clamp3">Lukashenko sent Putin condolences over a military transport aircraft crash in which people lost their lives; the report gives no casualty figures.</p>
+    <h3 class="clamp3">Belarus FM: EU relations no longer critical due to bloc restrictions</h3>
+    <p class="clamp3">Belarusian Foreign Minister Maxim Ryzhenkov told CNN-News18 that relations with the EU no longer hold critical significance for Belarus because of EU restrictions.</p>
     
   </div>
 </a><a class="card" href="#s-277139bf60" style="--h:350">
@@ -530,8 +510,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">BelTA</span>
-    <h3 class="clamp3">Belarus eyes North-South Corridor to cut Asia delivery distances</h3>
-    <p class="clamp3">Foreign Minister Maxim Ryzhenkov said the North-South Transport Corridor would halve Belarusian delivery distances to Asia, East Africa and Southeast Asia.</p>
+    <h3 class="clamp3">Belarus eyes North-South Corridor to halve Asian delivery distances</h3>
+    <p class="clamp3">Foreign Minister Maxim Ryzhenkov said the North-South Transport Corridor would halve delivery distances for Belarusian goods to Asia, East Africa and Southeast Asia.</p>
     
   </div>
 </a><a class="card" href="#s-ebdbcdb6de" style="--h:350">
@@ -541,8 +521,30 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">BelTA</span>
-    <h3 class="clamp3">Belarus open to Baltic ports for new supplies, minister says</h3>
-    <p class="clamp3">Foreign Minister Maxim Ryzhenkov said Belarus is ready to consider Baltic ports for new supplies, in an interview with CNN-News18.</p>
+    <h3 class="clamp3">FM names condition for return of Belarusian cargo to Baltic ports</h3>
+    <p class="clamp3">Foreign Minister Maxim Ryzhenkov said Belarus is ready to consider Baltic ports for new supplies, subject to a condition he set out in a CNN-News18 interview.</p>
+    
+  </div>
+</a><a class="card" href="#s-76ec6cf076" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000021_1795016444_189120_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3">Arab trade on Belarus commodity exchange nearly triples in 2026</h3>
+    <p class="clamp3">Transaction value with Arab countries on the Belarusian Universal Commodity Exchange nearly tripled in January-October 2026 compared with the same period in 2025.</p>
+    
+  </div>
+</a><a class="card" href="#s-fafb87ca0b" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000021_1795014530_189116_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3">EAEU Customs Code amendments in development to simplify goods movement</h3>
+    <p class="clamp3">A first package of amendments to the EAEU Customs Code is in development to simplify movement of goods including containers and to regulate piggyback and cabotage transport.</p>
     
   </div>
 </a>
@@ -552,16 +554,49 @@ body:has(.story:target){overflow:hidden}
 <section class="sec" id="tldr" style="--h:215">
   <h2>TLDR <span class="n">10</span></h2>
   <div class="grid">
-    <a class="card" href="#s-f74f8ff74c" style="--h:215">
+    <a class="card" href="#s-a8184d3cb6" style="--h:215">
+  <div class="img">
+    <div class="ph">testingcatalog.com</div>
+    <img src="https://storage.ghost.io/c/2a/1b/2a1b1782-8506-4d7d-bf53-ad3fb52e2a0f/content/images/size/w1200/2026/11/banner-11.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR Tech</span>
+    <h3 class="clamp3">OpenAI launches GPT-6.2 Astra and Sol on ChatGPT and APIs</h3>
+    <p class="clamp3">OpenAI released GPT-6.2 Astra for hard projects and GPT-6.2 Sol for everyday tasks, rolling out to paid ChatGPT tiers and the API, using fewer output tokens.</p>
+    <div class="also">Also in TLDR AI</div>
+  </div>
+</a><a class="card" href="#s-f74f8ff74c" style="--h:215">
   <div class="img">
     <div class="ph">stepsecurity.io</div>
     <img src="https://cdn.prod.website-files.com/673b71f0790aabf30bd30bf8/6afc0b447c5fd15c7cbd3137_6afc0b1c10a1780e1a0ee05e_wppconnect-compromised-cover-centered.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
   </div>
   <div class="body">
     <span class="tag">TLDR InfoSec</span>
-    <h3 class="clamp3">WPPConnect Compromised: Malicious Releases Steal Secrets and WhatsApp Sessions</h3>
-    <p class="clamp3">Malicious WPPConnect npm packages and Docker images shipped a &#39;diagnostics&#39; module that sent secrets, .env files, and WhatsApp session tokens to a Telegram bot.</p>
+    <h3 class="clamp3">WPPConnect npm and Docker Releases Compromised, Stealing Secrets</h3>
+    <p class="clamp3">Malicious unreviewed commits shipped a diagnostics module in WPPConnect npm packages and Docker images that sent env variables, .env files and WhatsApp session tokens to a Telegram bot.</p>
     
+  </div>
+</a><a class="card" href="#s-b2442a883e" style="--h:215">
+  <div class="img">
+    <div class="ph">theregister.com</div>
+    <img src="https://image.theregister.com/5310455.jpg?imageId=5310455&amp;x=0&amp;y=0&amp;cropw=100&amp;croph=100&amp;panox=0&amp;panoy=0&amp;panow=100&amp;panoh=100&amp;width=1200&amp;height=683" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR IT</span>
+    <h3 class="clamp3">Optimizely breach spreads malware across major websites</h3>
+    <p class="clamp3">Attackers abused Optimizely&#39;s experimentation software to inject malicious JavaScript into sites of at least 178 organizations, targeting crypto wallets and payment details.</p>
+    
+  </div>
+</a><a class="card" href="#s-950a39f90b" style="--h:215">
+  <div class="img">
+    <div class="ph">techcrunch.com</div>
+    <img src="https://techcrunch.com/wp-content/uploads/2026/01/GettyImages-2256813240.jpg?resize=1200,800" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR Hardware</span>
+    <h3 class="clamp3">Jensen Huang says he&#39;d be &#39;honored&#39; to return as Nvidia CEO</h3>
+    <p class="clamp3">In his first post-resignation statement, Huang admits serious mistakes, cooperates with the board investigation, and testifies to Congress on December 1.</p>
+    <div class="also">Also in TLDR Tech</div>
   </div>
 </a><a class="card" href="#s-4faa980a30" style="--h:215">
   <div class="img">
@@ -570,41 +605,41 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">TLDR Hardware</span>
-    <h3 class="clamp3">Nvidia guides Q4 to $130B; board rules out Huang&#39;s return</h3>
-    <p class="clamp3">Nvidia reported Q3 revenue of $115.8B with data center at $107.6B, guided Q4 to $130B assuming zero China data center revenue, and the board won&#39;t reinstate Huang.</p>
+    <h3 class="clamp3">Nvidia guides Q4 revenue to $130B; board rules out Huang return</h3>
+    <p class="clamp3">Q3 revenue hit $115.8B with data center at $107.6B, while Q4 guidance of $130B ±3% assumes zero China data center revenue; the board chair said Huang won&#39;t be reinstated.</p>
     <div class="also">Also in Handelsblatt</div>
   </div>
-</a><a class="card" href="#s-f2b48b3d19" style="--h:215">
+</a><a class="card" href="#s-b6beaab84b" style="--h:215">
   <div class="img">
-    <div class="ph">wsj.com</div>
-    <img src="https://techcrunch.com/wp-content/uploads/2026/01/GettyImages-2256813240.jpg?resize=1200,800" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <div class="ph">invertedpassion.substack.com</div>
+    
   </div>
   <div class="body">
     <span class="tag">TLDR Tech</span>
-    <h3 class="clamp3">Jensen Huang signals willingness to return as Nvidia CEO</h3>
-    <p class="clamp3">Jensen Huang says he would return as Nvidia CEO if the board asks, after resigning over extramarital affairs; President Trump said he would support reinstatement.</p>
-    <div class="also">Also in TLDR Hardware</div>
+    <h3 class="clamp3">Making sense of Recursive Self Improvement</h3>
+    <p class="clamp3">Article says Anthropic&#39;s AI R&amp;D progress rate roughly doubled since October 2025, mostly from its own AI use, and argues ASI will far exceed humans in verifiable domains.</p>
+    
   </div>
-</a><a class="card" href="#s-a8184d3cb6" style="--h:215">
+</a><a class="card" href="#s-5dbbce4400" style="--h:215">
   <div class="img">
-    <div class="ph">testingcatalog.com</div>
-    <img src="https://storage.ghost.io/c/2a/1b/2a1b1782-8506-4d7d-bf53-ad3fb52e2a0f/content/images/size/w1200/2026/11/banner-11.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-  </div>
-  <div class="body">
-    <span class="tag">TLDR Tech</span>
-    <h3 class="clamp3">OpenAI launches GPT-6.2 Astra and Sol on ChatGPT and APIs</h3>
-    <p class="clamp3">OpenAI released GPT-6.2 Astra for the hardest projects and GPT-6.2 Sol for everyday tasks, rolling out to Plus, Pro, Enterprise, and Edu users plus API developers.</p>
-    <div class="also">Also in TLDR AI</div>
-  </div>
-</a><a class="card" href="#s-cb1d8f8bc8" style="--h:215">
-  <div class="img">
-    <div class="ph">blog.google</div>
-    <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Hero_2784_x_1566_1.width-1300.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <div class="ph">microsoft.ai</div>
+    <img src="https://microsoft.ai/wp-content/uploads/2026/11/All-Up-Blog.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
   </div>
   <div class="body">
     <span class="tag">TLDR AI</span>
-    <h3 class="clamp3">Gemini Can Now Make Calls and Pay Bills</h3>
-    <p class="clamp3">Google&#39;s Gemini app can now call businesses, book appointments, and shop within a user-set spending limit.</p>
+    <h3 class="clamp3">Microsoft AI releases seven low-cost models, including MAI Code 2</h3>
+    <p class="clamp3">Microsoft AI released seven models; MAI Code 2, now in GitHub Copilot, reaches 98% of GPT-6.1 Sol&#39;s coding quality at about 40% of the price.</p>
+    
+  </div>
+</a><a class="card" href="#s-8452d289af" style="--h:215">
+  <div class="img">
+    <div class="ph">x.com</div>
+    <img src="https://pbs.twimg.com/profile_images/673095429748350976/ei5eeouV_400x400.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">TLDR Dev</span>
+    <h3 class="clamp3">Microsoft Outage Traced to Latent Human-Written Windows Bug</h3>
+    <p class="clamp3">An account based on a Microsoft incident-team conversation attributes the outage to a months-old, human-written Windows change that saturated machines, not AI-written code.</p>
     
   </div>
 </a><a class="card" href="#s-7f81f91aea" style="--h:215">
@@ -614,8 +649,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">TLDR InfoSec</span>
-    <h3 class="clamp3">Infoblox Confirms Security Incident After Hackers Access Company Information</h3>
-    <p class="clamp3">Infoblox confirmed hackers accessed company information via a compromised third-party SharePoint data-migration vendor; a source says sensitive customer data was taken, and Infoblox says its products were not involved.</p>
+    <h3 class="clamp3">Infoblox Confirms Breach via Compromised Third-Party Vendor</h3>
+    <p class="clamp3">Infoblox confirmed hackers accessed company information through a compromised third-party SharePoint data-migration vendor; a source says sensitive customer data was taken.</p>
     
   </div>
 </a><a class="card" href="#s-be65df09c8" style="--h:215">
@@ -625,41 +660,8 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">TLDR DevOps</span>
-    <h3 class="clamp3">Uber&#39;s framework governs AI agent actions across their full lifecycle</h3>
-    <p class="clamp3">Uber checks whether an agent&#39;s proposed action matches the user&#39;s request, purpose, permissions, and context, using pre-deployment registration, runtime authorization, and post-deployment replay.</p>
-    
-  </div>
-</a><a class="card" href="#s-c77e935aa3" style="--h:215">
-  <div class="img">
-    <div class="ph">omgubuntu.co.uk</div>
-    <img src="https://www.omgubuntu.co.uk/wp-content/uploads/2026/09/Ubuntu-Security-Bug.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-  </div>
-  <div class="body">
-    <span class="tag">TLDR DevOps</span>
-    <h3 class="clamp3">Ubuntu Pro users get early access to AI-written security fixes</h3>
-    <p class="clamp3">Canonical is giving Ubuntu Pro users early access to AI-generated patches for known security flaws via an opt-in archive called Edge.</p>
-    
-  </div>
-</a><a class="card" href="#s-ca65d2a792" style="--h:215">
-  <div class="img">
-    <div class="ph">saastr.com</div>
-    <img src="https://i0.wp.com/www.saastr.com/wp-content/uploads/2026/11/stripe-saas-index-chart-scaled.png?fit=1000%2C763&amp;#038;quality=70&amp;#038;ssl=1" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-  </div>
-  <div class="body">
-    <span class="tag">TLDR Founders</span>
-    <h3 class="clamp3">Stripe index: non-AI B2B software revenue up 30%+ year over year</h3>
-    <p class="clamp3">Stripe&#39;s new weekly index shows revenue up over 30% year over year for non-AI software companies billing through it, mostly self-serve products.</p>
-    
-  </div>
-</a><a class="card" href="#s-3574711074" style="--h:215">
-  <div class="img">
-    <div class="ph">claude.com</div>
-    <img src="https://claude.com/resources/articles/linked-billing-on-claude-platform/opengraph-image/og" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-  </div>
-  <div class="body">
-    <span class="tag">TLDR Founders</span>
-    <h3 class="clamp3">Anthropic adds linked billing for Claude Platform in beta</h3>
-    <p class="clamp3">Linked billing lets tools like Linear and Warp charge Claude usage to customers&#39; own Anthropic accounts, with per-tool monthly spend limits, now in beta.</p>
+    <h3 class="clamp3">Uber Built a Lifecycle Framework to Govern Autonomous AI Agents</h3>
+    <p class="clamp3">The framework checks whether an agent&#39;s proposed action fits the user&#39;s request, permissions, and context, combining pre-deployment registration, runtime authorization, and post-deployment replay.</p>
     
   </div>
 </a>
@@ -671,36 +673,22 @@ body:has(.story:target){overflow:hidden}
   <p>No new items: TLDR Fintech, TLDR Data.</p>
   
   
-  <p>Generated 18:27 CET. Archive:
+  <p>Generated 18:49 CET. Archive:
   <a href="2026-11-18.html">2026-11-18</a> · <a href="2026-11-17.html">2026-11-17</a></p>
 </footer>
 </div>
 
 
-<article class="story" id="s-86aeaafbc0" style="--h:215">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">TLDR InfoSec</span></div>
-    <h2>Java4Shell: Critical OpenJDK Base64 Decoder Flaw Enables RCE</h2>
-    <img src="https://calif.io/java4shell/poster.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-    
-    <ul><li>Calif disclosed Java4Shell (CVE-2026-114938), a memory-corruption bug in OpenJDK&#39;s Base64 decoder, rated 9.2/10 (critical) under CVSS 4.0.</li><li>An unauthenticated remote attacker can overwrite heap memory, leak data Heartbleed-style, or reach remote code execution.</li><li>Trigger: 64 &#39;A&#39; characters followed by &#39;=&#39; (128 &#39;A&#39;s in OpenJDK 17). The flaw sits in AVX-512 assembly used for fast decoding.</li><li>Calif reports RCE in default configs: pre-auth in Keycloak, Jira, Confluence, Jenkins; post-auth in Kafka, Elasticsearch, Solr and others.</li><li>Separately, samczsun shared a client-side exploit: Java programs connecting over TLS to a malicious server can be compromised.</li><li>Calif says AI helped find and exploit it: about one hour to discover, two more for a working exploit, under $200 in tokens. The text mentions no patch.</li></ul>
-    
-    
-    <div class="srcs">Sources:
-      <a href="https://calif.io/java4shell/?utm_source=tldrinfosec" target="_blank" rel="noopener">TLDR InfoSec</a>
-    </div>
-  </div>
-</article>
-
 <article class="story" id="s-2549cf8240" style="--h:152">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Inside Paradeplatz</span></div>
-    <h2>UBS reportedly concedes capital fight with government, per Reuters</h2>
+    <h2>Reuters: UBS concedes capital fight with finance ministry</h2>
     <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-18-um-08.25.43.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Reuters reports UBS has given up hoping to reverse the capital verdict in the Council of States; the shares dipped immediately.</li><li>Council of States backed rules requiring 90% of US and UK subsidiaries to be backed by proper capital. UBS must raise about 20 billion.</li><li>The National Council&#39;s committee decides within days; the plenary takes it up next week. Finance Minister Keller-Sutter is seen as the winner.</li><li>Opinion column: UBS could fund this faster by pausing buybacks for a few years, but CEO Ermotti chose to defend his growth model.</li><li>Column says Ermotti is now a lame duck and may not become the next board chair; it calls for a successor.</li></ul>
+    <p class="gist">UBS has dropped its fight against tougher capital rules, according to a Reuters report. The share price reacted at once.</p>
+    <ul><li>This is an opinion column that cites Reuters. Capital means the bank&#39;s own money that absorbs losses.</li><li>UBS is the country&#39;s last big bank, after its 2023 takeover of Credit Suisse.</li><li>Centre-right MPs in the Council of States, the upper house of Swiss parliament, pushed the rule through.</li><li>The rule requires 90% of UBS&#39;s US and UK subsidiaries to be backed by real capital.</li><li>UBS must raise 20 billion francs. The column calls that small compared with the bank&#39;s size.</li><li>The bank could raise the money faster by pausing share buybacks, where it buys back its own shares, for a few years.</li><li>Finance Minister Karin Keller-Sutter is named the winner of the dispute.</li><li>A National Council committee decides within days. The full National Council votes next week.</li></ul>
+    <p class="why"><b>Why it matters:</b> The rule aims to reduce risks to Swiss citizens if UBS runs into trouble.</p>
     
     
     <div class="srcs">Sources:
@@ -709,14 +697,34 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
+<article class="story" id="s-86aeaafbc0" style="--h:215">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">TLDR InfoSec</span></div>
+    <h2>Java4Shell: Critical OpenJDK Base64 Decoder Flaw (CVSS 9.2)</h2>
+    <img src="https://calif.io/java4shell/poster.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist">Security firm Calif has disclosed a critical flaw in Java that lets remote attackers run their own code. The flaw sits in OpenJDK, the free, open version of Java.</p>
+    <ul><li>The flaw is in the Base64 decoder. Base64 is a common way to store binary data as text.</li><li>Calif gave it the ID CVE-2026-114938 and scored it 9.2 out of 10 on the CVSS 4.0 severity scale.</li><li>No login is needed for some attacks. Attackers can overwrite memory, read it like the 2014 Heartbleed bug, or run code.</li><li>The trigger is 64 letter A&#39;s followed by an equals sign. OpenJDK 17 needs 128 A&#39;s followed by the equals sign.</li><li>Calif says it ran code remotely in default setups of Keycloak, Atlassian Jira, Confluence, JFrog Artifactory, Jenkins and PingFederate. These need no login.</li><li>After login, it says it ran code in Apache Kafka, Solr, Elasticsearch, Gerrit and Spinnaker. The lists are not complete.</li><li>Separately, samczsun shared a client-side exploit. A Java program that connects to a malicious server can be compromised.</li><li>Calif says AI helped: one hour to find the bug, two more hours for a first exploit, and under $200 in AI usage fees.</li></ul>
+    <p class="why"><b>Why it matters:</b> Java runs in banking, aviation, telecoms and government systems, so unpatched servers face risk.</p>
+    
+    
+    <div class="srcs">Sources:
+      <a href="https://calif.io/java4shell/?utm_source=tldrinfosec" target="_blank" rel="noopener">TLDR InfoSec</a>
+    </div>
+  </div>
+</article>
+
 <article class="story" id="s-74bc6f2436" style="--h:18">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Handelsblatt</span></div>
-    <h2>Deutsche Bank CEO Sewing admits failures after 15-million-document leak</h2>
+    <h2>Deutsche Bank CEO admits errors after 15 million-document leak</h2>
     <img src="https://images.handelsblatt.com/HhOWOfyTOCcJ/cover/900/506/0/0/107/106/0.5/0.5/deutsche-bank-chef-christian-sewing.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>A consortium including FT, Spiegel, NYT, ZDF and Tages-Anzeiger analysed about 15 million internal Deutsche Bank documents, described as the largest bank leak.</li><li>Reports allege the bank neglected anti-money-laundering controls and overrode internal warnings for profit, including business with Russian oligarchs and Jeffrey Epstein.</li><li>Reports say the bank expanded its Russia business until shortly before Russia&#39;s invasion of Ukraine.</li><li>CEO Christian Sewing admits he is not infallible, denies hiding anything, and says per the bank, customer account and login data are unaffected.</li><li>Hesse&#39;s data protection commissioner Roßnagel opened a GDPR investigation into security measures and whether the breach was reported on time. No sanctions discussed.</li><li>SRF: the leak contained no direct customer data. The bank disputes some conclusions but has not disputed the documents&#39; authenticity.</li></ul>
+    <p class="gist">Deutsche Bank CEO Christian Sewing admits the bank may have set the wrong priorities. This follows a huge leak of 15 million internal documents that media say show weak controls.</p>
+    <ul><li>A media group, including the Financial Times, Spiegel, New York Times, ZDF and Swiss paper Tages-Anzeiger, analysed the documents from whistleblowers.</li><li>The reports say the bank ignored internal warnings on money laundering, bribery and sanctions breaches for years, to protect profit.</li><li>Cases include business with Russian oligarchs (very rich Russians) and the convicted sex offender Jeffrey Epstein.</li><li>The reports say the bank pushed business in Russia shortly before Russia invaded Ukraine.</li><li>Sewing says he is not infallible. He says the bank was complex when he took over in 2018, and that it may have set priorities differently.</li><li>Sewing says the bank spends 7 billion euros on compliance and money-laundering checks. Staff in that area rose 40% to 3,000.</li><li>The bank says customer account numbers, balances and login data are not affected. The regulator&#39;s headline calls the affected data highly sensitive.</li><li>The Hesse data protection authority has opened a probe under the EU&#39;s GDPR privacy law. It checks protection measures and whether the bank reported the leak on time. No penalties are discussed.</li></ul>
+    <p class="why"><b>Why it matters:</b> Banks must report data leaks quickly under EU law, and this probe checks whether Deutsche Bank did.</p>
     
     
     <div class="srcs">Sources:
@@ -725,14 +733,70 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
+<article class="story" id="s-b820e11e4b" style="--h:18">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2>US military confirms attack on Iranian island Gheschm</h2>
+    <img src="https://images.handelsblatt.com/q-Nw80KsniJh/cover/900/506/0/0/62/61/0.5/0.5/archiv-23.05.2019-iran-hormus-fischerboote-am-hafen-der-gheschm-insel-in-suediran-am-22.-mail-20.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist">US forces bombed Iranian targets on the island of Gheschm in the Persian Gulf. Washington says it was revenge for Iranian missile attacks, as fears of a wider war grow.</p>
+    <ul><li>The US military says it hit a missile site of Iran&#39;s Revolutionary Guards, an elite Iranian military force.</li><li>It was the first US strike there in nearly two weeks. Iranian drones hit US bases in Bahrain and Kuwait.</li><li>The US and Israel began the war against Iran in late February. The Strait of Hormuz, a key oil route, has seen many tanker attacks.</li><li>The US has enforced a naval blockade of Iranian ports for months. A third US aircraft carrier, USS Theodore Roosevelt, has arrived in the region.</li><li>After Democrats won the November midterm elections, President Donald Trump called big new attacks highly unlikely.</li><li>Qatar, Oman and Pakistan are mediating. Pakistan helped reach the June Islamabad Agreement, but the deal has not led to a breakthrough.</li><li>The Financial Times reports Israeli Prime Minister Benjamin Netanyahu, who is outgoing after the election, calls Trump almost daily to push for attacks.</li><li>Saudi Arabia said it stopped Houthi missiles and drones aimed at Riyadh. Houthis say they hit a key Saudi oil pipeline.</li></ul>
+    <p class="why"><b>Why it matters:</b> The Strait of Hormuz is key for global energy trade, so fighting there can affect oil supply.</p>
+    
+    
+    <div class="srcs">Sources:
+      <a href="https://www.handelsblatt.com/politik/international/iran-krieg-us-militaer-bestaetigt-angriff-auf-iranische-insel-gheschm/100136895.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/politik/international/iran-krieg-neue-angriffe-schueren-sorge-vor-eskalation-im-iran-krieg/100270952.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.scmp.com/week-asia/politics/article/3374868/iran-us-trade-threats-over-dirty-bombs-and-first-strikes-new-war-wave-looms" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-7977751738" style="--h:18">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2>German coalition tax deal: what taxpayers gain in 2027</h2>
+    <img src="https://images.handelsblatt.com/PKfpuRbedfVA/cover/900/506/0/0/0/533/0.5/0.5/koalitionsrunde-in-berlin.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist">Germany&#39;s ruling parties agreed overnight to cut the electricity tax from 2027. Their income tax relief is smaller than many expected.</p>
+    <ul><li>The coalition committee, the top leaders of the CDU/CSU and SPD governing parties, talked for over eight hours. They reached a deal at about 2 a.m.</li><li>The electricity tax (Stromsteuer) falls in 2027. It is 2.05 cents per kilowatt hour now, and the EU minimum is 0.1 cent.</li><li>Chancellor Friedrich Merz pushed for the electricity cut. Bild reported he nearly ended the talks before midnight; the CDU parliamentary leader described a good atmosphere.</li><li>The employer-friendly German Economic Institute (IW) calculated the relief. A family with two children and incomes of 100,000 and 40,000 euros gets up to 552 euros more.</li><li>That 552 euros is 268 from the tax reform, 192 from child benefit and allowances, and 92 from the electricity cut.</li><li>A single person earning 50,000 euros gross gets 155 euros more. At 100,000 euros, the gain is 253 euros.</li><li>Verivox, a price comparison site, estimates a family of four saves about 7.75 euros a month from the electricity cut. A single person saves about 3 euros.</li><li>Cold progression (kalte Progression) means inflation pushes people into higher tax brackets without real pay gains. In 2027 it costs 10.76 billion euros, but only 3.2 billion is offset.</li></ul>
+    <p class="why"><b>Why it matters:</b> Most households get only small relief in 2027, and many pay more overall.</p>
+    
+    
+    <div class="srcs">Sources:
+      <a href="https://www.handelsblatt.com/politik/deutschland/steuern-kompromiss-der-koalition-bringt-familien-bis-zu-552-euro-entlastung/100270934.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/politik/deutschland/koalitionsausschuss-merz-drueckt-stromsteuersenkung-durch-aber-nur-halb/100270780.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-d7ed48eca0" style="--h:18">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2>DAX closes lower; bank shares fall over 3% on inflation data</h2>
+    <img src="https://images.handelsblatt.com/bckzfpdOn42n/cover/900/506/0/1/0/0/0.5/0.5/graph-aktienkurs-aktienchart-dax-online-dax-bericht.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist">The German stock index Dax closed lower for a second day in a row. Nvidia&#39;s strong results did not lift the market.</p>
+    <ul><li>The Dax, Germany&#39;s main share index of the largest companies, closed down 1.2% at 25,736 points on Wednesday.</li><li>On Tuesday, the Dax fell 2.1% to 26,045 points.</li><li>Nvidia, the US chipmaker behind much AI hardware, reported quarterly results that beat expectations after the US market closed.</li><li>CEO Jensen Huang has left the company. Nvidia&#39;s board said it does not want to bring back its co-founder.</li><li>Nvidia shares still fell more than 2% in US trading. The headline says a bank stock in Germany fell more than 3%, but the text does not name it.</li><li>Investors now watch Anthropic, the AI company behind Claude. It plans a US stock market debut (IPO, a first public share sale) and will announce its share price the day before.</li><li>Euro-zone final inflation data for October is also due. Inflation means how fast prices rise.</li><li>Leaders of APEC (Asia-Pacific Economic Cooperation, a group of Asian and Pacific economies) meet in Shenzhen, China. Trump, Xi Jinping and Putin plan a three-way talk on Thursday.</li></ul>
+    
+    
+    
+    <div class="srcs">Sources:
+      <a href="https://www.handelsblatt.com/finanzen/maerkte/marktberichte/dax-aktuell-dax-schliesst-im-minus-bank-aktie-sinkt-um-mehr-als-drei-prozent/100270820.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
 <article class="story" id="s-af543bf28d" style="--h:18">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Handelsblatt</span></div>
-    <h2>US pressure builds for Mercedes ban over Chinese shareholders</h2>
+    <h2>US debate over Mercedes ban over Chinese shareholders escalates</h2>
     <img src="https://images.handelsblatt.com/Sn0HD86z2cny/cover/900/506/0/0/498/0/0.5/0.5/bei-der-montage-des-gle-spielt-die-nahtlose-logistik-eine-schluesselrolle-die-produktion-erfolgt-jus.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Republican John Moolenaar and Democrat Ro Khanna, senior House China committee members, wrote to Mercedes-Benz over its Chinese shareholders.</li><li>The letter to CEO Ola Källenius and North America chief Jason Hoff asks detailed questions on Chinese owners and technology partnerships, citing &#39;significant risks&#39;.</li><li>A Senate Commerce Committee bill, approved this summer, would effectively bar sales of connected vehicles in the US if Chinese owners hold over 15% combined.</li><li>Handelsblatt confirms: state-owned BAIC holds 9.98% and Geely founder Li Shufu holds 9.69% via a holding company, about a fifth combined.</li></ul>
+    <p class="gist">US lawmakers from both parties are pressing Mercedes-Benz over its Chinese shareholders. A US bill could block its connected cars.</p>
+    <ul><li>Republican John Moolenaar and Democrat Ro Khanna, the top members of the US House of Representatives China committee, wrote to Mercedes-Benz.</li><li>The letter goes to CEO Ola Källenius and North America chief Jason Hoff. It asks detailed questions about Chinese owners and technology partnerships. Handelsblatt has seen it.</li><li>A bill approved by the Senate commerce committee this summer would effectively ban sales of connected vehicles in the US. The ban applies if Chinese owners together hold more than 15% of a carmaker.</li><li>The letter says about one fifth of Mercedes-Benz is owned by Chinese investors. It calls this a considerable risk.</li><li>State-owned carmaker BAIC holds 9.98%. Geely founder Li Shufu holds 9.69% through an investment company.</li><li>The letter calls BAIC a state company that is directly owned by the Chinese government. The bill has only passed committee so far.</li></ul>
+    <p class="why"><b>Why it matters:</b> If the bill became law, Mercedes-Benz could lose the right to sell connected cars in the US.</p>
     
     
     <div class="srcs">Sources:
@@ -741,18 +805,20 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
-<article class="story" id="s-9e89bd582f" style="--h:18">
+<article class="story" id="s-b6bc635bd8" style="--h:18">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Handelsblatt</span></div>
-    <h2>Court fines Tesla Grünheide plant chief over claimed secret recording</h2>
-    <img src="https://images.handelsblatt.com/nFXDDzH17rQp/cover/900/506/0/0/209/208/0.5/0.5/archiv-29042024-brandenburg-gruenheide-mark-werksleiter-andre-thierig-aufgenommen-waehrend-e.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <h2>Ukrainian refinery strikes; Russia reportedly imports record petrol</h2>
+    <img src="https://images.handelsblatt.com/lP6TJCCIGQo0/cover/900/506/0/0/107/106/0.5/0.5/oel-raffinerie-russland.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>A German local court issued a criminal penalty order (Strafbefehl) with a fine against Tesla Grünheide plant manager André Thierig.</li><li>Thierig claimed a union member secretly recorded a works council meeting; the article says no evidence existed.</li><li>Thierig is contesting the penalty order.</li></ul>
+    <p class="gist">A Polish newspaper reports Russia planned a violent provocation on Poland&#39;s border with Kaliningrad. The EU also proposed a new loan for Ukraine.</p>
+    <ul><li>The Polish daily Rzeczpospolita reports Russian intelligence planned a violent provocation at the Poland-Kaliningrad border in late October.</li><li>Kaliningrad is a Russian exclave on the Baltic Sea, cut off from mainland Russia by Poland and Lithuania.</li><li>The paper cites an anonymous Polish security source. It says Russia expected many casualties, and the text shows no official confirmation.</li><li>According to the report, the plan was to blame Ukraine. Attackers would be shot, or documents suggesting Ukrainian origin would be planted.</li><li>The aim was to make Poland stop helping Ukraine. The paper says a large Polish deployment in late October prevented the attack.</li><li>Poland had sent police, border guards and military to the border in late October. Prime Minister Donald Tusk said intelligence warned armed people might enter Polish territory.</li><li>The headline also mentions Ukrainian attacks on Russian refineries and record Russian petrol imports. The readable text does not cover these.</li><li>SCMP adds a preview only: on Wednesday the EU proposed an extra 45 billion euro (US$49 billion) loan for Ukraine in 2027.</li></ul>
     
-    <p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>
+    
+    
     <div class="srcs">Sources:
-      <a href="https://www.handelsblatt.com/unternehmen/industrie/tesla-gericht-erlaesst-strafbefehl-gegen-leiter-der-gigafabrik-in-gruenheide/100270988.html" target="_blank" rel="noopener">Handelsblatt</a>
+      <a href="https://www.handelsblatt.com/politik/international/ukraine-russland-importiert-offenbar-rekordmengen-an-benzin/27982126.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.scmp.com/news/world/europe/article/3374925/eu-proposes-new-us49-billion-ukraine-loan-2027" target="_blank" rel="noopener">South China Morning Post</a>
     </div>
   </div>
 </article>
@@ -761,10 +827,12 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Handelsblatt</span></div>
-    <h2>GLS and rival DPD join forces, narrowing German parcel options</h2>
+    <h2>Parcel firm GLS to merge with rival DPD</h2>
     <img src="https://images.handelsblatt.com/xmL9V2eX7X1Y/cover/900/506/0/0/107/106/0.5/0.5/paketbote-von-gls.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>GLS and DPD will merge their German parcel businesses into a joint venture; regulatory approval is still pending.</li><li>Ownership split: GLS owner 80%, DPD owner 20%. GLS belongs to a holding linked to Czech investor Daniel Křetínský.</li><li>The DPD brand will disappear in Germany; the joint company will operate under the GLS brand.</li><li>Plans €500m investment in coming years. Target: over €4bn revenue, 700m parcels a year, about 150 sites, 15,000 staff.</li><li>Market context: DHL leads with over 40% share (2024, Bundesnetzagentur). Amazon has 15–25%; Hermes, DPD, GLS and UPS 4–15% each. Consumer choice narrows.</li></ul>
+    <p class="gist">The parcel companies GLS and DPD plan a joint venture (a new shared company) in Germany. The DPD brand would disappear there.</p>
+    <ul><li>The two firms would combine their German parcel businesses. Government approval is still needed, which is the usual step for such deals.</li><li>GLS would hold 80% of the new firm and DPD&#39;s owner 20%. GLS Logistics is based in Neuenstein, Hesse.</li><li>GLS belongs to Czech investor Daniel Křetínský through a holding company. GLS Group is a sister company of Britain&#39;s Royal Mail. Křetínský also holds stakes in retailer Metro and energy firm TotalEnergies.</li><li>DPD belongs to Geopost, which is owned by the French post office La Poste. DPD&#39;s German arm is based in Aschaffenburg, Bavaria.</li><li>The new firm plans to invest €500 million in the coming years. DPD once stood for &#39;Deutscher Paketdienst&#39; and now stands for &#39;Dynamic Parcel Distribution&#39;.</li><li>The new firm expects revenue above €4 billion a year and 700 million parcels a year. It would have about 150 sites and 15,000 staff. Market leader DHL (based in Bonn) had €8.2 billion parcel revenue in Germany from 2 billion deliveries last year.</li><li>Germany&#39;s Federal Network Agency (Bundesnetzagentur) says DHL had over 40% of parcel volumes in 2024. Amazon had 15–25%. Hermes, DPD, GLS and UPS each had 4–15%. Customers would have slightly less choice, and the merger could pressure DHL.</li></ul>
+    <p class="why"><b>Why it matters:</b> Germany would have one fewer major parcel company, so customers would have less choice.</p>
     
     
     <div class="srcs">Sources:
@@ -773,62 +841,16 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
-<article class="story" id="s-9148e09028" style="--h:18">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">Handelsblatt</span></div>
-    <h2>Who profits most from Anthropic&#39;s record IPO: investors and suppliers</h2>
-    <img src="https://images.handelsblatt.com/3MQAPtte8GWv/cover/900/506/0/0/0/0/0.5/0.5/anthropic.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-    
-    <ul><li>SRF reports Anthropic&#39;s IPO targets a company valuation of $2 trillion; Handelsblatt calls it a record listing.</li><li>Co-founders and siblings Dario Amodei (CEO, 43) and Daniela Amodei (board president) left OpenAI in 2020 after disputes, founding Anthropic in 2021.</li><li>Dario publicly warns of AI risks such as bioweapons and cyberattacks, and promises AI-driven disease cures within a decade; an analyst says the marketing role is unclear.</li><li>Handelsblatt previews: an IPO expert argues investors could still lose money despite the high valuation, comparing the risk to Boeing.</li></ul>
-    
-    
-    <div class="srcs">Sources:
-      <a href="https://www.handelsblatt.com/technik/ki/anthropic-wer-vom-rekord-boersengang-am-meisten-profitiert/100270337.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/finanzen/maerkte/boersengang-vor-mega-ipo-warum-anthropic-in-die-kostenfalle-tappen-koennte/100270298.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.srf.ch/news/wirtschaft/boersengang-der-ki-firma-die-koepfe-hinter-anthropic-wer-sind-die-geschwister-amodei" target="_blank" rel="noopener">SRF News</a>
-    </div>
-  </div>
-</article>
-
-<article class="story" id="s-925b07bdf5" style="--h:18">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">Handelsblatt</span></div>
-    <h2>Trump, Putin and Xi meet at APEC summit before group photo</h2>
-    <img src="https://images.handelsblatt.com/Bo0qbAVse4yk/cover/900/506/0/0/9/11/0.5/0.5/gif.gif" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-    
-    <ul><li>Xi greeted Trump in Shenzhen on Wednesday before the APEC summit; a trilateral meeting with Putin is planned for Thursday on the sidelines.</li><li>A Handelsblatt live blog reports Trump and Putin will also speak one-on-one; Wadephul says Europe must be at the table on Ukraine.</li><li>Talks are expected to cover Ukraine and Taiwan. Trump met leaders of India, Japan and Australia beforehand; Xi has criticised the Quad grouping.</li></ul>
-    
-    <p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>
-    <div class="srcs">Sources:
-      <a href="https://www.handelsblatt.com/politik/international/apec-gipfel-putin-trump-und-xi-treffen-vor-gruppenfoto-aufeinander/100270890.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/video/politik/apec-treffen-trump-xi-und-putin-beim-dreiergipfel-in-china/100271035.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/video/politik/dreiergipfel-trump-erwartet-gespraeche-ueber-ukraine-und-taiwan-mit-putin-und-xi/100270705.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.srf.ch/news/international/apec-gipfel-umarmung-und-bankett-xi-trump-und-putin-in-shenzhen" target="_blank" rel="noopener">SRF News</a> · <a href="https://www.scmp.com/news/china/diplomacy/article/3374931/returning-favour-xi-personally-welcomes-trump-ahead-high-stakes-apec-talks" target="_blank" rel="noopener">South China Morning Post</a> · <a href="https://www.scmp.com/news/china/diplomacy/article/3374886/trump-arrives-apec-xi-talks-3-way-putin-summit-and-likely-kim-jong-un-meeting" target="_blank" rel="noopener">South China Morning Post</a> · <a href="https://www.scmp.com/news/china/diplomacy/article/3374955/rare-hug-and-roaring-flyover-set-stage-historic-firsts-apec-shenzhen" target="_blank" rel="noopener">South China Morning Post</a>
-    </div>
-  </div>
-</article>
-
-<article class="story" id="s-737f60b6d9" style="--h:18">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">Handelsblatt</span></div>
-    <h2>ECB may discuss higher minimum reserve requirement next week</h2>
-    <img src="https://images.handelsblatt.com/rpgS6PrWUuIh/cover/900/506/0/0/62/355/0.5/0.5/europaeische-zentralbank-ezb-29.10.2026-beschilderung-der-europaeischen-zentralbank-ezb-in-frankfurt.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-    
-    <ul><li>ECB may discuss raising the minimum reserve ratio from 1% to 2%, according to insiders cited by Reuters and Handelsblatt.</li><li>The proposal would be on the agenda of the 25 November Governing Council meeting, but could slip to 17 December.</li><li>A higher reserve requirement would cut the ECB&#39;s interest costs and drain liquidity from the banking system.</li><li>The main aim is to limit losses at national central banks, including the Bundesbank, which hold low-yield bonds from stimulus programmes.</li><li>An ECB spokesperson declined to comment on the report.</li></ul>
-    
-    
-    <div class="srcs">Sources:
-      <a href="https://www.handelsblatt.com/finanzen/geldpolitik/geldpolitik-ezb-will-offenbar-zeitnah-ueber-hoehere-mindestreserve-beraten/100270996.html" target="_blank" rel="noopener">Handelsblatt</a>
-    </div>
-  </div>
-</article>
-
 <article class="story" id="s-3a6a8cad37" style="--h:152">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Inside Paradeplatz</span></div>
-    <h2>UBS faces lawsuits over Credit Suisse&#39;s alleged past misrepresentations</h2>
+    <h2>UBS may face lawsuits over Credit Suisse liabilities it took on</h2>
     
     
-    <ul><li>UBS took over Credit Suisse&#39;s potential liability claims along with its assets, so affected investors can now sue UBS directly.</li><li>UBS paid CHF 3 billion for Credit Suisse in March 2023; critics say the price was effectively a gift to shareholders.</li><li>A parliamentary inquiry (PUK) report says UBS knew of planned rescue measures early; the federal loss guarantee rose from CHF 5bn to 9bn as the price rose.</li><li>Zurich Commercial Court is having Credit Suisse&#39;s value as a going concern assessed; UBS reportedly sought to exclude shareholders&#39; court review, which authorities refused.</li><li>Possible misleading-statement claims cite CS executives&#39; reassurances in late 2022 and March 2023; New York proceedings already exist, and defendants deny the allegations.</li><li>Legal analysis by Dario Item (antigua.news) identifies Swiss liability bases; bondholder contract claims could run for ten years.</li></ul>
+    <p class="gist">A Swiss outlet, Inside Paradeplatz, says investors could sue UBS over Credit Suisse&#39;s past conduct. It cites a new parliamentary report and two legal analyses.</p>
+    <ul><li>UBS paid CHF 3 billion (Swiss francs) for Credit Suisse (CS) in March 2023. CS&#39;s possible damage liability passed to UBS by law.</li><li>The article calls the price a gift, because CS was worthless. A parliamentary inquiry (PUK) says UBS knew of the planned state rescue before the final deal.</li><li>UBS chairman Colm Kelleher told the inquiry he negotiated the price with authorities. As the price rose from CHF 1 to 3 billion, the state&#39;s loss guarantee rose from CHF 5 to 9 billion.</li><li>UBS wanted shareholder court reviews of the exchange ratio (the terms for swapping CS shares) blocked. Authorities refused. The Zurich Commercial Court is now valuing CS as an ongoing business.</li><li>Zurich lawyer Philipp Haberbeck questions whether the price was justified. Lausanne law professor Célian Hirsch lists Swiss legal grounds for investors to sue UBS directly.</li><li>On 31 October 2022 CS chief Ulrich Körner said withdrawals (customer money leaving) had stabilised. The next day he activated the last step of the emergency liquidity plan.</li><li>On 5 December chairman Axel Lehmann called CS &#39;definitively stable&#39;. FINMA, the Swiss financial regulator, knew outflows were still continuing. On 15 March 2023 Lehmann said state aid was no topic. Hours later CS announced it could borrow up to CHF 50 billion from the Swiss National Bank (SNB).</li><li>Investors who kept shares or AT1 bonds (riskier bank bonds) could claim damages if misled, but must prove they would have sold. Bondholder contract claims generally expire only after ten years. UBS need not have known of the deception. Similar cases already run in New York, and the defendants deny the claims. The article names three open disputes: price, AT1 write-down and misled investors.</li></ul>
+    <p class="why"><b>Why it matters:</b> Investors may be able to sue UBS for Credit Suisse&#39;s past statements, even though UBS did not make them.</p>
     
     
     <div class="srcs">Sources:
@@ -841,10 +863,12 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Inside Paradeplatz</span></div>
-    <h2>IIHF challenges two CAS judges over Russian team return</h2>
+    <h2>IIHF challenges two CAS judges&#39; independence over Russia decision</h2>
     
     
-    <ul><li>The IIHF has filed a challenge at the Court of Arbitration for Sport (CAS/TAS) questioning the independence of two arbitrators.</li><li>The arbitrators are Giulio Palermo (Italy) and Ismail Selim (Egypt), who attended Russian Arbitration Congress events in Moscow without disclosing the trips.</li><li>Their late-October rulings paved the way for Russian national teams to return to international ice hockey.</li><li>The IIHF says its own appointee, Mark Hovell, is not under question; the challenge targets the Russian federation&#39;s and CAS&#39;s appointees.</li><li>A senior Swiss jurist has already resigned from CAS in protest over the Moscow appearances.</li><li>The IIHF excluded Russia&#39;s U20 team from the junior world championship in Canada, while the CAS decision reportedly lifts the ban on senior national teams.</li></ul>
+    <p class="gist">The International Ice Hockey Federation (IIHF) asks the Court of Arbitration for Sport (TAS) to examine two judges who cleared Russia&#39;s return. The IIHF questions their independence.</p>
+    <ul><li>IIHF communications chief Tanya Heimlich confirmed the request. The IIHF wants the judges&#39; independence clarified. TAS is the main independent sports tribunal, but it is not above political influence.</li><li>The challenged judges are Italy&#39;s Giulio Palermo and Egypt&#39;s Ismail Selim. Both had taken part in events of the Russian International Arbitration Congress in Moscow.</li><li>The IIHF says the judges did not disclose these trips. Their end-of-October decision cleared the way for Russian national teams to return to international ice hockey.</li><li>The IIHF chose the third judge, British lawyer Mark Hovell. His independence is not in question. The other two judges were named by the Russian ice hockey federation and by TAS.</li><li>A senior Swiss lawyer already resigned from TAS in protest at the two judges&#39; conduct. The IIHF also barred Russia&#39;s U20 team from the junior world championship in Canada after international protest.</li><li>The TAS decision would lift the ban on Russian national teams. The article says the dispute concerns the credibility of all international sports courts.</li></ul>
+    <p class="why"><b>Why it matters:</b> The outcome decides whether Russian national teams can return to international ice hockey.</p>
     
     
     <div class="srcs">Sources:
@@ -853,18 +877,38 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
-<article class="story" id="s-cb835afff9" style="--h:152">
+<article class="story" id="s-d13d721a63" style="--h:152">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Inside Paradeplatz</span></div>
-    <h2>Bär+Karrer and NKF in dispute over client data misuse</h2>
-    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-18-um-08.33.12-1.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <h2>Bern cannabis firm Cannerald goes bankrupt after last-minute sale</h2>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Cannerald.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Zurich law firms Bär+Karrer and NKF are in a dispute after a former NKF partner joined Bär+Karrer.</li><li>She is reported to have taken thousands of NKF client names and sent them welcome letters from her new firm.</li><li>She was NKF&#39;s data protection chief, which NKF says makes the conduct more serious.</li><li>NKF demanded that the client list be destroyed and that Bär+Karrer stop soliciting these clients.</li><li>Bär+Karrer says it destroyed all the names; the partner apologised and remains with the firm. NKF declined to comment further.</li></ul>
+    <p class="gist">Cannerald AG, a Swiss company that promised profits from legal cannabis, has gone bankrupt. Its investors face a total loss.</p>
+    <ul><li>Cannerald AG is based in Fraubrunnen, between Bern and Solothurn. It is a small or medium-sized company (KMU). A bankruptcy judge now takes over the process (Konkurs).</li><li>The article says the company promised large returns and drew strong investor interest, including many small investors.</li><li>An unknown buyer bought the production facilities at the headquarters. The buyer insists on staying anonymous, and the article says only this buyer benefits.</li><li>In a letter to investors, management said it regretted the news. It said the news would disappoint many investors who had supported the firm for years.</li><li>The article gives no figures on how much investors put in or how large the debts are.</li></ul>
+    <p class="why"><b>Why it matters:</b> Investors who put money into Cannerald may lose all of it.</p>
     
     
     <div class="srcs">Sources:
-      <a href="https://insideparadeplatz.ch/2026/11/18/kundennamen-geschnappt-riesenzoff-zwischen-baer-karrer-und-nkf/" target="_blank" rel="noopener">Inside Paradeplatz</a>
+      <a href="https://insideparadeplatz.ch/2026/11/18/berner-cannabis-hype-firma-ist-konkurs/" target="_blank" rel="noopener">Inside Paradeplatz</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-7d3721ea84" style="--h:152">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">Inside Paradeplatz</span></div>
+    <h2>SBB to redevelop Wollishofen site by 2029, displacing cultural venue</h2>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-18-um-07.14.35.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist">Swiss Federal Railways (SBB) plans new flats next to Wollishofen station in Zurich. A music venue in the station&#39;s historic freight shed must close by 30 January 2027.</p>
+    <ul><li>SBB owns the 6,500 square metre site (about 0.65 hectares) and rents the shed to the venue&#39;s operator.</li><li>The project, called &#39;Wellenlänge&#39;, should be built by 2029. The station building stays. The freight shed does not fit.</li><li>The shed is a heritage-listed building (denkmalgeschützt). Since 1999, it has hosted a motorbike club and concerts.</li><li>The Verein Güterschuppen, a non-profit association, runs the venue. Its acts are mostly punk, hardcore and ska bands.</li><li>The association says the short-notice termination came in November, after more than ten years of planning.</li><li>The shed will be taken down and rebuilt in Bauma for the DVZO, a steam railway club.</li><li>The association is frustrated that the rebuild in Bauma is not happening soon after the dismantling.</li><li>SBB says it sets the timetable. The site must be empty in time for the planned construction.</li></ul>
+    <p class="why"><b>Why it matters:</b> A Zurich venue loses its home. A listed building moves to another town.</p>
+    
+    
+    <div class="srcs">Sources:
+      <a href="https://insideparadeplatz.ch/2026/11/18/sbb-verbannt-punk-in-die-pampa/" target="_blank" rel="noopener">Inside Paradeplatz</a>
     </div>
   </div>
 </article>
@@ -873,10 +917,12 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Inside Paradeplatz</span></div>
-    <h2>Swiss Post&#39;s &#39;Klara&#39; reportedly sends dunning notices to wrong recipients</h2>
+    <h2>Swiss Post faces problems with mail processing and customer scans</h2>
     <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-18-um-06.58.43-1024x513.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Swiss Post&#39;s ePost scanning service (Klara, bought 2020) sent a reader&#39;s scanned letters to him instead of the intended recipient.</li><li>Post blames a misread c/o line. PostCom says it is not responsible, Bakom has not acted, and the EDÖB complaint was only auto-acknowledged.</li><li>Post admits other misrouted scans but says they fall in the &#39;very low per mille&#39; range. Over 54,000 accounts are registered on Klara.</li><li>Post is reviewing how to handle c/o addresses to reduce errors. Each scan costs CHF 0.80. Source is a single critical report.</li></ul>
+    <p class="gist">Swiss Post&#39;s digital letter scanning service sent a businessman a letter meant for someone else. He says the Post and the authorities have not fixed the problem.</p>
+    <ul><li>Klara scans paper letters and emails them as PDFs. Swiss Post bought the Lucerne firm Klara in 2020.</li><li>The service costs 80 Rappen (CHF 0.80) per scan. More than 54,000 accounts are registered on Klara.</li><li>The businessman got a third reminder from an authority. It was meant for someone else, but the scan went to him.</li><li>The Post blames a misread &#39;c/o&#39; line. A c/o (care of) address names a person living at another address.</li><li>The Post says other cases exist, but they are rare: &#39;deep low per-mille range&#39;, under 0.1 percent.</li><li>The postal regulator PostCom says it is not responsible. The Federal Office of Communication (Bakom) did not act.</li><li>A complaint to the federal data protection office (EDÖB) got only an automatic confirmation three months ago.</li><li>A few weeks ago, another wrong reminder arrived. The man says his patience is running out.</li></ul>
+    <p class="why"><b>Why it matters:</b> Official letters scanned for email can reach the wrong person, with no clear fix.</p>
     
     
     <div class="srcs">Sources:
@@ -885,30 +931,16 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
-<article class="story" id="s-7d171d9395" style="--h:152">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">Inside Paradeplatz</span></div>
-    <h2>Inside Paradeplatz attacks University of Zurich media quality yearbook</h2>
-    
-    
-    <ul><li>Critical commentary on the UZH Fög study &#39;Desinformation in der Schweiz&#39;, part of the Jahrbuch Qualität der Medien 2026. Funders include SRG, Tamedia and BAKOM.</li><li>Author argues the study treats &#39;not plausible&#39; as &#39;false&#39;, labelling the lab-leak claim as a conspiracy narrative based on a 2024 source.</li><li>Author says survey results are misread: rejecting system-critical claims is treated as skill at spotting disinformation, and correlation is read as causation.</li><li>Lead author told SRF the main finding is that quality journalism protects against disinformation. The commentary is cut off before its integrity section.</li></ul>
-    
-    
-    <div class="srcs">Sources:
-      <a href="https://insideparadeplatz.ch/2026/11/18/universitaet-zuerich-verbreitet-desinformation-ueber-desinformation/" target="_blank" rel="noopener">Inside Paradeplatz</a>
-    </div>
-  </div>
-</article>
-
 <article class="story" id="s-e4b00241fa" style="--h:0">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">SRF News</span></div>
-    <h2>BLS paid ex-CEO CHF 185,000 bonuses under secret agreement</h2>
+    <h2>BLS paid ex-CEO nearly CHF 185,000 in bonuses via secret deal</h2>
     <img src="https://www.srf.ch/static/cms/images//320ws/9cb6d2f.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>A Bern parliamentary committee (GPK) report says ex-BLS CEO Bernard Guillelmon received nearly CHF 185,000 in bonuses despite suspension, undisclosed.</li><li>Bonuses were CHF 94,023 for 2020 and CHF 90,716 for 2021, when he was suspended for ten months, according to BLS.</li><li>Payments were hidden in a secret amendment to his exit agreement and deferred to 2022 to avoid renewed media attention. The board reportedly was not informed.</li><li>The cantonal Finance Control uncovered the payments. The GPK criticises oversight by the board and the Bern transport directorate and demands a full review and follow-up audit.</li></ul>
+    <p class="gist">Swiss railway BLS paid its former boss, Bernard Guillelmon, almost CHF 185,000 in bonuses. BLS did not disclose the payments, and a Bern parliamentary committee says this was deliberate.</p>
+    <ul><li>BLS is Switzerland&#39;s second-largest railway company. In 2020, it was revealed to have unlawfully received millions in subsidies (state payments).</li><li>Guillelmon lost his job as chief executive (CEO) that year. He was suspended in autumn but kept receiving pay.</li><li>His 2020 bonus was CHF 94,023. For 2021, when he was suspended for ten months, his bonus was CHF 90,716.</li><li>The payments were hidden in a secret change to his exit agreement. The payout was delayed to 2022 to avoid renewed media attention.</li><li>The Bern cantonal Finance Control (state auditor) found the payments. It had won a court case to see BLS&#39;s books.</li><li>The auditor said BLS &#39;partly deliberately ignored&#39; its duty to disclose executive pay.</li><li>The board reportedly was not informed. Former board chair Rudolf Stämpfli says he did not sign the secret agreement.</li><li>BLS cites data protection and will not say who approved the deal. It says its rules are now stricter.</li></ul>
+    <p class="why"><b>Why it matters:</b> Subsidised public companies must report executive pay. This case shows how that rule can be sidestepped.</p>
     
     
     <div class="srcs">Sources:
@@ -917,18 +949,38 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
+<article class="story" id="s-6148018473" style="--h:0">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">SRF News</span></div>
+    <h2>Anthropic IPO: who are the Amodei siblings running the AI firm?</h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/c1a305c.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist">AI company Anthropic plans to sell shares on the stock market (an IPO, or initial public offering). It aims for a company value of 2,000 billion dollars (2 trillion).</p>
+    <ul><li>Dario Amodei, 43, is Anthropic&#39;s chief executive (CEO). His younger sister Daniela is president of the board.</li><li>The siblings co-founded Anthropic in 2021. Both held senior jobs at OpenAI before leaving in 2020 after a dispute.</li><li>Dario studied physics and biophysics. He earned a PhD in physics at Princeton University.</li><li>Daniela studied English literature at the University of California. Dario is four years older than her.</li><li>The siblings grew up in San Francisco. Their father died of a rare disease that became treatable a few years later.</li><li>Dario himself had cancer and was cured. In investor videos, he says cancer, Alzheimer&#39;s and heart disease could be history within ten years.</li><li>He says AI can speed up medical research. Dario also warns that AI could enable bioweapons or cyberattacks.</li><li>Philipp Dubach, an independent AI and finance researcher, says Dario means these forecasts seriously. How much is marketing is unclear, he says.</li></ul>
+    
+    
+    
+    <div class="srcs">Sources:
+      <a href="https://www.srf.ch/news/wirtschaft/boersengang-der-ki-firma-die-koepfe-hinter-anthropic-wer-sind-die-geschwister-amodei" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
 <article class="story" id="s-df0b194c5c" style="--h:0">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">SRF News</span></div>
-    <h2>SVP group board recommends two candidates for Federal Council seat</h2>
+    <h2>SVP faction board recommends two-candidate ticket for Federal Council</h2>
     <img src="https://www.srf.ch/static/cms/images//320ws/c3d0c0.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>SVP parliamentary group board recommends a two-name ticket for the 9 December 2026 Federal Council election to succeed Guy Parmelin.</li><li>Eight SVP candidates are in the running: Amaudruz, Aeschi, Chiesa, Wyssmann, Graber, Ruppen, Schnegg and Gallati.</li><li>The full SVP group decides on Friday, 20 November. A single-name ticket is ruled out; a three-name ticket is possible but less likely.</li><li>SRF rates Thomas Aeschi&#39;s chances as very good. With Parmelin leaving, the Romandie loses a seat, so a French-speaking candidate on the ticket is uncertain.</li></ul>
+    <p class="gist">The SVP (Swiss People&#39;s Party) board recommends a two-person ticket for the federal government election on 9 December. Eight SVP candidates want to succeed Guy Parmelin, who is leaving the seven-member Federal Council (the Swiss government).</p>
+    <ul><li>The board follows the recommendation of its nomination committee. The SVP parliamentary group votes on Friday.</li><li>The text does not say which two candidates the board recommends.</li><li>Usually only candidates on the official party ticket have a real chance of election.</li><li>Céline Amaudruz (47, Geneva) is seen as the strongest candidate from French-speaking Switzerland.</li><li>Thomas Aeschi (47, Zug) leads the SVP parliamentary group. His chances may have dropped after Martin Pfister (Mitte, from Zug) was elected.</li><li>Other candidates: Marco Chiesa (52, Ticino), Rémy Wyssmann (59, Solothurn), Michael Graber (45, Valais), Franz Ruppen (55, Valais), Pierre Alain Schnegg (Bern, turns 64 in December) and Jean-Pierre Gallati (60, Aargau).</li><li>Wyssmann&#39;s candidacy is seen as rather surprising. Schnegg is from the French-speaking Bernese Jura and speaks good German.</li></ul>
+    <p class="why"><b>Why it matters:</b> The final ticket shapes who could join the seven-member Federal Council next.</p>
     
     
     <div class="srcs">Sources:
-      <a href="https://www.srf.ch/news/schweiz/bundesratswahl-am-9-dezember-fraktionsvorstand-der-svp-empfiehlt-zweierticket" target="_blank" rel="noopener">SRF News</a> · <a href="https://www.srf.ch/news/schweiz/bundesratswahl-2026-parmelin-nachfolge-srf-schaetzt-alle-moeglichen-svp-tickets-ein" target="_blank" rel="noopener">SRF News</a>
+      <a href="https://www.srf.ch/news/schweiz/bundesratswahl-am-9-dezember-fraktionsvorstand-der-svp-empfiehlt-zweierticket" target="_blank" rel="noopener">SRF News</a>
     </div>
   </div>
 </article>
@@ -937,14 +989,16 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">SRF News</span></div>
-    <h2>Second SRG poll shows likely defeats for the Federal Council</h2>
+    <h2>SRG poll: VAT rise for AHV and Mitte initiative would both fail</h2>
     <img src="https://www.srf.ch/static/cms/images//320ws/913685.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Four federal items vote on 29 Nov 2026. The second SRG poll (GFS Bern) suggests the Bund could lose at least two of them.</li><li>Feuerwerk initiative: 63% yes, but support is declining. GFS&#39;s Lukas Golder says no major opposition campaign formed.</li><li>AHV 13th-pension financing (VAT +0.4 points): 46% yes vs 51% no in early November, down from a tie. Double majority needed.</li><li>Mitte&#39;s marriage-penalty initiative (called &#39;fairness initiative&#39; in one report): 40% yes, 54% no, reversing the first wave. Fear of conflicting tax systems is strongest.</li><li>War Material Act: 49% yes vs 46% no in early November, within the ±2.8 margin. The no-camp gained 5 points since the first wave.</li></ul>
+    <p class="gist">A second SRG poll (run by the GFS Bern research institute) shows at least two of four federal votes on 29 November 2026 may go against government advice. Voters look set to back the fireworks initiative and reject the VAT rise for AHV pensions.</p>
+    <ul><li>Voters decide on four federal items: two initiatives and two referendums. An initiative is a citizens&#39; proposal. A referendum lets voters reject a law passed by Parliament.</li><li>SRG is the Swiss public broadcaster. Figures refer to early November, not the final result.</li><li>Fireworks initiative: 63% would vote yes. Support is falling, but the lead stays clear, against the usual pattern for initiatives.</li><li>It could become the 27th popular initiative accepted. GFS researcher Lukas Golder says no side campaigned strongly, so the pro arguments won.</li><li>13th AHV pension financing (a VAT rise): 51% would reject it or lean towards rejecting it, up 2 points. Left-wing voters back it more, while centre-right voters reject it more.</li><li>Over-65s narrowly back the financing at 53%, down 2 points. They benefit most from the 13th pension.</li><li>Mitte &#39;fairness initiative&#39; on taxes: 40% yes (down 15 points), 54% no (up 20 points). Political scientist Corina Schena says fear of conflicting tax systems drives this.</li><li>War material law: 49% yes and 46% no. With a margin of ±2.8 points, this is a near tie with a slight yes lead. The no side gained 5 points since the first poll.</li></ul>
+    <p class="why"><b>Why it matters:</b> If these results hold, the government and Parliament could lose at least two votes.</p>
     
     
     <div class="srcs">Sources:
-      <a href="https://www.srf.ch/news/schweiz/2-srg-umfrage-auf-einen-blick-dem-bund-drohen-mindestens-zwei-niederlagen" target="_blank" rel="noopener">SRF News</a> · <a href="https://www.srf.ch/news/zweite-srg-umfrage-deutlicher-nein-trend-bei-der-initiative-gegen-die-heiratsstrafe" target="_blank" rel="noopener">SRF News</a> · <a href="https://www.srf.ch/news/zweite-srg-umfrage-finanzierung-13-ahv-jetzt-doch-ein-kleiner-nein-vorsprung" target="_blank" rel="noopener">SRF News</a>
+      <a href="https://www.srf.ch/news/schweiz/2-srg-umfrage-auf-einen-blick-dem-bund-drohen-mindestens-zwei-niederlagen" target="_blank" rel="noopener">SRF News</a>
     </div>
   </div>
 </article>
@@ -956,7 +1010,9 @@ body:has(.story:target){overflow:hidden}
     <h2>National Council committee opposes cantonal majority for EU package</h2>
     <img src="https://www.srf.ch/static/cms/images//320ws/a057c1.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>The Nationalrat&#39;s foreign affairs committee (APK-N) rejects the Ständerat&#39;s demand for a Ständemehr on the EU package.</li><li>APK-N voted 15–10 for an optional referendum with simple popular majority. This contradicts the SPK-N majority, which demanded a double majority on Monday.</li><li>The committee backs the bilateral path and the Bundesrat-negotiated package, changing the Ständerat&#39;s implementing law only at a few points.</li><li>It expands parliament and cantonal participation rights in dynamic law adoption. On free movement it goes less far than the Ständerat.</li><li>It rejects rules it considers inconsistent with the agreement. Detailed deliberation is now complete.</li></ul>
+    <p class="gist">A National Council committee (the lower house) backs the EU package and rejects the double majority the Council of States (upper house) wants for a popular vote. The two chambers now disagree.</p>
+    <ul><li>The foreign affairs committee of the National Council (APK-N) finished its detailed debate on the EU package. The package is a set of deals Switzerland negotiated with the EU.</li><li>The committee strongly supports the &#39;bilateral path&#39;, the series of agreements between Switzerland and the EU.</li><li>A double majority (Ständemehr) needs approval from most voters and most cantons. The committee rejects it.</li><li>It backs an optional referendum that needs only a simple majority of voters. The vote was 15 to 10.</li><li>On Monday, the State Policy Committee of the National Council (SPK-N) demanded the double majority. The two committees disagree.</li><li>The committee changed the Council of States&#39; implementing law only in a few places. This law puts the deal into Swiss law.</li><li>It wants more say for Parliament and cantons when Switzerland adopts changed EU rules.</li><li>It goes less far than the Council of States on free movement of people. It rejects rules that &#39;violate the agreement&#39;.</li></ul>
+    <p class="why"><b>Why it matters:</b> The outcome decides how voters may get a say on the EU deal.</p>
     
     
     <div class="srcs">Sources:
@@ -969,10 +1025,12 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">SRF News</span></div>
-    <h2>Israeli tanks advance into Gaza, first ground push since ceasefire</h2>
+    <h2>Israeli tanks advance into Gaza, first ground push since 2025 ceasefire</h2>
     <img src="https://www.srf.ch/static/cms/images//320ws/d51567.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Israeli tanks advanced into central Gaza, which Israel says targets Hamas infrastructure. Hamas warns of escalation.</li><li>A US-linked &#39;Peace Council&#39; says Israel and Hamas both violate the Gaza ceasefire.</li><li>The Houthis report at least 17 dead and 26 injured after a Saudi-led airstrike in Yemen.</li><li>Bahrain and Kuwait were hit again by attacks Iran says targeted US bases. The US military confirmed a strike on Iran&#39;s Qeshm island.</li><li>A tanker was attacked in the Strait of Hormuz and its crew evacuated. Source is a live ticker; details beyond headlines are limited.</li></ul>
+    <p class="gist">Israeli tanks advanced into central Gaza, and Hamas warned of escalation. Iranian attacks hit the Gulf states Bahrain and Kuwait again.</p>
+    <ul><li>Israel says its troops are targeting Hamas infrastructure in central Gaza.</li><li>A US peace council says both Israel and Hamas violate the Gaza ceasefire.</li><li>Reports say several people died in Israeli attacks in Gaza. The ticker gives no numbers.</li><li>According to Iran, both attacks on Bahrain and Kuwait targeted US bases in the Gulf states.</li><li>The US military confirmed an attack on Qeshm, an Iranian island in the Strait of Hormuz.</li><li>A tanker was attacked in the Strait of Hormuz, a key oil shipping route. Its crew was evacuated.</li><li>The Houthi militia in Yemen reports at least 17 dead and 26 injured after a Saudi-led air strike. The Houthis also attacked Saudi cities, and the Saudi government says the danger has passed.</li><li>The Houthis say shipping through the Bab al-Mandab strait in the Red Sea is safe. This is their claim, not independently confirmed.</li></ul>
+    <p class="why"><b>Why it matters:</b> Attacks on Hormuz and Red Sea shipping can affect fuel prices and trade.</p>
     
     
     <div class="srcs">Sources:
@@ -981,30 +1039,16 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
-<article class="story" id="s-a1ffd247b5" style="--h:0">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">SRF News</span></div>
-    <h2>Democrat wins Alaska Senate seat from Republicans</h2>
-    <img src="https://www.srf.ch/static/cms/images//320ws/c9ca08.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-    
-    <ul><li>Democrat Mary Peltola won Alaska&#39;s US Senate seat from Republican incumbent Dan S. Sullivan, per AP vote counts.</li><li>Democrats will hold 56 of 100 Senate seats from January. All Senate races are now decided, about two weeks after the midterms.</li><li>Peltola becomes Alaska&#39;s first Indigenous senator and the first Democrat to win an Alaska Senate race in 18 years.</li><li>A similarly named candidate, Dan J. Sullivan, drew Republican strawman accusations. The NYT reported Peltola allies sought him out; her campaign denies involvement.</li><li>A Trump-ordered DOJ lawsuit over the name confusion was dismissed by a court shortly before the election.</li></ul>
-    
-    
-    <div class="srcs">Sources:
-      <a href="https://www.srf.ch/news/international/mary-peltola-demokratin-nimmt-republikanern-senatssitz-in-alaska-ab" target="_blank" rel="noopener">SRF News</a>
-    </div>
-  </div>
-</article>
-
 <article class="story" id="s-436f41a34a" style="--h:120">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Swiss Federal Government</span></div>
-    <h2>Qatar&#39;s Amir pays state visit to Switzerland</h2>
+    <h2>Qatar&#39;s Emir Sheikh Tamim makes state visit to Switzerland</h2>
     
     
-    <ul><li>Qatar&#39;s Emir Sheikh Tamim bin Hamad Al Thani began a state visit to Bern on 18 November, welcomed by President Guy Parmelin and the Federal Council.</li><li>Talks covered investment and cooperation in infrastructure, finance, logistics, energy, water, education, science and AI, building on a 2025 SNSF-QRDI memorandum.</li><li>Two memoranda were signed: SDC and the Qatar Fund for Development on international cooperation, and Switzerland Tourism and Qatar Tourism on tourism.</li><li>Delegations discussed expanding mediation and peace cooperation. Switzerland expressed solidarity with Qatar, which has been affected by the war with Iran.</li><li>A Swiss-Qatari AI Forum was held in Zurich on 17 November. Parmelin and the Emir meet business leaders in Bern on Thursday.</li></ul>
+    <p class="gist">Qatar&#39;s ruler, Amir Sheikh Tamim bin Hamad Al Thani, made a state visit to Switzerland. Talks covered business, science, and international cooperation.</p>
+    <ul><li>President Guy Parmelin greeted the Amir (Qatar&#39;s ruler) on Parliament Square in Bern on 18 November.</li><li>Parmelin, Foreign Minister Ignazio Cassis, Finance Minister Karin Keller-Sutter and Albert Rösti, who heads the transport and energy department, took part for Switzerland.</li><li>Talks covered infrastructure, finance, logistics, energy and water management, plus Swiss investment in Qatar.</li><li>The Swiss National Science Foundation and Qatar&#39;s research council signed a memorandum of understanding (a formal cooperation agreement) in 2025. AI research was also discussed.</li><li>Both sides discussed peace and conflict mediation. Switzerland expressed solidarity with Qatar, which has been affected by the war with Iran.</li><li>Qatar also raised its reform of labour migration, the rules for foreign workers.</li><li>Two agreements were signed: one between the Swiss development agency (SDC) and Qatar&#39;s development fund, and one on tourism between the two countries&#39; tourism bodies.</li><li>Before the visit, a joint financial commission met in Bern, and the first Swiss-Qatari AI Forum was held in Zurich on 17 November.</li></ul>
+    
     
     
     <div class="srcs">Sources:
@@ -1017,10 +1061,12 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Swiss Federal Government</span></div>
-    <h2>Cassis convenes OSCE special meeting in Vienna on future chairpersonship</h2>
+    <h2>Cassis convenes special OSCE meeting in Vienna on future chairmanship</h2>
     
     
-    <ul><li>Federal Councillor Ignazio Cassis, OSCE chairman-in-office, will convene a special OSCE Permanent Council meeting in Vienna on 19 November.</li><li>The aim is to win consensus among the 57 participating states on who chairs the OSCE in 2027, as no agreement has been reached yet.</li><li>Switzerland frames the effort as safeguarding the OSCE&#39;s continuity and capacity to act amid a major crisis in European security.</li><li>On the sidelines, Cassis will meet Austrian foreign minister Beate Meinl-Reisinger to discuss international developments and OSCE challenges.</li></ul>
+    <p class="gist">Switzerland, which chairs the OSCE this year, called a special meeting in Vienna on 19 November. The aim is to agree who chairs the group in 2027.</p>
+    <ul><li>Foreign Minister Ignazio Cassis will attend the meeting of the OSCE Permanent Council (its main decision-making body) in Vienna.</li><li>The OSCE (Organization for Security and Co-operation in Europe) is a security forum of 57 participating states.</li><li>The 57 states have not yet agreed who will chair the OSCE in 2027. The chair rotates each year.</li><li>Switzerland wants to build consensus (general agreement) on the chair and keep the OSCE able to act during a major European security crisis.</li><li>Cassis will also meet Austrian Foreign Minister Beate Meinl-Reisinger to discuss current international developments.</li><li>This comes from one official Swiss government release, with no independent reporting.</li></ul>
+    
     
     
     <div class="srcs">Sources:
@@ -1033,10 +1079,12 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Swiss Federal Government</span></div>
-    <h2>Federal Council reviews EU cooperation on medicine supply security</h2>
+    <h2>Federal Council reports on EU cooperation to secure medicine supply</h2>
     
     
-    <ul><li>On 18 November the Federal Council approved a report on EU cooperation to secure medicine supply, responding to Postulate Golay (24.3216).</li><li>Medicine shortages have become more common in Switzerland in recent years. Supply security is increasingly an international challenge, especially during crises like COVID-19.</li><li>The report centres on the health agreement within the Bilaterals III package, giving Switzerland access to EU health security mechanisms and the ECDC.</li><li>The agreement also allows voluntary participation in EU joint procurement of vaccines and protective equipment. Switzerland otherwise has limited access to other EU supply mechanisms.</li><li>The report is available only in French and German.</li></ul>
+    <p class="gist">The Swiss government approved a report on working with the EU to keep medicine supplies secure. Medicine shortages have become more common in Switzerland in recent years.</p>
+    <ul><li>The Federal Council (the Swiss government) approved the report on 18 November, answering Postulate Golay, a parliamentary request for a study.</li><li>The causes of medicine shortages are many and complex, according to the report.</li><li>As a non-EU member, Switzerland has little or no access to the EU&#39;s main supply-security tools.</li><li>The report focuses on the health agreement, part of the Switzerland-EU package called Bilaterals III (a set of bilateral deals).</li><li>The health agreement gives Switzerland access to EU health security tools and to the ECDC (European Centre for Disease Prevention and Control), which tracks disease outbreaks.</li><li>The health agreement does not cover medicine supply itself. It does allow Switzerland to join EU joint purchases of vaccines and protective equipment, voluntarily.</li><li>Switzerland also plans to widen its trade ties and free trade agreements to diversify supply.</li><li>The full report is only available in French and German. This comes from one official government release.</li></ul>
+    
     
     
     <div class="srcs">Sources:
@@ -1045,34 +1093,38 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
-<article class="story" id="s-6290b87816" style="--h:120">
+<article class="story" id="s-1137049e95" style="--h:120">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Swiss Federal Government</span></div>
-    <h2>Confederation to subsidise early newspaper delivery from 2027</h2>
+    <h2>Federal Council sends Finland double taxation agreement amendment to Parliament</h2>
     
     
-    <ul><li>From 2027 the Confederation will also subsidise early delivery of regional and local newspapers, not only dailies and weeklies.</li><li>CHF 25 million per year will be available for seven years to strengthen media diversity in Switzerland.</li><li>The Federal Council approved the Postal Services Ordinance amendment on 18 November.</li></ul>
+    <p class="gist">The Swiss government sent parliament a proposal to amend its tax treaty with Finland. The change aligns the treaty with international minimum standards and adds a dispute route for taxpayers.</p>
+    <ul><li>The Federal Council (the Swiss government) adopted the dispatch (a formal proposal to parliament) on 18 November 2026.</li><li>A double taxation agreement (DTA) is a treaty that stops the same income being taxed in two countries.</li><li>The change brings the treaty in line with OECD/G20 minimum standards. These aim to stop companies shifting profits to low-tax countries (the BEPS project).</li><li>A new arbitration clause applies if the two countries fail to agree within three years. The taxpayer can then request a binding decision from an independent arbitration panel.</li><li>Some minor points were also updated to match both countries&#39; policies.</li><li>Cantons (Swiss regions) and affected business groups welcomed the agreement.</li><li>Parliament in both Switzerland and Finland must still approve the protocol before it takes effect.</li></ul>
+    <p class="why"><b>Why it matters:</b> Taxpayers get a fixed route to a final decision if tax authorities cannot agree.</p>
     
-    <p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>
+    
     <div class="srcs">Sources:
-      <a href="https://www.admin.ch/en/newnsb/ck-VI4MgFZwF" target="_blank" rel="noopener">Swiss Federal Government</a>
+      <a href="https://www.admin.ch/en/newnsb/7OPBVKtgrnvH" target="_blank" rel="noopener">Swiss Federal Government</a>
     </div>
   </div>
 </article>
 
-<article class="story" id="s-7bcfe7e9a7" style="--h:120">
+<article class="story" id="s-aad6b2c93b" style="--h:120">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">Swiss Federal Government</span></div>
-    <h2>Federal legal framework for CERN construction projects takes effect 2027</h2>
+    <h2>Federal Council approves sixth report on protection of national minorities</h2>
     
     
-    <ul><li>Federal Council brought into force the amended RIPA, its implementing ordinance and a federal sectoral plan for CERN construction projects.</li><li>Confederation gains responsibility for spatial planning of CERN&#39;s strategic construction projects, aiming to give planning certainty and streamline procedures.</li><li>Ordinance and sectoral plan take effect 1 January 2027, in parallel with the amended RIPA.</li><li>Sectoral plan allows forward-looking assessment of planned CERN construction and checks compatibility with federal policy objectives.</li></ul>
+    <p class="gist">The Swiss government approved its sixth report on protecting national minorities. The report covers February 2023 to April 2026 and describes progress made.</p>
+    <ul><li>The Federal Council (Switzerland&#39;s seven-member government) approved the report on 18 November 2026.</li><li>Switzerland ratified the Council of Europe&#39;s Framework Convention for the Protection of National Minorities on 21 October 1998. The Council of Europe is a human rights body, separate from the EU.</li><li>Under the Convention, Switzerland must report regularly on how it applies it.</li><li>The report covers measures by the federal government, cantons, cities and communes.</li><li>Knowledge of the other official languages and balanced language representation in the federal administration have improved.</li><li>The Languages Act was revised to promote Italian and Romansh, especially beyond their traditional areas.</li><li>Switzerland adopted a National Strategy Against Racism and Antisemitism and set up a Swiss Human Rights Institution.</li><li>Plans propose rules for large online platforms on fairness, transparency and user rights. A ban on public Nazi symbols is planned, to be extended to other extremist symbols.</li></ul>
+    
     
     
     <div class="srcs">Sources:
-      <a href="https://www.admin.ch/en/newnsb/zHTDaQXDOoMw" target="_blank" rel="noopener">Swiss Federal Government</a>
+      <a href="https://www.admin.ch/en/newnsb/Y9NgNW5jDUst" target="_blank" rel="noopener">Swiss Federal Government</a>
     </div>
   </div>
 </article>
@@ -1081,10 +1133,12 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">South China Morning Post</span></div>
-    <h2>Israeli parliament elects anti-Netanyahu speaker, moves to undo his legacy</h2>
+    <h2>Israeli parliament elects Eisenkot ally as speaker, moves to roll back Netanyahu</h2>
     <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/18/0ff48089-d8ae-4326-adc1-563526de71b4_0c58c70e.jpg?itok=41wfghBu&amp;v=1795014046" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Israel&#39;s parliament convened under a new speaker from the anti-Netanyahu bloc, Matan Kahana, elected with 66 of 120 votes.</li><li>Kahana is an ally of former military chief Gadi Eisenkot.</li><li>Opponents of caretaker PM Netanyahu have begun a legislative effort to roll back his legacy.</li><li>Kahana has until next month to form a government to replace Netanyahu.</li></ul>
+    <p class="gist">Israel&#39;s parliament, the Knesset, now has a new speaker from the bloc opposed to Prime Minister Benjamin Netanyahu. Its opponents have begun passing laws to undo his policies.</p>
+    <ul><li>On Tuesday, 66 of 120 lawmakers voted for Matan Kahana as speaker.</li><li>Kahana is an ally of former military chief Gadi Eisenkot.</li><li>Netanyahu is a caretaker prime minister, serving until a new government is formed.</li><li>The article says a new government to replace Netanyahu must be formed by next month.</li><li>The speaker sets the parliament&#39;s timetable. Only a preview was readable, so details of the planned laws are unknown.</li></ul>
+    <p class="why"><b>Why it matters:</b> It signals a shift in the parliament&#39;s direction before a new government is formed.</p>
     
     <p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>
     <div class="srcs">Sources:
@@ -1100,7 +1154,9 @@ body:has(.story:target){overflow:hidden}
     <h2>IAEA: North Korean enrichment facility extension externally complete</h2>
     <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/18/7ca61de2-8aad-481d-9728-d53ec2d2ced8_b6a76729.jpg?itok=a39ttw72&amp;v=1795010174" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>IAEA chief Rafael Grossi says a further extension to Yongbyon&#39;s enrichment facility in North Korea has been externally complete since last month.</li><li>Construction on the extension began in mid-September 2026, per Grossi.</li><li>IAEA inspectors have had no access to North Korea since 2009; monitoring relies on satellite imagery and open sources.</li></ul>
+    <p class="gist">UN nuclear watchdog head Rafael Grossi says a further extension to North Korea&#39;s Yongbyon enrichment facility is externally complete. Enrichment makes material used in nuclear fuel and weapons.</p>
+    <ul><li>The International Atomic Energy Agency (IAEA) is the UN&#39;s nuclear watchdog.</li><li>Construction on the extension began in mid-September 2026, according to Grossi.</li><li>IAEA inspectors have had no access to North Korea since 2009.</li><li>The agency monitors North Korea&#39;s nuclear programme using satellite images and open sources.</li><li>Only a preview was readable, so the article&#39;s full details are not available.</li></ul>
+    
     
     <p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>
     <div class="srcs">Sources:
@@ -1109,14 +1165,34 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
+<article class="story" id="s-baf922395c" style="--h:275">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">South China Morning Post</span></div>
+    <h2>Xi and Takaichi exchange greeting in Shenzhen without words</h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/18/51f00c88-b9d6-4b27-8d29-05f482089adc_78844d1e.jpg?itok=n3lx4fT2&amp;v=1795009021" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist">Japanese Prime Minister Sanae Takaichi and Chinese President Xi Jinping met in person in Shenzhen. It was their first in-person encounter since ties froze last autumn.</p>
+    <ul><li>Ties froze last autumn after Takaichi made controversial remarks about Taiwan.</li><li>Takaichi shook hands with Xi and his wife, Peng Liyuan, before a group photo at the Apec summit.</li><li>Apec (Asia-Pacific Economic Cooperation) is a forum of Pacific economies.</li><li>Xi greeted Takaichi with a smile but did not speak, according to a live feed of a welcome dinner on Wednesday evening.</li><li>Only a preview was readable, so the article&#39;s full details are not available.</li></ul>
+    <p class="why"><b>Why it matters:</b> It shows the diplomatic freeze between Japan and China has not yet ended.</p>
+    
+    <p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>
+    <div class="srcs">Sources:
+      <a href="https://www.scmp.com/news/china/diplomacy/article/3374944/xi-greets-takaichi-smile-no-words-china-japan-freeze-lingers" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
 <article class="story" id="s-6ff4450487" style="--h:275">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">South China Morning Post</span></div>
-    <h2>Hong Kong faces multiple data breaches as AI enables targeted scams</h2>
+    <h2>Multiple Hong Kong organisations hit by data breaches in recent weeks</h2>
     <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/18/9e8fa259-7978-429e-a61b-41e54bf8548a_ab914471.jpg?itok=IsMtRo2K&amp;v=1795006608" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Several Hong Kong organisations, including a department store, jeweller, university and airlines, suffered data breaches in recent weeks.</li><li>Experts say AI has enabled more targeted attacks.</li><li>SCMP explainer covers which organisations were hit, Hong Kong&#39;s shortcomings in such incidents, and how scammers use the stolen data.</li></ul>
+    <p class="gist">Several Hong Kong organisations have reported data breaches in recent weeks. Experts say AI helps attackers target victims more precisely.</p>
+    <ul><li>Affected organisations include a department store, a jeweller, a university and airlines.</li><li>Experts say artificial intelligence (AI) has enabled more targeted attacks.</li><li>The South China Morning Post (SCMP) explains the city&#39;s weak points in such cases.</li><li>The article also covers how scammers use the stolen information.</li><li>Only a short preview was readable, so specific details and numbers are not available.</li></ul>
+    <p class="why"><b>Why it matters:</b> Stolen personal data can be used for targeted scams, so people should check their accounts and be wary.</p>
     
     <p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>
     <div class="srcs">Sources:
@@ -1125,18 +1201,20 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
-<article class="story" id="s-ef2aa1ef4f" style="--h:275">
+<article class="story" id="s-02a68b0d3b" style="--h:275">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">South China Morning Post</span></div>
-    <h2>EU proposes €45 billion loan to Ukraine for 2027 budget gap</h2>
-    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/18/f0be32f2-b8aa-4837-8d82-8d5fafa2fe79_7d70c8c6.jpg?itok=3ENgpLF4&amp;v=1795001354" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <h2>Xi personally greets Trump on tarmac in Shenzhen before Apec talks</h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/18/a887c887-c10b-4716-917b-3612052a1233_849805da.jpg?itok=H6ySX5c3&amp;v=1795005186" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>EU proposed an extra €45 billion (US$49 billion) loan to Ukraine to cover part of its 2027 budget shortfall.</li><li>The loan would cover two-thirds of Kyiv&#39;s projected €70 billion funding gap for next year.</li><li>Brussels wants other Ukraine backers to fund the remaining third. The proposal needs approval by member states.</li></ul>
+    <p class="gist">Chinese President Xi Jinping personally greeted US President Donald Trump at the airport in Shenzhen on Wednesday. The two leaders are preparing for talks at the Apec summit.</p>
+    <ul><li>Apec (Asia-Pacific Economic Cooperation) is a 21-member forum for trade and economic ties in the region.</li><li>It was the first time in nearly seven decades that China&#39;s top leader met a visiting foreign head of state at an airport.</li><li>Xi returned a welcome he received in Washington during a state visit in September.</li><li>SCMP reports the summit is likely to end with a joint declaration by all 21 members on Thursday.</li><li>Only a short preview was readable, so further details are not available.</li></ul>
+    
     
     <p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>
     <div class="srcs">Sources:
-      <a href="https://www.scmp.com/news/world/europe/article/3374925/eu-proposes-new-us49-billion-ukraine-loan-2027" target="_blank" rel="noopener">South China Morning Post</a>
+      <a href="https://www.scmp.com/news/china/diplomacy/article/3374931/returning-favour-xi-personally-welcomes-trump-ahead-high-stakes-apec-talks" target="_blank" rel="noopener">South China Morning Post</a> · <a href="https://www.scmp.com/news/china/diplomacy/article/3374955/rare-hug-and-roaring-flyover-set-stage-historic-firsts-apec-shenzhen" target="_blank" rel="noopener">South China Morning Post</a>
     </div>
   </div>
 </article>
@@ -1145,10 +1223,12 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">South China Morning Post</span></div>
-    <h2>US commission proposes certification rules for AI chip exports to China</h2>
+    <h2>US panel urges chip export certification before Xi-Trump talks</h2>
     <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/18/a4f66088-7186-47e5-aaee-05cc3de0dfad_0df74d98.jpg?itok=pKi8-E6z&amp;v=1794950863" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>A bipartisan US-China Economic and Security Review Commission urged Congress to tighten AI chip export controls on China.</li><li>Proposal: exporters of advanced AI chips to China must certify the shipments won&#39;t divert manufacturing capacity from the US market.</li><li>Timing: the recommendation comes ahead of Trump&#39;s meeting with Xi Jinping. Commission recommendations are non-binding until Congress acts.</li></ul>
+    <p class="gist">A bipartisan US advisory panel asked Congress to tighten rules on exporting advanced AI chips to China. The request comes before Trump meets Xi.</p>
+    <ul><li>The US-China Economic and Security Review Commission is a panel created by Congress to study national security risks.</li><li>It urged Congress on Wednesday to act on the proposal.</li><li>Exporters would have to certify that chip shipments will not divert manufacturing capacity from the US market.</li><li>AI chips are the advanced processors used to train and run AI systems.</li><li>Only a short preview was readable, so the full details and any official response are not available.</li></ul>
+    <p class="why"><b>Why it matters:</b> It adds a new proposal to the debate over US limits on high-end chip sales to China.</p>
     
     <p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>
     <div class="srcs">Sources:
@@ -1157,66 +1237,20 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
-<article class="story" id="s-8d300aabfb" style="--h:275">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">South China Morning Post</span></div>
-    <h2>Tencent Q3 profit dips 6% as AI capex rises sixfold</h2>
-    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/18/1e359baa-99b9-41cd-b45c-15abfc938cee_17485612.jpg?itok=IGDVs3iU&amp;v=1794995373" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-    
-    <ul><li>Tencent&#39;s Q3 capital spending rose more than sixfold to above US$12 billion, driven by AI computing infrastructure.</li><li>Adjusted net income fell 6% year on year to 66.5 billion yuan (US$10 billion), matching the Bloomberg analyst consensus.</li><li>Revenue rose 8% year on year. Heavy spending weighed on free cash flow and margins. Rest of the article was truncated.</li></ul>
-    
-    <p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>
-    <div class="srcs">Sources:
-      <a href="https://www.scmp.com/tech/big-tech/article/3374902/tencent-profit-dips-sixfold-increase-ai-infrastructure-spending-sacrifices-margin" target="_blank" rel="noopener">South China Morning Post</a>
-    </div>
-  </div>
-</article>
-
-<article class="story" id="s-c1a263bd80" style="--h:350">
+<article class="story" id="s-2e1c8d3282" style="--h:350">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">BelTA</span></div>
-    <h2>China tests Q/V-band wireless reaching 6.75 Gbps per channel</h2>
-    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000177_1794984876_189086_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <h2>Belarus FM: EU relations no longer critical due to bloc restrictions</h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000020_1795023268_189130_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Chinese researchers, led by the CAS Aerospace Information Research Institute, tested wireless transmission in the Q/V band at a Yunnan ground station.</li><li>Single-channel bidirectional rate reached 6.75 Gbps, more than double the prior single-channel rate in China for this band.</li><li>Dual-carrier and polarization multiplexing raised the bidirectional rate to 27 Gbps, a claimed Chinese Q/V-band record. The team targets over 50 Gbps.</li><li>The work is aimed at 6G and satellite internet. The article&#39;s 6G gains over 5G are general industry claims, not test results.</li></ul>
-    
-    
-    <div class="srcs">Sources:
-      <a href="https://eng.belta.by/partner_news/view/china-tests-new-wireless-communication-technology-to-support-6g-satellite-internet-development-189086-2026/" target="_blank" rel="noopener">BelTA</a>
-    </div>
-  </div>
-</article>
-
-<article class="story" id="s-d39a81ae76" style="--h:350">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">BelTA</span></div>
-    <h2>Belarusian MAZ uses neural networks to speed vehicle design</h2>
-    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000021_1795004715_189107_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-    
-    <ul><li>Belarusian truck maker MAZ says AI is already used in vehicle design and in collecting and processing information.</li><li>The work is led by its Research and Technology Center, staffed largely by young technical graduates. Announced at a BSUIR conference in Minsk.</li><li>Plans include an on-premises AI computing cluster without internet access, to prevent data leaks, which the director calls the main risk.</li><li>The director says AI use will expand to a fully operational system next year. Source is BelTA, Belarusian state media, so claims are unverified.</li></ul>
+    <p class="gist">Belarus&#39;s foreign minister, Maxim Ryzhenkov, said EU relations no longer matter much to Belarus. He spoke in an interview with the Indian broadcaster CNN-News18.</p>
+    <ul><li>BelTA, the Belarusian state news agency, reports the interview.</li><li>Ryzhenkov says EU restrictions have pushed Belarus to redirect its trade and foreign policy to other regions.</li><li>He said Belarus still wants EU sanctions lifted, calling them illegal and against the UN Charter.</li><li>Belarus is talking with the United States, and the minister describes the relationship as pragmatic.</li><li>He said the US is lifting some sanctions as certain law enforcement issues are resolved.</li><li>Restrictions are also being removed from Belarus&#39;s banking and financial systems.</li><li>He said Russia, Belarus&#39;s closest ally, is an unconditional priority and not a bargaining chip.</li></ul>
+    <p class="why"><b>Why it matters:</b> Lifted US sanctions could ease Belarus&#39;s trade and bank payments with partners, while the EU stays a closed door.</p>
     
     
     <div class="srcs">Sources:
-      <a href="https://eng.belta.by/economics/view/ai-already-used-to-design-vehicles-for-belarusian-maz-189107-2026/" target="_blank" rel="noopener">BelTA</a>
-    </div>
-  </div>
-</article>
-
-<article class="story" id="s-1459e94fe8" style="--h:350">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">BelTA</span></div>
-    <h2>Lukashenko condoles with Putin over military transport aircraft crash</h2>
-    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000019_1794937240_189071_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-    
-    <ul><li>Lukashenko sent condolences to Putin over the crash of a military transport aircraft, saying the news was received in Belarus with deep pain.</li><li>The source is a short preview only. It gives no date, location, casualty figures or cause of the crash.</li></ul>
-    
-    <p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>
-    <div class="srcs">Sources:
-      <a href="https://eng.belta.by/president/view/lukashenko-condoles-with-putin-over-crash-of-military-transport-aircraft-189071-2026/" target="_blank" rel="noopener">BelTA</a>
+      <a href="https://eng.belta.by/politics/view/fm-relations-with-eu-are-no-longer-critical-for-belarus-189130-2026/" target="_blank" rel="noopener">BelTA</a>
     </div>
   </div>
 </article>
@@ -1225,10 +1259,12 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">BelTA</span></div>
-    <h2>Belarus eyes North-South Corridor to cut Asia delivery distances</h2>
+    <h2>Belarus eyes North-South Corridor to halve Asian delivery distances</h2>
     <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000021_1795022683_189128_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Foreign Minister Maxim Ryzhenkov, in a CNN-News18 interview, says the North–South corridor would halve Belarus&#39;s delivery distance to Asia, East Africa and Southeast Asia.</li><li>The route runs through Russia and Azerbaijan, across the Caspian Sea, then through Iran to Indian Ocean ports.</li><li>Belarus is identifying specific cargo types and volumes to reserve for the route and awaits Iran&#39;s missing railway section, with Russian help.</li><li>Belarus is also developing alternative routes through Central Asia. Source is BelTA, Belarusian state media, so claims are unverified.</li></ul>
+    <p class="gist">Belarus plans to use the North-South Transport Corridor, a freight route, to ship goods to Asia and Africa. Its foreign minister says the route would halve delivery distances.</p>
+    <ul><li>The corridor runs partly through Russia and Azerbaijan, then across the Caspian Sea and through Iran to Indian Ocean ports.</li><li>Foreign Minister Maxim Ryzhenkov said the route would halve delivery distances to Asia, East Africa and Southeast Asia.</li><li>He made the comments in an interview with the Indian broadcaster CNN-News18.</li><li>Belarus has named specific types and volumes of cargo it will reserve for the route.</li><li>A missing railway section in Iran is still under construction. Ryzhenkov looks forward to its launch, with Russian help.</li><li>Belarus is also developing alternative routes through Central Asia.</li><li>All details come from one interview with a minister. BelTA is Belarus&#39;s state news agency.</li></ul>
+    
     
     
     <div class="srcs">Sources:
@@ -1241,10 +1277,12 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">BelTA</span></div>
-    <h2>Belarus open to Baltic ports for new supplies, minister says</h2>
+    <h2>FM names condition for return of Belarusian cargo to Baltic ports</h2>
     <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000021_1795022816_189129_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Ryzhenkov says Belarus would consider Baltic ports only if EU neighbours give binding guarantees against new restrictions like those on potash.</li><li>Any Baltic routing would cover only new, additional volumes, not existing trade. Potash transit is now handled by Russia and other partners.</li><li>He says Baltic states lost large transit revenue after refusing Belarusian potash, which now benefits Russian and other enterprises.</li><li>India takes about 1 million tonnes of Belarusian potash a year; Belarus says it will meet obligations and could increase supply. Source is state media.</li></ul>
+    <p class="gist">Belarus&#39;s foreign minister says it would consider using Baltic ports again, but only with firm guarantees. He says the Baltic states are losing money by refusing Belarusian potash.</p>
+    <ul><li>Potash is a mineral used to make fertilizer for farming.</li><li>Belarus used to ship its potash through the Baltic states. Those countries then refused to transport it.</li><li>Ryzhenkov says the Baltic states are losing large sums. Belarusian, Russian and other transit-country firms now earn that money instead.</li><li>Belarus would use Baltic ports only for new, extra products, not for its current trade.</li><li>Belarus demands firm guarantees that the restrictions will not happen again.</li><li>India buys about 1 million tonnes of Belarusian potash a year. Belarus says it is ready to increase that amount.</li><li>Ryzhenkov says India&#39;s supplies are unaffected by EU restrictions and logistics problems, using Russian transport routes.</li><li>In the near term, Belarus also plans to set up new North-South corridor routes.</li></ul>
+    
     
     
     <div class="srcs">Sources:
@@ -1253,50 +1291,38 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
-<article class="story" id="s-f74f8ff74c" style="--h:215">
+<article class="story" id="s-76ec6cf076" style="--h:350">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">TLDR InfoSec</span></div>
-    <h2>WPPConnect Compromised: Malicious Releases Steal Secrets and WhatsApp Sessions</h2>
-    <img src="https://cdn.prod.website-files.com/673b71f0790aabf30bd30bf8/6afc0b447c5fd15c7cbd3137_6afc0b1c10a1780e1a0ee05e_wppconnect-compromised-cover-centered.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <div><span class="tag">BelTA</span></div>
+    <h2>Arab trade on Belarus commodity exchange nearly triples in 2026</h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000021_1795016444_189120_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>On Nov 15-16, 2026, malicious versions of @wppconnect-team/wppconnect 2.4.1 and @wppconnect/server 2.10.82 were published to npm through the project&#39;s own release pipeline.</li><li>A &#39;diagnostics&#39; module runs on import or server start, so npm install --ignore-scripts does not stop it. It collects environment variables, .env and config files, and WhatsApp session tokens.</li><li>Data is uploaded to a Telegram bot. Docker images and the GitHub nightly release also carried the payload. npm logged 155 downloads of 2.4.1, a floor rather than a count of affected systems.</li><li>Unreviewed commits went straight to main branches. The library release had valid SLSA provenance and a trusted-publisher identity, so standard checks passed it.</li><li>After an external researcher opened public issues, branches were force-pushed and tags rewritten. Tags were deleted Nov 17. GitHub shows the account used, not who operated it, and access method is unknown.</li><li>Source advises treating exposed session tokens and environment secrets as compromised account credentials.</li></ul>
+    <p class="gist">Trade with Arab countries on the Belarusian Universal Commodity Exchange (BUCE) grew sharply in January to October 2026. Most of it was purchases of Belarusian goods.</p>
+    <ul><li>BUCE is an exchange platform where companies trade commodities, meaning raw materials and bulk goods.</li><li>BUCE chairman Aleksandr Osmolovsky gave the figures at a Belarus-Algeria trade commission meeting in Minsk.</li><li>The article says trade volumes nearly tripled. It also gives growth of 296%, which would be nearly quadrupling, so the figures do not match.</li><li>96 companies from nine Arab countries are now approved to trade on the exchange. Of these, 22 joined this year.</li><li>Buyers mainly bought milk powder, butter, sawn timber, feed additives and flax fiber.</li><li>Companies from the United Arab Emirates, Lebanon and Syria were the most active users.</li><li>BUCE invites Algerian firms to trade. It publishes current price quotes and indices on its website.</li></ul>
+    
     
     
     <div class="srcs">Sources:
-      <a href="https://www.stepsecurity.io/blog/wppconnect-compromised-malicious-releases-steal-secrets-and-whatsapp-sessions?utm_source=tldrinfosec" target="_blank" rel="noopener">TLDR InfoSec</a>
+      <a href="https://eng.belta.by/economics/view/arab-companies-nearly-triple-transaction-value-on-belarus-commodity-exchange-189120-2026/" target="_blank" rel="noopener">BelTA</a>
     </div>
   </div>
 </article>
 
-<article class="story" id="s-4faa980a30" style="--h:215">
+<article class="story" id="s-fafb87ca0b" style="--h:350">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">TLDR Hardware</span></div>
-    <h2>Nvidia guides Q4 to $130B; board rules out Huang&#39;s return</h2>
-    <img src="https://iprsoftwaremedia.com/219/files/20224/628c2a47b3aed32797213f6c_voyager-exterior-sign-2/voyager-exterior-sign-2_1829ac3c-85ac-4929-8c67-5994c15c70c9-prv.jpg?v=1829ac3c-85ac-4929-8c67-5994c15c70c9" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <div><span class="tag">BelTA</span></div>
+    <h2>EAEU Customs Code amendments in development to simplify goods movement</h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000021_1795014530_189116_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Nvidia reported Q3 FY2027 (ended Oct 25) revenue of $115.8B, up 103% year on year. Data Center revenue was $107.6B, up 110%. GAAP EPS was $2.70.</li><li>Q4 revenue guidance is $130B plus or minus 3%, assuming no China data center compute revenue. Guided gross margin is 71-72%, versus 74.8% in Q3.</li><li>Board raised the buyback authorization by $150B. Nvidia returned $28.1B to shareholders in Q3 and has about $227.3B left under the program.</li><li>Vera Rubin NVL72 has begun shipping, with cloud rollouts at CoreWeave, Google Cloud, Microsoft Azure, Oracle and Nebius. Nvidia also announced an agreement to acquire Hugging Face.</li><li>Shares still fell Wednesday despite the beat, having lost over 10% around Jensen Huang&#39;s exit. Colette Kress is interim CEO.</li><li>Handelsblatt reports Anthropic&#39;s IPO is expected Thursday, possibly raising $90B at about a $1.4T valuation.</li></ul>
+    <p class="gist">The Eurasian Economic Union (EAEU, a trade bloc of Russia, Belarus, Kazakhstan, Armenia and Kyrgyzstan) is preparing two sets of changes to its customs rules. The first set is due to be signed in December 2026.</p>
+    <ul><li>The Eurasian Economic Commission (EEC), the bloc&#39;s executive body, announced the changes. Sergey Shklyaev, its customs minister, leads the work.</li><li>The first package changes all sections of the Customs Code, the bloc&#39;s main customs rulebook.</li><li>It aims to ease the movement of some goods, including containers.</li><li>It sets rules for piggyback transport (trucks carried on trains) and cabotage (domestic transport by foreign carriers).</li><li>It targets false transit, where goods declared as passing through a country are in fact kept there.</li><li>The first package is still going through national procedures. It should be signed at the December 2026 session of the Supreme Eurasian Economic Council, the bloc&#39;s top leaders&#39; body.</li><li>The second package is still under regulatory impact assessment, a review of its costs and effects.</li><li>It would create an &#39;authorized exporters&#39; status for trusted firms, cutting their paperwork.</li></ul>
+    <p class="why"><b>Why it matters:</b> The changes would cut paperwork and simplify customs for trade across the bloc.</p>
     
     
     <div class="srcs">Sources:
-      <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027?utm_source=tldrhardware" target="_blank" rel="noopener">TLDR Hardware</a> · <a href="https://www.handelsblatt.com/video/finanzen/handelsblatt-live-us-boersenexperte-koch-gute-zahlen-bewegen-nvidia-kurs-kaum/100271036.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/finanzen/maerkte/marktberichte/dow-jones-sp-500-nasdaq-nvidia-aktie-dreht-ins-minus-anthropic-ipo-erwartet/100270966.html" target="_blank" rel="noopener">Handelsblatt</a>
-    </div>
-  </div>
-</article>
-
-<article class="story" id="s-f2b48b3d19" style="--h:215">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">TLDR Tech</span></div>
-    <h2>Jensen Huang signals willingness to return as Nvidia CEO</h2>
-    <img src="https://techcrunch.com/wp-content/uploads/2026/01/GettyImages-2256813240.jpg?resize=1200,800" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-    
-    <ul><li>In his first public statement since resigning, Jensen Huang said he would be honored to return as CEO if the board decides it serves the company&#39;s best interest.</li><li>He resigned after reports of multiple affairs, including one with former Megaspeed executive Alice Huang, who is suspected of working with Chinese intelligence.</li><li>An open letter signed by over 10,000 current and former employees, plus figures like Elon Musk, asks the board for due process and evidence-based reasons for his removal.</li><li>A board source told The Washington Post on Monday there are no plans to reinstate him. Congressional resistance is significant; Huang testifies before Congress on December 1.</li><li>Nvidia has formed a new executive committee to oversee export control compliance. The TLDR Tech preview adds that President Trump said he would support reinstatement.</li></ul>
-    
-    
-    <div class="srcs">Sources:
-      <a href="https://www.wsj.com/tech/jensen-huang-statement-nvidia-ceo-9dedca36?st=TA1XEe&amp;reflink=desktopwebshare_permalink&amp;utm_source=tldrnewsletter" target="_blank" rel="noopener">TLDR Tech</a> · <a href="https://techcrunch.com/2026/11/17/jensen-huang-says-he-would-be-honored-if-allowed-to-return-as-nvidia-ceo?utm_source=tldrhardware" target="_blank" rel="noopener">TLDR Hardware</a>
+      <a href="https://eng.belta.by/economics/view/amendments-to-eurasian-economic-unions-customs-code-in-development-189116-2026/" target="_blank" rel="noopener">BelTA</a>
     </div>
   </div>
 </article>
@@ -1308,7 +1334,9 @@ body:has(.story:target){overflow:hidden}
     <h2>OpenAI launches GPT-6.2 Astra and Sol on ChatGPT and APIs</h2>
     <img src="https://storage.ghost.io/c/2a/1b/2a1b1782-8506-4d7d-bf53-ad3fb52e2a0f/content/images/size/w1200/2026/11/banner-11.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>OpenAI launched GPT-6.2 Astra, its frontier model, and GPT-6.2 Sol, its efficient everyday model, in ChatGPT Work, Codex and the API for paid tiers.</li><li>API pricing: Astra is $8 input and $40 output per million tokens, 20% below GPT-6 Astra. Sol keeps $2 input and $10 output.</li><li>OpenAI reports Astra leads several benchmarks, including AA-3D at 1,318 Elo, and beats Claude Fable 5.2 on Agents&#39; Last Exam at 5% of the cost. These figures are self-reported.</li><li>Both models hit the Critical cyber and High bio/chem thresholds under OpenAI&#39;s Preparedness Framework, so cyber safeguards are tighter and may restrict some legitimate security research.</li><li>Astra is the first externally released OpenAI model at the High threshold for AI self-improvement. OpenAI built Control Room to halt model output when needed.</li></ul>
+    <p class="gist">OpenAI launched two new AI models, GPT-6.2 Astra and GPT-6.2 Sol. Astra is for the hardest work, and Sol is for everyday tasks.</p>
+    <ul><li>Paid ChatGPT plans (Plus, Pro, Enterprise, Edu) get them in ChatGPT Work and Codex, a coding tool. Developers use gpt-6.2-astra and gpt-6.2-sol through the API.</li><li>Benchmarks are standard tests. On Agents&#39; Last Exam, Astra beats GPT-6 Astra by 5.2 points at under a third of the cost. It beats rival Claude Fable 5.2 by 5.5 points at 5% of the cost.</li><li>Astra also beats GPT-6 Astra by 9 points on Terminal-Bench-Science. On AA-3D, an Elo rating, Astra scores 1,318. Fable 5.2 scores 1,271 and Sol 1,259.</li><li>Astra builds slides and spreadsheets that match company templates. Early testers Harvey, Legora and ClickUp report fewer review rounds. Basis says its accounting work takes 50% less time.</li><li>Sol beats GPT-6.1 Sol. It trails Astra by only 0.5 points on Cognition&#39;s FrontierCode 2.0 test, at one-fifth the cost. It beats GPT-6 Astra on LifeVal at one-seventh the cost.</li><li>Per million tokens (text chunks): Astra costs $8 input, $40 output and $0.40 cached (reused) input, 20% below GPT-6 Astra. Its cached input is 60% cheaper. Sol keeps $2, $10 and $0.10.</li><li>Ultrafast, a faster mode, is available to Pro 500 users and via the API. It reaches Pro 200 for the first time, starting with Sol.</li><li>Both models meet OpenAI&#39;s &#39;Critical&#39; cyber and &#39;High&#39; bio/chemical risk levels, so safeguards are tighter. These also block some legitimate security research. Astra is OpenAI&#39;s first external model at &#39;High&#39; for AI self-improvement. OpenAI built Control Room to halt research output when needed.</li></ul>
+    <p class="why"><b>Why it matters:</b> Users get more done within the same usage limits, according to OpenAI. The cheaper Sol and stricter cyber limits both affect what users can do.</p>
     
     
     <div class="srcs">Sources:
@@ -1317,18 +1345,128 @@ body:has(.story:target){overflow:hidden}
   </div>
 </article>
 
-<article class="story" id="s-cb1d8f8bc8" style="--h:215">
+<article class="story" id="s-f74f8ff74c" style="--h:215">
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">TLDR AI</span></div>
-    <h2>Gemini Can Now Make Calls and Pay Bills</h2>
-    <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Hero_2784_x_1566_1.width-1300.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    <div><span class="tag">TLDR InfoSec</span></div>
+    <h2>WPPConnect npm and Docker Releases Compromised, Stealing Secrets</h2>
+    <img src="https://cdn.prod.website-files.com/673b71f0790aabf30bd30bf8/6afc0b447c5fd15c7cbd3137_6afc0b1c10a1780e1a0ee05e_wppconnect-compromised-cover-centered.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Google rolls out free Gemini agent features to hundreds of millions of users in the US, Japan, Korea, Canada, Australia and India, on its Gemini 4 Hydrogen model.</li><li>Gemini can call businesses, disclosing it is an AI, to book appointments and add them to Google Calendar. Businesses can opt out.</li><li>Purchases use the Agent Payments Protocol (AP2) with Mastercard and Visa; American Express is &#39;coming soon&#39;. Users can set hard spending caps.</li><li>Gemini asks for confirmation before clicking &#39;Buy&#39;. Tasks run in dedicated, sandboxed virtual machines. Routine actions can be set to &#39;Always allow&#39;.</li><li>Integrations include Google Password Manager, Google Pay, Google Wallet (expanding to iOS), Instacart via RCS, and 60+ apps. Universal Commerce Protocol support is planned next.</li><li>Source is a first-person Google blog post; all claims are vendor-stated and not independently verified.</li></ul>
+    <p class="gist">Two versions of WPPConnect, a WhatsApp tool library and server, were published with hidden code that steals secrets and WhatsApp login sessions. The code ran on load and sent data to a Telegram bot, through releases that skipped code review.</p>
+    <ul><li>npm, the public site for JavaScript code, served @wppconnect-team/wppconnect 2.4.1 at 23:31 UTC on Nov 15. @wppconnect/server 2.10.82 followed at 03:09 UTC on Nov 16.</li><li>A hidden &#39;diagnostics&#39; module copies environment variables, .env and config files, and WhatsApp session tokens. It uploads them to Telegram bot 9034051102, chat 7343578055.</li><li>Environment variables are secret app settings, such as API keys, database URLs and cloud credentials. The module also reads up to five WhatsApp session files.</li><li>Docker images of wppconnect-server and the GitHub nightly release also carried the code. The Docker container runs the payload when it starts.</li><li>The code runs when the library loads or the server starts. Running npm install with --ignore-scripts does not stop it.</li><li>Commits went straight to main branches with no pull request or review. The project&#39;s own automated release system then published them with valid credentials.</li><li>After an outside researcher opened public issues, the account force-pushed rewritten history. The v2.4.1 tag then pointed to a clean copy until tags were deleted on Nov 17.</li><li>All steps used the joaosouz4dev account, and how the attacker got access is unknown. npm logged 155 downloads of 2.4.1, which is a minimum, not a full count.</li></ul>
+    <p class="why"><b>Why it matters:</b> Anyone running these versions may have leaked API keys and WhatsApp login sessions. Treat those credentials as exposed.</p>
     
     
     <div class="srcs">Sources:
-      <a href="https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/?utm_source=tldrai" target="_blank" rel="noopener">TLDR AI</a>
+      <a href="https://www.stepsecurity.io/blog/wppconnect-compromised-malicious-releases-steal-secrets-and-whatsapp-sessions?utm_source=tldrinfosec" target="_blank" rel="noopener">TLDR InfoSec</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-b2442a883e" style="--h:215">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">TLDR IT</span></div>
+    <h2>Optimizely breach spreads malware across major websites</h2>
+    <img src="https://image.theregister.com/5310455.jpg?imageId=5310455&amp;x=0&amp;y=0&amp;cropw=100&amp;croph=100&amp;panox=0&amp;panoy=0&amp;panow=100&amp;panoh=100&amp;width=1200&amp;height=683" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist">The headline says a breach at Optimizely, a software vendor, spread malware across major websites. The article text provided here contains no details on it.</p>
+    <ul><li>The source text is a digest of many unrelated tech headlines, not a report on this breach.</li><li>No details are given on how the breach happened, which websites were hit, or what the malware does.</li><li>Read a full report on the breach before drawing conclusions. This brief cannot confirm more than the headline.</li></ul>
+    
+    
+    
+    <div class="srcs">Sources:
+      <a href="https://www.theregister.com/cyber-crime/2026/11/17/optimizely-hack-turns-worlds-biggest-websites-into-malware-dispensers/5310448?utm_source=tldrit" target="_blank" rel="noopener">TLDR IT</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-950a39f90b" style="--h:215">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">TLDR Hardware</span></div>
+    <h2>Jensen Huang says he&#39;d be &#39;honored&#39; to return as Nvidia CEO</h2>
+    <img src="https://techcrunch.com/wp-content/uploads/2026/01/GettyImages-2256813240.jpg?resize=1200,800" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist">Nvidia (a maker of AI chips) founder Jensen Huang says he would return as CEO if the board wants him. Nvidia says it is not considering his return.</p>
+    <ul><li>Huang resigned after reports of several affairs. One was with a direct report, another with former Megaspeed executive Alice Huang, suspected of working with Chinese intelligence.</li><li>In a post on X, Huang said he made &#39;serious mistakes&#39; and will cooperate with the board&#39;s independent investigation. He said he would be &#39;honored&#39; to return.</li><li>On Tuesday, Nvidia said it is not considering his return. Chairman Harvey Jones said the board unanimously accepted his resignation.</li><li>A board source told The Washington Post on Monday there were no plans to reinstate him. Still, three directors reportedly keep pushing for his return.</li><li>Other board members are narrowing the search for a replacement. ARM CEO Rene Haas and Marvell CEO Matt Murphy have been considered. Haas is wary of the optics, and Murphy&#39;s eligibility is unclear.</li><li>More than 10,000 current and former Nvidia employees signed an open letter. It includes Elon Musk, Amjad Masad and Travis Kalanick, and says Huang was removed without due process.</li><li>Huang testifies to Congress on Dec 1 about chip exports to China-linked firms. Nvidia formed a new executive committee for export control compliance. A senator called his return &#39;one of the worst ideas&#39;.</li><li>TLDR Tech&#39;s preview says President Trump would support reinstatement and believes Huang learned a big lesson. The full articles do not mention this.</li></ul>
+    <p class="why"><b>Why it matters:</b> Who leads Nvidia, and how it handles China chip-export scrutiny, could affect the wider chip industry.</p>
+    
+    
+    <div class="srcs">Sources:
+      <a href="https://techcrunch.com/2026/11/17/jensen-huang-says-he-would-be-honored-if-allowed-to-return-as-nvidia-ceo?utm_source=tldrhardware" target="_blank" rel="noopener">TLDR Hardware</a> · <a href="https://www.wsj.com/tech/jensen-huang-statement-nvidia-ceo-9dedca36?st=TA1XEe&amp;reflink=desktopwebshare_permalink&amp;utm_source=tldrnewsletter" target="_blank" rel="noopener">TLDR Tech</a> · <a href="https://www.semafor.com/article/11/17/2026/some-nvidia-directors-push-to-bring-huang-back-despite-board-opposition?utm_source=tldrnewsletter" target="_blank" rel="noopener">TLDR Tech</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-4faa980a30" style="--h:215">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">TLDR Hardware</span></div>
+    <h2>Nvidia guides Q4 revenue to $130B; board rules out Huang return</h2>
+    <img src="https://iprsoftwaremedia.com/219/files/20224/628c2a47b3aed32797213f6c_voyager-exterior-sign-2/voyager-exterior-sign-2_1829ac3c-85ac-4929-8c67-5994c15c70c9-prv.jpg?v=1829ac3c-85ac-4929-8c67-5994c15c70c9" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist">Nvidia, the world&#39;s biggest AI chip maker, beat expectations in its latest quarter. Its share price still fell on Wednesday.</p>
+    <ul><li>Revenue for the quarter ended October 25 was $115.8 billion, up 103% from a year earlier. Data center sales (chips sold for AI computing facilities) reached $107.6 billion, up 110%.</li><li>Gross margin, the share of sales left after direct costs, was 74.8%. Earnings per share (profit per share of stock) were $2.70.</li><li>Nvidia expects next-quarter revenue of $130 billion, plus or minus 3%. It assumes no AI chip sales to China.</li><li>The board raised its share buyback (the company buying its own shares) by $150 billion. About $227.3 billion remains. Nvidia returned $28.1 billion to shareholders last quarter.</li><li>Vera Rubin, Nvidia&#39;s new AI computing platform, has started shipping. Nvidia agreed to acquire Hugging Face, a popular platform for sharing AI models.</li><li>The share price fell over 10% around the departure of co-founder and former CEO Jensen Huang. Colette Kress is interim CEO. The TLDR headline says the board rules out Huang&#39;s return. Handelsblatt reports he still hopes for a comeback, backed by Donald Trump.</li><li>On Wednesday, the Dow Jones fell 1.1% to 50,197. The S&amp;P 500 fell 0.5%. The Nasdaq was flat.</li><li>Anthropic, the company behind the Claude AI model, plans its stock market debut (IPO) on Thursday. It could raise $90 billion at a valuation of about $1.4 trillion. Handelsblatt says the raise would be bigger than SpaceX&#39;s IPO, but the valuation smaller.</li></ul>
+    <p class="why"><b>Why it matters:</b> Nvidia supplies most AI chips, so its results and share price move the wider tech market.</p>
+    
+    
+    <div class="srcs">Sources:
+      <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027?utm_source=tldrhardware" target="_blank" rel="noopener">TLDR Hardware</a> · <a href="https://www.handelsblatt.com/video/finanzen/handelsblatt-live-us-boersenexperte-koch-gute-zahlen-bewegen-nvidia-kurs-kaum/100271036.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/finanzen/maerkte/marktberichte/dow-jones-sp-500-nasdaq-nvidia-aktie-dreht-ins-minus-anthropic-ipo-erwartet/100270966.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/audio/wall-street/wall-street-hohe-nachfrage-nach-anthropic-ipo/100271022.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-b6beaab84b" style="--h:215">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">TLDR Tech</span></div>
+    <h2>Making sense of Recursive Self Improvement</h2>
+    
+    
+    <p class="gist">An article says AI is already helping to improve future AI models at Anthropic. Only a short teaser was readable.</p>
+    <ul><li>Anthropic&#39;s pace of AI research and development (R&amp;D) has roughly doubled since October 2025.</li><li>Most of the speed-up is linked to Anthropic using AI in its own R&amp;D work.</li><li>The article says &#39;recursive self-improvement&#39; (AI improving AI) is already happening. It calls ASI (artificial superintelligence, AI far beyond human level) likely.</li><li>ASI would likely beat the best humans by huge margins where answers can be checked. Gains in harder-to-check areas would still be large.</li><li>Only the teaser was readable, so the full evidence and argument are unclear.</li></ul>
+    <p class="why"><b>Why it matters:</b> If AI speeds up its own development, progress could come faster than expected.</p>
+    
+    <p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>
+    <div class="srcs">Sources:
+      <a href="https://invertedpassion.substack.com/p/making-sense-of-recursive-self-improvement?utm_source=tldrnewsletter" target="_blank" rel="noopener">TLDR Tech</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-5dbbce4400" style="--h:215">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">TLDR AI</span></div>
+    <h2>Microsoft AI releases seven low-cost models, including MAI Code 2</h2>
+    <img src="https://microsoft.ai/wp-content/uploads/2026/11/All-Up-Blog.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist">Microsoft released seven new AI models, priced well below rival models. The performance claims come from Microsoft&#39;s own tests.</p>
+    <ul><li>MAI Code 2, for everyday coding, reached 98% of OpenAI&#39;s GPT-6.1 Sol performance at 40% of the price. It reached 96% of Anthropic&#39;s Claude Opus 5.5 at 5% of the price.</li><li>MAI Code 2 is not tuned for hard science research or very long AI tasks, Microsoft says. MAI Code 2 Flash, for routine tasks, matches cheaper rival models at 65% and 20% of their prices.</li><li>MAI Cyber 2 Flash is a security model. Microsoft says it is priced 86% lower than MAI Cyber 1.1 Flash on output tokens (units of AI text output).</li><li>MAI Cyber accounts for almost 40% of scans in MDASH, a scanning service the source does not describe.</li><li>MAI Image 2.7 ranks first for image editing on Artificial Analysis, an independent AI benchmark site. It beats GPT Image 2.6 Sunburst at one-fifth the price. Its Flash version costs about $10 per 1,000 images.</li><li>MAI Realtime 1 is Microsoft&#39;s first live speech-to-speech model. It beat GPT-Realtime 2.1 in Microsoft&#39;s tests. It starts at $0.01 per audio minute.</li><li>Dragon Copilot, Microsoft&#39;s medical tool, now transcribes 100% of doctor-patient conversations. It covers 10 million encounters a month and is used by a third of US physicians.</li><li>Decision 1.1 sends each request to the right model, so costly models run only when needed. Microsoft says it is 50 times faster and 79 times cheaper than GPT-6.1 Sol. The source names &#39;Jev&#39; as a rival, which may be a typo.</li></ul>
+    <p class="why"><b>Why it matters:</b> Cheaper models could lower the costs of companies building AI tools and agents.</p>
+    
+    
+    <div class="srcs">Sources:
+      <a href="https://microsoft.ai/news/microsoft-ignite-2026/?utm_source=tldrai" target="_blank" rel="noopener">TLDR AI</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-8452d289af" style="--h:215">
+  <div class="in">
+    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div><span class="tag">TLDR Dev</span></div>
+    <h2>Microsoft Outage Traced to Latent Human-Written Windows Bug</h2>
+    <img src="https://pbs.twimg.com/profile_images/673095429748350976/ei5eeouV_400x400.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist">A Microsoft team lead says a hidden bug caused a major outage, and the faulty code was not AI-written. Microsoft&#39;s full report is not out yet.</p>
+    <ul><li>The account comes from a post by a developer who spoke with a Microsoft team lead. It is not an official Microsoft statement.</li><li>The bug was a &#39;latent bug&#39; (a hidden error that stays inactive for a while). It came from a human-written code change saved about four months earlier to a Windows build.</li><li>The bug only switched on much later, and the source says it was very hard to spot.</li><li>Servers became overloaded and unreachable. The source says several other things also went wrong during the outage.</li><li>A developer found the root cause after spotting a memory dump that looked like an earlier error. AI diagnostic tools helped the response.</li><li>Twelve hours in, Microsoft still had not found why servers crashed when brought back online. The poster reads Microsoft&#39;s updates as pointing to a &#39;thundering herd&#39; (many machines reconnecting at once) plus another unclear issue.</li><li>Microsoft plans a detailed public postmortem (a formal incident report) later. It first wants all fixes patched globally.</li></ul>
+    <p class="why"><b>Why it matters:</b> It shows how one hidden bug in old code can disrupt large computer systems.</p>
+    
+    
+    <div class="srcs">Sources:
+      <a href="https://x.com/GergelyOrosz/status/2122428797647769970?utm_source=tldrdev" target="_blank" rel="noopener">TLDR Dev</a>
     </div>
   </div>
 </article>
@@ -1337,10 +1475,12 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">TLDR InfoSec</span></div>
-    <h2>Infoblox Confirms Security Incident After Hackers Access Company Information</h2>
+    <h2>Infoblox Confirms Breach via Compromised Third-Party Vendor</h2>
     <img src="https://techcrunch.com/wp-content/uploads/2024/02/connectwise-flaw-huntress-security.jpg?resize=1200,800" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Privately held Infoblox confirmed unauthorized access to some company information via a compromised third-party data migration vendor.</li><li>Per TechCrunch sources, the vendor provides SharePoint migration services. One source says sensitive customer data was taken.</li><li>Infoblox says no products, cloud services, software updates or build-and-release processes were involved.</li><li>One source says Infoblox terminated work with the vendor. The vendor is not named.</li><li>Infoblox did not say how many customers are affected or whether the attackers made contact or demands.</li></ul>
+    <p class="gist">Infoblox, a cybersecurity and networking company, confirmed that hackers accessed some of its company information. They got in through a outside vendor.</p>
+    <ul><li>Infoblox is privately held, so its shares are not traded on a stock market. It provides domain name lookup and user access management.</li><li>The company said it is investigating unauthorized access to certain company information. The access came through a compromised third-party data migration vendor.</li><li>Data migration means moving data from one system to another. Two people told TechCrunch the vendor provides SharePoint migration services.</li><li>SharePoint is Microsoft&#39;s software for sharing and storing files. Infoblox hosts files, email and infrastructure with Microsoft.</li><li>One source said sensitive customer data was taken. Infoblox&#39;s statement did not mention customer data.</li><li>Infoblox has not named the vendor. One source said Infoblox has ended its work with the vendor.</li><li>Infoblox says no sign that its products, cloud services, software updates or build-and-release processes were involved.</li><li>Infoblox activated its incident response procedures (its plan for handling security breaches). It hired outside cybersecurity experts to investigate.</li></ul>
+    <p class="why"><b>Why it matters:</b> Customers may be affected, but the company has not said how many or what data was taken.</p>
     
     
     <div class="srcs">Sources:
@@ -1353,62 +1493,16 @@ body:has(.story:target){overflow:hidden}
   <div class="in">
     <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
     <div><span class="tag">TLDR DevOps</span></div>
-    <h2>Uber&#39;s framework governs AI agent actions across their full lifecycle</h2>
+    <h2>Uber Built a Lifecycle Framework to Govern Autonomous AI Agents</h2>
     <img src="https://res.infoq.com/news/2026/11/uber-secure-ai-framework/en/headerimage/uber-open-search-semantic-1794769460527.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
     
-    <ul><li>Uber Engineering describes a three-layer framework for governing AI agents across pre-deployment, runtime and post-deployment stages.</li><li>Agents are registered in the Uber AI Registry. Argus scans code, prompts, configs and tool paths for security weaknesses.</li><li>At runtime, AI Guards check each proposed agent action against policy before it proceeds. Targets include prompt injection and goal hijacking.</li><li>Post-deployment, unified traces and replayable recordings test updated guardrails against past interactions.</li><li>Lessons: per-agent intents and constraints beat generic thresholds, but tuning false positives, latency and developer friction is hard.</li><li>Commenters note the approach scales costly with workflows, and it is unclear how to govern third-party vendor or SaaS agents.</li></ul>
+    <p class="gist">Uber Engineering published how it secures AI agents. These are AI programs that take real actions, such as using tools or changing data. Uber checks whether each action fits the user&#39;s request and the agent&#39;s allowed role.</p>
+    <ul><li>Normal login and access controls only check who may use a resource. They cannot judge whether an AI agent&#39;s proposed action makes sense in context.</li><li>Uber lists risks including prompt injection (hidden instructions that trick an AI), tool and memory poisoning, and hallucinations (AI making up false information).</li><li>Before deployment, each agent must be registered in Uber&#39;s AI Registry. Registration records its owner, purpose, permitted actions and risk level.</li><li>A tool called Argus automatically scans agent code, prompts, settings and tool connections for security weaknesses. The same check applies to MCP servers (connectors that link AI to tools).</li><li>While running, AI Guards check each proposed action against the agent&#39;s policies. Agent Guard hooks stop an action until the guard approves it.</li><li>After deployment, Uber logs every action and security decision. It can replay recorded interactions when policies change, to test the new rules.</li><li>Uber reports that agent-specific rules worked better than generic limits. Its main challenges were avoiding false alarms, keeping delays low and reducing setup friction for developers.</li><li>UN IT officer Tristan G. and AI architect Pratik Dhanave commented on LinkedIn. They said per-agent rules add the most value but cost more effort as workflows grow.</li></ul>
+    <p class="why"><b>Why it matters:</b> It shows one large company&#39;s method for controlling AI agents that act on their own.</p>
     
     
     <div class="srcs">Sources:
       <a href="https://www.infoq.com/news/2026/11/uber-secure-ai-framework/?utm_source=tldrdevops" target="_blank" rel="noopener">TLDR DevOps</a>
-    </div>
-  </div>
-</article>
-
-<article class="story" id="s-c77e935aa3" style="--h:215">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">TLDR DevOps</span></div>
-    <h2>Ubuntu Pro users get early access to AI-written security fixes</h2>
-    <img src="https://www.omgubuntu.co.uk/wp-content/uploads/2026/09/Ubuntu-Security-Bug.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-    
-    <ul><li>Canonical gives Ubuntu Pro users opt-in early access to AI-generated security patches through a new Edge archive.</li><li>Patches come from Surge, a multi-agent system that backports fixes for userspace packages. Kernel patches are not generated by Surge.</li><li>Edge fixes are not enabled by default and do not roll out to stable releases automatically. Human validation remains required.</li><li>Canonical says its security team has already shipped twice as many fixes as last year, amid rising AI-aided vulnerability reports and attacks.</li><li>Edge covers Ubuntu 18.04 to 26.04 LTS. Ubuntu Pro is free for personal use on up to 5 devices. Enable via &#39;pro-enable-edge&#39;.</li></ul>
-    
-    
-    <div class="srcs">Sources:
-      <a href="https://www.omgubuntu.co.uk/2026/11/ubuntu-pro-ai-security-archive?utm_source=tldrdevops" target="_blank" rel="noopener">TLDR DevOps</a>
-    </div>
-  </div>
-</article>
-
-<article class="story" id="s-ca65d2a792" style="--h:215">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">TLDR Founders</span></div>
-    <h2>Stripe index: non-AI B2B software revenue up 30%+ year over year</h2>
-    <img src="https://i0.wp.com/www.saastr.com/wp-content/uploads/2026/11/stripe-saas-index-chart-scaled.png?fit=1000%2C763&amp;#038;quality=70&amp;#038;ssl=1" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-    
-    <ul><li>Stripe Economics launched the weekly Stripe SaaS Index, tracking non-AI B2B software revenue via payment flows across about 72,000 businesses a week in 2026.</li><li>Year-over-year revenue growth is above 30%, at or above summer 2023 highs, and the index sits about 4% above its pre-sell-off trend.</li><li>The sell-off wiped out roughly $1 trillion of enterprise software value by early February 2026, possibly about $2 trillion in total; stocks have since recovered to about pre-sell-off levels.</li><li>Caveat: the sample is mostly self-serve, card-based firms, not the large public enterprise vendors that sold off. The index is nominal, so price increases count as growth.</li><li>The unweighted median company only returned to trend after a late-2025 slowdown; a smaller group of winners lifts the headline figure. Young firms lead on AI adoption signals.</li></ul>
-    
-    
-    <div class="srcs">Sources:
-      <a href="https://www.saastr.com/stripes-new-index-shows-non-ai-b2b-revenue-up-30-year-over-year-through-the-saaspocalypse/?utm_source=tldrfounders" target="_blank" rel="noopener">TLDR Founders</a>
-    </div>
-  </div>
-</article>
-
-<article class="story" id="s-3574711074" style="--h:215">
-  <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
-    <div><span class="tag">TLDR Founders</span></div>
-    <h2>Anthropic adds linked billing for Claude Platform in beta</h2>
-    <img src="https://claude.com/resources/articles/linked-billing-on-claude-platform/opengraph-image/og" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-    
-    <ul><li>Anthropic launched linked billing for the Claude Platform in beta, letting third-party tools bill end customers&#39; Claude API usage without sharing API keys.</li><li>Customers link their Claude Platform organization through a hosted flow, set monthly spend limits per platform, see spend per platform, and can unlink at any time.</li><li>Platforms get per-customer usage data and can choose, request by request, whether they or the end customer pay, without building metering or invoicing.</li><li>Requests run in the platform&#39;s organization, so customers&#39; IP allowlists, encryption keys and data retention settings do not apply.</li><li>Launch platforms include Asana, Linear, Ramp, Railway, Warp, Gumloop, ClickHouse and Harness, among about 19 named in total.</li></ul>
-    
-    
-    <div class="srcs">Sources:
-      <a href="https://claude.com/resources/articles/linked-billing-on-claude-platform?utm_source=tldrfounders" target="_blank" rel="noopener">TLDR Founders</a>
     </div>
   </div>
 </article>
