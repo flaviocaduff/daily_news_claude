@@ -3,9 +3,13 @@ name: Daily Brief
 on:
   schedule:
     # 06:30 Zurich (cron is UTC: 04:30 in summer, 05:30 in winter; the gate skips the wrong one).
+    # GitHub's scheduler has not fired on this repo so far; the routine below is the primary trigger.
     - cron: "30 4 * * *"
     - cron: "30 5 * * *"
-    - cron: "55 15 * * *"   # TEMPORARY test slot: full build even if already published
+  # Primary trigger: a Claude cloud routine (claude.ai/code/routines) pushes an empty commit to
+  # claude/brief-YYYY-MM-DD at 06:30 Zurich (claude/brief-test-* = forced test build). The branch is deleted afterwards.
+  push:
+    branches: ["claude/brief-*"]
   workflow_dispatch:
     inputs:
       dry_run:
@@ -28,9 +32,9 @@ jobs:
       - name: Gate (06:20 Zurich, once per day)
         id: gate
         run: |
-          if [ "${{ github.event_name }}" != "schedule" ] || [ "${{ github.event.schedule }}" = "55 15 * * *" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"; exit 0
-          fi
+          case "${{ github.event_name }}:${{ github.ref_name }}" in
+            workflow_dispatch:*|push:claude/brief-test-*) echo "run=true" >> "$GITHUB_OUTPUT"; exit 0;;
+          esac
           now=$(TZ=Europe/Zurich date +%H%M); today=$(TZ=Europe/Zurich date +%F)
           owner="${GITHUB_REPOSITORY%%/*}"; repo="${GITHUB_REPOSITORY#*/}"
           if [ "$now" -lt 620 ]; then
@@ -116,3 +120,9 @@ jobs:
           owner="${GITHUB_REPOSITORY%%/*}"; repo="${GITHUB_REPOSITORY#*/}"
           export SITE_URL="${SITE_URL_OVERRIDE:-https://${owner,,}.github.io/${repo}/}"
           uv run daily-brief --notify-only
+
+      - name: Delete trigger branch
+        if: always() && github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X DELETE "repos/$GITHUB_REPOSITORY/git/refs/heads/$GITHUB_REF_NAME" || true
