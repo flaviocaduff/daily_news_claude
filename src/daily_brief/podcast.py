@@ -192,3 +192,23 @@ def add_audio(brief, settings: dict) -> None:
     brief.audio = f"archive/{day}.mp3"
     brief.audio_seconds = secs
     log.info("podcast: %d words, %.0fs audio, TTS took %.0fs, %s", word_count(brief.script), secs, time.monotonic() - t0, path)
+
+
+_PLAYER = re.compile(r'\s*<div class="pod">.*?</audio></div>', re.S)
+
+
+def prune_old_audio(output_dir: str | Path, keep_day: str) -> list[str]:
+    """Keep only today's MP3: delete older ones and drop their now-dead player from those archive pages."""
+    archive = Path(output_dir) / "archive"
+    removed = []
+    for mp3 in archive.glob("*.mp3"):
+        if mp3.stem == keep_day:
+            continue
+        mp3.unlink(missing_ok=True)
+        page = archive / f"{mp3.stem}.html"
+        if page.exists():
+            page.write_text(_PLAYER.sub("", page.read_text(encoding="utf-8")), encoding="utf-8")
+        removed.append(mp3.name)
+    if removed:
+        log.info("removed old audio: %s", ", ".join(sorted(removed)))
+    return removed

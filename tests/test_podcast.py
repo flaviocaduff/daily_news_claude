@@ -87,3 +87,20 @@ def test_split_chunks_keeps_all_text():
     chunks = pc.split_chunks(text, 40)
     assert len(chunks) > 1 and all(len(c.split()) <= 40 for c in chunks)
     assert " ".join(chunks) == text
+
+
+def test_prune_keeps_only_todays_audio(tmp_path, monkeypatch):
+    monkeypatch.setattr(pc, "_tts", _fake_tts(100))
+    settings = {"output_dir": str(tmp_path)}
+    old = Brief(now=datetime(2026, 11, 17, 6, tzinfo=timezone.utc), top=_brief().top, sections=[], script="Hi there.")
+    pc.add_audio(old, settings)
+    write_site(old, settings)
+    assert "<audio" in (tmp_path / "archive/2026-11-17.html").read_text()
+    new = _brief()
+    pc.add_audio(new, settings)
+    write_site(new, settings)
+    assert pc.prune_old_audio(tmp_path, "2026-11-18") == ["2026-11-17.mp3"]
+    assert [p.name for p in (tmp_path / "archive").glob("*.mp3")] == ["2026-11-18.mp3"]
+    old_page = (tmp_path / "archive/2026-11-17.html").read_text()
+    assert "<audio" not in old_page and 'class="pod"' not in old_page and "</footer>" in old_page
+    assert "<audio" in (tmp_path / "index.html").read_text()

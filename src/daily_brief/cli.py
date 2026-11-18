@@ -51,6 +51,12 @@ def main(argv: list[str] | None = None) -> int:
 
     add_audio(brief, cfg.settings)  # never raises; no file -> no player
     path = write_site(brief, cfg.settings)
+    try:
+        from .podcast import prune_old_audio
+
+        prune_old_audio(cfg.get("output_dir", "site"), brief.now.strftime("%Y-%m-%d"))
+    except Exception as e:  # housekeeping only
+        logging.warning("could not prune old audio: %s", e)
     print(f"wrote {path} ({brief.item_count} stories)")
     if args.open:
         import webbrowser
