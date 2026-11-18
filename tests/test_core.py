@@ -98,3 +98,16 @@ def test_parse_meta_and_time():
     t = _parse_time(m["article:published_time"], ZoneInfo("Europe/Minsk"))
     assert t == datetime(2026, 11, 17, 6, 53, tzinfo=ZoneInfo("UTC"))
     assert _parse_time("garbage", ZoneInfo("UTC")) is None
+
+
+def test_render_story_gist_and_why():
+    from datetime import datetime
+
+    from daily_brief.pipeline import Brief
+    from daily_brief.render import render
+
+    it = Item("x", "X", "", "https://a.com", section="TLDR", uid="u2", points=["p1"],
+              gist="The Fed <i>raised</i> rates.", why="Loans get dearer.")
+    html = render(Brief(now=datetime(2026, 11, 17), top=[it], sections=[]), {})
+    assert 'class="gist"' in html and "<i>raised</i>" not in html
+    assert "Why it matters:" in html and "Loans get dearer." in html

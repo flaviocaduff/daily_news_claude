@@ -24,6 +24,8 @@ class Item:
     dupes: list[Item] = field(default_factory=list)  # same story from other URLs/sources
     text: str = ""       # full article text, when it could be read
     points: list[str] = field(default_factory=list)  # key points across all sources
+    gist: str = ""       # plain-language summary for the story view
+    why: str = ""        # one line: why it matters
     points_from_preview: bool = False  # no full text was readable; points come from teasers
 
     def display_headline(self) -> str:

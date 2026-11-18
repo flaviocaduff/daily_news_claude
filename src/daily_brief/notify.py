@@ -16,7 +16,8 @@ def _ntfy(title: str, text: str, url: str) -> bool:
     if not topic:
         return False
     server = os.getenv("NTFY_SERVER") or "https://ntfy.sh"
-    headers = {"Title": title.encode("utf-8"), "Tags": "newspaper"}
+    # Priority high = "time-sensitive" on iOS, so the push gets through Focus modes; default priority was dropped.
+    headers = {"Title": title.encode("utf-8"), "Tags": "newspaper", "Priority": os.getenv("NTFY_PRIORITY") or "high"}
     if url:
         headers["Click"] = url
         headers["Actions"] = f"view, Open brief, {url}"
