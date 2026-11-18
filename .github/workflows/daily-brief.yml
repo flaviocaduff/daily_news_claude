@@ -2,10 +2,12 @@ name: Daily Brief
 
 on:
   schedule:
-    # GitHub cron is UTC only and scheduled runs are sometimes dropped, so there are
-    # backup slots every 30 min (off the busy :00/:30). The gate below builds on the first
-    # slot from 06:20 Zurich time (summer or winter) and skips once today's brief exists.
-    - cron: "25,55 4-8 * * *"
+    # Primary trigger: an external scheduler calls workflow_dispatch at 06:30 Zurich (see README).
+    # Fallback only: GitHub cron at 06:50 Zurich (UTC only: one line for summer, one for winter).
+    # The gate builds only if it is after 06:20 Zurich and today's brief is not yet published.
+    - cron: "50 4 * * *"
+    - cron: "50 5 * * *"
+    - cron: "*/15 * * * *"   # TEMPORARY: checks that GitHub's scheduler fires here; gate skips it
   workflow_dispatch:
     inputs:
       dry_run:
