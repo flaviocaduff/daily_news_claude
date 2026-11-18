@@ -2,12 +2,10 @@ name: Daily Brief
 
 on:
   schedule:
-    # Primary trigger: scripts/trigger_cloud.sh on the Mac (launchd) at 06:30 Zurich (see README).
-    # Fallback only: GitHub cron at 06:50 Zurich (UTC only: one line for summer, one for winter).
-    # The gate builds only if it is after 06:20 Zurich and today's brief is not yet published.
-    - cron: "50 4 * * *"
-    - cron: "50 5 * * *"
-    - cron: "*/15 * * * *"   # TEMPORARY: checks that GitHub's scheduler fires here; gate skips it
+    # 06:30 Zurich (cron is UTC: 04:30 in summer, 05:30 in winter; the gate skips the wrong one).
+    # Backup: scripts/trigger_cloud.sh on the Mac (launchd), skips if today's brief already exists.
+    - cron: "30 4 * * *"
+    - cron: "30 5 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
