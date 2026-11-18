@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Installs a LaunchAgent that starts the cloud build at 06:30 (or on wake/login if missed), once a day.
+# Installs a LaunchAgent that starts the cloud build at 07:15 (or on wake/login if missed), once a day.
 # The script is copied out of ~/Documents because macOS blocks background jobs from reading it.
 # Uninstall: launchctl bootout gui/$(id -u)/local.daily-brief-trigger; rm ~/Library/LaunchAgents/local.daily-brief-trigger.plist
 set -e
@@ -19,7 +19,7 @@ cat > "$plist" <<PLIST
 <dict>
   <key>Label</key><string>$label</string>
   <key>ProgramArguments</key><array><string>/bin/zsh</string><string>$app/trigger_cloud.sh</string></array>
-  <key>StartCalendarInterval</key><dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>30</integer></dict>
+  <key>StartCalendarInterval</key><dict><key>Hour</key><integer>7</integer><key>Minute</key><integer>15</integer></dict>
   <key>StartInterval</key><integer>1800</integer>
   <key>RunAtLoad</key><true/>
   <key>StandardOutPath</key><string>$HOME/Library/Logs/daily-brief-trigger.log</string>
