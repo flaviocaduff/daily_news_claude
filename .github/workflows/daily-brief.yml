@@ -2,7 +2,7 @@ name: Daily Brief
 
 on:
   schedule:
-    # Primary trigger: an external scheduler calls workflow_dispatch at 06:30 Zurich (see README).
+    # Primary trigger: scripts/trigger_cloud.sh on the Mac (launchd) at 06:30 Zurich (see README).
     # Fallback only: GitHub cron at 06:50 Zurich (UTC only: one line for summer, one for winter).
     # The gate builds only if it is after 06:20 Zurich and today's brief is not yet published.
     - cron: "50 4 * * *"
