@@ -24,7 +24,7 @@ def test_script_is_cleaned_and_capped():
         return "## Intro\n- **Good** morning https://x.y\n" + "word. " * 900
 
     script = pc.write_script(ask, _brief(""), {"podcast": {"max_words": 100}}, "m")
-    assert len(calls) == 2  # one shorter retry before trimming
+    assert len(calls) == 2 and "at most 90 words" in calls[0]  # aim under the cap, then one shorter retry
     assert "Story 3" in calls[0] and "ALL 4 stories" in calls[0]
     assert pc.word_count(script) <= 100
     assert not any(c in script for c in "#*") and "http" not in script
@@ -44,8 +44,8 @@ def test_tts_failure_leaves_no_player(tmp_path, monkeypatch):
 
 
 def _fake_tts(seconds):
-    async def fake(text, path: Path, voice, rate):
-        path.write_bytes(b"\0" * int(seconds * pc.BITRATE / 8))
+    async def fake(text, voice, rate):
+        return b"\0" * int(seconds * pc.BITRATE / 8)
     return fake
 
 
@@ -66,3 +66,24 @@ def test_overlong_audio_is_not_published(tmp_path, monkeypatch):
     b = _brief()
     pc.add_audio(b, {"output_dir": str(tmp_path)})
     assert b.audio is None and not list(tmp_path.rglob("*.mp3"))
+
+
+def test_tts_stall_is_bounded(tmp_path, monkeypatch):
+    import asyncio
+    import time
+
+    async def stall(*a, **k):
+        await asyncio.sleep(60)
+
+    monkeypatch.setattr(pc, "_tts", stall)
+    b = _brief()
+    t0 = time.monotonic()
+    pc.add_audio(b, {"output_dir": str(tmp_path), "podcast": {"tts_budget_seconds": 7}})
+    assert b.audio is None and time.monotonic() - t0 < 10
+
+
+def test_split_chunks_keeps_all_text():
+    text = " ".join(f"Sentence number {k} is here." for k in range(60))
+    chunks = pc.split_chunks(text, 40)
+    assert len(chunks) > 1 and all(len(c.split()) <= 40 for c in chunks)
+    assert " ".join(chunks) == text
