@@ -49,7 +49,7 @@ def write_site(brief: Brief, settings: dict) -> Path:
     day = brief.now.strftime("%Y-%m-%d")
     dates = sorted({p.stem for p in archive.glob("*.html") if p.stem != "index"} | {day}, reverse=True)
     html = render(brief, settings, archive_dates=dates[:14])
-    (archive / f"{day}.html").write_text(html.replace('href="archive/', 'href="'), encoding="utf-8")
+    (archive / f"{day}.html").write_text(html.replace('href="archive/', 'href="').replace('src="archive/', 'src="'), encoding="utf-8")
     (out / "index.html").write_text(html, encoding="utf-8")
     (out / ".nojekyll").touch()
     return out / "index.html"

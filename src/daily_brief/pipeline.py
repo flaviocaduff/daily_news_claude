@@ -22,6 +22,9 @@ class Brief:
     empty_sources: list[str] = field(default_factory=list)
     failed_sources: list[str] = field(default_factory=list)
     llm: bool = True
+    script: str = ""          # spoken audio overview (podcast.py)
+    audio: str | None = None  # page-relative MP3 path, set only once the file exists
+    audio_seconds: float = 0.0
 
     @property
     def stories(self) -> list[Item]:
@@ -150,4 +153,15 @@ def build_brief(cfg: Config, use_llm: bool = True, now: datetime | None = None) 
 
     with_items = {i.source_id for i in items}
     empty = [s["name"] for s in cfg.sources if s["id"] not in with_items and s["name"] not in failed]
-    return Brief(now=now, top=top, sections=sections, empty_sources=empty, failed_sources=failed, llm=bool(summarizer))
+    brief = Brief(now=now, top=top, sections=sections, empty_sources=empty, failed_sources=failed, llm=bool(summarizer))
+
+    # 9. spoken script for the audio overview (TTS runs later, in podcast.add_audio)
+    if summarizer and (cfg.get("podcast") or {}).get("enabled", True):
+        from .podcast import write_script
+
+        try:
+            model = (cfg.get("models") or {}).get("podcast", summarizer.rank_model)
+            brief.script = write_script(summarizer._ask, brief, cfg.settings, model)
+        except Exception as e:  # the page never depends on the podcast
+            log.error("podcast script failed: %s", e)
+    return brief

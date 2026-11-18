@@ -41,6 +41,12 @@ settings:
   fetch_articles: true         # read the full text of shown stories for the tap-to-open summary
   http_timeout: 10
   output_dir: site
+  # Audio overview at the top of the page: Claude writes a short script, edge-tts (free Microsoft neural
+  # voices, no key) reads it. Any failure just leaves the player out.
+  podcast:
+    enabled: true
+    max_words: 600             # ~4.5 min at the voice's ~132 words/min; the MP3 itself is hard-capped at 5 min
+    voice: en-US-AvaMultilingualNeural   # multilingual voice: reads German/Swiss names better
 
 sources:
   - {id: tldr-tech,      name: TLDR Tech,      section: TLDR, type: tldr, newsletter: tech}

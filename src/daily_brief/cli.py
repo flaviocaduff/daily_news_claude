@@ -47,6 +47,9 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     brief = build_brief(cfg, use_llm=use_llm)
+    from .podcast import add_audio
+
+    add_audio(brief, cfg.settings)  # never raises; no file -> no player
     path = write_site(brief, cfg.settings)
     print(f"wrote {path} ({brief.item_count} stories)")
     if args.open:

@@ -90,6 +90,8 @@ footer a{text-decoration:underline}
 .story .srcs{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
 .story .srcs a{text-decoration:underline;color:var(--text)}
 body:has(.story:target){overflow:hidden}
+.pod{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-size:13px;color:var(--muted)}
+.pod audio{flex:1;min-width:0;height:36px}
 </style>
 </head>
 <body>
@@ -101,6 +103,11 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="stats">{{ b.item_count }} stories · {{ b.sections | length }} sections</div>
 </header>
+
+{% if b.audio %}
+<div class="pod"><span>Listen · {{ (b.audio_seconds // 60) | int }}:{{ '%02d' | format((b.audio_seconds % 60) | int) }}</span>
+  <audio controls preload="none" src="{{ b.audio }}"></audio></div>
+{% endif %}
 
 {% macro card(it, rank=None) -%}
 <a class="card" href="#s-{{ it.uid }}" style="--h:{{ it.section | hue }}">

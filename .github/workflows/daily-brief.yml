@@ -82,6 +82,8 @@ jobs:
           claude --version
           cd "$(mktemp -d)" && claude -p "say ok" --tools "" --no-session-persistence
 
+      # `uv run` installs the locked deps, including edge-tts for the audio overview (free, no key; it needs
+      # network to Microsoft's speech service and the build carries on without the player if that fails).
       - name: Build brief
         if: steps.gate.outputs.run == 'true' && !inputs.dry_run
         env:
