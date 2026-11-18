@@ -45,8 +45,9 @@ settings:
   # voices, no key) reads it. Any failure just leaves the player out.
   podcast:
     enabled: true
-    max_words: 600             # ~4.5 min at the voice's ~132 words/min; the MP3 itself is hard-capped at 5 min
-    voice: en-US-AvaMultilingualNeural   # multilingual voice: reads German/Swiss names better
+    language: German           # audio language (the page itself stays in settings.language)
+    max_words: 500             # ~4.3 min at the German voice's ~115 words/min; the MP3 itself is hard-capped at 5 min
+    voice: de-DE-SeraphinaMultilingualNeural   # multilingual: also handles English names; Swiss accent: de-CH-LeniNeural
 
 sources:
   - {id: tldr-tech,      name: TLDR Tech,      section: TLDR, type: tldr, newsletter: tech}

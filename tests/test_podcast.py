@@ -104,3 +104,9 @@ def test_prune_keeps_only_todays_audio(tmp_path, monkeypatch):
     old_page = (tmp_path / "archive/2026-11-17.html").read_text()
     assert "<audio" not in old_page and 'class="pod"' not in old_page and "</footer>" in old_page
     assert "<audio" in (tmp_path / "index.html").read_text()
+
+
+def test_german_script_prompt():
+    seen = []
+    pc.write_script(lambda m, p, n: seen.append(p) or "Guten Morgen.", _brief(""), {"podcast": {"language": "German"}}, "m")
+    assert "Mittwoch, 18. November 2026" in seen[0] and "Plain spoken German" in seen[0]
