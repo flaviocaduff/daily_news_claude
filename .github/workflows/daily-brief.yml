@@ -2,10 +2,10 @@ name: Daily Brief
 
 on:
   schedule:
-    # GitHub cron is UTC only. Both slots are registered; the gate below lets
-    # exactly one through so the brief starts at 06:30 Europe/Zurich all year.
-    - cron: "30 4 * * *"  # 06:30 CEST (summer, UTC+2)
-    - cron: "30 5 * * *"  # 06:30 CET  (winter, UTC+1)
+    # GitHub cron is UTC only and scheduled runs are sometimes dropped, so there are
+    # backup slots every 30 min (off the busy :00/:30). The gate below builds on the first
+    # slot from 06:20 Zurich time (summer or winter) and skips once today's brief exists.
+    - cron: "25,55 4-8 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -25,17 +25,19 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: DST gate
+      - name: Gate (06:20 Zurich, once per day)
         id: gate
         run: |
           if [ "${{ github.event_name }}" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
-          off=$(TZ=Europe/Zurich date +%z)
-          sched="${{ github.event.schedule }}"
-          if { [ "$off" = "+0200" ] && [ "$sched" = "30 4 * * *" ]; } || { [ "$off" = "+0100" ] && [ "$sched" = "30 5 * * *" ]; }; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
+          now=$(TZ=Europe/Zurich date +%H%M); today=$(TZ=Europe/Zurich date +%F)
+          owner="${GITHUB_REPOSITORY%%/*}"; repo="${GITHUB_REPOSITORY#*/}"
+          if [ "$now" -lt 620 ]; then
+            echo "Skipping: $now is before 06:20 Zurich"; echo "run=false" >> "$GITHUB_OUTPUT"
+          elif git ls-remote --exit-code "https://github.com/$GITHUB_REPOSITORY.git" gh-pages >/dev/null &&
+               curl -sfI "https://${owner,,}.github.io/${repo}/archive/$today.html" >/dev/null; then
+            echo "Skipping: today's brief ($today) is already published"; echo "run=false" >> "$GITHUB_OUTPUT"
           else
-            echo "Skipping: Zurich offset $off does not match slot '$sched'"
-            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "run=true" >> "$GITHUB_OUTPUT"
           fi
 
       - uses: actions/checkout@v4

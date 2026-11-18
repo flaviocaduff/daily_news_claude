@@ -63,7 +63,7 @@ The workflow installs Claude Code and runs on your Claude subscription: run `cla
 Test without Claude, publishing or notifying: `gh workflow run daily-brief.yml -f dry_run=true`, then compare the per-source counts in the log with a local run.
 
 
-`.github/workflows/daily-brief.yml` runs at 04:30 and 05:30 UTC. A gate step lets exactly one of the two runs through, whichever matches 06:30 in Zurich (CET or CEST). The workflow builds the site, pushes it to the `gh-pages` branch (keeping the archive) and then sends the notification.
+`.github/workflows/daily-brief.yml` runs every 30 min from 04:25 to 08:55 UTC, because GitHub sometimes drops scheduled runs. A gate step builds on the first slot from 06:20 Zurich time (CET or CEST) and skips the rest once today's brief is published. The workflow builds the site, pushes it to the `gh-pages` branch (keeping the archive) and then sends the notification.
 
 Setup:
 1. Push this folder to a GitHub repo. Pages on a private repo needs a paid plan.
