@@ -3,9 +3,9 @@ name: Daily Brief
 on:
   schedule:
     # 06:30 Zurich (cron is UTC: 04:30 in summer, 05:30 in winter; the gate skips the wrong one).
-    # Backup: scripts/trigger_cloud.sh on the Mac (launchd), skips if today's brief already exists.
     - cron: "30 4 * * *"
     - cron: "30 5 * * *"
+    - cron: "10 16 * * *"   # TEMPORARY test slot (17:10 Zurich): full build even if already published
   workflow_dispatch:
     inputs:
       dry_run:
@@ -28,7 +28,9 @@ jobs:
       - name: Gate (06:20 Zurich, once per day)
         id: gate
         run: |
-          if [ "${{ github.event_name }}" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if [ "${{ github.event_name }}" != "schedule" ] || [ "${{ github.event.schedule }}" = "10 16 * * *" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
           now=$(TZ=Europe/Zurich date +%H%M); today=$(TZ=Europe/Zurich date +%F)
           owner="${GITHUB_REPOSITORY%%/*}"; repo="${GITHUB_REPOSITORY#*/}"
           if [ "$now" -lt 620 ]; then
