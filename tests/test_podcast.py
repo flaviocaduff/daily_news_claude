@@ -24,7 +24,7 @@ def test_script_is_cleaned_and_capped():
         return "## Intro\n- **Good** morning https://x.y\n" + "word. " * 900
 
     script = pc.write_script(ask, _brief(""), {"podcast": {"max_words": 100}}, "m")
-    assert len(calls) == 2 and "at most 90 words" in calls[0]  # aim under the cap, then one shorter retry
+    assert len(calls) == 2 and "at most 80 words" in calls[0]  # aim under the cap, then one shorter retry
     assert "Story 3" in calls[0] and "ALL 4 stories" in calls[0]
     assert pc.word_count(script) <= 100
     assert not any(c in script for c in "#*") and "http" not in script

@@ -46,7 +46,8 @@ settings:
   podcast:
     enabled: true
     language: German           # audio language (the page itself stays in settings.language)
-    max_words: 500             # ~4.3 min at the German voice's ~115 words/min; the MP3 itself is hard-capped at 5 min
+    max_words: 450             # German reads at ~100 words/min (~110 at +8%) -> about 4 min; MP3 hard-capped at 5 min
+    rate: "+8%"                 # speaking speed
     voice: de-DE-SeraphinaMultilingualNeural   # multilingual: also handles English names; Swiss accent: de-CH-LeniNeural
 
 sources:

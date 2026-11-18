@@ -84,9 +84,9 @@ def write_script(ask, brief, settings: dict, model: str) -> str:
     if not stories:
         return ""
     conf = settings.get("podcast") or {}
-    max_words = int(conf.get("max_words", 500))
+    max_words = int(conf.get("max_words", 450))
     language = conf.get("language") or settings.get("language", "English")
-    budget = int(max_words * 0.9)  # models overshoot a word target; aim a bit under the hard cap
+    budget = int(max_words * 0.8)  # models overshoot a word target by 10-30%; aim well under the hard cap
     script = ""
     t0 = time.monotonic()
     for attempt in (1, 2):
@@ -100,7 +100,7 @@ def write_script(ask, brief, settings: dict, model: str) -> str:
             log.info("podcast script: %d words in %.0fs", word_count(script), time.monotonic() - t0)
             return script
         log.warning("podcast script has %d words (max %d), attempt %d", word_count(script), max_words, attempt)
-        budget = int(max_words * 0.75)  # ask for noticeably shorter the second time
+        budget = int(max_words * 0.6)  # ask for noticeably shorter the second time
     return trim_words(script, max_words)
 
 
@@ -192,10 +192,11 @@ def add_audio(brief, settings: dict) -> None:
     t0 = time.monotonic()
     deadline = t0 + float(conf.get("tts_budget_seconds", 180))  # shared by all attempts: never stall the build
     try:
-        secs = synthesize(brief.script, path, voice, deadline=deadline)
+        rate = conf.get("rate", "+8%")
+        secs = synthesize(brief.script, path, voice, rate=rate, deadline=deadline)
         if secs > MAX_SECONDS:  # read a little faster once rather than publish an over-long file
             log.warning("audio is %.0fs, re-reading faster", secs)
-            secs = synthesize(brief.script, path, voice, rate="+12%", deadline=deadline)
+            secs = synthesize(brief.script, path, voice, rate="+20%", deadline=deadline)
         if secs > MAX_SECONDS:
             raise RuntimeError(f"audio still {secs:.0f}s long")
     except Exception as e:
