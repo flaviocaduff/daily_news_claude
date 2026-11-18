@@ -63,7 +63,7 @@ The workflow installs Claude Code and runs on your Claude subscription: run `cla
 Test without Claude, publishing or notifying: `gh workflow run daily-brief.yml -f dry_run=true`, then compare the per-source counts in the log with a local run.
 
 
-`.github/workflows/daily-brief.yml` runs on GitHub's own cron at 06:30 Zurich (two UTC lines for summer/winter; a gate skips the wrong one and anything already published). Nothing runs on the Mac. The workflow builds the site, pushes it to the `gh-pages` branch (keeping the archive) and then sends the notification.
+`.github/workflows/daily-brief.yml` is started at 06:30 Zurich by a Claude cloud routine (https://claude.ai/code/routines/trig_01Bz7v24esyFoVRdGBahrbu4, runs on the subscription): it pushes an empty commit to `claude/brief-YYYY-MM-DD`, which starts the workflow; the workflow deletes the branch afterwards. Running the routine by hand outside 06:20-08:59 pushes `claude/brief-test-*`, which forces a full test build. GitHub's own cron (06:30) is kept as a second trigger but has never fired on this repo. The gate skips anything already published, so there is at most one brief per day. Nothing runs on the Mac. The workflow builds the site, pushes it to the `gh-pages` branch (keeping the archive) and then sends the notification.
 
 Setup:
 1. Push this folder to a GitHub repo. Pages on a private repo needs a paid plan.
