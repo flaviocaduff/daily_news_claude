@@ -94,3 +94,39 @@ def test_grouped_section_caps_per_source(monkeypatch):
 def test_total_llm_failure_is_loud(run):
     with pytest.raises(RuntimeError):
         run("broken")
+
+
+def test_translate_fills_german_and_keeps_english():
+    s = FakeSummarizer({}, "ok")
+    s.translate_model = "t"
+    a = Item("a", "A", "T", "https://a.com/1", uid="1", headline="Bank merger", summary="Approved.",
+             gist="G.", points=["p1", "p2"], why="W.")
+    b = Item("a", "A", "T2", "https://a.com/2", uid="2", headline="GPU", summary="Fast.", points=["p1", "p2"])
+
+    def ask(model, prompt, max_tokens, system=None, timeout=600):
+        assert model == "t" and "German" in system and timeout == 5
+        rows = json.loads(prompt[prompt.index("Stories:") + 8:])
+        # story 2 comes back with a bullet missing -> its points stay English
+        return json.dumps([{"id": r["id"], "headline": "DE " + r["headline"], "summary": "DE", "gist": "DE G",
+                            "points": ["d1", "d2"] if r["id"] == "1" else ["d1"], "why": "DE W"} for r in rows])
+
+    s._ask = ask
+    s.translate([a, b], "German", batch_size=1, timeout=5)
+    assert a.de == {"headline": "DE Bank merger", "summary": "DE", "gist": "DE G", "why": "DE W", "points": ["d1", "d2"]}
+    assert a.headline == "Bank merger" and a.points == ["p1", "p2"]  # English untouched
+    assert b.de["headline"] == "DE GPU" and b.de["points"] == [] and b.de["gist"] == "" and b.de["why"] == ""
+
+
+def test_translation_failure_keeps_english_brief(run):
+    # FakeSummarizer has no translate model and a 3-arg _ask: the translate step fails, the brief must not
+    b = run("ok")
+    assert b.top and all(not it.de for it in b.stories)
+
+
+def test_translate_bad_json_is_contained():
+    s = FakeSummarizer({}, "ok")
+    s.translate_model = "t"
+    it = Item("a", "A", "T", "https://a.com/1", uid="1", headline="H", summary="S.")
+    s._ask = lambda *a, **k: '[{"id": "1", "headline": "Er sagte "Hallo"'
+    s.translate([it])
+    assert it.de == {}

@@ -151,11 +151,20 @@ def build_brief(cfg: Config, use_llm: bool = True, now: datetime | None = None) 
             log.error("article step failed: %s", e)
     client.close()
 
+    # 9. German version of everything shown, for the page's EN/DE toggle (translates the finished English text)
+    tr = cfg.get("translate") or {}
+    if summarizer and tr.get("enabled", True):
+        shown = top + [i for _, lst in sections for i in lst]
+        try:
+            summarizer.translate(shown, tr.get("language", "German"), timeout=float(tr.get("timeout", 120)))
+        except Exception as e:  # the English page never depends on the translation
+            log.error("translation step failed: %s", e)
+
     with_items = {i.source_id for i in items}
     empty = [s["name"] for s in cfg.sources if s["id"] not in with_items and s["name"] not in failed]
     brief = Brief(now=now, top=top, sections=sections, empty_sources=empty, failed_sources=failed, llm=bool(summarizer))
 
-    # 9. spoken script for the audio overview (TTS runs later, in podcast.add_audio)
+    # 10. spoken script for the audio overview (TTS runs later, in podcast.add_audio)
     if summarizer and (cfg.get("podcast") or {}).get("enabled", True):
         from .podcast import write_script
 

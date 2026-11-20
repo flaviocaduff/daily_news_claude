@@ -94,20 +94,41 @@ footer a{text-decoration:underline}
 body:has(.story:target){overflow:hidden}
 .pod{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-size:13px;color:var(--muted)}
 .pod audio{flex:1;min-width:0;height:36px}
+
+/* EN/DE toggle: a hidden checkbox (first child of body) switches every .en/.de pair; works without JS */
+#de:not(:checked) ~ * .de,#de:checked ~ * .en{display:none}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;cursor:pointer;
+  font-size:.78rem;font-weight:800;letter-spacing:.06em;user-select:none;-webkit-tap-highlight-color:transparent}
+.lang b{padding:5px 11px;color:var(--muted)}
+#de:not(:checked) ~ * .lang .le,#de:checked ~ * .lang .ld{background:var(--text);color:var(--bg)}
+.mast .right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.story .bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.story .bar .back{margin:0}
 </style>
 </head>
 <body>
+<input type="checkbox" id="de" hidden>
+{% if has_de %}<script>(function(){var c=document.getElementById("de");function s(){document.documentElement.lang=c.checked?"de":"en"}
+try{c.checked=localStorage.getItem("lang")==="de"}catch(e){}s();
+c.addEventListener("change",function(){s();try{localStorage.setItem("lang",c.checked?"de":"en")}catch(e){}})})()</script>{% endif %}
+{% macro t(en, de) -%}
+{% if de %}<span class="en">{{ en }}</span><span class="de" lang="de">{{ de }}</span>{% else %}{{ en }}{% endif %}
+{%- endmacro %}
+{% macro toggle() -%}
+{% if has_de %}<label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label>{% endif %}
+{%- endmacro %}
 <div class="wrap">
 <header class="mast">
   <div>
     <div class="kicker">{{ title }}</div>
-    <h1>{{ date_long }}</h1>
+    <h1>{{ t(date_long, date_long_de if has_de else '') }}</h1>
   </div>
-  <div class="stats">{{ b.item_count }} stories · {{ b.sections | length }} sections</div>
+  <div class="right">{{ toggle() }}
+  <div class="stats">{{ b.item_count }} {{ t('stories', 'Meldungen') }} · {{ b.sections | length }} {{ t('sections', 'Rubriken') }}</div></div>
 </header>
 
 {% if b.audio %}
-<div class="pod"><span>Listen · {{ (b.audio_seconds // 60) | int }}:{{ '%02d' | format((b.audio_seconds % 60) | int) }}</span>
+<div class="pod"><span>{{ t('Listen (German)', 'Anhören') }} · {{ (b.audio_seconds // 60) | int }}:{{ '%02d' | format((b.audio_seconds % 60) | int) }}</span>
   <audio controls preload="none" src="{{ b.audio }}"></audio></div>
 {% endif %}
 
@@ -119,9 +140,9 @@ body:has(.story:target){overflow:hidden}
   </div>
   <div class="body">
     <span class="tag">{{ it.source_name }}</span>
-    <h3 class="{{ '' if rank == 1 else 'clamp3' }}">{% if rank %}<span class="rank">{{ rank }}</span>{% endif %}{{ it.display_headline() }}</h3>
-    <p class="{{ '' if rank == 1 else 'clamp3' }}">{{ it.display_summary() }}</p>
-    {% if it.also_in %}<div class="also">Also in {{ it.also_in | join(', ') }}</div>{% endif %}
+    <h3 class="{{ '' if rank == 1 else 'clamp3' }}">{% if rank %}<span class="rank">{{ rank }}</span>{% endif %}{{ t(it.display_headline(), it.de.headline) }}</h3>
+    <p class="{{ '' if rank == 1 else 'clamp3' }}">{{ t(it.display_summary(), it.de.summary) }}</p>
+    {% if it.also_in %}<div class="also">{{ t('Also in', 'Auch in') }} {{ it.also_in | join(', ') }}</div>{% endif %}
   </div>
 </a>
 {%- endmacro %}
@@ -142,10 +163,10 @@ body:has(.story:target){overflow:hidden}
 {% endfor %}
 
 <footer>
-  {% if b.empty_sources %}<p>No new items: {{ b.empty_sources | join(', ') }}.</p>{% endif %}
-  {% if b.failed_sources %}<p>Could not fetch: {{ b.failed_sources | join(', ') }}.</p>{% endif %}
+  {% if b.empty_sources %}<p>{{ t('No new items:', 'Keine neuen Meldungen:') }} {{ b.empty_sources | join(', ') }}.</p>{% endif %}
+  {% if b.failed_sources %}<p>{{ t('Could not fetch:', 'Nicht abrufbar:') }} {{ b.failed_sources | join(', ') }}.</p>{% endif %}
   {% if not b.llm %}<p>Summaries: source teasers (LLM disabled).</p>{% endif %}
-  <p>Generated {{ generated }}. {% if archive_dates %}Archive:
+  <p>{{ t('Generated', 'Erstellt') }} {{ generated }}. {% if archive_dates %}{{ t('Archive:', 'Archiv:') }}
   {% for d in archive_dates %}<a href="archive/{{ d }}.html">{{ d }}</a>{% if not loop.last %} · {% endif %}{% endfor %}{% endif %}</p>
 </footer>
 </div>
@@ -153,19 +174,24 @@ body:has(.story:target){overflow:hidden}
 {% for it in b.stories %}
 <article class="story" id="s-{{ it.uid }}" style="--h:{{ it.section | hue }}">
   <div class="in">
-    <a class="back" href="#" onclick="if(history.length>1){history.back();return false}">← Back</a>
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}">{{ t('← Back', '← Zurück') }}</a>{{ toggle() }}</div>
     <div><span class="tag">{{ it.source_name }}</span></div>
-    <h2>{{ it.display_headline() }}</h2>
+    <h2>{{ t(it.display_headline(), it.de.headline) }}</h2>
     {% if it.image %}<img src="{{ it.image }}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">{% endif %}
     {% if it.points %}
-    {% if it.gist %}<p class="gist">{{ it.gist }}</p>{% endif %}
-    <ul>{% for p in it.points %}<li>{{ p }}</li>{% endfor %}</ul>
-    {% if it.why %}<p class="why"><b>Why it matters:</b> {{ it.why }}</p>{% endif %}
+    {% if it.gist %}<p class="gist">{{ t(it.gist, it.de.gist) }}</p>{% endif %}
+    {% if it.de.points %}
+    <ul class="en">{% for p in it.points %}<li>{{ p }}</li>{% endfor %}</ul>
+    <ul class="de" lang="de">{% for p in it.de.points %}<li>{{ p }}</li>{% endfor %}</ul>
     {% else %}
-    <p>{{ it.display_summary() }}</p>
+    <ul>{% for p in it.points %}<li>{{ p }}</li>{% endfor %}</ul>
     {% endif %}
-    {% if it.points_from_preview %}<p class="note">Based on the preview only: the full article could not be read (paywall or blocked).</p>{% endif %}
-    <div class="srcs">Sources:
+    {% if it.why %}<p class="why"><b>{{ t('Why it matters:', 'Warum es wichtig ist:') }}</b> {{ t(it.why, it.de.why) }}</p>{% endif %}
+    {% else %}
+    <p>{{ t(it.display_summary(), it.de.summary) }}</p>
+    {% endif %}
+    {% if it.points_from_preview %}<p class="note">{{ t('Based on the preview only: the full article could not be read (paywall or blocked).', 'Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).') }}</p>{% endif %}
+    <div class="srcs">{{ t('Sources:', 'Quellen:') }}
       {% for src in [it] + it.dupes %}<a href="{{ src.link }}" target="_blank" rel="noopener">{{ src.source_name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
     </div>
   </div>

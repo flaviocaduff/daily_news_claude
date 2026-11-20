@@ -111,3 +111,32 @@ def test_render_story_gist_and_why():
     html = render(Brief(now=datetime(2026, 11, 17), top=[it], sections=[]), {})
     assert 'class="gist"' in html and "<i>raised</i>" not in html
     assert "Why it matters:" in html and "Loans get dearer." in html
+
+
+def test_render_language_toggle():
+    from datetime import datetime
+
+    from daily_brief.pipeline import Brief
+    from daily_brief.render import render
+
+    de = Item("x", "X", "", "https://a.com/1", section="TLDR", uid="u1", headline="Rates up", summary="S.",
+              points=["p1"], why="W.", de={"headline": "Zinsen <b>steigen</b>", "summary": "Z.", "points": ["d1"], "why": "Ww."})
+    en = Item("x", "X", "", "https://a.com/2", section="TLDR", uid="u2", headline="Only English", summary="E.")
+    html = render(Brief(now=datetime(2026, 11, 17), top=[de, en], sections=[]), {})
+    body = html[html.index("<body>"):]
+    assert body.index('id="de"') < body.index('class="wrap"')  # checkbox precedes all content
+    assert '<label class="lang" for="de"' in html and "localStorage" in html
+    assert '<span class="en">Rates up</span><span class="de" lang="de">Zinsen &lt;b&gt;steigen' in html
+    assert '<ul class="de" lang="de"><li>d1</li></ul>' in html and "Dienstag, 17. November 2026" in html
+    assert ">Only English<" in html  # untranslated story: one unwrapped copy, shown in both modes
+
+
+def test_no_toggle_without_translation():
+    from datetime import datetime
+
+    from daily_brief.pipeline import Brief
+    from daily_brief.render import render
+
+    it = Item("x", "X", "T", "https://a.com/1", uid="u1", headline="H", summary="S.")
+    html = render(Brief(now=datetime(2026, 11, 17), top=[it], sections=[]), {})
+    assert 'class="lang"' not in html and "localStorage" not in html

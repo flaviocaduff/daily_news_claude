@@ -27,6 +27,8 @@ class Item:
     gist: str = ""       # plain-language summary for the story view
     why: str = ""        # one line: why it matters
     points_from_preview: bool = False  # no full text was readable; points come from teasers
+    # German version for the page's EN/DE toggle: headline, summary, gist, points, why (empty = English only)
+    de: dict = field(default_factory=dict)
 
     def display_headline(self) -> str:
         return self.headline or self.title

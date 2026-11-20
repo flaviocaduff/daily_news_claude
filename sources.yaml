@@ -35,12 +35,19 @@ settings:
     summarize: claude-haiku-5-5   # per-item one-sentence summaries (batched)
     rank: claude-sonnet-5-5       # Top-N pick + cross-source duplicate detection
     article: claude-haiku-5-5     # key points per story from the full article text (all sources)
+    translate: claude-haiku-5-5   # German version of the finished page (EN/DE toggle)
   summarize_batch_size: 25
   dedup_threshold: 90          # rapidfuzz token_set_ratio on normalised titles (0-100)
   fetch_images: true
   fetch_articles: true         # read the full text of shown stories for the tap-to-open summary
   http_timeout: 10
   output_dir: site
+  # EN/DE toggle on the page: the finished English text of the shown stories is translated (cheap Haiku pass).
+  # Without JS or if translation fails, the page is English. enabled: false = English only, no toggle.
+  translate:
+    enabled: true
+    language: German
+    timeout: 120               # seconds per batch; a slow batch just stays English
   # Audio overview at the top of the page: Claude writes a short script, edge-tts (free Microsoft neural
   # voices, no key) reads it. Any failure just leaves the player out.
   podcast:

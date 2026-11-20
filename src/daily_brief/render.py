@@ -32,8 +32,12 @@ def render(brief: Brief, settings: dict, archive_dates: list[str] | None = None)
     env.filters["domain"] = _domain
     env.filters["hue"] = _hue
     tpl = env.get_template("brief.html.j2")
+    from .podcast import _spoken_date
+
     return tpl.render(
         b=brief,
+        has_de=any(it.de for it in brief.stories),
+        date_long_de=_spoken_date(brief.now, "German"),
         title=settings.get("title", "Daily Brief"),
         lang_code=settings.get("lang_code", "en"),
         date_long=brief.now.strftime("%A, %-d %B %Y"),
