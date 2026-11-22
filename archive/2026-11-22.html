@@ -1,0 +1,1147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Daily Brief · 2026-11-22</title>
+<style>
+:root{
+  --bg:#f4f2ee;--card:#fff;--text:#16161a;--muted:#5f5f66;--line:#e3e0da;
+  --accent:#c2410c;--shadow:0 1px 2px rgba(0,0,0,.05),0 4px 14px rgba(0,0,0,.06);
+  --ph-l:46%;--ph-s:58%;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0f0f11;--card:#1a1a1e;--text:#f1f1f3;--muted:#a3a3ad;--line:#2a2a30;
+  --accent:#fb923c;--shadow:0 1px 2px rgba(0,0,0,.4);--ph-l:34%;--ph-s:45%;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 16px 56px}
+
+/* masthead */
+.mast{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding-bottom:14px;border-bottom:3px solid var(--text)}
+.mast .kicker{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.mast h1{margin:2px 0 0;font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.05;font-weight:850;letter-spacing:-.03em}
+.mast .stats{color:var(--muted);font-size:.9rem}
+
+/* thumbnails + placeholders */
+.img{position:relative;aspect-ratio:16/9;overflow:hidden;
+  background:linear-gradient(135deg,hsl(var(--h) var(--ph-s) var(--ph-l)),hsl(calc(var(--h) + 40) var(--ph-s) calc(var(--ph-l) - 12%)))}
+.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.img .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:12px;
+  color:rgba(255,255,255,.92);font-weight:800;font-size:1.05rem;letter-spacing:-.01em;text-align:center}
+
+/* cards */
+.card{display:flex;flex-direction:column;background:var(--card);border-radius:14px;overflow:hidden;
+  box-shadow:var(--shadow);border:1px solid var(--line);transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(0,0,0,.12)}
+.card .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tag{align-self:flex-start;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:hsl(var(--h) 70% 38%);}
+@media (prefers-color-scheme:dark){.tag{color:hsl(var(--h) 80% 70%)}}
+.card h3{margin:0;font-size:1.08rem;line-height:1.28;font-weight:780;letter-spacing:-.012em}
+.card:hover h3{color:var(--accent)}
+.card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.45}
+.also{font-size:.75rem;color:var(--muted);margin-top:auto;padding-top:4px}
+.clamp3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* Top N */
+.top{display:grid;grid-template-columns:1.55fr 1fr;grid-template-rows:auto auto;gap:18px;margin-top:22px}
+.top .card:first-child{grid-row:span 2}
+.top .card:first-child h3{font-size:clamp(1.4rem,2.6vw,1.95rem);line-height:1.15;font-weight:850;letter-spacing:-.025em}
+.top .card:first-child p{font-size:1.02rem}
+.top .card:first-child .img{aspect-ratio:auto;flex:1;min-height:240px}
+.top .card:first-child .body{flex:0 0 auto;padding:16px 20px 20px}
+.top .card:not(:first-child) h3{font-size:1.2rem}
+.top .rank{color:var(--accent);margin-right:6px}
+
+/* sections */
+section.sec{margin-top:44px}
+.sec h2{display:flex;align-items:baseline;gap:10px;margin:0 0 16px;font-size:1.55rem;font-weight:850;letter-spacing:-.02em}
+.sec h2::before{content:"";width:6px;height:1.05em;border-radius:3px;background:hsl(var(--h) 65% 50%);align-self:center}
+.sec h2 .n{font-size:.85rem;font-weight:600;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+
+footer{margin-top:48px;padding-top:14px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+footer a{text-decoration:underline}
+@media (max-width:760px){
+  .top{grid-template-columns:1fr}
+  .top .card:first-child{grid-row:auto}
+  .top .card:first-child .img{aspect-ratio:16/10;flex:none;min-height:0}
+}
+
+/* story view: opens when a card is tapped (#s-<id>), no JS needed */
+.story{display:none}
+.story:target{display:block;position:fixed;inset:0;z-index:10;overflow-y:auto;background:var(--bg)}
+.story .in{max-width:720px;margin:0 auto;padding:20px 16px 56px}
+.story .back{display:inline-block;margin-bottom:18px;font-weight:700;color:var(--accent)}
+.story h2{margin:6px 0 14px;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.15;font-weight:850;letter-spacing:-.02em}
+.story img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin-bottom:16px;background:var(--line)}
+.story ul{margin:0 0 18px;padding-left:1.2em;font-size:1.08rem}
+.story li{margin:0 0 10px}
+.story .gist{font-size:1.15rem;line-height:1.5;margin:0 0 16px}
+.story .why{margin:0 0 18px;padding:10px 14px;border-left:3px solid var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:0 8px 8px 0}
+.story .note{font-size:.85rem;color:var(--muted)}
+.story .srcs{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+.story .srcs a{text-decoration:underline;color:var(--text)}
+body:has(.story:target){overflow:hidden}
+.pod{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-size:13px;color:var(--muted)}
+.pod audio{flex:1;min-width:0;height:36px}
+
+/* EN/DE toggle: a hidden checkbox (first child of body) switches every .en/.de pair; works without JS */
+#de:not(:checked) ~ * .de,#de:checked ~ * .en{display:none}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;cursor:pointer;
+  font-size:.78rem;font-weight:800;letter-spacing:.06em;user-select:none;-webkit-tap-highlight-color:transparent}
+.lang b{padding:5px 11px;color:var(--muted)}
+#de:not(:checked) ~ * .lang .le,#de:checked ~ * .lang .ld{background:var(--text);color:var(--bg)}
+.mast .right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.story .bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.story .bar .back{margin:0}
+</style>
+</head>
+<body>
+<input type="checkbox" id="de" hidden>
+<script>(function(){var c=document.getElementById("de");function s(){document.documentElement.lang=c.checked?"de":"en"}
+try{c.checked=localStorage.getItem("lang")==="de"}catch(e){}s();
+c.addEventListener("change",function(){s();try{localStorage.setItem("lang",c.checked?"de":"en")}catch(e){}})})()</script>
+
+
+<div class="wrap">
+<header class="mast">
+  <div>
+    <div class="kicker">Daily Brief</div>
+    <h1><span class="en">Sunday, 22 November 2026</span><span class="de" lang="de">Sonntag, 22. November 2026</span></h1>
+  </div>
+  <div class="right"><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label>
+  <div class="stats">30 <span class="en">stories</span><span class="de" lang="de">Meldungen</span> · 5 <span class="en">sections</span><span class="de" lang="de">Rubriken</span></div></div>
+</header>
+
+
+<div class="pod"><span><span class="en">Listen (German)</span><span class="de" lang="de">Anhören</span> · 3:14</span>
+  <audio controls preload="none" src="2026-11-22.mp3"></audio></div>
+
+
+
+
+
+<div class="top">
+  <a class="card" href="#s-92ab234231" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/ziCfRDTBhE9K/cover/900/506/0/0/270/270/0.5/0.5/urnnewsmldpa.com20090101261122-935-1758467.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class=""><span class="rank">1</span><span class="en">Iran war: Bahrain hit again; Saudi Arabia repels Riyadh attacks</span><span class="de" lang="de">Iran-Krieg: Bahrain erneut getroffen; Saudi-Arabien wehrt Angriffe auf Riad ab</span></h3>
+    <p class=""><span class="en">Iranian fire has again hit Bahrain, Saudi Arabia repelled new attacks on Riyadh, and tankers were attacked in the Strait of Hormuz.</span><span class="de" lang="de">Iranisches Feuer hat Bahrain erneut getroffen, Saudi-Arabien hat neue Angriffe auf Riad abgewehrt, und in der Strasse von Hormus wurden Tanker angegriffen.</span></p>
+    <div class="also"><span class="en">Also in</span><span class="de" lang="de">Auch in</span> SRF News</div>
+  </div>
+</a><a class="card" href="#s-1302b96e42" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/jXW7codkYHlJ/cover/900/506/0/0/380/628/0.5/0.5/archiv-19.06.2026-belgien-bruessel-antonio-costa-l-praesident-des-europaeischen-rates-kommt-ne.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="rank">2</span><span class="en">Costa wants €204bn savings in EU budget; Merz says not enough</span><span class="de" lang="de">Costa will 204 Milliarden Euro im EU-Budget sparen; Merz sagt, das reicht nicht</span></h3>
+    <p class="clamp3"><span class="en">EU Council President Costa&#39;s budget plan would save €204 billion, cut defense and cohesion funds and add a digital tax, which Chancellor Merz considers insufficient.</span><span class="de" lang="de">Der Budgetplan von EU-Ratspräsident Costa würde 204 Milliarden Euro einsparen, Verteidigungs- und Kohäsionsmittel kürzen und eine digitale Steuer einführen, die Bundeskanzler Merz für unzureichend hält.</span></p>
+    <div class="also"><span class="en">Also in</span><span class="de" lang="de">Auch in</span> South China Morning Post</div>
+  </div>
+</a><a class="card" href="#s-a3942eee42" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/NL7DUxZIYhvP/cover/900/506/613/112/0/621/0.5/0.5/nvidia-ki-konferenz.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="rank">3</span><span class="en">SEC reportedly reviews Nvidia accounting; shares fall further</span><span class="de" lang="de">SEC prüft Berichten zufolge Nvidia-Buchhaltung; Aktien fallen weiter</span></h3>
+    <p class="clamp3"><span class="en">According to a report, the SEC is examining Nvidia&#39;s accounting and alleged chip smuggling to China, while Trump calls for former CEO Huang&#39;s return.</span><span class="de" lang="de">Laut einem Bericht prüft die SEC die Buchhaltung von Nvidia und mutmassliche Chip-Schmuggelei nach China, während Trump die Rückkehr von Ex-CEO Huang fordert.</span></p>
+    
+  </div>
+</a>
+</div>
+
+
+
+<section class="sec" id="handelsblatt" style="--h:18">
+  <h2>Handelsblatt <span class="n">6</span></h2>
+  <div class="grid">
+    <a class="card" href="#s-73d74176a2" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/lUUZiISXz8vE/cover/900/506/0/0/0/622/0.5/0.5/06.09.2026-sachsen-anhalt-magdeburg-ulrich-siegmund-mitte-l-afd-spitzenkandidat-und-co-vorsit.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="en">AfD gains oversight of state intelligence that monitors it</span><span class="de" lang="de">AfD erhält Mitsprache bei Geheimdienst, der sie überwacht</span></h3>
+    <p class="clamp3"><span class="en">The AfD in Saxony-Anhalt will co-supervise the state domestic intelligence agency that monitors the party, prompting security politicians to warn of risks to partner services.</span><span class="de" lang="de">Die AfD in Sachsen-Anhalt wird den Landesverfassungsschutz mitkontrollieren, der die Partei beobachtet, und Sicherheitspolitiker warnen vor Risiken für Partnerdienste.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-f9b36345a2" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/rCxrNZ7t-ZFC/cover/900/506/0/0/156/157/0.5/0.5/urnnewsmldpa.com20090101261116-935-1746822.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="en">Ukrainian drones being built in Britain; UK, Netherlands pledge aid</span><span class="de" lang="de">Ukrainische Drohnen werden in Grossbritannien gebaut; Grossbritannien und Niederlande sagen Hilfe zu</span></h3>
+    <p class="clamp3"><span class="en">Ukrainian drones are being built in Britain, and the UK and Netherlands pledged further military aid to Ukraine.</span><span class="de" lang="de">In Grossbritannien werden ukrainische Drohnen gebaut, und Grossbritannien und die Niederlande haben der Ukraine weitere militärische Hilfe zugesagt.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-84cd4a73ea" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/w0PrVqZoPTOK/cover/900/506/0/0/274/275/0.5/0.5/urnnewsmldpa.com20090101261120-936-150693.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="en">IG Metall expands 24-hour strikes; 23,000 workers called out</span><span class="de" lang="de">IG Metall weitet 24-Stunden-Streiks aus; 23’000 Beschäftigte aufgerufen</span></h3>
+    <p class="clamp3"><span class="en">IG Metall Küste called more than 23,000 employees at 19 plants to strike on Monday, including at Mercedes-Benz and Meyer Werft, amid a deadlocked wage dispute.</span><span class="de" lang="de">IG Metall Küste hat über 23’000 Beschäftigte an 19 Standorten zum Streik am Montag aufgerufen, darunter bei Mercedes-Benz und der Meyer Werft, inmitten eines festgefahrenen Lohnkonflikts.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-26747dcf9c" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/8lEVGdai87iB/cover/900/506/0/0/185/184/0.5/0.5/apec-gipfel-in-china.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="en">Trump again calls Putin a &#39;friend&#39; after criticism</span><span class="de" lang="de">Trump nennt Putin nach Kritik erneut einen «Freund»</span></h3>
+    <p class="clamp3"><span class="en">US President Trump repeated his description of Russian President Putin as a &#39;friend&#39; after drawing criticism for earlier warm remarks.</span><span class="de" lang="de">US-Präsident Trump hat seine Beschreibung des russischen Präsidenten Putin als «Freund» wiederholt, nachdem er für frühere freundliche Äusserungen kritisiert worden war.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-62472fbde8" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/WQzcpoedb5b8/cover/900/506/88/88/0/0/0.5/0.5/urnnewsmldpa.com20090101261121-99-352801.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="en">Russian cargo ship on fire after drone attack off Finland</span><span class="de" lang="de">Russisches Frachtschiff nach Drohnenangriff vor Finnland in Brand</span></h3>
+    <p class="clamp3"><span class="en">Finland suspects Ukraine of a drone attack that set a Russian cargo ship ablaze in the Baltic Sea, and Estonia is sending a naval vessel to help.</span><span class="de" lang="de">Finnland vermutet die Ukraine hinter einem Drohnenangriff, der ein russisches Frachtschiff in der Ostsee in Brand setzte. Estland schickt ein Marineschiff zur Hilfe.</span></p>
+    <div class="also"><span class="en">Also in</span><span class="de" lang="de">Auch in</span> SRF News</div>
+  </div>
+</a><a class="card" href="#s-cef05a68f6" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/DYgTwYm1UOVR/cover/900/506/0/0/363/189/0.5/0.5/a-sign-for-the-cop31-u.n.-climate-summit-is-displayed-as-negotiations-continue-saturday-nov.-21-20.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="en">COP31 president sees deal in reach; decision due Sunday</span><span class="de" lang="de">COP31-Präsident sieht Einigung in Reichweite; Entscheid am Sonntag</span></h3>
+    <p class="clamp3"><span class="en">Australia and Turkey presented a new negotiating package at COP31 in Antalya, and the COP31 president says agreement is within reach, with a decision expected Sunday morning.</span><span class="de" lang="de">Australien und die Türkei haben an der COP31 in Antalya ein neues Verhandlungspaket vorgelegt. Der COP31-Präsident sagt, eine Einigung sei in Reichweite, die Entscheidung wird für Sonntagmorgen erwartet.</span></p>
+    <div class="also"><span class="en">Also in</span><span class="de" lang="de">Auch in</span> SRF News</div>
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="sec" id="inside-paradeplatz" style="--h:152">
+  <h2>Inside Paradeplatz <span class="n">4</span></h2>
+  <div class="grid">
+    <a class="card" href="#s-e74eae03d7" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-21-um-08.00.46.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3"><span class="en">Nicolas Galladé Seeks Zurich Government Seat for SP</span><span class="de" lang="de">Nicolas Galladé strebt für die SP einen Sitz in der Zürcher Regierung an</span></h3>
+    <p class="clamp3"><span class="en">SP politician Nicolas Galladé, formerly Winterthur&#39;s youngest executive member, plans to win a Zurich cantonal government seat in the spring election.</span><span class="de" lang="de">SP-Politiker Nicolas Galladé, früher jüngstes Exekutivmitglied in Winterthur, will bei den Frühlingswahlen einen Sitz im Zürcher Regierungsrat gewinnen.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-d48b04cee7" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-21-um-12.42.10.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3"><span class="en">Is Switzerland really Europe&#39;s wind-energy laggard?</span><span class="de" lang="de">Ist die Schweiz wirklich Europas Nachzügler bei der Windenergie?</span></h3>
+    <p class="clamp3"><span class="en">An Inside Paradeplatz opinion piece rejects claims that Switzerland is Europe&#39;s wind-energy laggard, criticising a move to relax a century-old forest-clearing ban for turbines.</span><span class="de" lang="de">Ein Meinungsbeitrag auf Inside Paradeplatz weist die Behauptung zurück, die Schweiz sei Europas Nachzügler bei der Windenergie, und kritisiert eine Lockerung des hundertjährigen Rodungsverbots für Windturbinen.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-639a631017" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3"><span class="en">SRF Literary Critic Leaves After Criticizing Broadcaster</span><span class="de" lang="de">SRF-Literaturkritiker verlässt Sendung nach Kritik am Sender</span></h3>
+    <p class="clamp3"><span class="en">An opinion piece argues SRF&#39;s literary critic is leaving because of his criticism, which the author sees as a misreading of TV business.</span><span class="de" lang="de">Ein Meinungsbeitrag argumentiert, der Literaturkritiker von SRF gehe wegen seiner Kritik, die der Autor als Fehlinterpretation des TV-Geschäfts sieht.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-32dc42490a" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3"><span class="en">War Games: East-West Rivalry Beyond Military Conflict</span><span class="de" lang="de">Kriegsspiele: Ost-West-Rivalität jenseits militärischer Konflikte</span></h3>
+    <p class="clamp3"><span class="en">An essay describes &#39;War Games&#39; as East-West rivalry waged through economic pressure, tech dependencies, cyberattacks and influence operations rather than military force.</span><span class="de" lang="de">Ein Essay beschreibt «Kriegsspiele» als Ost-West-Rivalität, die mit wirtschaftlichem Druck, technologischen Abhängigkeiten, Cyberangriffen und Einflussoperationen geführt wird statt mit militärischer Gewalt.</span></p>
+    
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="sec" id="srf-news" style="--h:0">
+  <h2>SRF News <span class="n">6</span></h2>
+  <div class="grid">
+    <a class="card" href="#s-57038eb13b" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/a603f9.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3"><span class="en">Cross-Party Criticism of SVP&#39;s Aeschi and Graber Ticket</span><span class="de" lang="de">Parteiübergreifende Kritik am SVP-Ticket Aeschi und Graber</span></h3>
+    <p class="clamp3"><span class="en">Politicians across parties have criticized the SVP&#39;s choice of Thomas Aeschi and Michael Graber for the Federal Council ticket, according to SRF.</span><span class="de" lang="de">Politiker verschiedener Parteien kritisieren die Wahl von Thomas Aeschi und Michael Graber durch die SVP für den Bundesrat, wie SRF berichtet.</span></p>
+    <div class="also"><span class="en">Also in</span><span class="de" lang="de">Auch in</span> Inside Paradeplatz</div>
+  </div>
+</a><a class="card" href="#s-79de63639a" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/80f363.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3"><span class="en">Bukele Sends About 2,000 Soldiers to Haiti</span><span class="de" lang="de">Bukele schickt rund 2&#39;000 Soldaten nach Haiti</span></h3>
+    <p class="clamp3"><span class="en">El Salvador&#39;s President Nayib Bukele has sent about 2,000 soldiers to Haiti, which a political scientist says further complicates the gang crisis there.</span><span class="de" lang="de">Der salvadorianische Präsident Nayib Bukele hat rund 2&#39;000 Soldaten nach Haiti geschickt, was laut einem Politikwissenschaftler die dortige Bandenkrise weiter verkompliziert.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-7310d96234" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/67d9c1.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3"><span class="en">Abuse Victim Awarded Compensation He Likely Never Receives</span><span class="de" lang="de">Missbrauchsopfer erhält Genugtuung, die es vermutlich nie bekommt</span></h3>
+    <p class="clamp3"><span class="en">Lukas Baumann, abused as a child, was awarded financial redress, but he will likely never receive the money, SRF reports.</span><span class="de" lang="de">Lukas Baumann, als Kind missbraucht, wurde eine finanzielle Genugtuung zugesprochen. Laut SRF wird er das Geld vermutlich nie erhalten.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-d082ca6c41" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/a4366d.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3"><span class="en">Manor Basel marks 100 years amid online shopping pressure</span><span class="de" lang="de">Manor Basel feiert 100 Jahre unter dem Druck des Onlinehandels</span></h3>
+    <p class="clamp3"><span class="en">Manor&#39;s Basel department store celebrates its 100th anniversary as online shopping pressures large-format retailers, and its adaptation is upsetting loyal customers.</span><span class="de" lang="de">Das Basler Warenhaus von Manor feiert sein 100-jähriges Bestehen, während der Onlinehandel grossformatige Händler unter Druck setzt. Die Anpassung verärgert treue Kundschaft.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-c27622bdcd" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/47fa5d.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3"><span class="en">Swiss cantons largely do not inspect food courier working conditions</span><span class="de" lang="de">Schweizer Kantone kontrollieren die Arbeitsbedingungen von Essenskurieren weitgehend nicht</span></h3>
+    <p class="clamp3"><span class="en">An SRF survey finds most Swiss cantons do not check working conditions at delivery services Uber Eats and Just Eat, despite precarious courier jobs.</span><span class="de" lang="de">Eine SRF-Umfrage zeigt, dass die meisten Schweizer Kantone die Arbeitsbedingungen bei den Lieferdiensten Uber Eats und Just Eat nicht kontrollieren, obwohl die Kurierjobs prekär sind.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-b3bac8beb2" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/eb69f1.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3"><span class="en">Media workers protest in Bern over layoffs and press freedom</span><span class="de" lang="de">Medienschaffende protestieren in Bern gegen Stellenabbau und für Pressefreiheit</span></h3>
+    <p class="clamp3"><span class="en">Journalists demonstrated in Bern against recent layoffs, fearing for the media&#39;s role as the fourth estate and for Swiss democracy.</span><span class="de" lang="de">Journalistinnen und Journalisten demonstrierten in Bern gegen aktuelle Entlassungen. Sie fürchten um die Rolle der Medien als vierte Gewalt und um die Schweizer Demokratie.</span></p>
+    
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="sec" id="south-china-morning-post" style="--h:275">
+  <h2>South China Morning Post <span class="n">6</span></h2>
+  <div class="grid">
+    <a class="card" href="#s-d59a7ff0cc" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/20/c722a4e9-ea2f-49be-a46f-5ffc4b9387d7_e0734ec9.jpg?itok=Uy-rV7so&amp;v=1795164429" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post</span>
+    <h3 class="clamp3"><span class="en">Japan&#39;s weak yen, tax cuts complicate Takaichi&#39;s defence budget plans</span><span class="de" lang="de">Schwacher Yen und Steuersenkungen erschweren Takaichis Pläne für das Verteidigungsbudget</span></h3>
+    <p class="clamp3"><span class="en">PM Sanae Takaichi faces conservative backlash over curbing the next five-year defence budget, while analysts say US pressure poses a bigger challenge.</span><span class="de" lang="de">Premierministerin Sanae Takaichi sieht sich konservativem Gegenwind ausgesetzt, weil sie das nächste Fünfjahresbudget für die Verteidigung begrenzen will. Analysten sagen, der Druck aus den USA sei die grössere Herausforderung.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-fb8c496654" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/22/601ac6be-c41e-4b13-98dc-3a2448eed96d_d862b30e.jpg?itok=50V1l9iX&amp;v=1795285250" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post</span>
+    <h3 class="clamp3"><span class="en">Former Italian police chief Gianni De Gennaro dies by suicide amid probe</span><span class="de" lang="de">Ehemaliger italienischer Polizeichef Gianni De Gennaro stirbt durch Suizid während Ermittlungen</span></h3>
+    <p class="clamp3"><span class="en">De Gennaro, 78, national police chief from 2000 to 2007, had been under investigation for alleged obstruction of a probe into the 1992 killing of an anti-mafia magistrate.</span><span class="de" lang="de">De Gennaro, 78, war von 2000 bis 2007 nationaler Polizeichef. Gegen ihn wurde ermittelt, weil er angeblich die Untersuchung des Mordes an einem Antimafia-Magistraten im Jahr 1992 behindert haben soll.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-f9334cce54" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/21/110c3334-9b1b-4645-9e39-314378de9dd7_fe65b120.jpg?itok=KD9TJ_lh&amp;v=1795269632" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post</span>
+    <h3 class="clamp3"><span class="en">Mexico captures FBI most-wanted drug kingpin in Sinaloa firefight</span><span class="de" lang="de">Mexiko verhaftet bei Feuergefecht in Sinaloa meistgesuchten Drogenboss des FBI</span></h3>
+    <p class="clamp3"><span class="en">Mexican forces captured Fausto Isidro Meza, alias Chapo Isidro, on the FBI&#39;s top-10 most-wanted list in a Sinaloa raid that left 11 dead, including four soldiers.</span><span class="de" lang="de">Mexikanische Streitkräfte haben Fausto Isidro Meza, genannt Chapo Isidro, auf der Top-10-Liste der meistgesuchten Flüchtigen des FBI verhaftet. Bei dem Einsatz in Sinaloa starben 11 Menschen, darunter vier Soldaten.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-54414c1253" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/21/b6ae5070-152b-4031-8a59-d09022883f35_c6f4a798.jpg?itok=A5RI2Ynl&amp;v=1795260989" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post</span>
+    <h3 class="clamp3"><span class="en">Tainted alcohol kills 11, hospitalises over 180 in Indian Manipur</span><span class="de" lang="de">Verunreinigter Alkohol tötet 11 Menschen und bringt über 180 ins Spital im indischen Manipur</span></h3>
+    <p class="clamp3"><span class="en">At least 11 people died and over 180 were hospitalised after drinking suspected tainted liquor in Manipur, with the chief minister ordering an inquiry.</span><span class="de" lang="de">Mindestens 11 Menschen starben und über 180 wurden ins Spital eingeliefert, nachdem sie mutmasslich verunreinigten Alkohol in Manipur getrunken hatten. Der Ministerpräsident ordnete eine Untersuchung an.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-e7d8fca2cf" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/21/973eaa80-8e2d-4542-8bbf-6119092c11f6_42ab9ebc.jpg?itok=xzwdoBFx&amp;v=1795245425" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post</span>
+    <h3 class="clamp3"><span class="en">Xi, Trump agree military AI decisions must involve humans, Bessent says</span><span class="de" lang="de">Xi und Trump einigen sich, dass Entscheidungen zu militärischer KI Menschen einbeziehen müssen, sagt Bessent</span></h3>
+    <p class="clamp3"><span class="en">Xi Jinping and Donald Trump agreed at APEC that humans should always be involved in military AI decisions, US Treasury Secretary Scott Bessent said.</span><span class="de" lang="de">Xi Jinping und Donald Trump vereinbarten am APEC-Gipfel, dass bei militärischen KI-Entscheidungen immer Menschen beteiligt sein sollen, sagte US-Finanzminister Scott Bessent.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-08d05dabd6" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/21/bdd22e51-e8d8-46a5-b3ff-cfd461ae7a4a_f0e004cf.jpg?itok=erb2FqqK&amp;v=1795242718" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post</span>
+    <h3 class="clamp3"><span class="en">UN pledges &#39;killer robot&#39; rules by 2028 after Russian pushback</span><span class="de" lang="de">UN verspricht Regeln für &#39;Killer-Roboter&#39; bis 2028 nach russischem Widerstand</span></h3>
+    <p class="clamp3"><span class="en">UN talks on autonomous weapons ended with a pledge to develop rules within two years, a weaker outcome after Russian opposition; about 100 countries had backed binding rules.</span><span class="de" lang="de">Die UN-Gespräche über autonome Waffen endeten mit dem Versprechen, innerhalb von zwei Jahren Regeln zu entwickeln. Das Ergebnis fiel schwächer aus, nachdem Russland Widerstand leistete. Rund 100 Länder hatten verbindliche Regeln unterstützt.</span></p>
+    <div class="also"><span class="en">Also in</span><span class="de" lang="de">Auch in</span> Swiss Federal Government, SRF News, Handelsblatt</div>
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="sec" id="belta" style="--h:350">
+  <h2>BelTA <span class="n">5</span></h2>
+  <div class="grid">
+    <a class="card" href="#s-52a80480f4" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795276958_189277_big.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3"><span class="en">Expert comments on repeated Ukrainian drone attacks on Crimean Bridge</span><span class="de" lang="de">Experte kommentiert wiederholte ukrainische Drohnenangriffe auf die Krim-Brücke</span></h3>
+    <p class="clamp3"><span class="en">Political analyst Nikolai Platoshkin commented on repeated Ukrainian drone attacks on the Crimean Bridge in a BelTA segment.</span><span class="de" lang="de">Der politische Analyst Nikolai Platoshkin kommentierte in einem Beitrag von BelTA wiederholte ukrainische Drohnenangriffe auf die Krim-Brücke.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-1a0d9091ea" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795293018_189282_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3"><span class="en">Analyst: which European states still fund Ukraine, and which have stopped</span><span class="de" lang="de">Analyst: Welche europäischen Staaten die Ukraine noch finanziell unterstützen und welche aufgehört haben</span></h3>
+    <p class="clamp3"><span class="en">On BelTA&#39;s programme, economist Serghei Banari said which of Ukraine&#39;s European backers can still sustain aid and which have stopped providing it.</span><span class="de" lang="de">Im Programm von BelTA sagte der Wirtschaftswissenschaftler Serghei Banari, welche europäischen Unterstützer der Ukraine ihre Hilfe noch aufrechterhalten können und welche sie eingestellt haben.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-a3a85801be" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795248031_189262_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3"><span class="en">Expert: Europe deadlocked over Ukraine support, Kyiv seeks stronger position</span><span class="de" lang="de">Experte: Europa blockiert bei der Unterstützung der Ukraine, Kiew sucht eine stärkere Position</span></h3>
+    <p class="clamp3"><span class="en">In a BelTA segment, economist Serghei Banari argued Europe is deadlocked and questioned whether European support for Kyiv will continue.</span><span class="de" lang="de">In einem Beitrag von BelTA argumentierte der Wirtschaftswissenschaftler Serghei Banari, Europa stecke in einer Blockade, und stellte in Frage, ob die europäische Unterstützung für Kiew weitergehe.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-e7fbf75c21" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795280638_189279_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3"><span class="en">Analyst explains what awaits Zelensky after the war ends</span><span class="de" lang="de">Analyst erklärt, was Zelensky nach Kriegsende erwartet</span></h3>
+    <p class="clamp3"><span class="en">In a BelTA segment, economist Serghei Banari assessed Zelensky&#39;s prospects after a peace settlement, saying &#39;Moscow doesn&#39;t care about him&#39;.</span><span class="de" lang="de">In einem Beitrag von BelTA bewertete der Wirtschaftswissenschaftler Serghei Banari die Aussichten von Zelensky nach einer Friedensregelung und sagte: &#39;Moskau kümmert sich nicht um ihn&#39;.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-f067387c96" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795278051_189278_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3"><span class="en">Analyst: European support for Ukraine shrinks as peace nears</span><span class="de" lang="de">Analyst: Europäische Unterstützung für die Ukraine schrumpft mit näher rückendem Frieden</span></h3>
+    <p class="clamp3"><span class="en">In a BelTA segment, economist Serghei Banari argued European support for Ukraine will shrink as peace approaches, calling Western agreements unreliable.</span><span class="de" lang="de">In einem Beitrag von BelTA argumentierte der Wirtschaftswissenschaftler Serghei Banari, die europäische Unterstützung für die Ukraine werde schwinden, je näher der Frieden rücke, und bezeichnete westliche Abkommen als unzuverlässig.</span></p>
+    
+  </div>
+</a>
+  </div>
+</section>
+
+
+<footer>
+  <p><span class="en">No new items:</span><span class="de" lang="de">Keine neuen Meldungen:</span> TLDR Tech, TLDR AI, TLDR Dev, TLDR InfoSec, TLDR Product, TLDR DevOps, TLDR Founders, TLDR Design, TLDR Marketing, TLDR Crypto, TLDR Fintech, TLDR IT, TLDR Data, TLDR Hardware.</p>
+  
+  
+  <p><span class="en">Generated</span><span class="de" lang="de">Erstellt</span> 06:38 CET. <span class="en">Archive:</span><span class="de" lang="de">Archiv:</span>
+  <a href="2026-11-22.html">2026-11-22</a> · <a href="2026-11-21.html">2026-11-21</a> · <a href="2026-11-20.html">2026-11-20</a> · <a href="2026-11-19.html">2026-11-19</a> · <a href="2026-11-18.html">2026-11-18</a> · <a href="2026-11-17.html">2026-11-17</a></p>
+</footer>
+</div>
+
+
+<article class="story" id="s-92ab234231" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">Iran war: Bahrain hit again; Saudi Arabia repels Riyadh attacks</span><span class="de" lang="de">Iran-Krieg: Bahrain erneut getroffen; Saudi-Arabien wehrt Angriffe auf Riad ab</span></h2>
+    <img src="https://images.handelsblatt.com/ziCfRDTBhE9K/cover/900/506/0/0/270/270/0.5/0.5/urnnewsmldpa.com20090101261122-935-1758467.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Trump has put off any decision on new large strikes on Iran until next year. Fighting and attacks continue across the Gulf region and into Lebanon and Gaza.</span><span class="de" lang="de">Trump hat Entscheidungen über neue grosse Schläge gegen den Iran auf nächstes Jahr verschoben. Kämpfe und Angriffe gehen in der Golfregion weiter, auch bis in den Libanon und den Gazastreifen.</span></p>
+    
+    <ul class="en"><li>In a Reuters interview on Thursday, US President Donald Trump said he will discuss new strikes on Iran after the new year. He said: &#39;We have time.&#39;</li><li>Handelsblatt says both sides are stuck in efforts to end the conflict. Trump had recently threatened escalation but also hinted at an end to hostilities.</li><li>Bahrain&#39;s air defences repelled several air attacks from Iran and destroyed projectiles, its armed forces said (SRF News, preview only).</li><li>The Strait of Hormuz, a sea passage between Iran and Oman that is key for oil, is now the main dispute. Iran says ships need its approval; the US says it controls the strait.</li><li>Iran reports explosions on three ships near the strait. Attacks on oil tankers there have risen sharply again recently.</li><li>Shipping data firm Kpler says about 8.5 million barrels of oil a day pass the strait. That is roughly half the level at the start of November; figures may be revised up.</li><li>A Pentagon (US defence ministry) official told a Senate hearing the Iran war has cost the US $48.3 billion, about 44 billion euros, as of 13 November.</li><li>The US Treasury sanctioned three people and three entities in Lebanon linked to Hezbollah, including the charity Ta&#39;awanu. The US military warned it may seize ships that take cargo from Iran-linked vessels.</li></ul>
+    <ul class="de" lang="de"><li>In einem Interview mit Reuters am Donnerstag sagte US-Präsident Donald Trump, er werde nach dem Jahreswechsel über neue Schläge gegen den Iran sprechen. Er sagte: «Wir haben Zeit.»</li><li>Handelsblatt schreibt, beide Seiten stecken bei den Bemühungen um ein Ende des Konflikts fest. Trump hatte kürzlich mit einer Eskalation gedroht, aber auch Andeutungen über ein Ende der Feindseligkeiten gemacht.</li><li>Die Luftabwehr Bahrains habe mehrere Luftangriffe aus dem Iran abgewehrt und Projektile zerstört, teilten die Streitkräfte mit (SRF News, nur Vorschau).</li><li>Die Strasse von Hormus, eine Meerenge zwischen dem Iran und Oman, die für Öl zentral ist, ist nun der Hauptstreitpunkt. Der Iran sagt, Schiffe brauchen seine Zustimmung; die USA sagen, sie kontrollierten die Meerenge.</li><li>Der Iran meldet Explosionen auf drei Schiffen nahe der Meerenge. Angriffe auf Öltanker dort haben in letzter Zeit wieder stark zugenommen.</li><li>Die Schifffahrtsdatenfirma Kpler sagt, etwa 8,5 Millionen Barrel Öl pro Tag passierten die Meerenge. Das ist ungefähr die Hälfte des Niveaus Anfang November; die Zahlen könnten nach oben korrigiert werden.</li><li>Ein Beamter des Pentagons (US-Verteidigungsministerium) sagte vor einem Senatsausschuss, der Iran-Krieg habe die USA bis zum 13. November 48,3 Milliarden Dollar gekostet, etwa 44 Milliarden Euro.</li><li>Das US-Finanzministerium hat drei Personen und drei Organisationen im Libanon sanktioniert, die mit der Hisbollah in Verbindung stehen, darunter die Wohltätigkeitsorganisation Ta&#39;awanu. Das US-Militär warnte, es könnte Schiffe beschlagnahmen, die Fracht von Schiffen mit Iran-Verbindungen übernehmen.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Oil shipments through Hormuz affect global energy prices, including fuel and power costs in Europe.</span><span class="de" lang="de">Öllieferungen durch Hormus beeinflussen die globalen Energiepreise, einschliesslich der Kosten für Treibstoff und Strom in Europa.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/politik/international/iran-krieg-bahrain-geraet-erneut-unter-iranischen-beschuss/100136895.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.srf.ch/news/international/nahost/krieg-im-nahen-osten-bahrain-erneut-angriffe-aus-dem-iran-abgewehrt" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-1302b96e42" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">Costa wants €204bn savings in EU budget; Merz says not enough</span><span class="de" lang="de">Costa will 204 Milliarden Euro im EU-Budget sparen; Merz sagt, das reicht nicht</span></h2>
+    <img src="https://images.handelsblatt.com/jXW7codkYHlJ/cover/900/506/0/0/380/628/0.5/0.5/archiv-19.06.2026-belgien-bruessel-antonio-costa-l-praesident-des-europaeischen-rates-kommt-ne.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">EU Council President António Costa proposed a new EU-wide tax on big tech firms and cut the next long-term EU budget by 204 billion euros. German Chancellor Friedrich Merz says the budget is still too big.</span><span class="de" lang="de">EU-Ratspräsident António Costa hat eine neue EU-weite Steuer auf grosse Tech-Konzerne vorgeschlagen und das nächste langfristige EU-Budget um 204 Milliarden Euro gekürzt. Bundeskanzler Friedrich Merz sagt, das Budget sei immer noch zu gross.</span></p>
+    
+    <ul class="en"><li>Costa proposes a 3% levy on big firms&#39; revenue from online advertising, platform services and selling user data. He presented the plan in Brussels on Saturday.</li><li>Firms with over 750 million euros in global annual sales and above 60 million euros in EU digital sales would pay. One Handelsblatt report says 50 million euros; the reports differ.</li><li>The levy replaces a company charge the European Commission (the EU&#39;s executive) had proposed. Berlin had called that charge unacceptable because it would hit big German firms.</li><li>The total budget for 2028 to 2034 would be 1.781 trillion euros in current prices. Costa cuts 204 billion euros from the Commission&#39;s plan over seven years. SCMP puts that at $224 billion.</li><li>Other new income would include emissions trading, a carbon border levy (CBAM), a tobacco levy, and fees for mobile radio frequencies. A crypto levy is also floated. Together they bring about 60 billion euros a year; the digital tax about 5 billion.</li><li>France called the proposal &#39;very disappointing&#39;, citing farm income support. Merz says the budget must not grow by over 40%, and it is still too high.</li><li>Merz links the budget talks to funding for Ukraine. He threatened to block the deal unless all 27 member states share the Ukraine costs.</li><li>EU leaders meet in Brussels on Thursday and Friday. A final deal is expected at the December summit at the earliest; Costa also cuts funds for poorer regions.</li></ul>
+    <ul class="de" lang="de"><li>Costa schlägt eine Abgabe von 3 % auf die Einnahmen grosser Firmen aus Online-Werbung, Plattformdiensten und dem Verkauf von Nutzerdaten vor. Er stellte den Plan am Samstag in Brüssel vor.</li><li>Firmen mit mehr als 750 Millionen Euro weltweitem Jahresumsatz und über 60 Millionen Euro digitalem Umsatz in der EU würden zahlen. Ein Bericht von Handelsblatt nennt 50 Millionen Euro; die Berichte unterscheiden sich.</li><li>Die Abgabe ersetzt eine Unternehmenssteuer, die die Europäische Kommission (die Exekutive der EU) vorgeschlagen hatte. Berlin hatte diese als inakzeptabel bezeichnet, weil sie grosse deutsche Firmen treffen würde.</li><li>Das Gesamtbudget für 2028 bis 2034 würde 1,781 Billionen Euro zu laufenden Preisen betragen. Costa streicht 204 Milliarden Euro aus dem Plan der Kommission über sieben Jahre. SCMP beziffert dies auf 224 Milliarden Dollar.</li><li>Weitere neue Einnahmen wären der Emissionshandel, eine CO2-Grenzausgleichsabgabe (CBAM), eine Tabakabgabe und Gebühren für Mobilfunkfrequenzen. Auch eine Kryptoabgabe wird ins Spiel gebracht. Zusammen bringen sie etwa 60 Milliarden Euro pro Jahr; die digitale Steuer etwa 5 Milliarden.</li><li>Frankreich nannte den Vorschlag «sehr enttäuschend» und verwies auf die Unterstützung der Einkommen von Landwirten. Merz sagt, das Budget dürfe nicht um mehr als 40 % wachsen, und es sei immer noch zu hoch.</li><li>Merz verknüpft die Budgetverhandlungen mit der Finanzierung für die Ukraine. Er drohte, den Deal zu blockieren, falls nicht alle 27 Mitgliedstaaten die Kosten für die Ukraine teilen.</li><li>Die EU-Staats- und Regierungschefs treffen sich am Donnerstag und Freitag in Brüssel. Eine endgültige Einigung wird frühestens am Dezember-Gipfel erwartet; Costa kürzt zudem Mittel für ärmere Regionen.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Germany pays the largest share of EU contributions, so the budget size directly affects German taxpayers.</span><span class="de" lang="de">Deutschland zahlt den grössten Anteil an den EU-Beiträgen, daher wirkt sich die Budgetgrösse direkt auf die deutschen Steuerzahler aus.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/politik/international/eu-haushalt-costa-will-204-milliarden-sparen-merz-reicht-das-nicht/100271749.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/politik/international/ringen-um-billionen-haushalt-neue-eu-digitalsteuer-soll-streit-um-haushalt-entschaerfen/100271742.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.scmp.com/news/world/europe/article/3375333/eu-eyes-tax-big-tech-boost-budget" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-a3942eee42" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">SEC reportedly reviews Nvidia accounting; shares fall further</span><span class="de" lang="de">SEC prüft Berichten zufolge Nvidia-Buchhaltung; Aktien fallen weiter</span></h2>
+    <img src="https://images.handelsblatt.com/NL7DUxZIYhvP/cover/900/506/613/112/0/621/0.5/0.5/nvidia-ki-konferenz.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Nvidia shares fell another 14% to 128 dollars after a report that US regulators are reviewing its accounting. The shares are at their lowest since May 2025.</span><span class="de" lang="de">Die Nvidia-Aktie fiel um weitere 14 % auf 128 Dollar, nachdem ein Bericht erschien, wonach US-Regulierer deren Buchhaltung prüfen. Die Aktie steht so tief wie seit Mai 2025 nicht mehr.</span></p>
+    
+    <ul class="en"><li>Nvidia makes AI chips. Its shares fell to their lowest level since May 2025 on Friday after the report.</li><li>Reuters, citing people familiar with the matter, says the SEC (the US stock market watchdog) is examining Nvidia&#39;s accounting. The SEC did not comment; Nvidia did not respond to a request.</li><li>The Wall Street Journal reported on Tuesday that the SEC is investigating Nvidia. It did not say what the investigation focuses on.</li><li>Investors are also discussing allegations that Nvidia smuggled chips to China, bypassing US export controls (rules limiting chip sales abroad). Accounting problems could add to these legal issues.</li><li>Shares have lost over 42% in a month. They are about half their October record high of roughly 243 dollars.</li></ul>
+    <ul class="de" lang="de"><li>Nvidia stellt KI-Chips her. Die Aktie fiel am Freitag nach dem Bericht auf ihren tiefsten Stand seit Mai 2025.</li><li>Reuters schreibt unter Berufung auf mit der Sache vertraute Personen, die SEC (die US-Börsenaufsicht) prüfe die Buchhaltung von Nvidia. Die SEC äusserte sich nicht; Nvidia reagierte nicht auf eine Anfrage.</li><li>Das Wall Street Journal berichtete am Dienstag, die SEC untersuche Nvidia. Worauf sich die Untersuchung konzentriert, sagte es nicht.</li><li>Investoren diskutieren auch Vorwürfe, Nvidia habe Chips unter Umgehung der US-Exportkontrollen (Regeln, die den Verkauf von Chips ins Ausland beschränken) nach China geschmuggelt. Buchhaltungsprobleme könnten diese rechtlichen Fragen noch verschärfen.</li><li>Die Aktien haben in einem Monat über 42 % verloren. Sie liegen etwa bei der Hälfte ihres Rekordhochs vom Oktober von rund 243 Dollar.</li></ul>
+    
+    
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/technik/ki/chip-konzern-aufsicht-sec-ueberprueft-laut-bericht-nvidia-bilanzierung/100271678.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-73d74176a2" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">AfD gains oversight of state intelligence that monitors it</span><span class="de" lang="de">AfD erhält Mitsprache bei Geheimdienst, der sie überwacht</span></h2>
+    <img src="https://images.handelsblatt.com/lUUZiISXz8vE/cover/900/506/0/0/0/622/0.5/0.5/06.09.2026-sachsen-anhalt-magdeburg-ulrich-siegmund-mitte-l-afd-spitzenkandidat-und-co-vorsit.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">In Saxony-Anhalt, the AfD (Alternative for Germany) will now help oversee the state intelligence agency that monitors the party itself. Security politicians are raising the alarm.</span><span class="de" lang="de">In Sachsen-Anhalt wird die AfD (Alternative für Deutschland) nun bei der Aufsicht über den Landesgeheimdienst mitwirken, der die Partei selbst überwacht. Sicherheitspolitiker schlagen Alarm.</span></p>
+    
+    <ul class="en"><li>A parliamentary committee in the state will now oversee the Landesverfassungsschutz, the state office for protecting the constitution, which runs domestic intelligence.</li><li>The state agency monitors the AfD itself, so the party will sit on a body that checks its own observer.</li><li>Handelsblatt calls this an &#39;absolutely bad sign&#39;. Its headline asks whether it endangers cooperation with partner intelligence services.</li><li>Only a short preview was available, so further details are not known.</li></ul>
+    <ul class="de" lang="de"><li>Ein Parlamentsausschuss des Landes wird nun den Landesverfassungsschutz beaufsichtigen, das Landesamt für den Schutz der Verfassung, das den Inlandsgeheimdienst betreibt.</li><li>Die Landesbehörde überwacht die AfD selbst, daher wird die Partei in einem Gremium sitzen, das ihren eigenen Beobachter kontrolliert.</li><li>Handelsblatt nennt dies ein «absolut schlechtes Zeichen». Der Titel fragt, ob es die Zusammenarbeit mit Partnerdiensten gefährdet.</li><li>Nur eine kurze Vorschau war verfügbar, weitere Details sind daher nicht bekannt.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/politik/deutschland/afd-politiker-sorgen-sich-um-kooperation-mit-partnergeheimdiensten/100271788.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-f9b36345a2" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">Ukrainian drones being built in Britain; UK, Netherlands pledge aid</span><span class="de" lang="de">Ukrainische Drohnen werden in Grossbritannien gebaut; Grossbritannien und Niederlande sagen Hilfe zu</span></h2>
+    <img src="https://images.handelsblatt.com/rCxrNZ7t-ZFC/cover/900/506/0/0/156/157/0.5/0.5/urnnewsmldpa.com20090101261116-935-1746822.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Handelsblatt&#39;s live blog reports that Ukrainian drones are being built in Britain. Only the headline and a short teaser were readable.</span><span class="de" lang="de">Der Live-Blog von Handelsblatt berichtet, dass in Grossbritannien ukrainische Drohnen gebaut werden. Lesbar waren nur die Schlagzeile und ein kurzer Teaser.</span></p>
+    
+    <ul class="en"><li>Only the headline and a short teaser were readable, so no details are available.</li><li>The teaser also mentions a Russian cargo ship that caught fire after a drone attack off Finland.</li><li>It also reports that Britain and the Netherlands pledged more aid to Ukraine.</li></ul>
+    <ul class="de" lang="de"><li>Lesbar waren nur die Schlagzeile und ein kurzer Teaser, daher sind keine Details verfügbar.</li><li>Der Teaser erwähnt auch ein russisches Frachtschiff, das nach einem Drohnenangriff vor Finnland in Brand geriet.</li><li>Ausserdem wird berichtet, dass Grossbritannien und die Niederlande der Ukraine mehr Hilfe zugesagt haben.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/politik/international/ukraine-ukrainische-drohnen-werden-in-grossbritannien-gebaut/27982126.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-84cd4a73ea" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">IG Metall expands 24-hour strikes; 23,000 workers called out</span><span class="de" lang="de">IG Metall weitet 24-Stunden-Streiks aus; 23’000 Beschäftigte aufgerufen</span></h2>
+    <img src="https://images.handelsblatt.com/w0PrVqZoPTOK/cover/900/506/0/0/274/275/0.5/0.5/urnnewsmldpa.com20090101261120-936-150693.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Germany&#39;s IG Metall union is expanding its full-day strikes at metal and electrical plants in northern Germany. More than 23,000 workers at 19 plants are called to walk out on Monday.</span><span class="de" lang="de">Die deutsche IG Metall weitet ihre ganztägigen Streiks in Metall- und Elektrobetrieben in Norddeutschland aus. Über 23’000 Beschäftigte an 19 Standorten sind aufgerufen, am Montag die Arbeit niederzulegen.</span></p>
+    
+    <ul class="en"><li>IG Metall Küste, the union&#39;s northern branch, says it is sharply widening its 24-hour strikes.</li><li>In several plants, strikes begin Sunday evening, when night shifts start.</li><li>Affected sites include Mercedes-Benz plants in Bremen and Hamburg and the Meyer Werft shipyard in Papenburg.</li><li>Also hit: Siemens Gamesa (a wind turbine maker) in Cuxhaven, Lear in Bremen, and ZF Airbag in Laage.</li><li>Stryker and GKN Driveline in Schleswig-Holstein, Manitowoc in Wilhelmshaven, and BRÜGGEN in Lübtheen also face full-day stoppages.</li><li>Shorter warning strikes will also run at more plants.</li><li>The pay talks for about 130,000 workers are deadlocked. Daniel Friedrich, the union&#39;s chief negotiator, says employers must move.</li></ul>
+    <ul class="de" lang="de"><li>IG Metall Küste, der Norden der Gewerkschaft, sagt, sie weite ihre 24-Stunden-Streiks stark aus.</li><li>In mehreren Betrieben beginnen die Streiks am Sonntagabend, wenn die Nachtschichten beginnen.</li><li>Betroffen sind Mercedes-Benz-Werke in Bremen und Hamburg sowie die Meyer Werft in Papenburg.</li><li>Ebenfalls betroffen sind Siemens Gamesa (ein Hersteller von Windkraftanlagen) in Cuxhaven, Lear in Bremen und ZF Airbag in Laage.</li><li>Stryker und GKN Driveline in Schleswig-Holstein, Manitowoc in Wilhelmshaven sowie BRÜGGEN in Lübtheen sind ebenfalls von ganztägigen Arbeitsniederlegungen betroffen.</li><li>Kürzere Warnstreiks laufen zudem in weiteren Betrieben.</li><li>Die Lohnverhandlungen für rund 130’000 Beschäftigte sind festgefahren. Daniel Friedrich, der Chefverhandlungsführer der Gewerkschaft, sagt, die Arbeitgeber müssten sich bewegen.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Walkouts at big employers like Mercedes-Benz could delay production across northern Germany.</span><span class="de" lang="de">Streiks bei grossen Arbeitgebern wie Mercedes-Benz könnten die Produktion in ganz Norddeutschland verzögern.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/politik/deutschland/metall-tarifkonflikt-ig-metall-kueste-24-stunden-streiks-werden-ausgeweitet/100271781.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-26747dcf9c" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">Trump again calls Putin a &#39;friend&#39; after criticism</span><span class="de" lang="de">Trump nennt Putin nach Kritik erneut einen «Freund»</span></h2>
+    <img src="https://images.handelsblatt.com/8lEVGdai87iB/cover/900/506/0/0/185/184/0.5/0.5/apec-gipfel-in-china.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">US President Donald Trump again called Russian leader Vladimir Putin his &#39;friend&#39;. The remark drew sharp criticism, including from members of his own party.</span><span class="de" lang="de">US-Präsident Donald Trump hat den russischen Machthaber Wladimir Putin erneut seinen «Freund» genannt. Die Aussage stiess auf scharfe Kritik, auch von Mitgliedern seiner eigenen Partei.</span></p>
+    
+    <ul class="en"><li>Trump posted a handshake photo with Putin on Truth Social, his own social media platform, captioned &#39;My friend.&#39;</li><li>The post follows a warm greeting and &#39;friend&#39; remark at a summit in China earlier this week.</li><li>Senate Democratic leader Chuck Schumer said Putin kidnapped tens of thousands of children and killed tens of thousands of civilians.</li><li>Schumer also said Putin wrongly jailed Americans, and that Trump treats him as a friend.</li><li>Republican Senator Jim Banks of Indiana urged tougher action against hostile nations. He said China and Russia are not America&#39;s friends.</li><li>Republican Senator Rick Scott of Florida called Putin a &#39;villain&#39;.</li><li>At a White House press conference on Friday, Trump again praised his &#39;fantastic relationship&#39; with Putin.</li><li>Asked whether Putin is a friend of America, Trump avoided a direct answer. Russia&#39;s war on Ukraine has lasted almost five years.</li></ul>
+    <ul class="de" lang="de"><li>Trump veröffentlichte auf Truth Social, seiner eigenen Social-Media-Plattform, ein Foto eines Händedrucks mit Putin mit der Bildunterschrift «Mein Freund».</li><li>Der Beitrag folgt auf eine herzliche Begrüssung und die Bezeichnung «Freund» bei einem Gipfeltreffen in China, das früher in dieser Woche stattfand.</li><li>Der demokratische Fraktionschef im Senat, Chuck Schumer, sagte, Putin habe Zehntausende Kinder entführt und Zehntausende Zivilisten getötet.</li><li>Schumer sagte ausserdem, Putin habe Amerikaner zu Unrecht eingesperrt, und Trump behandle ihn als Freund.</li><li>Der republikanische Senator Jim Banks aus Indiana forderte härtere Massnahmen gegen feindlich gesinnte Staaten. Er sagte, China und Russland seien nicht Amerikas Freunde.</li><li>Der republikanische Senator Rick Scott aus Florida nannte Putin einen «Schurken».</li><li>Bei einer Pressekonferenz im Weissen Haus am Freitag lobte Trump erneut seine «fantastische Beziehung» zu Putin.</li><li>Auf die Frage, ob Putin ein Freund Amerikas sei, gab Trump keine direkte Antwort. Russlands Krieg gegen die Ukraine dauert inzwischen fast fünf Jahre.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">The remarks show Trump&#39;s stance on Russia dividing even his own Republican party.</span><span class="de" lang="de">Die Äusserungen zeigen, dass Trumps Haltung zu Russland sogar seine eigene republikanische Partei spaltet.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/politik/international/umstrittene-aeusserung-nach-kritik-trump-bezeichnet-putin-erneut-als-freund/100271795.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-62472fbde8" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">Russian cargo ship on fire after drone attack off Finland</span><span class="de" lang="de">Russisches Frachtschiff nach Drohnenangriff vor Finnland in Brand</span></h2>
+    <img src="https://images.handelsblatt.com/WQzcpoedb5b8/cover/900/506/88/88/0/0/0.5/0.5/urnnewsmldpa.com20090101261121-99-352801.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">A Russian military cargo ship caught fire after a drone attack in the Gulf of Finland. Finland said the attack was likely Ukrainian, but this is not confirmed.</span><span class="de" lang="de">Ein russisches Militärfrachtschiff geriet nach einem Drohnenangriff im Finnischen Meerbusen in Brand. Finnland sagte, der Angriff sei wahrscheinlich ukrainisch, doch dies ist nicht bestätigt.</span></p>
+    
+    <ul class="en"><li>The ship, the &#39;Sparta II&#39;, belongs to a Russian military logistics company. It was hit on Saturday.</li><li>It was struck in international waters near Gogland, a Russian island, then drifted into Finnish waters.</li><li>Finland imposed local restrictions in the area for security reasons.</li><li>Estonia&#39;s border guard reported signs of explosions on board the ship.</li><li>Ukraine&#39;s foreign ministry did not answer a Reuters (news agency) request for comment.</li><li>Finnish Prime Minister Petteri Orpo wrote on X that the war is spreading to the neighbourhood. He said Ukraine has the right to fight the aggressor.</li><li>Estonian Prime Minister Kristen Michal said the consequences of fighting Russia have reached the Baltic Sea. Sweden&#39;s Prime Minister Ulf Kristersson offered Finland support.</li><li>SRF (Swiss public broadcaster) adds that Ukrainian President Zelensky said Russia&#39;s Crimea bridge has no future. It also reports that Trump will not give Ukraine security guarantees for now.</li></ul>
+    <ul class="de" lang="de"><li>Das Schiff «Sparta II» gehört einer russischen militärischen Logistikfirma. Es wurde am Samstag getroffen.</li><li>Es wurde in internationalen Gewässern nahe Gogland, einer russischen Insel, getroffen und trieb danach in finnische Gewässer.</li><li>Finnland verhängte aus Sicherheitsgründen lokale Einschränkungen für das Gebiet.</li><li>Die estnische Grenzwache meldete Anzeichen von Explosionen an Bord des Schiffs.</li><li>Das ukrainische Aussenministerium beantwortete eine Anfrage der Nachrichtenagentur Reuters um Stellungnahme nicht.</li><li>Der finnische Ministerpräsident Petteri Orpo schrieb auf X, der Krieg breite sich in der Nachbarschaft aus. Die Ukraine habe das Recht, gegen den Aggressor zu kämpfen.</li><li>Der estnische Ministerpräsident Kristen Michal sagte, die Folgen des Kampfes gegen Russland hätten die Ostsee erreicht. Schwedens Ministerpräsident Ulf Kristersson bot Finnland Unterstützung an.</li><li>SRF (öffentlich-rechtlicher Schweizer Sender) ergänzt, der ukrainische Präsident Selenskyj habe gesagt, Russlands Krim-Brücke habe keine Zukunft. Ausserdem berichtet SRF, Trump werde der Ukraine vorerst keine Sicherheitsgarantien geben.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">It shows the war&#39;s fighting reaching Baltic waters near NATO members Finland and Estonia.</span><span class="de" lang="de">Es zeigt, dass die Kämpfe die Ostsee nahe den NATO-Mitgliedern Finnland und Estland erreichen.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/politik/international/ostsee-russisches-frachtschiff-nach-drohnenangriff-vor-finnland-in-brand/100271784.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-russischer-frachter-nahe-finnland-von-drohnen-getroffen" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-cef05a68f6" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">COP31 president sees deal in reach; decision due Sunday</span><span class="de" lang="de">COP31-Präsident sieht Einigung in Reichweite; Entscheid am Sonntag</span></h2>
+    <img src="https://images.handelsblatt.com/DYgTwYm1UOVR/cover/900/506/0/0/363/189/0.5/0.5/a-sign-for-the-cop31-u.n.-climate-summit-is-displayed-as-negotiations-continue-saturday-nov.-21-20.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Negotiators at the UN climate summit in Antalya, Turkey, appear close to a deal. A new draft goes to a final vote on Sunday morning.</span><span class="de" lang="de">Verhandlungsführer am UN-Klimagipfel in Antalya, Türkei, scheinen nahe an einer Einigung zu sein. Ein neuer Entwurf geht am Sonntagmorgen in die finale Abstimmung.</span></p>
+    
+    <ul class="en"><li>Australia and Turkey presented the new package after talks that ran into early Sunday morning.</li><li>COP31 president Murat Kurum, from Turkey, is confident all countries can agree to the text.</li><li>Objections were due by 4:00 CET (Central European Time, Swiss clock). The plenary vote is set for 7:00 CET, or 9:00 local time.</li><li>The conference was due to end on Friday. The draft appeared about 32 hours later than planned.</li><li>The earlier draft left out any mention of phasing out fossil fuels. The new text does not name oil, coal or gas directly. SRF notes it refers generally to a 2023 Dubai decision to move away from fossil fuels.</li><li>The text accepts that the world will overshoot the 1.5°C limit agreed in Paris in 2015. 1.5°C is the warming limit compared with pre-industrial times. It aims to cap how far and how long it overshoots.</li><li>A UN report says the 1.5°C limit is now unavoidable. Best case, warming stays at 1.7 to 1.8°C by mid-century. That needs emission cuts of 18% by 2030 and 45% by 2035, which are not yet visible.</li><li>The host proposed raising electricity&#39;s share of final energy use from 23% to 35% by 2035. The text only mentions efforts to increase clean energy, which experts say may include nuclear power. Decisions need at least two-thirds of the roughly 200 countries present. Ministers and whole delegations left on Saturday. Handelsblatt says tensions remain high despite the climate and energy crises.</li></ul>
+    <ul class="de" lang="de"><li>Australien und die Türkei legten das neue Paket nach Verhandlungen vor, die bis in den frühen Sonntagmorgen dauerten.</li><li>COP31-Präsident Murat Kurum aus der Türkei ist zuversichtlich, dass sich alle Länder auf den Text einigen können.</li><li>Einwände mussten bis 4.00 Uhr MEZ (Mitteleuropäische Zeit, Schweizer Zeit) eingereicht werden. Die Plenarabstimmung ist für 7.00 Uhr MEZ bzw. 9.00 Uhr Ortszeit angesetzt.</li><li>Die Konferenz sollte am Freitag enden. Der Entwurf erschien rund 32 Stunden später als geplant.</li><li>Der frühere Entwurf erwähnte den Ausstieg aus fossilen Brennstoffen nicht. Der neue Text nennt Öl, Kohle oder Gas nicht direkt. SRF weist darauf hin, dass er allgemein auf einen Beschluss von Dubai aus dem Jahr 2023 verweist, sich von fossilen Brennstoffen wegzubewegen.</li><li>Der Text erkennt an, dass die Welt die 1,5-°C-Grenze überschreiten wird, die 2015 in Paris vereinbart wurde. 1,5 °C ist die Erwärmungsgrenze gegenüber vorindustriellen Zeiten. Ziel ist es, zu begrenzen, wie weit und wie lange sie überschritten wird.</li><li>Ein UN-Bericht sagt, die 1,5-°C-Grenze sei inzwischen nicht mehr zu vermeiden. Im besten Fall bleibt die Erwärmung bis Mitte des Jahrhunderts bei 1,7 bis 1,8 °C. Dafür wären Emissionssenkungen von 18% bis 2030 und 45% bis 2035 nötig, die noch nicht sichtbar sind.</li><li>Der Gastgeber schlug vor, den Anteil des Stroms am Endenergieverbrauch von 23% auf 35% bis 2035 zu erhöhen. Der Text erwähnt nur Bemühungen zum Ausbau sauberer Energie, was laut Experten auch Atomkraft einschliessen könnte. Entscheidungen brauchen mindestens zwei Drittel der rund 200 anwesenden Länder. Minister und ganze Delegationen reisten am Samstag ab. Das Handelsblatt schreibt, die Spannungen bleiben trotz der Klima- und Energiekrisen hoch.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">The result shapes how firmly countries commit to cutting fossil fuels and emissions.</span><span class="de" lang="de">Das Ergebnis prägt, wie entschlossen sich Länder zum Abbau fossiler Brennstoffe und zur Senkung der Emissionen verpflichten.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/politik/deutschland/cop31-klimagipfel-in-antalya-cop31-praesident-sieht-einigung-in-reichweite/100270720.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.srf.ch/news/international/klimakonferenz-in-der-tuerkei-neuer-textentwurf-erwaehnt-oel-und-gas-nicht" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-e74eae03d7" style="--h:152">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Inside Paradeplatz</span></div>
+    <h2><span class="en">Nicolas Galladé Seeks Zurich Government Seat for SP</span><span class="de" lang="de">Nicolas Galladé strebt für die SP einen Sitz in der Zürcher Regierung an</span></h2>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-21-um-08.00.46.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Nicolas Galladé, a Social Democrat (SP) politician, wants a seat in the Zurich cantonal government in spring. The Inside Paradeplatz article is a short preview only.</span><span class="de" lang="de">Nicolas Galladé, Politiker der Sozialdemokratischen Partei (SP), will im Frühling einen Sitz im Zürcher Regierungsrat. Der Artikel auf Inside Paradeplatz ist nur eine kurze Vorschau.</span></p>
+    
+    <ul class="en"><li>Galladé was the youngest SP candidate to join Winterthur&#39;s city executive.</li><li>He plans to repeat that step by running for the Zurich cantonal government, the canton&#39;s executive council, in spring.</li><li>The preview describes him as a university dropout and former journalist, and calls him the left&#39;s Kennedy.</li><li>Only a short teaser was readable. The full article&#39;s content is not known.</li></ul>
+    <ul class="de" lang="de"><li>Galladé war der jüngste SP-Kandidat, der in den Winterthurer Stadtrat gewählt wurde.</li><li>Er plant, diesen Schritt zu wiederholen, indem er im Frühling für den Zürcher Regierungsrat, die kantonale Exekutive, kandidiert.</li><li>Die Vorschau beschreibt ihn als Universitätsabbrecher und ehemaligen Journalisten und nennt ihn den Kennedy der Linken.</li><li>Lesbar war nur ein kurzer Anreisser. Der Inhalt des vollständigen Artikels ist nicht bekannt.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://insideparadeplatz.ch/videos/6808709/" target="_blank" rel="noopener">Inside Paradeplatz</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-d48b04cee7" style="--h:152">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Inside Paradeplatz</span></div>
+    <h2><span class="en">Is Switzerland really Europe&#39;s wind-energy laggard?</span><span class="de" lang="de">Ist die Schweiz wirklich Europas Nachzügler bei der Windenergie?</span></h2>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-21-um-12.42.10.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">An opinion piece on Inside Paradeplatz argues Switzerland is not Europe&#39;s renewable energy laggard. It says critics mainly target wind power.</span><span class="de" lang="de">Ein Meinungsbeitrag auf Inside Paradeplatz argumentiert, die Schweiz sei nicht Europas Nachzügler bei den erneuerbaren Energien. Kritiker zielen laut dem Beitrag vor allem auf die Windkraft.</span></p>
+    
+    <ul class="en"><li>Critics, mostly from the wind turbine industry, often call Switzerland Europe&#39;s last place for renewables.</li><li>The author says 2025 figures show hydropower at 51.8% and solar at 12.8%, above the European average.</li><li>The real dispute, the author says, is about heavily subsidised wind power, which often faces local opposition.</li><li>Switzerland has about 50 wind turbines. The author calls the country low-wind, densely populated and hilly, so unsuitable for wind.</li><li>Austria, often cited as comparable, has most turbines in the flat eastern Pannonian Plain. Its western states, more like Switzerland, have few.</li><li>Capacity factor is the share of possible output a turbine actually produces. Schleswig-Holstein, a northern German state, averages 31%. No Swiss turbine reaches that.</li><li>About 60% of wind output comes in winter, the author says, but that is still very little. Solar produced over 20 times more than the 50 turbines in winter 2025/26, and 49 times more over the full year.</li><li>An unpublished Federal Energy Office (BFE) report, leaked to media, sees 25% to 40% savings from efficiency alone. A 2019 BFE study puts rooftop and façade solar potential at 67,000 GWh a year, or 110% of current consumption. GWh means gigawatt-hour, one million kilowatt-hours.</li></ul>
+    <ul class="de" lang="de"><li>Kritiker, vor allem aus der Windturbinen-Branche, bezeichnen die Schweiz oft als europäisches Schlusslicht bei den erneuerbaren Energien.</li><li>Der Autor schreibt, Zahlen aus dem Jahr 2025 zeigen Wasserkraft mit 51,8% und Solarstrom mit 12,8%, jeweils über dem europäischen Durchschnitt.</li><li>Der eigentliche Streit drehe sich laut dem Autor um die stark subventionierte Windkraft, die oft auf lokalen Widerstand stosse.</li><li>Die Schweiz hat rund 50 Windturbinen. Der Autor nennt das Land windarm, dicht besiedelt und hügelig und daher für Windkraft ungeeignet.</li><li>Österreich, oft als vergleichbar genannt, hat die meisten Turbinen in der flachen östlichen Pannonischen Tiefebene. Seine westlichen Bundesländer, die der Schweiz eher ähneln, haben nur wenige.</li><li>Der Kapazitätsfaktor ist der Anteil der möglichen Leistung, den eine Turbine tatsächlich erzeugt. Schleswig-Holstein, ein Bundesland im Norden Deutschlands, liegt im Schnitt bei 31%. Keine Schweizer Turbine erreicht diesen Wert.</li><li>Rund 60% der Windenergie fallen laut dem Autor im Winter an, das sei aber immer noch sehr wenig. Solarstrom erzeugte im Winter 2025/26 mehr als 20-mal so viel wie die 50 Turbinen, im ganzen Jahr 49-mal so viel.</li><li>Ein unveröffentlichter Bericht des Bundesamts für Energie (BFE), der den Medien zugespielt wurde, sieht allein durch Effizienz Einsparungen von 25% bis 40%. Eine BFE-Studie aus dem Jahr 2019 beziffert das Potenzial von Solaranlagen auf Dächern und Fassaden auf 67&#39;000 GWh pro Jahr, also 110% des heutigen Verbrauchs. GWh steht für Gigawattstunde, eine Million Kilowattstunden.</li></ul>
+    
+    
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://insideparadeplatz.ch/2026/11/21/wind-energie-schlusslicht-schweiz/" target="_blank" rel="noopener">Inside Paradeplatz</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-639a631017" style="--h:152">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Inside Paradeplatz</span></div>
+    <h2><span class="en">SRF Literary Critic Leaves After Criticizing Broadcaster</span><span class="de" lang="de">SRF-Literaturkritiker verlässt Sendung nach Kritik am Sender</span></h2>
+    
+    
+    <p class="gist"><span class="en">SRF has dropped literary critic Philipp Tingler from its Literaturclub this week. An opinion column says he was removed for criticising books.</span><span class="de" lang="de">SRF hat den Literaturkritiker Philipp Tingler diese Woche aus dem Literaturclub gestrichen. Eine Meinungskolumne sagt, er sei wegen seiner Bücherkritik entfernt worden.</span></p>
+    
+    <ul class="en"><li>The Literaturclub is a monthly book discussion on SRF, Switzerland&#39;s public broadcaster. It airs late on Tuesday evenings.</li><li>The column says Tingler&#39;s harsh reviews were weakly founded and read as provocations.</li><li>It also says his criticism made other critics speak more forcefully, making debates livelier than the books.</li><li>The author agrees with Tingler that many of the chosen books are of doubtful quality.</li><li>The author fears viewers began to suspect they were watching a publishers&#39; lobby meeting.</li><li>The author calls the show a public service that the SRG, the umbrella body of Swiss public broadcasters, must not neglect. He says Tingler&#39;s removal sends a bad signal.</li><li>The column recommends Jaroslav Hašek&#39;s anti-war novel The Good Soldier Švejk and Stefan Zweig&#39;s The World of Yesterday.</li><li>The column does not give SRF&#39;s reasons for the removal. It only gives the author&#39;s view.</li></ul>
+    <ul class="de" lang="de"><li>Der Literaturclub ist eine monatliche Buchdiskussion auf SRF, dem öffentlich-rechtlichen Sender der Schweiz. Sie läuft am Dienstagabend spät.</li><li>Die Kolumne schreibt, Tinglers harte Besprechungen seien schwach begründet gewesen und als Provokationen gelesen worden.</li><li>Ausserdem schreibt sie, seine Kritik habe andere Kritiker dazu gebracht, sich deutlicher zu äussern, wodurch die Debatten lebhafter wurden als die Bücher selbst.</li><li>Der Autor teilt Tinglers Ansicht, dass viele der ausgewählten Bücher von zweifelhafter Qualität sind.</li><li>Der Autor befürchtet, Zuschauer könnten den Verdacht geschöpft haben, sie sähen eine Sitzung einer Verlagslobby.</li><li>Der Autor nennt die Sendung einen Service public, den die SRG, der Dachverband der öffentlich-rechtlichen Sender der Schweiz, nicht vernachlässigen dürfe. Tinglers Entfernung sei ein schlechtes Signal.</li><li>Die Kolumne empfiehlt Jaroslav Hašeks Antikriegsroman «Der brave Soldat Schwejk» und Stefan Zweigs «Die Welt von gestern».</li><li>Die Kolumne nennt keine Gründe von SRF für die Entfernung. Sie gibt nur die Sicht des Autors wieder.</li></ul>
+    
+    
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://insideparadeplatz.ch/2026/11/21/ein-literaturkritiker-muss-gehen-weil-er-kritisiert/" target="_blank" rel="noopener">Inside Paradeplatz</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-32dc42490a" style="--h:152">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Inside Paradeplatz</span></div>
+    <h2><span class="en">War Games: East-West Rivalry Beyond Military Conflict</span><span class="de" lang="de">Kriegsspiele: Ost-West-Rivalität jenseits militärischer Konflikte</span></h2>
+    
+    
+    <p class="gist"><span class="en">Inside Paradeplatz argues that the East-West power struggle now plays out far beyond the military. Pressure comes through the economy, technology, cyberattacks and influence campaigns.</span><span class="de" lang="de">Inside Paradeplatz argumentiert, dass der Machtkampf zwischen Ost und West heute weit über das Militärische hinaus stattfindet. Der Druck kommt über Wirtschaft, Technologie, Cyberangriffe und Einflusskampagnen.</span></p>
+    
+    <ul class="en"><li>The article uses the term &#39;War Games&#39; for a conflict below the level of open war.</li><li>Tools include trade conflicts, market turbulence, cyber theft and disinformation campaigns.</li><li>Targets include financial markets, companies, digital networks, media and social cohesion.</li><li>Dependence on a few suppliers, such as chipmakers (semiconductors, the chips in computers), can be used as leverage.</li><li>Critical infrastructure is at risk: energy, water, transport, communications, banking and health care.</li><li>The biggest danger is several systems failing at once, such as a long power cut affecting hospitals and water.</li><li>The author says Switzerland is exposed because of its international links, finance sector and infrastructure dependence.</li><li>The piece is an opinion essay. It cites no new incidents or data, and says not every crisis is deliberate.</li></ul>
+    <ul class="de" lang="de"><li>Der Artikel verwendet den Begriff «War Games» für einen Konflikt unterhalb der Schwelle eines offenen Krieges.</li><li>Zu den Mitteln gehören Handelskonflikte, Marktturbulenzen, Cyberdiebstahl und Desinformationskampagnen.</li><li>Ziele sind Finanzmärkte, Unternehmen, digitale Netzwerke, Medien und der gesellschaftliche Zusammenhalt.</li><li>Die Abhängigkeit von wenigen Lieferanten, etwa bei Chipherstellern (Halbleiter, die Chips in Computern), kann als Druckmittel eingesetzt werden.</li><li>Kritische Infrastruktur ist gefährdet: Energie, Wasser, Verkehr, Kommunikation, Bankwesen und Gesundheitsversorgung.</li><li>Die grösste Gefahr ist der gleichzeitige Ausfall mehrerer Systeme, etwa ein langer Stromausfall, der Spitäler und die Wasserversorgung betrifft.</li><li>Der Autor sagt, die Schweiz sei wegen ihrer internationalen Verflechtungen, ihres Finanzsektors und ihrer Abhängigkeit von Infrastruktur verwundbar.</li><li>Der Beitrag ist ein Meinungsessay. Er nennt keine neuen Vorfälle oder Daten und sagt, nicht jede Krise sei gewollt.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Economic, digital and political pressure can hit Switzerland without any war being declared.</span><span class="de" lang="de">Wirtschaftlicher, digitaler und politischer Druck kann die Schweiz treffen, ohne dass ein Krieg erklärt wird.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://insideparadeplatz.ch/2026/11/21/war-games-der-unsichtbare-krieg-zwischen-ost-und-west/" target="_blank" rel="noopener">Inside Paradeplatz</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-57038eb13b" style="--h:0">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">SRF News</span></div>
+    <h2><span class="en">Cross-Party Criticism of SVP&#39;s Aeschi and Graber Ticket</span><span class="de" lang="de">Parteiübergreifende Kritik am SVP-Ticket Aeschi und Graber</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/a603f9.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">The right-wing SVP named Thomas Aeschi and Michael Graber as its two candidates for the Federal Council, Switzerland&#39;s seven-member government. Several parties criticise the choice, and parliament&#39;s vote is uncertain.</span><span class="de" lang="de">Die rechte SVP hat Thomas Aeschi und Michael Graber als ihre beiden Kandidaten für den Bundesrat, die siebenköpfige Landesregierung der Schweiz, nominiert. Mehrere Parteien kritisieren die Wahl, und der Ausgang der Parlamentswahl ist ungewiss.</span></p>
+    
+    <ul class="en"><li>The Federal Council seat is open after Guy Parmelin resigned. Parliament (the Federal Assembly) votes on 9 December.</li><li>Aeschi is from Zug and Graber from Upper Valais. Parliament may pick anyone, not only the two listed on the ticket.</li><li>SRF reports that Aeschi was easily chosen. The fight for the second spot was close.</li><li>In the sixth round, Graber had 27 votes and Bern&#39;s Pierre-Alain Schnegg had 25. Céline Amaudruz had 19 and dropped out.</li><li>In the seventh round, Graber won 42 to 29 against Schnegg. Some of Amaudruz&#39;s supporters switched to Graber, reportedly on her advice.</li><li>SP co-president Cédric Wermuth calls the ticket &#39;no real choice&#39; and a step back for gender equality.</li><li>The Greens say the two are unfit and too similar. They will not hold hearings, but would consider a wild candidacy (a candidate outside the ticket).</li><li>Centre, FDP and GLP members criticise the lack of French-speaking and women candidates. Mitte&#39;s Reto Nause cites a 2024 clash with federal police. Inside Paradeplatz, in an opinion piece, calls the ticket a disgrace.</li></ul>
+    <ul class="de" lang="de"><li>Der Bundesratssitz ist nach dem Rücktritt von Guy Parmelin vakant. Das Parlament (die Bundesversammlung) wählt am 9. Dezember.</li><li>Aeschi stammt aus Zug, Graber aus dem Oberwallis. Das Parlament kann jede Person wählen, nicht nur die beiden Kandidaten auf dem Ticket.</li><li>SRF berichtet, dass Aeschi klar nominiert wurde. Der Kampf um den zweiten Platz war knapp.</li><li>Im sechsten Wahlgang erhielt Graber 27 Stimmen, Pierre-Alain Schnegg aus Bern 25. Céline Amaudruz kam auf 19 Stimmen und schied aus.</li><li>Im siebten Wahlgang setzte sich Graber mit 42 zu 29 Stimmen gegen Schnegg durch. Einige Anhängerinnen und Anhänger von Amaudruz wechselten laut Berichten auf ihre Empfehlung zu Graber.</li><li>SP-Co-Präsident Cédric Wermuth bezeichnet das Ticket als «keine echte Wahl» und als Rückschritt für die Gleichstellung.</li><li>Die Grünen sagen, die beiden seien ungeeignet und zu ähnlich. Sie führen keine Anhörungen durch, würden aber eine wilde Kandidatur (eine Kandidatur ausserhalb des Tickets) prüfen.</li><li>Mitglieder der Mitte, der FDP und der GLP kritisieren das Fehlen französischsprachiger und weiblicher Kandidaten. Reto Nause von der Mitte verweist auf einen Konflikt mit der Bundespolizei im Jahr 2024. Inside Paradeplatz nennt das Ticket in einem Meinungsbeitrag eine Schande.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">The vote decides who sits in the government, and the choice is openly contested.</span><span class="de" lang="de">Die Wahl entscheidet, wer in der Regierung sitzt, und die Auswahl ist offen umstritten.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.srf.ch/news/schweiz/kritik-an-svp-bundesratsticket-wahl-von-aeschi-und-graber-sorgt-parteiuebergreifend-fuer-unmut" target="_blank" rel="noopener">SRF News</a> · <a href="https://www.srf.ch/news/schweiz/enges-rennen-um-ticketplatz-graber-wegen-amaudruz-manoever-auf-dem-svp-ticket" target="_blank" rel="noopener">SRF News</a> · <a href="https://insideparadeplatz.ch/2026/11/21/svp-unwuerdig-diktatorisch-unschweizerisch/" target="_blank" rel="noopener">Inside Paradeplatz</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-79de63639a" style="--h:0">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">SRF News</span></div>
+    <h2><span class="en">Bukele Sends About 2,000 Soldiers to Haiti</span><span class="de" lang="de">Bukele schickt rund 2&#39;000 Soldaten nach Haiti</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/80f363.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">El Salvador&#39;s president Nayib Bukele sent about 2000 soldiers to Haiti from late October. A Latin America expert says this makes Haiti&#39;s crisis harder to solve.</span><span class="de" lang="de">El Salvadors Präsident Nayib Bukele hat ab Ende Oktober rund 2&#39;000 Soldaten nach Haiti geschickt. Ein Lateinamerika-Experte sagt, dadurch sei die Krise in Haiti schwerer zu lösen.</span></p>
+    
+    <ul class="en"><li>Bukele, who has jailed over 90,000 people at home, is now running for a third term in El Salvador.</li><li>The soldiers operate outside the UN-approved force, the Gang Suppression Force, which has about 2000 members.</li><li>Four Salvadorans from that force disappeared. Bukele says he wants to free them, which the expert calls a pretext.</li><li>The Salvadoran troops attacked gang bases with helicopters and drones. The expert says this sharply increased deaths in Haiti.</li><li>Bukele told US President Donald Trump by phone he would &#39;invade&#39; Haiti. Trump confirmed the call.</li><li>The expert says it is not an invasion. Haiti&#39;s transitional government signed a security cooperation deal with El Salvador.</li><li>Some people in Haiti held rallies praising Bukele for the operation.</li><li>The US launched the &#39;Shield of the Americas&#39; initiative this year against gangs and &#39;narco-terrorists&#39; (armed drug-linked groups). The expert says the operation mainly seeks international attention.</li></ul>
+    <ul class="de" lang="de"><li>Bukele hat im eigenen Land über 90&#39;000 Menschen inhaftiert und tritt nun für eine dritte Amtszeit in El Salvador an.</li><li>Die Soldaten operieren ausserhalb der von der UNO genehmigten Truppe, der Gang Suppression Force, die rund 2&#39;000 Mitglieder hat.</li><li>Vier Salvadorianer aus dieser Truppe sind verschwunden. Bukele sagt, er wolle sie befreien, was der Experte als Vorwand bezeichnet.</li><li>Die salvadorianischen Truppen griffen Bandenstützpunkte mit Helikoptern und Drohnen an. Laut dem Experten hat dies die Todesfälle in Haiti stark erhöht.</li><li>Bukele sagte US-Präsident Donald Trump telefonisch, er wolle Haiti «invadieren». Trump bestätigte das Telefonat.</li><li>Der Experte sagt, es handle sich nicht um eine Invasion. Die Übergangsregierung Haitis hat mit El Salvador ein Abkommen zur Sicherheitszusammenarbeit unterzeichnet.</li><li>Einige Menschen in Haiti haben Kundgebungen abgehalten, um Bukele für die Operation zu loben.</li><li>Die USA haben dieses Jahr die Initiative «Shield of the Americas» gegen Banden und «Narcoterroristen» (bewaffnete, drogenbezogene Gruppen) lanciert. Der Experte sagt, die Operation suche vor allem internationale Aufmerksamkeit.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">A foreign army is now fighting gangs in Haiti outside UN control.</span><span class="de" lang="de">Eine ausländische Armee bekämpft nun Banden in Haiti ausserhalb der Kontrolle der UNO.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.srf.ch/news/international/kampf-gegen-banden-die-lage-in-haiti-wurde-wegen-bukele-noch-komplizierter" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-7310d96234" style="--h:0">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">SRF News</span></div>
+    <h2><span class="en">Abuse Victim Awarded Compensation He Likely Never Receives</span><span class="de" lang="de">Missbrauchsopfer erhält Genugtuung, die es vermutlich nie bekommt</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/67d9c1.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Lukas Baumann, now 40, was sexually abused as a child by a youth leader. A court ruled he should receive compensation, but he has never been paid.</span><span class="de" lang="de">Lukas Baumann, heute 40, wurde als Kind von einem Jugendleiter sexuell missbraucht. Ein Gericht entschied, dass er eine Genugtuung erhalten soll, doch er hat bis heute nichts erhalten.</span></p>
+    
+    <ul class="en"><li>The abuser was a leader of Cevi, a Swiss Christian youth group, and met Baumann in a Zurich forest.</li><li>In 2017 the Dietikon district court sentenced him to 9 years and 4 months in prison.</li><li>The court found he abused at least eight boys aged 5 to 15, several hundred times, while awake or drugged.</li><li>The court granted the victims Genugtuung (money for emotional harm). Baumann has received none of it.</li><li>Baumann pursued the debt. He received a Verlustschein (a certificate that the debtor cannot pay).</li><li>The abuser is considered penniless and receives an IV pension (Swiss disability insurance). Baumann is owed thousands of francs on paper; the exact sum is not given.</li><li>The abuse began in the 1990s. The abuser targeted children from difficult families, often with single mothers.</li><li>Another victim reported him in 2014. Police seized hundreds of gigabytes of video. Baumann had declined to file a complaint then and now regrets it.</li></ul>
+    <ul class="de" lang="de"><li>Der Täter war Leiter bei Cevi, einer christlichen Jugendorganisation der Schweiz, und traf Baumann in einem Wald in Zürich.</li><li>Im Jahr 2017 verurteilte ihn das Bezirksgericht Dietikon zu 9 Jahren und 4 Monaten Freiheitsstrafe.</li><li>Das Gericht stellte fest, dass er mindestens acht Buben im Alter von 5 bis 15 Jahren mehrere hundert Mal missbraucht hat, wach oder unter Drogen.</li><li>Das Gericht sprach den Opfern eine Genugtuung (Geld für seelisches Leid) zu. Baumann hat davon nichts erhalten.</li><li>Baumann verfolgte die Forderung weiter. Er erhielt einen Verlustschein (eine Bescheinigung, dass der Schuldner nicht zahlen kann).</li><li>Der Täter gilt als mittellos und bezieht eine IV-Rente (Invalidenversicherung der Schweiz). Auf dem Papier hat Baumann Anspruch auf Tausende Franken; die genaue Summe wird nicht genannt.</li><li>Der Missbrauch begann in den 1990er-Jahren. Der Täter suchte sich Kinder aus schwierigen Familien aus, oft mit alleinerziehenden Müttern.</li><li>Ein anderes Opfer zeigte ihn 2014 an. Die Polizei beschlagnahmte Hunderte Gigabyte Videomaterial. Baumann hatte damals auf eine Anzeige verzichtet und bedauert dies heute.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">A court win does not guarantee payment, and legal deadlines can block late complaints.</span><span class="de" lang="de">Ein Gerichtsurteil garantiert keine Zahlung, und gesetzliche Fristen können späte Anzeigen verhindern.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.srf.ch/news/schweiz/kampf-um-entschaedigung-als-kind-missbraucht-bis-heute-keine-genugtuung" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-d082ca6c41" style="--h:0">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">SRF News</span></div>
+    <h2><span class="en">Manor Basel marks 100 years amid online shopping pressure</span><span class="de" lang="de">Manor Basel feiert 100 Jahre unter dem Druck des Onlinehandels</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/a4366d.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Manor&#39;s Basel department store turns 100 years old this year. It faces tough times because of online shopping.</span><span class="de" lang="de">Das Manor-Warenhaus in Basel wird dieses Jahr 100 Jahre alt. Wegen des Onlinehandels sieht es sich mit schwierigen Zeiten konfrontiert.</span></p>
+    
+    <ul class="en"><li>The store opened in 1926 near the Mittlere Brücke bridge. A new building in 1932 gave it the name &#34;Rheinbrücke&#34;.</li><li>Manor is the company&#39;s store name. It combines the founding families&#39; names, Maus and Nordmann.</li><li>Manor now runs 56 stores across Switzerland. German-speaking stores adopted the Manor name in 1994.</li><li>Basel locals recall past highlights. These include a Formula 1 car of racer Jo Siffert and the city&#39;s first cassette recorder.</li><li>Boxer Muhammad Ali also visited the store and made headlines.</li><li>Many department stores have closed, including Knopf, ABM, EPA and Jelmoli. Online shopping is the main reason.</li><li>Manor cut jobs twice in two years. It also redesigned its sales floors to look more open. The company declined to comment on the anniversary.</li><li>Manor will close its Basel food department in early 2027. Customers are disappointed.</li></ul>
+    <ul class="de" lang="de"><li>Das Warenhaus eröffnete 1926 in der Nähe der Mittleren Brücke. Ein Neubau im Jahr 1932 gab ihm den Namen «Rheinbrücke».</li><li>Manor ist der Ladenname des Unternehmens. Er setzt sich aus den Namen der Gründerfamilien Maus und Nordmann zusammen.</li><li>Manor betreibt heute 56 Warenhäuser in der ganzen Schweiz. Die deutschsprachigen Häuser übernahmen 1994 den Namen Manor.</li><li>Basler erinnern sich an frühere Höhepunkte. Dazu gehören ein Formel-1-Wagen des Rennfahrers Jo Siffert und der erste Kassettenrekorder der Stadt.</li><li>Auch der Boxer Muhammad Ali besuchte das Warenhaus und machte Schlagzeilen.</li><li>Viele Warenhäuser haben geschlossen, darunter Knopf, ABM, EPA und Jelmoli. Hauptgrund dafür ist der Onlinehandel.</li><li>Manor baute innerhalb von zwei Jahren zweimal Stellen ab. Zudem gestaltete das Unternehmen die Verkaufsflächen offener. Zum Jubiläum wollte sich das Unternehmen nicht äussern.</li><li>Manor wird seine Lebensmittelabteilung in Basel Anfang 2027 schliessen. Die Kundschaft ist enttäuscht.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Shows how online shopping is squeezing Swiss department stores.</span><span class="de" lang="de">Zeigt, wie der Onlinehandel die Schweizer Warenhäuser unter Druck setzt.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.srf.ch/news/schweiz/100-jahre-manor-basel-warenhaus-feiert-rundes-jubilaeum-mit-durchwachsenen-aussichten" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-c27622bdcd" style="--h:0">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">SRF News</span></div>
+    <h2><span class="en">Swiss cantons largely do not inspect food courier working conditions</span><span class="de" lang="de">Schweizer Kantone kontrollieren die Arbeitsbedingungen von Essenskurieren weitgehend nicht</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/47fa5d.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Most Swiss cantons (the regional states) do not check working conditions of food delivery couriers. An SRF survey found this.</span><span class="de" lang="de">Die meisten Schweizer Kantone (die Gliedstaaten) kontrollieren die Arbeitsbedingungen von Essenskurieren nicht. Dies ergab eine Umfrage von SRF.</span></p>
+    
+    <ul class="en"><li>SRF asked all cantons. Five check couriers, four did not answer, and 17 do not check.</li><li>Cantons are normally responsible for checking working conditions. This includes couriers who count as employees.</li><li>Some cantons say couriers are self-employed. Others say the self-employed question is not settled, and it is unclear who must decide.</li><li>Just Eat, a delivery platform, employed all its couriers until recently. It now wants more self-employed couriers, saying this is needed to compete.</li><li>Uber Eats, its main rival, already uses self-employed couriers. Several court rulings say they are self-employed only on paper.</li><li>Uber Eats had to pay back social insurance contributions because of these rulings.</li><li>Kurt Pärli, a social law professor at the University of Basel, says the app sets when and how couriers work. Courts therefore treat them as employees.</li><li>Employees are entitled to rest periods, holidays, local wages and social insurance.</li></ul>
+    <ul class="de" lang="de"><li>SRF hat alle Kantone angefragt. Fünf kontrollieren Kuriere, vier antworteten nicht, und 17 kontrollieren nicht.</li><li>Die Kantone sind normalerweise für die Kontrolle der Arbeitsbedingungen zuständig. Dazu gehören auch Kuriere, die als Angestellte gelten.</li><li>Einige Kantone sagen, Kuriere seien selbstständig. Andere sagen, die Frage der Selbstständigkeit sei nicht geklärt, und es sei unklar, wer entscheiden müsse.</li><li>Just Eat, eine Lieferplattform, beschäftigte bis vor kurzem alle Kuriere als Angestellte. Nun will das Unternehmen mehr selbstständige Kuriere, da dies für die Konkurrenzfähigkeit nötig sei.</li><li>Uber Eats, der Hauptkonkurrent, setzt bereits auf selbstständige Kuriere. Mehrere Gerichtsentscheide sagen, sie seien nur auf dem Papier selbstständig.</li><li>Uber Eats musste wegen dieser Urteile Sozialversicherungsbeiträge nachzahlen.</li><li>Kurt Pärli, Professor für Sozialrecht an der Universität Basel, sagt, die App bestimme, wann und wie Kuriere arbeiten. Gerichte behandeln sie deshalb als Angestellte.</li><li>Angestellte haben Anspruch auf Ruhezeiten, Ferien, ortsübliche Löhne und Sozialversicherungen.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Couriers may lose holidays, rest periods and social insurance if they count as self-employed.</span><span class="de" lang="de">Kuriere könnten Ferien, Ruhezeiten und Sozialversicherungen verlieren, wenn sie als selbstständig gelten.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.srf.ch/news/wirtschaft/uber-eats-und-just-eat-lieferdienste-werden-in-den-meisten-kantonen-nicht-kontrolliert" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-b3bac8beb2" style="--h:0">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">SRF News</span></div>
+    <h2><span class="en">Media workers protest in Bern over layoffs and press freedom</span><span class="de" lang="de">Medienschaffende protestieren in Bern gegen Stellenabbau und für Pressefreiheit</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/eb69f1.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Over a thousand people protested in Bern against job cuts in the media industry. Media workers and unions organised the rally on Bundesplatz.</span><span class="de" lang="de">Über tausend Menschen protestierten in Bern gegen den Stellenabbau in der Medienbranche. Medienschaffende und Gewerkschaften hatten die Kundgebung auf dem Bundesplatz organisiert.</span></p>
+    
+    <ul class="en"><li>The rally&#39;s motto was &#34;Less journalism – less democracy&#34;. SRF reports over 1,000 people attended.</li><li>The organisers, the Media Alliance, say about 2,000 people took part. This figure comes from their press release.</li><li>The Media Alliance includes media workers, media-minded readers, staff representatives and professional associations.</li><li>The protest followed layoffs in recent weeks. Several Swiss media houses have dismissed several dozen people in recent months.</li><li>The Media Alliance fears the media&#39;s role as the &#34;fourth estate&#34; (the press as a check on power) is at risk.</li><li>Speakers said journalism must be uncomfortable and expose wrongdoing. This is why, they said, it has no lobby.</li><li>Stephanie Vonarburg, vice-president of the union Syndicom, says mass layoffs have happened for 20 years.</li><li>Vonarburg says overworked staff struggle to meet professional standards. She says this also affects democratic participation and calls for stronger support for journalism.</li></ul>
+    <ul class="de" lang="de"><li>Das Motto der Kundgebung lautete «Weniger Journalismus – weniger Demokratie». SRF berichtet, dass über 1000 Personen teilnahmen.</li><li>Die Organisatoren, die Media Alliance, sprechen von rund 2000 Teilnehmenden. Diese Zahl stammt aus ihrer Medienmitteilung.</li><li>Die Media Alliance umfasst Medienschaffende, medieninteressierte Leserinnen und Leser, Personalvertretungen und Berufsverbände.</li><li>Der Protest folgte auf Entlassungen in den letzten Wochen. Mehrere Schweizer Medienhäuser haben in den vergangenen Monaten jeweils mehrere Dutzend Personen entlassen.</li><li>Die Media Alliance befürchtet, dass die Rolle der Medien als «vierte Gewalt» (die Presse als Kontrolle der Macht) gefährdet ist.</li><li>Redner sagten, Journalismus müsse unbequem sein und Missstände aufdecken. Deshalb habe er keine Lobby, sagten sie.</li><li>Stephanie Vonarburg, Vizepräsidentin der Gewerkschaft Syndicom, sagt, Massenentlassungen gebe es seit 20 Jahren.</li><li>Vonarburg sagt, überlastete Mitarbeitende hätten Mühe, berufliche Standards einzuhalten. Dies betreffe auch die demokratische Mitwirkung. Sie fordert stärkere Unterstützung für den Journalismus.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Fewer journalists can mean less reporting on regions and local politics, the protesters argue.</span><span class="de" lang="de">Weniger Journalistinnen und Journalisten können dazu führen, dass weniger über Regionen und lokale Politik berichtet wird, argumentieren die Protestierenden.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.srf.ch/news/schweiz/demonstration-in-bern-medienschaffende-protestieren-fuer-journalismus-und-demokratie" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-d59a7ff0cc" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post</span></div>
+    <h2><span class="en">Japan&#39;s weak yen, tax cuts complicate Takaichi&#39;s defence budget plans</span><span class="de" lang="de">Schwacher Yen und Steuersenkungen erschweren Takaichis Pläne für das Verteidigungsbudget</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/20/c722a4e9-ea2f-49be-a46f-5ffc4b9387d7_e0734ec9.jpg?itok=Uy-rV7so&amp;v=1795164429" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Japanese Prime Minister Sanae Takaichi faces criticism from conservative allies. They oppose her plan to limit the next five-year defence budget.</span><span class="de" lang="de">Japans Premierministerin Sanae Takaichi wird von konservativen Verbündeten kritisiert. Diese lehnen ihren Plan ab, das nächste Fünfjahresbudget für die Verteidigung zu begrenzen.</span></p>
+    
+    <ul class="en"><li>Analysts say pressure from Washington could be an even bigger challenge for Takaichi.</li><li>A weak yen (Japan&#39;s currency has lost value against other currencies) and worries about government finances complicate the plan.</li><li>Takaichi must satisfy both her conservative allies, who want a stronger military, and US President Donald Trump.</li><li>The article is a preview only. It is cut off before details from the Finance Ministry.</li></ul>
+    <ul class="de" lang="de"><li>Analysten sagen, der Druck aus Washington könnte für Takaichi eine noch grössere Herausforderung sein.</li><li>Ein schwacher Yen (die japanische Währung hat gegenüber anderen Währungen an Wert verloren) und Sorgen um die Staatsfinanzen erschweren den Plan.</li><li>Takaichi muss sowohl ihre konservativen Verbündeten zufriedenstellen, die ein stärkeres Militär wollen, als auch US-Präsident Donald Trump.</li><li>Der Artikel ist nur eine Vorschau. Er bricht ab, bevor Details aus dem Finanzministerium folgen.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">The outcome could shape Japan&#39;s military spending and its ties with the United States.</span><span class="de" lang="de">Das Ergebnis könnte Japans Militärausgaben und die Beziehungen zu den Vereinigten Staaten prägen.</span></p>
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/week-asia/politics/article/3375224/weak-yen-tax-cuts-put-japans-defence-plans-trump-bind" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-fb8c496654" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post</span></div>
+    <h2><span class="en">Former Italian police chief Gianni De Gennaro dies by suicide amid probe</span><span class="de" lang="de">Ehemaliger italienischer Polizeichef Gianni De Gennaro stirbt durch Suizid während Ermittlungen</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/22/601ac6be-c41e-4b13-98dc-3a2448eed96d_d862b30e.jpg?itok=50V1l9iX&amp;v=1795285250" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Gianni De Gennaro, a former Italian police chief, has died by suicide. He was under investigation over an alleged attempt to obstruct a new mafia probe.</span><span class="de" lang="de">Gianni De Gennaro, ein ehemaliger italienischer Polizeichef, ist durch Suizid gestorben. Gegen ihn wurde wegen eines mutmasslichen Versuchs ermittelt, eine neue Untersuchung gegen die Mafia zu behindern.</span></p>
+    
+    <ul class="en"><li>De Gennaro, 78, led Italy&#39;s national police from 2000 to 2007. The police is the country&#39;s main national police force.</li><li>He was investigated for allegedly trying to block a new inquiry into a 1992 killing. The victim was a top anti-mafia magistrate (a judge or prosecutor).</li><li>He played a key role in the 1980s campaign against Sicily&#39;s Cosa Nostra, the local mafia.</li><li>An official familiar with the matter confirmed the death on Saturday. No further details were given in the preview.</li><li>South China Morning Post (SCMP) reported this from a short preview only, so the full details are unclear.</li></ul>
+    <ul class="de" lang="de"><li>De Gennaro, 78, leitete Italiens nationale Polizei von 2000 bis 2007. Die Polizei ist die wichtigste nationale Polizeikraft des Landes.</li><li>Gegen ihn wurde ermittelt, weil er angeblich versucht haben soll, eine neue Untersuchung zu einem Mord aus dem Jahr 1992 zu blockieren. Das Opfer war ein führender Antimafia-Magistrat (Richter oder Staatsanwalt).</li><li>Er spielte eine Schlüsselrolle in der Kampagne der 1980er-Jahre gegen Cosa Nostra auf Sizilien, die lokale Mafia.</li><li>Ein mit der Angelegenheit vertrauter Beamter bestätigte den Tod am Samstag. In der Vorschau wurden keine weiteren Details genannt.</li><li>Die South China Morning Post (SCMP) berichtete dies nur aus einer kurzen Vorschau, daher sind die vollständigen Details unklar.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">The death ends a criminal inquiry into a senior security official linked to a major mafia case.</span><span class="de" lang="de">Der Tod beendet eine Strafuntersuchung gegen einen hohen Sicherheitsbeamten, der mit einem grossen Mafia-Fall in Verbindung steht.</span></p>
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/news/world/europe/article/3375349/former-italian-police-chief-de-gennaro-takes-own-life-amid-mafia-probe" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-f9334cce54" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post</span></div>
+    <h2><span class="en">Mexico captures FBI most-wanted drug kingpin in Sinaloa firefight</span><span class="de" lang="de">Mexiko verhaftet bei Feuergefecht in Sinaloa meistgesuchten Drogenboss des FBI</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/21/110c3334-9b1b-4645-9e39-314378de9dd7_fe65b120.jpg?itok=KD9TJ_lh&amp;v=1795269632" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Mexico&#39;s military captured Fausto Isidro Meza, a drug boss on the FBI&#39;s most wanted list. The raid left 11 people dead.</span><span class="de" lang="de">Das mexikanische Militär hat Fausto Isidro Meza festgenommen, einen Drogenboss auf der Liste der meistgesuchten Personen des FBI. Bei dem Einsatz kamen 11 Menschen ums Leben.</span></p>
+    
+    <ul class="en"><li>Meza, also called &#39;Chapo Isidro&#39;, is on the FBI&#39;s list of 10 most wanted fugitives. The FBI is the US federal police.</li><li>Special forces captured him on Friday night in Sinaloa, a northwestern state known for drug gangs.</li><li>His alleged second-in-command and a financial operator for his criminal group were also captured.</li><li>Four soldiers and seven suspected gunmen died in the firefight, according to the defence ministry.</li><li>The ministry said seven suspected attackers were also involved. The preview cut off before giving more detail.</li></ul>
+    <ul class="de" lang="de"><li>Meza, auch «Chapo Isidro» genannt, steht auf der Liste der 10 meistgesuchten Flüchtigen des FBI. Das FBI ist die US-Bundespolizei.</li><li>Spezialkräfte nahmen ihn am Freitagabend in Sinaloa fest, einem Bundesstaat im Nordwesten, der für Drogenbanden bekannt ist.</li><li>Auch sein mutmasslicher Stellvertreter und ein Finanzverantwortlicher seiner kriminellen Gruppe wurden festgenommen.</li><li>Bei dem Feuergefecht starben laut dem Verteidigungsministerium vier Soldaten und sieben mutmassliche Bewaffnete.</li><li>Das Ministerium sagte, auch sieben mutmassliche Angreifer seien beteiligt gewesen. Die Vorschau bricht ab, bevor mehr Details genannt werden.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/news/world/americas/article/3375342/mexico-captures-drug-kingpin-fbis-most-wanted-list" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-54414c1253" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post</span></div>
+    <h2><span class="en">Tainted alcohol kills 11, hospitalises over 180 in Indian Manipur</span><span class="de" lang="de">Verunreinigter Alkohol tötet 11 Menschen und bringt über 180 ins Spital im indischen Manipur</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/21/b6ae5070-152b-4031-8a59-d09022883f35_c6f4a798.jpg?itok=A5RI2Ynl&amp;v=1795260989" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Suspected tainted alcohol has killed at least 11 people in India&#39;s Manipur state. More than 180 people are in hospital.</span><span class="de" lang="de">Mutmasslich verunreinigter Alkohol hat im indischen Bundesstaat Manipur mindestens 11 Menschen getötet. Über 180 Personen befinden sich im Spital.</span></p>
+    
+    <ul class="en"><li>Manipur is a state in India&#39;s northeast. Its chief minister, Yumnam Khemchand Singh, announced the figures on Friday.</li><li>More than 180 patients were admitted to two hospitals. The chief minister said 11 died in the last 48 hours.</li><li>The chief minister ordered an inquiry. He said those responsible would face action, but the preview cut off there.</li><li>The Straits Times-style preview from South China Morning Post (SCMP) gave no details on the alcohol&#39;s source or the cause.</li><li>Only a short preview was readable, so later figures and details may differ.</li></ul>
+    <ul class="de" lang="de"><li>Manipur ist ein Bundesstaat im Nordosten Indiens. Sein Ministerpräsident Yumnam Khemchand Singh gab die Zahlen am Freitag bekannt.</li><li>Über 180 Patientinnen und Patienten wurden in zwei Spitälern aufgenommen. Der Ministerpräsident sagte, in den letzten 48 Stunden seien 11 Menschen gestorben.</li><li>Der Ministerpräsident ordnete eine Untersuchung an. Er sagte, die Verantwortlichen würden belangt, doch die Vorschau bricht an dieser Stelle ab.</li><li>Die Vorschau der South China Morning Post (SCMP) im Stil der Straits Times gab keine Details zur Herkunft des Alkohols oder zur Ursache.</li><li>Nur eine kurze Vorschau war lesbar, daher können spätere Zahlen und Details abweichen.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Tainted alcohol is a public health risk, and this case may show weak controls over local liquor.</span><span class="de" lang="de">Verunreinigter Alkohol ist ein Risiko für die öffentliche Gesundheit, und dieser Fall könnte auf schwache Kontrollen bei lokalem Alkohol hinweisen.</span></p>
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/news/asia/south-asia/article/3375332/india-tainted-alcohol-leaves-11-dead-over-180-hospitalised" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-e7d8fca2cf" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post</span></div>
+    <h2><span class="en">Xi, Trump agree military AI decisions must involve humans, Bessent says</span><span class="de" lang="de">Xi und Trump einigen sich, dass Entscheidungen zu militärischer KI Menschen einbeziehen müssen, sagt Bessent</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/21/973eaa80-8e2d-4542-8bbf-6119092c11f6_42ab9ebc.jpg?itok=xzwdoBFx&amp;v=1795245425" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">US President Donald Trump and Chinese President Xi Jinping agreed that humans must stay involved in military AI decisions. US Treasury Secretary Scott Bessent announced it.</span><span class="de" lang="de">US-Präsident Donald Trump und Chinas Präsident Xi Jinping haben sich darauf geeinigt, dass Menschen bei militärischen KI-Entscheidungen beteiligt bleiben müssen. US-Finanzminister Scott Bessent hat dies bekanntgegeben.</span></p>
+    
+    <ul class="en"><li>The agreement came during talks at the Asia-Pacific Economic Cooperation (APEC) summit, a regional economic forum.</li><li>Bessent, the US finance minister, told US broadcaster CNBC on Friday that both leaders agreed on this point.</li><li>He called the agreement a breakthrough from the previous day&#39;s meeting between the two leaders.</li><li>Both sides said humans should always be involved in any military decisions that AI makes. AI means artificial intelligence.</li><li>Only a short preview was readable, so the rest of Bessent&#39;s comments and any follow-up steps are unknown.</li></ul>
+    <ul class="de" lang="de"><li>Die Vereinbarung wurde bei Gesprächen am Gipfel der Asiatisch-Pazifischen Wirtschaftskooperation (APEC) getroffen, einem regionalen Wirtschaftsforum.</li><li>Bessent, der US-Finanzminister, sagte am Freitag dem US-Sender CNBC, dass beide Staatschefs diesem Punkt zugestimmt hätten.</li><li>Er bezeichnete die Einigung als Durchbruch nach dem Treffen der beiden Staatschefs am Vortag.</li><li>Beide Seiten sagten, dass bei allen militärischen Entscheidungen, die KI trifft, immer Menschen beteiligt sein sollten. KI steht für künstliche Intelligenz.</li><li>Nur eine kurze Vorschau war lesbar, daher sind die übrigen Aussagen Bessents und allfällige weitere Schritte unbekannt.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">It is one of the few direct US-China agreements on how military AI may be used.</span><span class="de" lang="de">Es ist eine der wenigen direkten Vereinbarungen zwischen den USA und China darüber, wie militärische KI eingesetzt werden darf.</span></p>
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/news/china/diplomacy/article/3375321/xi-trump-agree-military-ai-decisions-must-involve-humans-bessent-says" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-08d05dabd6" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post</span></div>
+    <h2><span class="en">UN pledges &#39;killer robot&#39; rules by 2028 after Russian pushback</span><span class="de" lang="de">UN verspricht Regeln für &#39;Killer-Roboter&#39; bis 2028 nach russischem Widerstand</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/21/bdd22e51-e8d8-46a5-b3ff-cfd461ae7a4a_f0e004cf.jpg?itok=erb2FqqK&amp;v=1795242718" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">UN talks in Geneva ended with a weak deal on &#39;killer robots&#39;. Countries agreed to draft rules by 2028, but no binding ban yet.</span><span class="de" lang="de">Die UN-Gespräche in Genf endeten mit einer schwachen Einigung über &#39;Killer-Roboter&#39;. Die Staaten vereinbarten, bis 2028 Regeln auszuarbeiten, aber noch kein verbindliches Verbot.</span></p>
+    
+    <ul class="en"><li>&#39;Killer robots&#39; are weapons that pick and attack targets with little or no human control.</li><li>The talks took place at the UN Convention on Certain Conventional Weapons (CCW), a UN treaty on weapons.</li><li>Around 100 countries wanted talks on a legally binding treaty, meaning one enforceable in law.</li><li>Decisions at the CCW need full agreement. Russia blocked formal talks by refusing to adopt the agenda, acting as a veto.</li><li>SRF adds that the US, Israel, Belarus and the UK also opposed a binding treaty. Brazil&#39;s ambassador said some hide behind Russia.</li><li>Government experts will work on possible rules until 2028. They will then decide whether to write a binding treaty.</li><li>Switzerland&#39;s ambassador Julien Thöni chaired the conference. Switzerland and Peru drafted the compromise text.</li><li>The Swiss government called the mandate a step forward. Campaigners at Stop Killer Robots called it disappointing.</li></ul>
+    <ul class="de" lang="de"><li>&#39;Killer-Roboter&#39; sind Waffen, die Ziele mit wenig oder ohne menschliche Kontrolle auswählen und angreifen.</li><li>Die Gespräche fanden im Rahmen des UN-Übereinkommens über bestimmte konventionelle Waffen (CCW) statt, eines UN-Vertrags über Waffen.</li><li>Rund 100 Länder wollten Verhandlungen über einen rechtlich verbindlichen Vertrag, also einen Vertrag, der rechtlich durchsetzbar ist.</li><li>Entscheidungen im CCW brauchen die volle Zustimmung. Russland blockierte formelle Verhandlungen, indem es die Traktandenliste nicht annahm, und wirkte so wie ein Veto.</li><li>SRF ergänzt, dass auch die USA, Israel, Belarus und Grossbritannien sich gegen einen verbindlichen Vertrag stellten. Der brasilianische Botschafter sagte, manche versteckten sich hinter Russland.</li><li>Regierungsexperten werden bis 2028 an möglichen Regeln arbeiten. Danach entscheiden sie, ob ein verbindlicher Vertrag ausgearbeitet wird.</li><li>Der Schweizer Botschafter Julien Thöni leitete die Konferenz. Die Schweiz und Peru verfassten den Kompromisstext.</li><li>Die Schweizer Regierung nannte das Mandat einen Schritt nach vorn. Aktivistinnen und Aktivisten der Kampagne Stop Killer Robots bezeichneten es als enttäuschend.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">It starts the process for rules on AI-driven weapons, but no ban is guaranteed.</span><span class="de" lang="de">Er startet den Prozess für Regeln zu KI-gesteuerten Waffen, aber ein Verbot ist nicht garantiert.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/news/world/europe/article/3375318/un-talks-pledge-draft-killer-robot-rules-2028-after-russian-pushback" target="_blank" rel="noopener">South China Morning Post</a> · <a href="https://www.admin.ch/en/newnsb/cpYJGLEaQYIi" target="_blank" rel="noopener">Swiss Federal Government</a> · <a href="https://www.srf.ch/news/international/uno-konferenz-in-genf-regeln-fuer-killerroboter-gespraeche-enden-mit-minimalkonsens" target="_blank" rel="noopener">SRF News</a> · <a href="https://www.srf.ch/news/international/killerroboter-die-technologie-ist-schneller-als-die-diplomatie" target="_blank" rel="noopener">SRF News</a> · <a href="https://www.handelsblatt.com/politik/international/ki-ruestung-un-gespraeche-ueber-autonome-waffen-enden-ohne-verbindliche-zusage/100271727.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-52a80480f4" style="--h:350">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">BelTA</span></div>
+    <h2><span class="en">Expert comments on repeated Ukrainian drone attacks on Crimean Bridge</span><span class="de" lang="de">Experte kommentiert wiederholte ukrainische Drohnenangriffe auf die Krim-Brücke</span></h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795276958_189277_big.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">A Belarusian state news agency, BelTA, reports an analyst&#39;s comments on repeated Ukrainian drone attacks on the Crimean Bridge.</span><span class="de" lang="de">Die belarussische staatliche Nachrichtenagentur BelTA berichtet über die Kommentare eines Analysten zu wiederholten ukrainischen Drohnenangriffen auf die Krim-Brücke.</span></p>
+    
+    <ul class="en"><li>Nikolai Platoshkin, a historian and political analyst, commented on the attacks for BelTA&#39;s &#39;V Teme&#39; programme.</li><li>The Crimean Bridge links Russia to the Crimean peninsula, which Russia annexed from Ukraine in 2014.</li><li>Only a short preview was readable. The details of the attacks and his full argument are unknown.</li></ul>
+    <ul class="de" lang="de"><li>Nikolai Platoshkin, Historiker und politischer Analyst, kommentierte die Angriffe für das Programm &#39;V Teme&#39; von BelTA.</li><li>Die Krim-Brücke verbindet Russland mit der Halbinsel Krim, die Russland 2014 von der Ukraine annektierte.</li><li>Nur ein kurzer Ausschnitt war lesbar. Die Einzelheiten der Angriffe und seine vollständige Argumentation sind unbekannt.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://eng.belta.by/society/view/expert-comments-on-attack-on-crimean-bridge-189277-2026/" target="_blank" rel="noopener">BelTA</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-1a0d9091ea" style="--h:350">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">BelTA</span></div>
+    <h2><span class="en">Analyst: which European states still fund Ukraine, and which have stopped</span><span class="de" lang="de">Analyst: Welche europäischen Staaten die Ukraine noch finanziell unterstützen und welche aufgehört haben</span></h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795293018_189282_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">A Belarusian state news agency, BelTA, reports an economist&#39;s view on which European countries still fund Ukraine.</span><span class="de" lang="de">Die belarussische staatliche Nachrichtenagentur BelTA berichtet über die Einschätzung eines Wirtschaftswissenschaftlers, welche europäischen Länder die Ukraine noch finanziell unterstützen.</span></p>
+    
+    <ul class="en"><li>Serghei Banari, an economist and analyst, spoke for BelTA&#39;s &#39;V Teme&#39; programme.</li><li>He says some European allies can still support Ukraine&#39;s war effort, while others refuse any aid.</li><li>Only a short preview was readable. The countries he named and his reasoning are not available here.</li></ul>
+    <ul class="de" lang="de"><li>Serghei Banari, Wirtschaftswissenschaftler und Analyst, sprach für das Programm &#39;V Teme&#39; von BelTA.</li><li>Er sagt, einige europäische Verbündete könnten die Kriegsanstrengungen der Ukraine weiterhin unterstützen, andere lehnten jede Hilfe ab.</li><li>Nur ein kurzer Ausschnitt war lesbar. Die Länder, die er nannte, und seine Begründung sind hier nicht verfügbar.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://eng.belta.by/society/view/analyst-explains-who-in-europe-is-still-willing-to-fund-ukraine-and-who-wont-189282-2026/" target="_blank" rel="noopener">BelTA</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-a3a85801be" style="--h:350">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">BelTA</span></div>
+    <h2><span class="en">Expert: Europe deadlocked over Ukraine support, Kyiv seeks stronger position</span><span class="de" lang="de">Experte: Europa blockiert bei der Unterstützung der Ukraine, Kiew sucht eine stärkere Position</span></h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795248031_189262_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">A Belarusian state news agency, BelTA, reports an economist&#39;s view on Europe&#39;s support for Ukraine. He describes Europe as deadlocked.</span><span class="de" lang="de">Die belarussische staatliche Nachrichtenagentur BelTA berichtet über die Einschätzung eines Wirtschaftswissenschaftlers zur europäischen Unterstützung der Ukraine. Er beschreibt Europa als blockiert.</span></p>
+    
+    <ul class="en"><li>Serghei Banari, an economist and analyst, spoke for BelTA&#39;s &#39;V Teme&#39; programme.</li><li>He discusses which side is stronger in the Ukraine conflict, and whether European support will continue.</li><li>Only a short preview was readable. His specific claims and evidence are not available here.</li></ul>
+    <ul class="de" lang="de"><li>Serghei Banari, Wirtschaftswissenschaftler und Analyst, sprach für das Programm &#39;V Teme&#39; von BelTA.</li><li>Er erörtert, welche Seite im Ukraine-Konflikt stärker ist und ob die europäische Unterstützung weitergehen wird.</li><li>Nur ein kurzer Ausschnitt war lesbar. Seine konkreten Behauptungen und Belege sind hier nicht verfügbar.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://eng.belta.by/society/view/europe-is-in-a-deadlock-expert-weighs-in-on-how-kiev-and-its-backers-are-seeking-to-strengthen-their-189262-2026/" target="_blank" rel="noopener">BelTA</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-e7fbf75c21" style="--h:350">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">BelTA</span></div>
+    <h2><span class="en">Analyst explains what awaits Zelensky after the war ends</span><span class="de" lang="de">Analyst erklärt, was Zelensky nach Kriegsende erwartet</span></h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795280638_189279_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Economist Serghei Banari discussed what could happen to Ukraine&#39;s president, Volodymyr Zelensky, after a peace deal. The headline says Moscow &#34;doesn&#39;t care about him.&#34;</span><span class="de" lang="de">Der Wirtschaftswissenschaftler Serghei Banari sprach darüber, was mit dem ukrainischen Präsidenten Volodymyr Zelensky nach einem Friedensabkommen geschehen könnte. Die Schlagzeile sagt, Moskau «kümmert sich nicht um ihn».</span></p>
+    
+    <ul class="en"><li>The comments were made on BelTA&#39;s &#34;On Point&#34; (V Teme) project. BelTA is Belarus&#39;s state-run news agency.</li><li>Banari is an economist and analyst. He spoke about Zelensky&#39;s future once the war in Ukraine ends.</li><li>Only a short teaser was readable. The full article, including his reasoning, was not available.</li></ul>
+    <ul class="de" lang="de"><li>Die Kommentare stammen aus dem Projekt «On Point» (V Teme) von BelTA. BelTA ist die staatlich betriebene Nachrichtenagentur von Belarus.</li><li>Banari ist Wirtschaftswissenschaftler und Analyst. Er sprach über die Zukunft von Zelensky, sobald der Krieg in der Ukraine endet.</li><li>Nur ein kurzer Teaser war lesbar. Der vollständige Artikel mit seiner Begründung war nicht verfügbar.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://eng.belta.by/society/view/moscow-doesnt-care-about-him-analyst-explains-what-awaits-zelensky-after-the-war-189279-2026/" target="_blank" rel="noopener">BelTA</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-f067387c96" style="--h:350">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">BelTA</span></div>
+    <h2><span class="en">Analyst: European support for Ukraine shrinks as peace nears</span><span class="de" lang="de">Analyst: Europäische Unterstützung für die Ukraine schrumpft mit näher rückendem Frieden</span></h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795278051_189278_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Economist Serghei Banari says European support for Ukraine shrinks as peace gets closer. The headline states this directly.</span><span class="de" lang="de">Der Wirtschaftswissenschaftler Serghei Banari sagt, die europäische Unterstützung für die Ukraine schrumpfe, je näher der Frieden rücke. Die Schlagzeile formuliert dies direkt.</span></p>
+    
+    <ul class="en"><li>In a quoted remark, Banari says deals with the West will always be broken and forgotten.</li><li>He says appeals to politeness, logic, morality or ethics will not produce an agreement with the West.</li><li>Only the headline and one quote were readable. The full article and its evidence were not available.</li><li>The story comes from BelTA, Belarus&#39;s state-run news agency, so its view reflects that government&#39;s line.</li></ul>
+    <ul class="de" lang="de"><li>In einem zitierten Satz sagt Banari, Abkommen mit dem Westen würden immer gebrochen und vergessen.</li><li>Er sagt, Appelle an Höflichkeit, Logik, Moral oder Ethik würden keine Einigung mit dem Westen bringen.</li><li>Nur die Schlagzeile und ein Zitat waren lesbar. Der vollständige Artikel und seine Belege waren nicht verfügbar.</li><li>Die Meldung stammt von BelTA, der staatlichen Nachrichtenagentur von Belarus, weshalb sie die Linie dieser Regierung widerspiegelt.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://eng.belta.by/society/view/the-closer-peace-the-smaller-the-share-analyst-on-european-support-for-ukraine-189278-2026/" target="_blank" rel="noopener">BelTA</a>
+    </div>
+  </div>
+</article>
+
+</body>
+</html>
