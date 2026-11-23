@@ -66,8 +66,14 @@ def build_brief(cfg: Config, use_llm: bool = True, now: datetime | None = None) 
         summarizer = Summarizer(cfg.settings)
         summarizer.summarize(items)
         if not any(i.summary for i in items):
-            # wrong model id, bad key, outage... don't silently publish raw teasers
-            raise RuntimeError("LLM produced no summaries; check ANTHROPIC_API_KEY and models in sources.yaml")
+            # usage limit, wrong model id, bad token, outage: publish a marked teaser-only page rather than none.
+            # The page says so, and the workflow's gate rebuilds a marked page on its next run.
+            log.error("LLM produced no summaries (usage limit? token? models in sources.yaml?): "
+                      "publishing a teaser-only page")
+            summarizer = None
+            for it in items:
+                it.headline = it.summary = ""
+                it.score = 0
 
 
     sections_conf = cfg.sections()

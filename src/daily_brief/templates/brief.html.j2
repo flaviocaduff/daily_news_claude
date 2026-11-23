@@ -6,6 +6,7 @@
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex">
+{% if not b.llm %}<meta name="brief-fallback" content="teasers">{% endif %}
 <title>{{ title }} · {{ b.now.strftime('%Y-%m-%d') }}</title>
 <style>
 :root{
@@ -92,6 +93,7 @@ footer a{text-decoration:underline}
 .story .srcs{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
 .story .srcs a{text-decoration:underline;color:var(--text)}
 body:has(.story:target){overflow:hidden}
+.fallback{margin:14px 0 0;padding:10px 14px;border-left:3px solid var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:0 8px 8px 0;font-size:.9rem}
 .pod{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-size:13px;color:var(--muted)}
 .pod audio{flex:1;min-width:0;height:36px}
 
@@ -127,6 +129,10 @@ c.addEventListener("change",function(){s();try{localStorage.setItem("lang",c.che
   <div class="stats">{{ b.item_count }} {{ t('stories', 'Meldungen') }} · {{ b.sections | length }} {{ t('sections', 'Rubriken') }}</div></div>
 </header>
 
+{% if not b.llm %}
+<p class="fallback">Short version: Claude was not available for this build, so these are the sources' own teasers,
+  without ranking, plain-language panels or German. The next automatic run replaces it with the full brief.</p>
+{% endif %}
 {% if b.audio %}
 <div class="pod"><span>{{ t('Listen (German)', 'Anhören') }} · {{ (b.audio_seconds // 60) | int }}:{{ '%02d' | format((b.audio_seconds % 60) | int) }}</span>
   <audio controls preload="none" src="{{ b.audio }}"></audio></div>

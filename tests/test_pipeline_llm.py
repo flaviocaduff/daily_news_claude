@@ -91,9 +91,14 @@ def test_grouped_section_caps_per_source(monkeypatch):
     assert all(sum(1 for i in items if i.source_id == s["id"]) <= 2 for s in srcs)
 
 
-def test_total_llm_failure_is_loud(run):
-    with pytest.raises(RuntimeError):
-        run("broken")
+def test_total_llm_failure_gives_marked_teaser_page(run):
+    from daily_brief.render import render
+
+    b = run("broken")
+    assert not b.llm and b.item_count > 0 and not b.script
+    html = render(b, {})
+    assert '<meta name="brief-fallback"' in html and "Short version" in html
+    assert '<meta name="brief-fallback"' not in render(run("ok"), {})
 
 
 def test_translate_fills_german_and_keeps_english():

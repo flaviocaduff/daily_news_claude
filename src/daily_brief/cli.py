@@ -65,7 +65,8 @@ def main(argv: list[str] | None = None) -> int:
 
     top = "\n".join(f"• {it.display_headline()}" for it in brief.top)
     msg = {
-        "title": f"{cfg.get('title', 'Daily Brief')} · {brief.now.strftime('%a %-d %b')}",
+        "title": f"{cfg.get('title', 'Daily Brief')} · {brief.now.strftime('%a %-d %b')}"
+                 + ("" if brief.llm else " (short version, Claude unavailable)"),
         "text": f"{top}\n{brief.item_count} stories" if top else f"{brief.item_count} stories",
     }
     latest.write_text(json.dumps(msg, ensure_ascii=False), encoding="utf-8")

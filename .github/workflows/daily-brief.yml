@@ -40,8 +40,14 @@ jobs:
           if [ "$now" -lt 620 ]; then
             echo "Skipping: $now is before 06:20 Zurich"; echo "run=false" >> "$GITHUB_OUTPUT"
           elif git ls-remote --exit-code "https://github.com/$GITHUB_REPOSITORY.git" gh-pages >/dev/null &&
-               curl -sfI "https://${owner,,}.github.io/${repo}/archive/$today.html" >/dev/null; then
-            echo "Skipping: today's brief ($today) is already published"; echo "run=false" >> "$GITHUB_OUTPUT"
+               page=$(curl -sf "https://${owner,,}.github.io/${repo}/archive/$today.html?nc=$RANDOM"); then
+            if grep -q 'name="brief-fallback"' <<<"$page"; then
+              # Claude was unavailable earlier (e.g. usage limit): replace the short version with the full brief
+              echo "Today's brief is only the short version: rebuilding"
+              echo "run=true" >> "$GITHUB_OUTPUT"; echo "retry=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "Skipping: today's brief ($today) is already published"; echo "run=false" >> "$GITHUB_OUTPUT"
+            fi
           else
             echo "run=true" >> "$GITHUB_OUTPUT"
           fi
@@ -69,9 +75,14 @@ jobs:
         if: steps.gate.outputs.run == 'true' && !inputs.dry_run
         run: npm install -g @anthropic-ai/claude-code
 
-      # Fails in seconds on a bad/expired token; prints only non-secret facts about it.
+      # Fails in seconds on a bad/expired token or a used-up subscription; prints only non-secret facts.
+      # Not fatal: without Claude the build publishes a marked short version (source teasers), and the
+      # next run (the late GitHub schedule) replaces it with the full brief.
       - name: Check Claude token
+        id: claude
         if: steps.gate.outputs.run == 'true' && !inputs.dry_run
+        continue-on-error: true
+        timeout-minutes: 3
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
@@ -88,7 +99,7 @@ jobs:
         if: steps.gate.outputs.run == 'true' && !inputs.dry_run
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-        run: uv run daily-brief
+        run: uv run daily-brief ${{ steps.claude.outcome == 'failure' && '--no-llm' || '' }}
 
       # The restored gh-pages checkout brings its own .git, which breaks the publish action.
       - name: Drop restored git metadata
@@ -121,6 +132,9 @@ jobs:
         run: |
           owner="${GITHUB_REPOSITORY%%/*}"; repo="${GITHUB_REPOSITORY#*/}"
           export SITE_URL="${SITE_URL_OVERRIDE:-https://${owner,,}.github.io/${repo}/}"
+          if [ "${{ steps.gate.outputs.retry }}" = "true" ] && grep -q 'name="brief-fallback"' site/index.html; then
+            echo "Still the short version: not notifying again"; exit 0
+          fi
           uv run daily-brief --notify-only
 
       - name: Delete trigger branch
