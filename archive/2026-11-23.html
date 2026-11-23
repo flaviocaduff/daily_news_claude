@@ -1,0 +1,1179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Daily Brief · 2026-11-23</title>
+<style>
+:root{
+  --bg:#f4f2ee;--card:#fff;--text:#16161a;--muted:#5f5f66;--line:#e3e0da;
+  --accent:#c2410c;--shadow:0 1px 2px rgba(0,0,0,.05),0 4px 14px rgba(0,0,0,.06);
+  --ph-l:46%;--ph-s:58%;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0f0f11;--card:#1a1a1e;--text:#f1f1f3;--muted:#a3a3ad;--line:#2a2a30;
+  --accent:#fb923c;--shadow:0 1px 2px rgba(0,0,0,.4);--ph-l:34%;--ph-s:45%;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 16px 56px}
+
+/* masthead */
+.mast{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding-bottom:14px;border-bottom:3px solid var(--text)}
+.mast .kicker{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.mast h1{margin:2px 0 0;font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.05;font-weight:850;letter-spacing:-.03em}
+.mast .stats{color:var(--muted);font-size:.9rem}
+
+/* thumbnails + placeholders */
+.img{position:relative;aspect-ratio:16/9;overflow:hidden;
+  background:linear-gradient(135deg,hsl(var(--h) var(--ph-s) var(--ph-l)),hsl(calc(var(--h) + 40) var(--ph-s) calc(var(--ph-l) - 12%)))}
+.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.img .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:12px;
+  color:rgba(255,255,255,.92);font-weight:800;font-size:1.05rem;letter-spacing:-.01em;text-align:center}
+
+/* cards */
+.card{display:flex;flex-direction:column;background:var(--card);border-radius:14px;overflow:hidden;
+  box-shadow:var(--shadow);border:1px solid var(--line);transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(0,0,0,.12)}
+.card .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tag{align-self:flex-start;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:hsl(var(--h) 70% 38%);}
+@media (prefers-color-scheme:dark){.tag{color:hsl(var(--h) 80% 70%)}}
+.card h3{margin:0;font-size:1.08rem;line-height:1.28;font-weight:780;letter-spacing:-.012em}
+.card:hover h3{color:var(--accent)}
+.card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.45}
+.also{font-size:.75rem;color:var(--muted);margin-top:auto;padding-top:4px}
+.clamp3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* Top N */
+.top{display:grid;grid-template-columns:1.55fr 1fr;grid-template-rows:auto auto;gap:18px;margin-top:22px}
+.top .card:first-child{grid-row:span 2}
+.top .card:first-child h3{font-size:clamp(1.4rem,2.6vw,1.95rem);line-height:1.15;font-weight:850;letter-spacing:-.025em}
+.top .card:first-child p{font-size:1.02rem}
+.top .card:first-child .img{aspect-ratio:auto;flex:1;min-height:240px}
+.top .card:first-child .body{flex:0 0 auto;padding:16px 20px 20px}
+.top .card:not(:first-child) h3{font-size:1.2rem}
+.top .rank{color:var(--accent);margin-right:6px}
+
+/* sections */
+section.sec{margin-top:44px}
+.sec h2{display:flex;align-items:baseline;gap:10px;margin:0 0 16px;font-size:1.55rem;font-weight:850;letter-spacing:-.02em}
+.sec h2::before{content:"";width:6px;height:1.05em;border-radius:3px;background:hsl(var(--h) 65% 50%);align-self:center}
+.sec h2 .n{font-size:.85rem;font-weight:600;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+
+footer{margin-top:48px;padding-top:14px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+footer a{text-decoration:underline}
+@media (max-width:760px){
+  .top{grid-template-columns:1fr}
+  .top .card:first-child{grid-row:auto}
+  .top .card:first-child .img{aspect-ratio:16/10;flex:none;min-height:0}
+}
+
+/* story view: opens when a card is tapped (#s-<id>), no JS needed */
+.story{display:none}
+.story:target{display:block;position:fixed;inset:0;z-index:10;overflow-y:auto;background:var(--bg)}
+.story .in{max-width:720px;margin:0 auto;padding:20px 16px 56px}
+.story .back{display:inline-block;margin-bottom:18px;font-weight:700;color:var(--accent)}
+.story h2{margin:6px 0 14px;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.15;font-weight:850;letter-spacing:-.02em}
+.story img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin-bottom:16px;background:var(--line)}
+.story ul{margin:0 0 18px;padding-left:1.2em;font-size:1.08rem}
+.story li{margin:0 0 10px}
+.story .gist{font-size:1.15rem;line-height:1.5;margin:0 0 16px}
+.story .why{margin:0 0 18px;padding:10px 14px;border-left:3px solid var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:0 8px 8px 0}
+.story .note{font-size:.85rem;color:var(--muted)}
+.story .srcs{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+.story .srcs a{text-decoration:underline;color:var(--text)}
+body:has(.story:target){overflow:hidden}
+.pod{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-size:13px;color:var(--muted)}
+.pod audio{flex:1;min-width:0;height:36px}
+
+/* EN/DE toggle: a hidden checkbox (first child of body) switches every .en/.de pair; works without JS */
+#de:not(:checked) ~ * .de,#de:checked ~ * .en{display:none}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;cursor:pointer;
+  font-size:.78rem;font-weight:800;letter-spacing:.06em;user-select:none;-webkit-tap-highlight-color:transparent}
+.lang b{padding:5px 11px;color:var(--muted)}
+#de:not(:checked) ~ * .lang .le,#de:checked ~ * .lang .ld{background:var(--text);color:var(--bg)}
+.mast .right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.story .bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.story .bar .back{margin:0}
+</style>
+</head>
+<body>
+<input type="checkbox" id="de" hidden>
+<script>(function(){var c=document.getElementById("de");function s(){document.documentElement.lang=c.checked?"de":"en"}
+try{c.checked=localStorage.getItem("lang")==="de"}catch(e){}s();
+c.addEventListener("change",function(){s();try{localStorage.setItem("lang",c.checked?"de":"en")}catch(e){}})})()</script>
+
+
+<div class="wrap">
+<header class="mast">
+  <div>
+    <div class="kicker">Daily Brief</div>
+    <h1><span class="en">Monday, 23 November 2026</span><span class="de" lang="de">Montag, 23. November 2026</span></h1>
+  </div>
+  <div class="right"><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label>
+  <div class="stats">31 <span class="en">stories</span><span class="de" lang="de">Meldungen</span> · 5 <span class="en">sections</span><span class="de" lang="de">Rubriken</span></div></div>
+</header>
+
+
+<div class="pod"><span><span class="en">Listen (German)</span><span class="de" lang="de">Anhören</span> · 3:12</span>
+  <audio controls preload="none" src="2026-11-23.mp3"></audio></div>
+
+
+
+
+
+<div class="top">
+  <a class="card" href="#s-f1ba66f4be" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/iYJIYlJ0LyLk/cover/900/506/0/0/0/0/0.5/0.5/kurstafel.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class=""><span class="rank">1</span><span class="en">Tech selloff weighs on global markets; DAX fell sharply last week</span><span class="de" lang="de">Technologie-Ausverkauf belastet Weltbörsen; DAX fiel letzte Woche stark</span></h3>
+    <p class=""><span class="en">Tech-stock selloff is weighing on stock markets worldwide, and Germany&#39;s DAX fell sharply in the previous week, with no clear recovery signal for Monday.</span><span class="de" lang="de">Der Ausverkauf bei Technologieaktien belastet die Aktienmärkte weltweit, und der DAX fiel in der Vorwoche stark. Für Montag gibt es kein klares Erholungssignal.</span></p>
+    <div class="also"><span class="en">Also in</span><span class="de" lang="de">Auch in</span> SRF News, South China Morning Post</div>
+  </div>
+</a><a class="card" href="#s-00be5e703f" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/23/2ae390f9-7741-4c84-97a5-df693e09ba2d_d3e6e94e.jpg?itok=OyM63cRq&amp;v=1795377736" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post</span>
+    <h3 class="clamp3"><span class="rank">2</span><span class="en">Bessent says US seeking answers from Nvidia on China chip sales</span><span class="de" lang="de">Bessent sagt, die USA verlangen Antworten von Nvidia zu Chip-Verkäufen nach China</span></h3>
+    <p class="clamp3"><span class="en">Treasury Secretary Scott Bessent said Washington wants to know who oversaw Nvidia compliance after Jensen Huang resigned over an affair with a suspected Chinese spy.</span><span class="de" lang="de">Finanzminister Scott Bessent sagt, Washington wolle wissen, wer die Nvidia-Compliance überwachte, nachdem Jensen Huang wegen einer Affäre mit einem mutmasslichen chinesischen Spion zurückgetreten war.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-dc9cdf9147" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3"><span class="rank">3</span><span class="en">Ex-Credit Suisse chairman Urs Rohner faces criminal penalty order</span><span class="de" lang="de">Ex-Credit-Suisse-Präsident Urs Rohner droht Strafbefehl</span></h3>
+    <p class="clamp3"><span class="en">A penalty order dated 20 October 2026 against Urs Rohner is not final and will go to the Federal Criminal Court in Bellinzona; he denies all allegations.</span><span class="de" lang="de">Ein Strafbefehl vom 20. Oktober 2026 gegen Urs Rohner ist nicht rechtskräftig und geht an das Bundesstrafgericht in Bellinzona. Er bestreitet alle Vorwürfe.</span></p>
+    
+  </div>
+</a>
+</div>
+
+
+
+<section class="sec" id="handelsblatt" style="--h:18">
+  <h2>Handelsblatt <span class="n">6</span></h2>
+  <div class="grid">
+    <a class="card" href="#s-9a2ffff9b4" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/Y78cEAPDBAqF/cover/900/506/0/0/107/106/0.5/0.5/hendrik-wuest.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="en">Resistance grows against Söder&#39;s push on cold progression relief</span><span class="de" lang="de">Widerstand wächst gegen Söders Vorstoss zur kalten Progression</span></h3>
+    <p class="clamp3"><span class="en">CSU leader Markus Söder insists on offsetting cold progression in the federal budget, facing resistance from other states including North Rhine-Westphalia.</span><span class="de" lang="de">CSU-Chef Markus Söder beharrt darauf, die kalte Progression im Bundeshaushalt auszugleichen, stösst aber auf Widerstand anderer Länder, darunter Nordrhein-Westfalen.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-8226bc869c" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/e8U7T1xoajPX/cover/900/506/0/0/107/106/0.5/0.5/volkswagen.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="en">VW pay dispute with IG Metall escalates over proposed cost cuts</span><span class="de" lang="de">Lohnstreit bei VW mit IG Metall eskaliert wegen geplanter Kostensenkungen</span></h3>
+    <p class="clamp3"><span class="en">Volkswagen seeks major savings in upcoming wage talks, including zero pay rounds, working-time changes and cuts to allowances, while IG Metall resists.</span><span class="de" lang="de">Volkswagen strebt in den anstehenden Lohnverhandlungen grosse Einsparungen an, darunter Nullrunden, Änderungen der Arbeitszeit und Kürzungen bei Zulagen. Die IG Metall hält dagegen.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-163591f9a3" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/dgup7h6MhwgM/cover/900/506/0/0/107/106/0.5/0.5/spritpreise.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="en">Fuel price cap could cut petrol by 7.5 cents per litre</span><span class="de" lang="de">Treibstoffpreisdeckel könnte Benzin um 7,5 Cent pro Liter verbilligen</span></h3>
+    <p class="clamp3"><span class="en">Handelsblatt calculations show Minister Reiche&#39;s proposed fuel price cap could cut petrol by 7.5 cents per litre and would apply on almost every day.</span><span class="de" lang="de">Berechnungen des Handelsblatts zeigen, dass der geplante Treibstoffpreisdeckel von Ministerin Reiche Benzin um 7,5 Cent pro Liter verbilligen könnte und fast an jedem Tag gelten würde.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-cbf77604fd" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/ZmgV1gFA1SyE/cover/900/506/0/0/0/0/0.5/0.5/marktkolumne-jakob-blume-22.11.26.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="en">Market insight: AI industry&#39;s enormous energy appetite</span><span class="de" lang="de">Marktbeobachtung: Der enorme Energiehunger der KI-Branche</span></h3>
+    <p class="clamp3"><span class="en">A new report projects the enormous electricity demand of data centres over the next decade, and its author recommends investors consider AI infrastructure suppliers.</span><span class="de" lang="de">Ein neuer Bericht prognostiziert den enormen Strombedarf von Rechenzentren in den kommenden zehn Jahren. Dessen Autor empfiehlt Anlegern, Zulieferer der KI-Infrastruktur in Betracht zu ziehen.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-bc81c35405" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/sQB72QVORDEJ/cover/900/506/0/0/0/0/0.5/0.5/longread-evonik-basf.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="en">BASF&#39;s failed Evonik merger: ten weeks from letter to collapse</span><span class="de" lang="de">Gescheiterte BASF-Fusion mit Evonik: zehn Wochen vom Brief bis zum Scheitern</span></h3>
+    <p class="clamp3"><span class="en">BASF CEO Kamieth&#39;s plan to merge with Evonik into a global chemicals champion collapsed within ten weeks after management underestimated political opposition.</span><span class="de" lang="de">Der Plan von BASF-Chef Markus Kamieth, mit Evonik zu einem globalen Chemie-Champion zu fusionieren, scheiterte innert zehn Wochen, nachdem das Management den politischen Widerstand unterschätzt hatte.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-38bb066e79" style="--h:18">
+  <div class="img">
+    <div class="ph">handelsblatt.com</div>
+    <img src="https://images.handelsblatt.com/u59RoXJV2GJa/cover/900/506/0/0/351/351/0.5/0.5/dpatopbilder-handout-22.11.2026-libyen-bengasi-auf-diesem-von-vantor-via-ap-zur-verfuegung-ges.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Handelsblatt</span>
+    <h3 class="clamp3"><span class="en">Russian warship sinks after Libyan port explosion</span><span class="de" lang="de">Russisches Kriegsschiff sinkt nach Explosion im libyschen Hafen</span></h3>
+    <p class="clamp3"><span class="en">A Russian warship sank after a port explosion in Libya; NATO is discussing Russian airspace violations and Poland says a downed object was a Russian missile.</span><span class="de" lang="de">Ein russisches Kriegsschiff ist nach einer Hafenexplosion in Libyen gesunken. Die NATO berät über russische Luftraumverletzungen, und Polen sagt, ein abgestürztes Objekt sei eine russische Rakete gewesen.</span></p>
+    <div class="also"><span class="en">Also in</span><span class="de" lang="de">Auch in</span> South China Morning Post</div>
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="sec" id="inside-paradeplatz" style="--h:152">
+  <h2>Inside Paradeplatz <span class="n">5</span></h2>
+  <div class="grid">
+    <a class="card" href="#s-4d6dc448ca" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/1e9b92.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3"><span class="en">SVP&#39;s two-candidate Federal Council ticket angers rival parties</span><span class="de" lang="de">Zwei-Kandidaten-Ticket der SVP für den Bundesrat verärgert Konkurrenzparteien</span></h3>
+    <p class="clamp3"><span class="en">SP and Green leaders criticise the SVP&#39;s two-candidate proposal for the Federal Council as unelectable and coercive, saying it pressures parliament.</span><span class="de" lang="de">SP- und Grünen-Spitze kritisieren den Zwei-Kandidaten-Vorschlag der SVP für den Bundesrat als unwählbar und nötigend, weil er das Parlament unter Druck setze.</span></p>
+    <div class="also"><span class="en">Also in</span><span class="de" lang="de">Auch in</span> SRF News</div>
+  </div>
+</a><a class="card" href="#s-bd8bdf62a2" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3"><span class="en">Will Thomas Aeschi soon back the EU treaties?</span><span class="de" lang="de">Wird Thomas Aeschi bald die EU-Verträge unterstützen?</span></h3>
+    <p class="clamp3"><span class="en">Inside Paradeplatz speculates that SVP faction leader Thomas Aeschi, a Federal Council candidate, will have to drop his rhetoric against the EU treaties.</span><span class="de" lang="de">Inside Paradeplatz spekuliert, dass SVP-Fraktionschef Thomas Aeschi, Bundesratskandidat, seine Rhetorik gegen die EU-Verträge werde aufgeben müssen.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-c1b8340de5" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-22-um-08.31.48.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3"><span class="en">SVP favourite Aeschi faces lost cantonal bank mandate if bid fails</span><span class="de" lang="de">SVP-Favorit Aeschi droht der Verlust eines Kantonalbank-Mandats, falls die Wahl scheitert</span></h3>
+    <p class="clamp3"><span class="en">Per Inside Paradeplatz, SVP favourite Thomas Aeschi would lose a cantonal bank mandate because of a board role at colleague Matter&#39;s firm.</span><span class="de" lang="de">Laut Inside Paradeplatz würde der SVP-Favorit Thomas Aeschi ein Kantonalbank-Mandat verlieren, wegen eines Verwaltungsratsmandats bei der Firma von Kollege Matter.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-5053ad07e5" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-22-um-07.15.44.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3"><span class="en">Bitcoin hits record low against CAD on Kraken amid thin liquidity</span><span class="de" lang="de">Bitcoin erreicht Rekordtief gegenüber dem kanadischen Dollar auf Kraken wegen dünner Liquidität</span></h3>
+    <p class="clamp3"><span class="en">Bitcoin fell to record lows against the Canadian dollar on Kraken as buyers and market liquidity disappeared, according to Inside Paradeplatz.</span><span class="de" lang="de">Bitcoin fiel auf der Krypto-Börse Kraken auf ein Rekordtief gegenüber dem kanadischen Dollar, weil Käufer und Marktliquidität verschwanden, wie Inside Paradeplatz berichtet.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-0f75502c52" style="--h:152">
+  <div class="img">
+    <div class="ph">insideparadeplatz.ch</div>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-22-um-07.51.04-1.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">Inside Paradeplatz</span>
+    <h3 class="clamp3"><span class="en">IWC&#39;s 65,000-franc glowing watch draws ridicule</span><span class="de" lang="de">IWC-Uhr für 65’000 Franken mit Leuchteffekt sorgt für Spott</span></h3>
+    <p class="clamp3"><span class="en">IWC unveiled a CHF 65,000 watch that glows like reactor rods at the Las Vegas Grand Prix, and says the idea came from an apprentice.</span><span class="de" lang="de">IWC hat am Grand Prix von Las Vegas eine Uhr für CHF 65’000 vorgestellt, die wie Reaktorstäbe leuchtet. Die Idee stamme von einem Lehrling, sagt die Firma.</span></p>
+    
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="sec" id="srf-news" style="--h:0">
+  <h2>SRF News <span class="n">6</span></h2>
+  <div class="grid">
+    <a class="card" href="#s-edb4b927ad" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/31eeef.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3"><span class="en">SRF investigation finds 169 attempted femicides in Switzerland</span><span class="de" lang="de">SRF-Recherche zählt 169 versuchte Femizide in der Schweiz</span></h3>
+    <p class="clamp3"><span class="en">SRF Investigativ reports 169 attempted femicides in Switzerland, the first investigation to show the scale of life-threatening violence against women.</span><span class="de" lang="de">SRF Investigativ berichtet von 169 versuchten Femiziden in der Schweiz. Es ist die erste Recherche, die das Ausmass lebensbedrohlicher Gewalt gegen Frauen zeigt.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-5105929ca7" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/0eb750.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3"><span class="en">Democrats win historic US House majority in midterm elections</span><span class="de" lang="de">Demokraten gewinnen historische Mehrheit im US-Repräsentantenhaus bei den Zwischenwahlen</span></h3>
+    <p class="clamp3"><span class="en">US Democrats have won at least 258 seats in the House of Representatives, their largest majority since 1992.</span><span class="de" lang="de">Die US-Demokraten haben mindestens 258 Sitze im Repräsentantenhaus gewonnen, ihre grösste Mehrheit seit 1992.</span></p>
+    <div class="also"><span class="en">Also in</span><span class="de" lang="de">Auch in</span> South China Morning Post, Handelsblatt</div>
+  </div>
+</a><a class="card" href="#s-6a7cf30f84" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/66f22db.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3"><span class="en">Russian strike on multi-storey house near Kyiv kills several</span><span class="de" lang="de">Russischer Angriff auf mehrstöckiges Wohnhaus bei Kiew fordert mehrere Tote</span></h3>
+    <p class="clamp3"><span class="en">A Russian attack hit a multi-storey residential building near Kyiv, killing several people, and rescue operations are still ongoing.</span><span class="de" lang="de">Ein russischer Angriff traf ein mehrstöckiges Wohnhaus bei Kiew und tötete mehrere Menschen. Die Rettungsarbeiten dauern an.</span></p>
+    <div class="also"><span class="en">Also in</span><span class="de" lang="de">Auch in</span> South China Morning Post</div>
+  </div>
+</a><a class="card" href="#s-73c74b5599" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/3351e6.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3"><span class="en">Trump says Iranian attacks have increased significantly recently</span><span class="de" lang="de">Trump sagt, iranische Angriffe hätten in letzter Zeit deutlich zugenommen</span></h3>
+    <p class="clamp3"><span class="en">US President Donald Trump says Iran has significantly expanded its attacks in the Middle East conflict recently, by his account.</span><span class="de" lang="de">US-Präsident Donald Trump sagt, der Iran habe seine Angriffe im Nahost-Konflikt in letzter Zeit laut seiner Darstellung deutlich ausgeweitet.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-275769e8f9" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/cb0904.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3"><span class="en">COP31 Antalya ends without deal; Switzerland and EU reject draft</span><span class="de" lang="de">COP31 in Antalya endet ohne Einigung; Schweiz und EU lehnen Entwurf ab</span></h3>
+    <p class="clamp3"><span class="en">The UN climate conference COP31 in Antalya ended without agreement after Switzerland, the EU and other states rejected a draft final declaration as too weak.</span><span class="de" lang="de">Die UNO-Klimakonferenz COP31 in Antalya endete ohne Einigung, nachdem die Schweiz, die EU und weitere Staaten einen Entwurf der Schlusserklärung als zu schwach abgelehnt hatten.</span></p>
+    <div class="also"><span class="en">Also in</span><span class="de" lang="de">Auch in</span> South China Morning Post</div>
+  </div>
+</a><a class="card" href="#s-a55ca8981e" style="--h:0">
+  <div class="img">
+    <div class="ph">srf.ch</div>
+    <img src="https://www.srf.ch/static/cms/images//320ws/a48002c.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">SRF News</span>
+    <h3 class="clamp3"><span class="en">Critics say SVP Federal Council candidates Aeschi and Graber are alike</span><span class="de" lang="de">Kritiker sagen, SVP-Bundesratskandidaten Aeschi und Graber seien sich ähnlich</span></h3>
+    <p class="clamp3"><span class="en">Critics say SVP candidates Thomas Aeschi and Michael Graber are politically nearly identical; SRF examines whether that holds up.</span><span class="de" lang="de">Kritiker sagen, die SVP-Kandidaten Thomas Aeschi und Michael Graber seien politisch nahezu identisch; SRF prüft, ob das stimmt.</span></p>
+    
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="sec" id="south-china-morning-post" style="--h:275">
+  <h2>South China Morning Post <span class="n">6</span></h2>
+  <div class="grid">
+    <a class="card" href="#s-f3a3b4c058" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/22/80aae96e-5824-4dab-9f38-fa1a6c5d7c78_632c7f7e.jpg?itok=mwkbyv9W&amp;v=1795352716" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post Business</span>
+    <h3 class="clamp3"><span class="en">China cuts stock margin ratio to 80% from 100% to support markets</span><span class="de" lang="de">China senkt Margenquote für Aktien auf 80% statt 100%, um Märkte zu stützen</span></h3>
+    <p class="clamp3"><span class="en">The CSRC approved Shanghai and Shenzhen exchanges lowering the minimum margin ratio for margin trading from 100% to 80%, effective November 30, to stem a stock decline.</span><span class="de" lang="de">Die CSRC hat genehmigt, dass die Börsen Shanghai und Shenzhen die Mindestmargenquote für Margenhandel von 100% auf 80% senken, gültig ab 30. November, um einen Aktienrückgang zu stoppen.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-80b2ce7066" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/21/c7f09c41-1137-409b-89fa-1dbf012eab7c_2f97cf39.jpg?itok=aT0ysulU&amp;v=1795247972" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post Business</span>
+    <h3 class="clamp3"><span class="en">New World seeks HK$50bn debt cut after HK$24.9bn rights issue</span><span class="de" lang="de">New World will Schulden um bis zu HK$50 Mrd. senken nach Bezugsrechtsemission über HK$24,9 Mrd.</span></h3>
+    <p class="clamp3"><span class="en">New World plans to cut up to HK$50 billion in borrowings by end-2031 via property sales, mainland REITs and strategic investors, after its shares fell 41% on resumed trading.</span><span class="de" lang="de">New World plant, bis Ende 2031 Kredite um bis zu HK$50 Mrd. zu senken, durch Immobilienverkäufe, REITs auf dem chinesischen Festland und strategische Investoren. Nach Wiederaufnahme des Handels fielen die Aktien um 41%.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-100d2c308a" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/23/86b1c9c1-28f3-4baf-ab2b-6f1cdb3fdf48_75c89503.jpg?itok=UwPwbeZs&amp;v=1795401365" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post</span>
+    <h3 class="clamp3"><span class="en">Weekend roundup: Princeton student detained by ICE, China space mining plan</span><span class="de" lang="de">Wochenrückblick: Princeton-Student von ICE festgehalten, Chinas Pläne für Weltraumbergbau</span></h3>
+    <p class="clamp3"><span class="en">A Chinese Princeton PhD student was detained by ICE after a US academic conference, and China unveiled a space mining roadmap with a moon move within four years.</span><span class="de" lang="de">Ein chinesischer Doktorand aus Princeton wurde nach einer akademischen Konferenz in den USA von ICE festgehalten, und China stellte einen Fahrplan für Weltraumbergbau mit einem Mondvorstoss innerhalb von vier Jahren vor.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-a0b3532840" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/23/1c307afb-53f1-4c0e-b54b-44f86c247674_0c257697.jpg?itok=wKj-ay8P&amp;v=1795392427" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post</span>
+    <h3 class="clamp3"><span class="en">Tai Po fire survivors struggle with grief and trauma as anniversary nears</span><span class="de" lang="de">Überlebende des Brandes in Tai Po kämpfen mit Trauer und Trauma vor dem Jahrestag</span></h3>
+    <p class="clamp3"><span class="en">A year after the Wang Fuk Court blaze in Tai Po, Hong Kong, survivors report ongoing trauma, fear and loss while living in transitional housing.</span><span class="de" lang="de">Ein Jahr nach dem Brand in der Wang Fuk Court in Tai Po, Hongkong, berichten Überlebende von anhaltendem Trauma, Angst und Verlust, während sie in Übergangsunterkünften wohnen.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-c79a9e89a6" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/23/afdf949a-a607-4682-bf5c-b5ef31e59a55_c4bb0cf6.jpg?itok=iSDOarm2&amp;v=1795403612" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post</span>
+    <h3 class="clamp3"><span class="en">Beijing praises Hong Kong Election Committee poll as &#39;patriots-only&#39; model succeeds</span><span class="de" lang="de">Peking lobt Wahl des Hongkonger Wahlkomitees: «Nur Patrioten»-Modell funktioniert</span></h3>
+    <p class="clamp3"><span class="en">The Hong Kong and Macau Affairs Office hailed the Election Committee poll, which recorded nearly 99 per cent turnout among 5,640 registered voters.</span><span class="de" lang="de">Das Büro für Hongkong- und Macau-Angelegenheiten lobte die Wahl des Wahlkomitees, die eine Beteiligung von fast 99 Prozent unter 5&#39;640 registrierten Wählenden verzeichnete.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-61aca8728e" style="--h:275">
+  <div class="img">
+    <div class="ph">scmp.com</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/22/0bc86f92-1b70-499d-a188-2a540875f3a3_c1023abe.jpg?itok=TlkA9XZg&amp;v=1795330553" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">South China Morning Post</span>
+    <h3 class="clamp3"><span class="en">China&#39;s memory chipmakers close gap with industry leaders; demand cools</span><span class="de" lang="de">Chinas Speicherchip-Hersteller holen auf Branchenführer auf; Nachfrage kühlt ab</span></h3>
+    <p class="clamp3"><span class="en">CXMT and YMTC have grown rapidly on state backing and new factories, but early signs of a market cool-down threaten their momentum.</span><span class="de" lang="de">CXMT und YMTC sind dank staatlicher Unterstützung und neuer Fabriken rasch gewachsen, doch erste Anzeichen einer Abkühlung des Marktes bedrohen ihren Schwung.</span></p>
+    
+  </div>
+</a>
+  </div>
+</section>
+
+<section class="sec" id="belta" style="--h:350">
+  <h2>BelTA <span class="n">5</span></h2>
+  <div class="grid">
+    <a class="card" href="#s-eb57ed09ac" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795380589_189307_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3"><span class="en">Belarus revises 2027 list of professions open to foreign workers</span><span class="de" lang="de">Belarus überarbeitet Liste der Berufe für ausländische Arbeitskräfte 2027</span></h3>
+    <p class="clamp3"><span class="en">Ministry of Labor official Maksim Florinsky said some professions were dropped from and others added to the 2027 list for foreign workers.</span><span class="de" lang="de">Maksim Florinsky, Beamter des Arbeitsministeriums, sagte, auf der Liste 2027 für ausländische Arbeitskräfte seien einige Berufe gestrichen und andere hinzugefügt worden.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-72a756d4a2" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000020_1795375534_189304_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3"><span class="en">Belarus foreign minister outlines new formats of India cooperation</span><span class="de" lang="de">Aussenminister von Belarus skizziert neue Formen der Zusammenarbeit mit Indien</span></h3>
+    <p class="clamp3"><span class="en">Foreign Minister Maxim Ryzhenkov described new partnership formats between Belarus and India in a STV interview; the teaser gives no specifics.</span><span class="de" lang="de">Aussenminister Maxim Ryzhenkov beschrieb in einem STV-Interview neue Partnerschaftsformen zwischen Belarus und Indien; der Anreisser enthält keine Einzelheiten.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-773e14b47e" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795359369_189297_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3"><span class="en">Chagall painting unseen for 50 years heads to Munich auction</span><span class="de" lang="de">Chagall-Gemälde, seit 50 Jahren nicht gezeigt, kommt zur Auktion in München</span></h3>
+    <p class="clamp3"><span class="en">Marc Chagall&#39;s Mystere du Matin, unseen for 50 years, will be offered at Ketterer Kunst&#39;s evening sale in Munich on 4 December.</span><span class="de" lang="de">Marc Chagalls «Mystère du Matin», seit 50 Jahren nicht gezeigt, wird bei der Abendauktion von Ketterer Kunst in München am 4. Dezember angeboten.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-57cd03074a" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795366513_189300_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3"><span class="en">Minsk to host exhibition marking Patriarch Kirill&#39;s 80th birthday</span><span class="de" lang="de">Minsk richtet Ausstellung zum 80. Geburtstag von Patriarch Kirill aus</span></h3>
+    <p class="clamp3"><span class="en">A photo exhibition, A Life of Service, marking Patriarch Kirill of Moscow&#39;s 80th birthday will open in Minsk, showing his visits to Belarus.</span><span class="de" lang="de">In Minsk wird die Fotoausstellung «Ein Leben im Dienst» zum 80. Geburtstag von Patriarch Kirill von Moskau eröffnet; sie zeigt seine Besuche in Belarus.</span></p>
+    
+  </div>
+</a><a class="card" href="#s-0135040282" style="--h:350">
+  <div class="img">
+    <div class="ph">eng.belta.by</div>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000021_1795378219_189306_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+  </div>
+  <div class="body">
+    <span class="tag">BelTA</span>
+    <h3 class="clamp3"><span class="en">Belarus ranks among top three flaxseed oil exporters globally</span><span class="de" lang="de">Belarus gehört zu den drei grössten Leinöl-Exporteuren weltweit</span></h3>
+    <p class="clamp3"><span class="en">Belarus sold over $11 million of flaxseed oil in six months, placing it in the global top three ahead of the Netherlands and Germany, per analysts.</span><span class="de" lang="de">Belarus hat in sechs Monaten Leinöl im Wert von über 11 Millionen Dollar verkauft. Laut Analysten liegt das Land damit weltweit auf Platz drei, vor den Niederlanden und Deutschland.</span></p>
+    
+  </div>
+</a>
+  </div>
+</section>
+
+
+<footer>
+  <p><span class="en">No new items:</span><span class="de" lang="de">Keine neuen Meldungen:</span> TLDR Tech, TLDR AI, TLDR Dev, TLDR InfoSec, TLDR Product, TLDR DevOps, TLDR Founders, TLDR Design, TLDR Marketing, TLDR Crypto, TLDR Fintech, TLDR IT, TLDR Data, TLDR Hardware, Swiss Federal Government.</p>
+  
+  
+  <p><span class="en">Generated</span><span class="de" lang="de">Erstellt</span> 06:37 CET. <span class="en">Archive:</span><span class="de" lang="de">Archiv:</span>
+  <a href="2026-11-23.html">2026-11-23</a> · <a href="2026-11-22.html">2026-11-22</a> · <a href="2026-11-21.html">2026-11-21</a> · <a href="2026-11-20.html">2026-11-20</a> · <a href="2026-11-19.html">2026-11-19</a> · <a href="2026-11-18.html">2026-11-18</a> · <a href="2026-11-17.html">2026-11-17</a></p>
+</footer>
+</div>
+
+
+<article class="story" id="s-f1ba66f4be" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">Tech selloff weighs on global markets; DAX fell sharply last week</span><span class="de" lang="de">Technologie-Ausverkauf belastet Weltbörsen; DAX fiel letzte Woche stark</span></h2>
+    <img src="https://images.handelsblatt.com/iYJIYlJ0LyLk/cover/900/506/0/0/0/0/0.5/0.5/kurstafel.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Stock markets fell sharply on Friday, led by tech shares. Germany&#39;s Dax index fell below 25,000 points, and US markets dropped further.</span><span class="de" lang="de">Die Aktienmärkte fielen am Freitag stark, angeführt von Technologiewerten. Der deutsche Dax-Index fiel unter 25&#39;000 Punkte, und die US-Märkte gaben weiter nach.</span></p>
+    
+    <ul class="en"><li>The Dax (Germany&#39;s main index of the largest listed companies) closed down 2.6% at 24,803 points on Friday.</li><li>It was the first close below 25,000 since early October. The Dax lost more than 2,000 points in one week, its weakest week in over a year.</li><li>The sell-off followed the record stock market debut (IPO) of AI firm Anthropic, but Anthropic shares briefly fell almost to their issue price.</li><li>The US &#39;fear index&#39; (VIX, which measures expected market swings) jumped over 30% on Friday. It reached 36 points, its highest since spring 2025.</li><li>The S&amp;P 500 (the 500 largest US firms) fell 3.5% below 7,000 points. It had its longest losing streak since 2020. The Dow fell 1.9%.</li><li>The S&amp;P 500 and Dow are now in a correction, meaning about 10% below their recent peaks. The Nasdaq 100 (a tech index) fell 5.6%, erasing all of its gains for the year.</li><li>In Asia, South Korea&#39;s Kospi fell over 5% at one point on Monday. Japan&#39;s Nikkei fell 5% on Friday. Taiwan&#39;s Taiex rose 1.5%.</li><li>Goldman Sachs&#39; &#39;Panic Index&#39; (a stress gauge from 0 to 10) rose to 9. Handelsblatt says automated funds are adding to the selling. A podcast preview adds only that few signs point to a quick recovery.</li></ul>
+    <ul class="de" lang="de"><li>Der Dax (Deutschlands Hauptindex der grössten börsennotierten Unternehmen) schloss am Freitag mit einem Minus von 2,6 % bei 24&#39;803 Punkten.</li><li>Es war der erste Schluss unter 25&#39;000 Punkten seit Anfang Oktober. Der Dax verlor in einer Woche mehr als 2&#39;000 Punkte, seine schwächste Woche seit über einem Jahr.</li><li>Auf das Rekord-Börsendebüt (IPO) des KI-Unternehmens Anthropic folgte der Ausverkauf. Die Anthropic-Aktien fielen allerdings kurzzeitig fast auf ihren Ausgabepreis.</li><li>Der US-«Angstindex» (VIX, der die erwarteten Kursschwankungen misst) stieg am Freitag um über 30 %. Er erreichte 36 Punkte, den höchsten Stand seit dem Frühjahr 2025.</li><li>Der S&amp;P 500 (die 500 grössten US-Firmen) fiel um 3,5 % unter 7&#39;000 Punkte. Es war seine längste Verlustserie seit 2020. Der Dow fiel um 1,9 %.</li><li>S&amp;P 500 und Dow befinden sich nun in einer Korrektur, das heisst, sie liegen rund 10 % unter ihren jüngsten Höchstständen. Der Nasdaq 100 (ein Technologieindex) fiel um 5,6 % und löschte damit alle seine Gewinne des Jahres aus.</li><li>In Asien fiel Südkoreas Kospi am Montag zeitweise um über 5 %. Japans Nikkei verlor am Freitag 5 %. Taiwans Taiex stieg um 1,5 %.</li><li>Der «Panik-Index» von Goldman Sachs (ein Stressmesser von 0 bis 10) stieg auf 9. Laut Handelsblatt verstärken automatisierte Fonds den Verkaufsdruck. Eine Podcast-Vorschau erwähnt lediglich, dass wenige Anzeichen auf eine rasche Erholung hindeuten.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Falling share prices affect pensions, savings and company values, and markets are expected to stay volatile this week.</span><span class="de" lang="de">Fallende Aktienkurse wirken sich auf Renten, Ersparnisse und Unternehmenswerte aus, und die Märkte dürften diese Woche volatil bleiben.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/finanzen/maerkte/marktberichte/dax-und-boerse-aktuell-sechs-punkte-die-fuer-anleger-heute-wichtig-sind/100002161.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/meinung/morningbriefing/morning-briefing-der-panik-index-an-der-boerse-steht-auf-neun-von-zehn/100271899.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/audio/podcast-morning-briefing/morning-briefing-podcast-der-panik-index-an-der-boerse-steht-auf-neun-von-zehn/100271934.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/finanzen/maerkte/asien-boersen-ki-ausverkauf-setzt-sich-in-asien-fort-kospi-sackt-um-mehr-als-fuenf-prozent-ab/100271898.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/finanzen/maerkte/maerkte-euphorie-weicht-furcht-sorge-vor-einem-ende-des-ki-booms-waechst/100271863.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.handelsblatt.com/politik/deutschland/aktienmaerkte-ki-sorgen-setzen-asiens-boersen-weiter-unter-druck/100271926.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.srf.ch/news/wirtschaft/ki-aktien-im-sinkflug-ki-boersenkorrektur-hype-vorbei-oder-gesunde-bereinigung" target="_blank" rel="noopener">SRF News</a> · <a href="https://www.scmp.com/business/markets/article/3375424/new-19-month-low-hong-kong-stocks-plunge-ai-sell-spreads-asia" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-00be5e703f" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post</span></div>
+    <h2><span class="en">Bessent says US seeking answers from Nvidia on China chip sales</span><span class="de" lang="de">Bessent sagt, die USA verlangen Antworten von Nvidia zu Chip-Verkäufen nach China</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/23/2ae390f9-7741-4c84-97a5-df693e09ba2d_d3e6e94e.jpg?itok=OyM63cRq&amp;v=1795377736" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">US Treasury Secretary Scott Bessent says the US wants answers from Nvidia about its chip sales to China. Nvidia&#39;s former chief Jensen Huang resigned after an affair with a suspected Chinese spy.</span><span class="de" lang="de">US-Finanzminister Scott Bessent sagt, die USA wollen Antworten von Nvidia zu den Chip-Verkäufen nach China. Nvidias früherer Chef Jensen Huang trat nach einer Affäre mit einem mutmasslichen chinesischen Spion zurück.</span></p>
+    
+    <ul class="en"><li>Bessent is the head of the US finance ministry. He spoke on Sunday, and said Nvidia must move quickly to answer US questions.</li><li>The US wants to know who was in charge of compliance (the company&#39;s internal rule-checking) at Nvidia. Bessent also wants to know &#39;what the culture was.&#39;</li><li>Nvidia is currently run by temporary management. Bessent said the government is in contact with the lead directors and their lawyers.</li><li>A second SCMP preview says Bessent now leaves the door open for Huang to return. Earlier, Bessent had urged Nvidia&#39;s board to hire an outside leader.</li><li>The second preview says Bessent&#39;s shift came after US President Donald Trump publicly backed Huang. Both sources are short previews, so details may be missing.</li></ul>
+    <ul class="de" lang="de"><li>Bessent ist Chef des US-Finanzministeriums. Er äusserte sich am Sonntag und sagte, Nvidia müsse rasch auf die Fragen der USA antworten.</li><li>Die USA wollen wissen, wer bei Nvidia für die Compliance (die interne Regeleinhaltung des Unternehmens) verantwortlich war. Bessent will zudem wissen, «wie die Kultur war».</li><li>Nvidia wird derzeit von einer Übergangsleitung geführt. Bessent sagte, die Regierung stehe mit den federführenden Direktoren und deren Anwälten in Kontakt.</li><li>Eine zweite SCMP-Vorschau berichtet, Bessent lasse nun die Tür für eine Rückkehr von Huang offen. Zuvor hatte Bessent den Nvidia-Verwaltungsrat gedrängt, eine externe Führungskraft einzustellen.</li><li>Die zweite Vorschau sagt, Bessents Kurswechsel sei erfolgt, nachdem US-Präsident Donald Trump Huang öffentlich unterstützt habe. Beide Quellen sind kurze Vorschauen, weshalb Details fehlen könnten.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/news/world/united-states-canada/article/3375404/us-seeks-answers-nvidias-sale-chips-china-bessent-says" target="_blank" rel="noopener">South China Morning Post</a> · <a href="https://www.scmp.com/tech/tech-war/article/3375427/us-treasury-secretary-leaves-door-open-jensen-huangs-return-nvidia" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-dc9cdf9147" style="--h:152">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Inside Paradeplatz</span></div>
+    <h2><span class="en">Ex-Credit Suisse chairman Urs Rohner faces criminal penalty order</span><span class="de" lang="de">Ex-Credit-Suisse-Präsident Urs Rohner droht Strafbefehl</span></h2>
+    
+    
+    <p class="gist"><span class="en">Swiss authorities issued a penalty order against Urs Rohner, former chairman of Credit Suisse. He is accused of giving false information to the Swiss financial regulator, FINMA. The order is not final.</span><span class="de" lang="de">Die Schweizer Behörden haben einen Strafbefehl gegen Urs Rohner erlassen, den früheren Präsidenten der Credit Suisse. Ihm wird vorgeworfen, der Finanzmarktaufsicht FINMA falsche Angaben gemacht zu haben. Der Strafbefehl ist nicht rechtskräftig.</span></p>
+    
+    <ul class="en"><li>The order is dated 20 October 2026. The Federal Criminal Court in Bellinzona will have to deal with it. Rohner denies all allegations, and he is presumed innocent.</li><li>The charge is under Article 45 of the Financial Market Supervision Act. It says he intentionally gave FINMA false information.</li><li>The case stems from the shadowing affair around star banker Iqbal Khan, which came to light in September 2019. Credit Suisse later merged into UBS.</li><li>Rohner was a lawyer and general counsel (chief legal officer) at Credit Suisse. He was vice chair of the board from 2009 to 2011, and chair from 2011 to 2021.</li><li>The 81-page decision, issued by the Federal Finance Department (EFD), says the bank had no rules on physical surveillance from 2015 to 2019.</li><li>Private detectives were used without rules. Invoices were vague, orders were undocumented, and messages were deleted. The authorities call this inadequate organisation with secretive features.</li><li>The decision says Rohner relied on outside lawyers&#39; drafts. It says he should have checked the documents, despite clear warning signs.</li><li>The article is an opinion column from Inside Paradeplatz, first published in the Luzerner Zeitung. It calls the overall picture devastating and says a conviction is not needed to see it.</li></ul>
+    <ul class="de" lang="de"><li>Der Strafbefehl ist vom 20. Oktober 2026 datiert. Das Bundesstrafgericht in Bellinzona wird sich damit befassen müssen. Rohner bestreitet alle Vorwürfe und gilt bis zum Beweis des Gegenteils als unschuldig.</li><li>Der Vorwurf beruht auf Artikel 45 des Finanzmarktaufsichtsgesetzes. Demnach soll Rohner der FINMA absichtlich falsche Angaben gemacht haben.</li><li>Der Fall geht auf die Beschattungsaffäre um den Starbanker Iqbal Khan zurück, die im September 2019 bekannt wurde. Die Credit Suisse ging später in der UBS auf.</li><li>Rohner war Anwalt und Chefjurist (Chief Legal Officer) der Credit Suisse. Er war von 2009 bis 2011 Vizepräsident des Verwaltungsrats und von 2011 bis 2021 Präsident.</li><li>Die 81-seitige Verfügung des Eidgenössischen Finanzdepartements (EFD) hält fest, dass die Bank von 2015 bis 2019 keine Regeln für physische Überwachung hatte.</li><li>Privatdetektive wurden ohne Regeln eingesetzt. Rechnungen waren vage, Aufträge nicht dokumentiert, und Nachrichten wurden gelöscht. Die Behörden sprechen von ungenügender Organisation mit verdeckten Zügen.</li><li>Laut der Verfügung stützte sich Rohner auf Entwürfe externer Anwälte. Er hätte die Dokumente trotz deutlicher Warnzeichen überprüfen müssen.</li><li>Der Artikel ist ein Meinungskommentar von Inside Paradeplatz, zuerst erschienen in der Luzerner Zeitung. Er nennt das Gesamtbild verheerend und sagt, eine Verurteilung sei nicht nötig, um dies zu erkennen.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">It shows that a bank&#39;s top board member can face personal criminal charges over a company&#39;s controls.</span><span class="de" lang="de">Es zeigt, dass ein oberstes Verwaltungsratsmitglied einer Bank persönlich strafrechtlich belangt werden kann wegen der Kontrollen eines Unternehmens.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://insideparadeplatz.ch/2026/11/22/urs-und-die-detektive/" target="_blank" rel="noopener">Inside Paradeplatz</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-9a2ffff9b4" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">Resistance grows against Söder&#39;s push on cold progression relief</span><span class="de" lang="de">Widerstand wächst gegen Söders Vorstoss zur kalten Progression</span></h2>
+    <img src="https://images.handelsblatt.com/Y78cEAPDBAqF/cover/900/506/0/0/107/106/0.5/0.5/hendrik-wuest.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">CSU leader Markus Söder wants the federal government to offset &#39;cold progression&#39; in 2027. Several CDU state premiers disagree, saying the 2027 federal budget is already agreed.</span><span class="de" lang="de">CSU-Chef Markus Söder will, dass der Bund die «kalte Progression» 2027 ausgleicht. Mehrere CDU-Ministerpräsidenten lehnen dies ab und sagen, der Bundeshaushalt 2027 sei bereits beschlossen.</span></p>
+    
+    <ul class="en"><li>Cold progression is a hidden tax increase. Income tax does not account for inflation, so people pay more tax even when their real income stays the same.</li><li>Söder, Bavaria&#39;s premier, wants the cost offset next year as well. He told Bild am Sonntag that Bavaria would share the cost.</li><li>A full offset in 2027 would cost the federal government, the states and the municipalities about 4.2 billion euros in total.</li><li>Rhineland-Palatinate premier Gordon Schnieder says anyone demanding extra relief must fund it fully from federal money. He questions whether Söder&#39;s pet project, the Mütterrente III (a pension boost for mothers), should come first.</li><li>North Rhine-Westphalia premier Hendrik Wüst, speaking on ZDF, says the offset is desirable but not feasible. He says the coalition committee chose a cut in the electricity tax for relief instead.</li><li>Fritz Güntzler (CDU), finance spokesman for the Union parliamentary group, backs Söder. He says the states have blocked the offset so far, and they should do their homework.</li><li>Greens leader Britta Haßelmann calls it a staged &#39;Söder-Inszenierung&#39;. She says Söder sits on the coalition committee himself and should propose concrete plans.</li><li>The 2027 federal budget is due for its final debate in the Bundestag this week, with a vote on Friday. The article says even new state funding would come too late for that budget.</li></ul>
+    <ul class="de" lang="de"><li>Die kalte Progression ist eine versteckte Steuererhöhung. Die Einkommensteuer berücksichtigt die Inflation nicht, sodass Menschen mehr Steuern zahlen, auch wenn ihr reales Einkommen gleich bleibt.</li><li>Söder, bayerischer Ministerpräsident, will den Ausgleich auch nächstes Jahr. Er sagte der «Bild am Sonntag», Bayern würde sich an den Kosten beteiligen.</li><li>Ein vollständiger Ausgleich 2027 würde Bund, Länder und Gemeinden insgesamt rund 4,2 Mrd. Euro kosten.</li><li>Der rheinland-pfälzische Ministerpräsident Gordon Schnieder sagt, wer zusätzliche Entlastung fordert, müsse sie vollständig aus Bundesmitteln finanzieren. Er stellt infrage, ob Söders Lieblingsprojekt, die Mütterrente III (eine Rentenerhöhung für Mütter), vorgehen sollte.</li><li>Der nordrhein-westfälische Ministerpräsident Hendrik Wüst sagt im ZDF, der Ausgleich sei wünschenswert, aber nicht machbar. Der Koalitionsausschuss habe stattdessen eine Senkung der Stromsteuer als Entlastung gewählt.</li><li>Fritz Güntzler (CDU), finanzpolitischer Sprecher der Unionsfraktion, unterstützt Söder. Die Länder hätten den Ausgleich bisher blockiert, sie sollten ihre Hausaufgaben machen.</li><li>Grünen-Chefin Britta Haßelmann nennt es eine gestaffelte «Söder-Inszenierung». Söder sitze selbst im Koalitionsausschuss und solle konkrete Pläne vorlegen.</li><li>Der Bundeshaushalt 2027 steht diese Woche zur finalen Debatte im Bundestag, die Abstimmung ist am Freitag. Laut dem Artikel käme selbst neue Landesfinanzierung zu spät für diesen Haushalt.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">The 2027 federal budget is set, so an income tax offset for workers is unlikely to come through this push.</span><span class="de" lang="de">Der Bundeshaushalt 2027 steht fest, daher dürfte der Vorstoss keinen Ausgleich der Einkommensteuer für Arbeitnehmende bringen.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/politik/deutschland/bundeshaushalt-widerstand-gegen-soeders-vorstoss-zur-kalten-progression/100271928.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-8226bc869c" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">VW pay dispute with IG Metall escalates over proposed cost cuts</span><span class="de" lang="de">Lohnstreit bei VW mit IG Metall eskaliert wegen geplanter Kostensenkungen</span></h2>
+    <img src="https://images.handelsblatt.com/e8U7T1xoajPX/cover/900/506/0/0/107/106/0.5/0.5/volkswagen.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Volkswagen (VW) and the IG Metall union are heading into a hard pay round. VW wants deep cuts, and both sides have hardened their positions.</span><span class="de" lang="de">Volkswagen (VW) und die IG Metall gehen in eine harte Lohnrunde. VW will tiefe Einschnitte, beide Seiten haben ihre Positionen verhärtet.</span></p>
+    
+    <ul class="en"><li>The pay round covers about 120,000 VW staff. IG Metall, the metalworkers&#39; union, wants 5% more pay because living costs are rising.</li><li>A 2024 deal already cut 35,000 German jobs by 2030. Bonuses and allowances were cut, and pay rises were frozen. Staff pay about €1.5bn a year.</li><li>In return, VW promised no forced layoffs and no plant closures. It also promised investment and new products for German sites.</li><li>VW&#39;s 2025 profit fell about 44%, to €6.9bn from €12.4bn. Sales dipped to about €322bn. Deliveries were 8.98 million cars, down 0.5%.</li><li>CEO Oliver Blume said in August that the situation was &#39;more than critical&#39;. The operating margin (profit from core business as a share of sales) was 3.8%.</li><li>On 3 September, the supervisory board (the company&#39;s oversight board) approved the &#39;Future Plan 2030&#39;. It means savings in the double-digit billions and about 50,000 fewer jobs worldwide.</li><li>No plant closures were decided yet. Management must present a European production plan by mid-2027.</li><li>On 18 September, VW cut its 2026 profit forecast. It cited a multi-billion write-down on Porsche, weak sales in China and restructuring costs.</li></ul>
+    <ul class="de" lang="de"><li>Die Lohnrunde betrifft rund 120&#39;000 VW-Beschäftigte. Die IG Metall, die Gewerkschaft der Metallarbeiter, fordert 5 % mehr Lohn, weil die Lebenshaltungskosten steigen.</li><li>Eine Vereinbarung von 2024 hat bereits bis 2030 35&#39;000 Stellen in Deutschland gestrichen. Boni und Zulagen wurden gekürzt, Lohnerhöhungen eingefroren. Die Löhne der Belegschaft kosten rund 1,5 Mrd. Euro pro Jahr.</li><li>Im Gegenzug hat VW betriebsbedingte Kündigungen und Werksschliessungen ausgeschlossen. Ausserdem versprach das Unternehmen Investitionen und neue Produkte für die deutschen Standorte.</li><li>Der Gewinn von VW sank 2025 um rund 44 % auf 6,9 Mrd. Euro, nach 12,4 Mrd. Euro. Der Umsatz ging auf rund 322 Mrd. Euro zurück. Ausgeliefert wurden 8,98 Millionen Autos, 0,5 % weniger.</li><li>Konzernchef Oliver Blume sagte im August, die Lage sei «mehr als kritisch». Die operative Marge (Gewinn aus dem Kerngeschäft in Prozent des Umsatzes) lag bei 3,8 %.</li><li>Am 3. September hat der Aufsichtsrat (das Kontrollgremium des Unternehmens) den «Zukunftsplan 2030» genehmigt. Er bedeutet Einsparungen im zweistelligen Milliardenbereich und rund 50&#39;000 Stellen weniger weltweit.</li><li>Werksschliessungen wurden noch nicht beschlossen. Die Konzernleitung muss bis Mitte 2027 einen europäischen Produktionsplan vorlegen.</li><li>Am 18. September senkte VW die Gewinnprognose für 2026. Als Gründe nannte das Unternehmen eine Abschreibung auf Porsche im Milliardenbereich, schwache Verkäufe in China und Restrukturierungskosten.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Strikes or a deal at Germany&#39;s biggest carmaker could shape pay and jobs across the sector.</span><span class="de" lang="de">Streiks oder eine Einigung beim grössten deutschen Autobauer könnten Löhne und Stellen in der ganzen Branche prägen.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/politik/deutschland/kriselnder-autobauer-wie-bei-volkswagen-der-streit-ums-sparen-eskaliert-ist/100271914.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-163591f9a3" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">Fuel price cap could cut petrol by 7.5 cents per litre</span><span class="de" lang="de">Treibstoffpreisdeckel könnte Benzin um 7,5 Cent pro Liter verbilligen</span></h2>
+    <img src="https://images.handelsblatt.com/dgup7h6MhwgM/cover/900/506/0/0/107/106/0.5/0.5/spritpreise.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">A planned fuel price cap could make petrol and diesel cheaper on most days from January. Handelsblatt calculated the effect from a new draft law.</span><span class="de" lang="de">Ein geplanter Treibstoffpreisdeckel könnte Benzin und Diesel ab Januar an den meisten Tagen günstiger machen. Das Handelsblatt hat die Wirkung anhand eines neuen Gesetzesentwurfs berechnet.</span></p>
+    
+    <ul class="en"><li>A fuel price cap sets maximum prices at petrol stations. The draft comes from Economy Minister Katherina Reiche (CDU) and is being agreed within the government.</li><li>Federal and state governments agreed in September to introduce the cap on 1 January. High fuel prices caused by the Iran war drove the decision.</li><li>Reiche&#39;s first draft in early November only planned a check in January on whether a cap was needed. The SPD (Social Democrats) protested strongly.</li><li>Handelsblatt&#39;s calculations show the cap could lower prices almost every day, once or several times a day.</li><li>Petrol and diesel would be cheaper 11 to 14% of the time than without the cap.</li><li>On average, the cut could be 5 to 7.5 cents per litre.</li><li>The estimates rely on the current draft, which may still change. The article does not explain how the cap would be set.</li></ul>
+    <ul class="de" lang="de"><li>Ein Treibstoffpreisdeckel legt Höchstpreise an den Tankstellen fest. Der Entwurf stammt von Wirtschaftsministerin Katherina Reiche (CDU) und wird innerhalb der Regierung abgestimmt.</li><li>Bund und Länder haben sich im September darauf geeinigt, den Deckel am 1. Januar einzuführen. Auslöser waren hohe Treibstoffpreise infolge des Iran-Kriegs.</li><li>Reiches erster Entwurf von Anfang November sah lediglich vor, im Januar zu prüfen, ob ein Deckel nötig ist. Die SPD protestierte heftig.</li><li>Die Berechnungen des Handelsblatts zeigen, dass der Deckel die Preise fast jeden Tag senken könnte, ein- oder mehrmals täglich.</li><li>Benzin und Diesel wären in 11 bis 14 % der Zeit günstiger als ohne Deckel.</li><li>Im Durchschnitt könnte die Senkung 5 bis 7,5 Cent pro Liter betragen.</li><li>Die Schätzungen beruhen auf dem aktuellen Entwurf, der sich noch ändern kann. Der Artikel erklärt nicht, wie der Deckel festgelegt würde.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Drivers could pay less at the pump, if the cap becomes law as drafted.</span><span class="de" lang="de">Autofahrer könnten an der Zapfsäule weniger bezahlen, falls der Deckel wie entworfen Gesetz wird.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/politik/deutschland/kraftstoff-preisdeckel-koennte-sprit-bis-zu-75-cent-pro-liter-verguenstigen/100271834.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-cbf77604fd" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">Market insight: AI industry&#39;s enormous energy appetite</span><span class="de" lang="de">Marktbeobachtung: Der enorme Energiehunger der KI-Branche</span></h2>
+    <img src="https://images.handelsblatt.com/ZmgV1gFA1SyE/cover/900/506/0/0/0/0/0.5/0.5/marktkolumne-jakob-blume-22.11.26.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">A new report estimates the huge electricity needs of data centres over the next ten years. Only a short teaser was readable.</span><span class="de" lang="de">Ein neuer Bericht schätzt den gewaltigen Strombedarf von Rechenzentren für die nächsten zehn Jahre. Nur ein kurzer Anriss war lesbar.</span></p>
+    
+    <ul class="en"><li>Data centres are the large computer facilities that run AI. The teaser says a new report details their power demand for the next decade.</li><li>The teaser gives no figures from the report, so the size of the demand is unknown here.</li><li>Columnist Jakob Blume argues investors should back the suppliers that equip the AI boom.</li></ul>
+    <ul class="de" lang="de"><li>Rechenzentren sind die grossen Computeranlagen, auf denen KI läuft. Der Anriss besagt, dass ein neuer Bericht deren Strombedarf für das kommende Jahrzehnt beschreibt.</li><li>Der Anriss nennt keine Zahlen aus dem Bericht, daher ist die Grösse des Bedarfs hier unbekannt.</li><li>Kolumnist Jakob Blume argumentiert, Anleger sollten jene Zulieferer unterstützen, die den KI-Boom ausrüsten.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/finanzen/anlagestrategie/kolumnen/maerkte-insight-der-unglaubliche-energiehunger-der-ki-industrie/100269633.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-bc81c35405" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">BASF&#39;s failed Evonik merger: ten weeks from letter to collapse</span><span class="de" lang="de">Gescheiterte BASF-Fusion mit Evonik: zehn Wochen vom Brief bis zum Scheitern</span></h2>
+    <img src="https://images.handelsblatt.com/sQB72QVORDEJ/cover/900/506/0/0/0/0/0.5/0.5/longread-evonik-basf.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">BASF&#39;s plan to take over rival Evonik has failed. The deal was planned for over a year and collapsed within about ten weeks of approval.</span><span class="de" lang="de">Der Plan der BASF, den Konkurrenten Evonik zu übernehmen, ist gescheitert. Das Geschäft war seit über einem Jahr geplant und brach rund zehn Wochen nach der Zustimmung zusammen.</span></p>
+    
+    <ul class="en"><li>Evonik is Germany&#39;s second-largest chemicals company. BASF is the largest. The takeover was worth billions of euros.</li><li>BASF chief Markus Kamieth pushed the plan. The supervisory board (the company&#39;s oversight board) approved it on 23 July, at its summer meeting.</li><li>Michael Vassiliadis, head of the chemical workers&#39; union IG BCE, left the room. He did not oppose the deal, but was seen as biased.</li><li>He sits on the board of the RAG-Stiftung, the foundation that holds Evonik&#39;s largest stake.</li><li>Four months after approval, the plan had failed. Insiders told Handelsblatt about earlier plans, a meeting in the Taunus region and a deadline that set too much pressure.</li><li>Handelsblatt calls the case a lesson in the power of political interests.</li><li>The account relies on insiders. The article does not name who blocked the deal or what the deadline was.</li></ul>
+    <ul class="de" lang="de"><li>Evonik ist Deutschlands zweitgrösstes Chemieunternehmen. BASF ist das grösste. Die Übernahme war Milliarden Euro wert.</li><li>BASF-Chef Markus Kamieth trieb den Plan voran. Der Aufsichtsrat (das Kontrollgremium des Unternehmens) stimmte ihm am 23. Juli an der Sommersitzung zu.</li><li>Michael Vassiliadis, Chef der Chemiegewerkschaft IG BCE, verliess den Raum. Er war nicht gegen das Geschäft, galt aber als befangen.</li><li>Er sitzt im Verwaltungsrat der RAG-Stiftung, jener Stiftung, die den grössten Anteil an Evonik hält.</li><li>Vier Monate nach der Zustimmung war der Plan gescheitert. Insider berichteten dem Handelsblatt von früheren Plänen, einem Treffen in der Taunus-Region und einer Frist, die zu viel Druck erzeugte.</li><li>Das Handelsblatt nennt den Fall eine Lehrstunde in der Macht politischer Interessen.</li><li>Der Bericht stützt sich auf Insider. Der Artikel nennt nicht, wer das Geschäft blockiert hat oder wie die Frist lautete.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">It shows how politics can shape major German industrial deals.</span><span class="de" lang="de">Er zeigt, wie Politik grosse deutsche Industriegeschäfte prägen kann.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/unternehmen/industrie/basf-und-evonik-der-zerplatzte-traum-vom-deutschen-chemie-champion/100271483.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-38bb066e79" style="--h:18">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Handelsblatt</span></div>
+    <h2><span class="en">Russian warship sinks after Libyan port explosion</span><span class="de" lang="de">Russisches Kriegsschiff sinkt nach Explosion im libyschen Hafen</span></h2>
+    <img src="https://images.handelsblatt.com/u59RoXJV2GJa/cover/900/506/0/0/351/351/0.5/0.5/dpatopbilder-handout-22.11.2026-libyen-bengasi-auf-diesem-von-vantor-via-ap-zur-verfuegung-ges.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">A suspected Ukrainian sea-drone attack hit a Russian warship at a Libyan naval base on Sunday. Reports differ on how badly the ship was hurt.</span><span class="de" lang="de">Ein mutmasslicher ukrainischer Seedrohnen-Angriff traf am Sonntag ein russisches Kriegsschiff auf einer libyschen Marinebasis. Die Berichte gehen auseinander, wie stark das Schiff beschädigt wurde.</span></p>
+    
+    <ul class="en"><li>South China Morning Post reports that the Russian corvette (a small, fast warship) Merkury was severely damaged at the Benghazi Naval Base in eastern Libya.</li><li>Two Libyan military officials said the attack also started a fire at the base.</li><li>They said several Ukrainian sea drones (unmanned explosive boats) were launched from a Ukrainian-run base in western Libya.</li><li>Handelsblatt&#39;s headline says the ship sinks after an explosion. Its live-blog teaser does not confirm a sinking, and SCMP only reports severe damage.</li><li>Handelsblatt&#39;s live blog also lists other war news: NATO is discussing Russian airspace violations over Poland, and Poland says a crashed flying object was a Russian missile.</li><li>Selenskyj (Ukrainian President Zelensky) reports another delay in air-defence deliveries.</li><li>Only short previews were readable, so the full articles may contain more detail.</li></ul>
+    <ul class="de" lang="de"><li>Die South China Morning Post berichtet, dass die russische Korvette (ein kleines, schnelles Kriegsschiff) Merkury auf der Marinebasis Benghazi im Osten Libyens schwer beschädigt wurde.</li><li>Zwei libysche Militärbeamte sagten, der Angriff habe auch einen Brand auf der Basis ausgelöst.</li><li>Sie sagten, mehrere ukrainische Seedrohnen (unbemannte Sprengboote) seien von einer ukrainisch betriebenen Basis im Westen Libyens aus gestartet worden.</li><li>Die Schlagzeile des Handelsblatts sagt, das Schiff sinkt nach einer Explosion. Der Anriss des Live-Blogs bestätigt kein Sinken, und die SCMP meldet nur schwere Schäden.</li><li>Der Live-Blog des Handelsblatts listet weitere Kriegsnachrichten auf: Die NATO berät über russische Luftraumverletzungen über Polen, und Polen sagt, ein abgestürztes Flugobjekt sei eine russische Rakete gewesen.</li><li>Selenskyj (ukrainischer Präsident) meldet eine weitere Verzögerung bei Lieferungen von Luftverteidigungssystemen.</li><li>Nur kurze Vorschauen waren lesbar, die vollständigen Artikel enthalten daher möglicherweise mehr Details.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.handelsblatt.com/politik/international/ukraine-russisches-kriegsschiff-sinkt-nach-explosion-in-libyschem-hafen/27982126.html" target="_blank" rel="noopener">Handelsblatt</a> · <a href="https://www.scmp.com/news/world/africa/article/3375407/suspected-ukrainian-sea-drones-hit-russian-warship-libyan-naval-base-officials-say" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-4d6dc448ca" style="--h:152">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Inside Paradeplatz</span></div>
+    <h2><span class="en">SVP&#39;s two-candidate Federal Council ticket angers rival parties</span><span class="de" lang="de">Zwei-Kandidaten-Ticket der SVP für den Bundesrat verärgert Konkurrenzparteien</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/1e9b92.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">The SVP, Switzerland&#39;s biggest party, has nominated two candidates for a seat in the Federal Council. Other parties strongly reject this two-name ticket.</span><span class="de" lang="de">Die SVP, die grösste Partei der Schweiz, hat zwei Kandidaten für einen Bundesratssitz nominiert. Andere Parteien lehnen dieses Zwei-Namen-Ticket deutlich ab.</span></p>
+    
+    <ul class="en"><li>Guy Parmelin is leaving the Federal Council, Switzerland&#39;s seven-member government. The SVP nominated Thomas Aeschi (Zug) and Michael Graber (Valais).</li><li>Parliament chooses the successor in a joint session called the United Federal Assembly. A candidate needs an absolute majority (more than half the votes).</li><li>The Green Party president calls the ticket arrogant and unelectable. SP leader Cédric Wermuth says everything is still open.</li><li>Mitte party chief Bregy says the SVP put forward two almost identical figures. Analyst Michael Hermann says Graber is barely electable for other parties.</li><li>Hermann says the ticket challenges Konkordanz, the Swiss power-sharing spirit among the big parties. He says Aeschi&#39;s fit for this matters most.</li><li>In a Sotomo poll for the newspaper Blick, 61% of voters said they would not want Aeschi in government. That is more than for any other candidate.</li><li>The SVP says it will expel members who elect a rival &#39;Sprengkandidat&#39; (a candidate who breaks the ticket). Hermann warns that giving in could leave the choice to the party.</li><li>Past cases: in 2008 Hansjörg Walter missed an absolute majority by one vote. In 1993 parliament rejected the SP&#39;s Christiane Brunner, and Ruth Dreifuss was then elected.</li></ul>
+    <ul class="de" lang="de"><li>Guy Parmelin verlässt den Bundesrat, die siebenköpfige Regierung der Schweiz. Die SVP nominierte Thomas Aeschi (Zug) und Michael Graber (Wallis).</li><li>Das Parlament wählt die Nachfolge in einer gemeinsamen Sitzung, der Vereinigten Bundesversammlung. Ein Kandidat braucht das absolute Mehr (mehr als die Hälfte der Stimmen).</li><li>Die Grünen-Präsidentin nennt das Ticket arrogant und unwählbar. SP-Chef Cédric Wermuth sagt, alles sei noch offen.</li><li>Mitte-Chef Bregy sagt, die SVP habe zwei nahezu identische Figuren vorgeschlagen. Politanalyst Michael Hermann sagt, Graber sei für andere Parteien kaum wählbar.</li><li>Hermann sagt, das Ticket stelle die Konkordanz infrage, also den schweizerischen Geist der Machtteilung unter den grossen Parteien. Entscheidend sei für ihn vor allem, ob Aeschi dazu passe.</li><li>In einer Umfrage von Sotomo für die Zeitung Blick sagten 61 Prozent der Wählerinnen und Wähler, sie wollten Aeschi nicht in der Regierung. Das ist mehr als bei jedem anderen Kandidaten.</li><li>Die SVP sagt, sie werde Mitglieder ausschliessen, die einen «Sprengkandidaten» wählen (einen Kandidaten, der das Ticket sprengt). Hermann warnt, nachzugeben könnte die Wahl der Partei überlassen.</li><li>Frühere Fälle: 2008 verpasste Hansjörg Walter das absolute Mehr um eine Stimme. 1993 lehnte das Parlament die SP-Kandidatin Christiane Brunner ab, danach wurde Ruth Dreifuss gewählt.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">The vote decides who sits in the government that runs federal policy, and how parties share power.</span><span class="de" lang="de">Die Wahl entscheidet, wer in der Regierung sitzt, die die Bundespolitik führt, und wie die Parteien die Macht teilen.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://insideparadeplatz.ch/2026/11/22/der-schwachsinn-mit-dem-zweierticket/" target="_blank" rel="noopener">Inside Paradeplatz</a> · <a href="https://www.srf.ch/news/schweiz/bundesratsticket-der-svp-michael-herrmann-dieses-svp-ticket-stellt-konkordanz-infrage" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-bd8bdf62a2" style="--h:152">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Inside Paradeplatz</span></div>
+    <h2><span class="en">Will Thomas Aeschi soon back the EU treaties?</span><span class="de" lang="de">Wird Thomas Aeschi bald die EU-Verträge unterstützen?</span></h2>
+    
+    
+    <p class="gist"><span class="en">An opinion column asks whether Thomas Aeschi would support EU treaties if he becomes a Federal Councillor. It says government members must set party views aside.</span><span class="de" lang="de">Eine Meinungskolumne fragt, ob Thomas Aeschi die EU-Verträge unterstützen würde, falls er Bundesrat wird. Sie sagt, Regierungsmitglieder müssten Parteiansichten beiseitelegen.</span></p>
+    
+    <ul class="en"><li>The column says a Federal Councillor may not use the SVP term &#39;Unterwerfungsvertrag&#39; (submission treaty) for EU agreements.</li><li>It says the collegiality principle requires government members to act together and drop party doctrine.</li><li>It jokes that Aeschi might one day travel to Brussels with the government to shake hands with EU Commission President Ursula von der Leyen.</li><li>It suggests the SVP might want a failed vote to break the Zauberformel (magic formula, the informal rule sharing seats among the four big parties).</li><li>It raises a scenario where the centre-left votes for Céline Amaudruz, a moderate Geneva SVP member, instead of Aeschi.</li><li>It recalls Eveline Widmer-Schlumpf, a 2007 case where parliament elected a candidate the SVP opposed.</li><li>It says the nomination shows the SVP rejects moderate compromise politicians.</li><li>This is an opinion column, not reporting. Its scenarios are speculation.</li></ul>
+    <ul class="de" lang="de"><li>Die Kolumne schreibt, ein Bundesrat dürfe den SVP-Begriff «Unterwerfungsvertrag» für EU-Abkommen nicht verwenden.</li><li>Sie sagt, das Kollegialitätsprinzip verlange, dass Regierungsmitglieder gemeinsam handeln und Parteidoktrin ablegen.</li><li>Sie scherzt, Aeschi könnte eines Tages mit der Regierung nach Brüssel reisen, um EU-Kommissionspräsidentin Ursula von der Leyen die Hand zu schütteln.</li><li>Sie legt nahe, die SVP könnte eine gescheiterte Wahl wollen, um die Zauberformel zu sprengen (die informelle Regel, die Sitze unter den vier grossen Parteien aufteilt).</li><li>Sie skizziert ein Szenario, in dem die Mitte-links-Parteien statt Aeschi Céline Amaudruz wählen, ein gemässigtes SVP-Mitglied aus Genf.</li><li>Sie erinnert an Eveline Widmer-Schlumpf, einen Fall von 2007, als das Parlament eine Kandidatin wählte, die die SVP ablehnte.</li><li>Sie sagt, die Nomination zeige, dass die SVP gemässigte Kompromisspolitiker ablehne.</li><li>Dies ist eine Meinungskolumne, keine Berichterstattung. Ihre Szenarien sind Spekulation.</li></ul>
+    
+    
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://insideparadeplatz.ch/2026/11/22/wird-thomas-aeschi-bald-die-eu-vertraege-unterstuetzen/" target="_blank" rel="noopener">Inside Paradeplatz</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-c1b8340de5" style="--h:152">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Inside Paradeplatz</span></div>
+    <h2><span class="en">SVP favourite Aeschi faces lost cantonal bank mandate if bid fails</span><span class="de" lang="de">SVP-Favorit Aeschi droht der Verlust eines Kantonalbank-Mandats, falls die Wahl scheitert</span></h2>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-22-um-08.31.48.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">An opinion column says Thomas Aeschi is going all in on his Federal Council bid. It says a second failed election would end his national political career.</span><span class="de" lang="de">Eine Meinungskolumne sagt, Thomas Aeschi setze bei seiner Bundesratskandidatur alles auf eine Karte. Eine zweite gescheiterte Wahl würde seine nationale politische Laufbahn beenden.</span></p>
+    
+    <ul class="en"><li>The column says Aeschi&#39;s tactics only make sense if he feels sure of his case.</li><li>The SVP gave him extra time past its internal deadline, letting him sound out support behind closed doors for a two-name ticket.</li><li>The column recalls the 2003 election win, when SVP leader Ueli Maurer demanded a second Federal Council seat.</li><li>In 2015 Aeschi lost to Guy Parmelin in parliament. SRF then called him &#39;the Sphinx of Lake Zug&#39;.</li><li>The column expects Céline Amaudruz to almost certainly leave the SVP&#39;s national board after being passed over. It expects Geneva and other French-speaking SVP sections to react.</li><li>It cites former FDP member Pierre Maudet, who split from his party, as a model for a breakaway.</li><li>In Zug, the column expects Peter Hegglin (Mitte) to retire from the Council of States, the upper house. It says Matthias Michel&#39;s (FDP) re-election is uncertain.</li><li>It says Hans-Ueli Vogt could become president of the Zug cantonal bank board. Aeschi would then have to leave the board of Helvetische Bank, where he sits with Thomas Matter.</li></ul>
+    <ul class="de" lang="de"><li>Die Kolumne schreibt, Aeschis Taktik ergebe nur Sinn, wenn er sich seiner Sache sicher fühle.</li><li>Die SVP gewährte ihm mehr Zeit über ihre interne Frist hinaus, sodass er hinter verschlossenen Türen Unterstützung für ein Zwei-Namen-Ticket ausloten konnte.</li><li>Die Kolumne erinnert an den Wahlsieg von 2003, als SVP-Chef Ueli Maurer einen zweiten Bundesratssitz verlangte.</li><li>2015 verlor Aeschi im Parlament gegen Guy Parmelin. Das SRF nannte ihn danach «die Sphinx vom Zugersee».</li><li>Die Kolumne erwartet, dass Céline Amaudruz nach der Übergehung den nationalen Parteivorstand der SVP fast sicher verlässt. Sie erwartet Reaktionen aus Genf und anderen französischsprachigen SVP-Sektionen.</li><li>Sie nennt den früheren FDP-Politiker Pierre Maudet, der sich von seiner Partei abspaltete, als Vorbild für eine Abspaltung.</li><li>In Zug erwartet die Kolumne, dass Peter Hegglin (Mitte) aus dem Ständerat zurücktritt. Die Wiederwahl von Matthias Michel (FDP) sei ungewiss.</li><li>Sie schreibt, Hans-Ueli Vogt könnte Präsident des Bankrats der Zuger Kantonalbank werden. Aeschi müsste dann den Verwaltungsrat der Helvetischen Bank verlassen, wo er zusammen mit Thomas Matter sitzt.</li></ul>
+    
+    
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://insideparadeplatz.ch/2026/11/22/aeschi-geht-all-in/" target="_blank" rel="noopener">Inside Paradeplatz</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-5053ad07e5" style="--h:152">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Inside Paradeplatz</span></div>
+    <h2><span class="en">Bitcoin hits record low against CAD on Kraken amid thin liquidity</span><span class="de" lang="de">Bitcoin erreicht Rekordtief gegenüber dem kanadischen Dollar auf Kraken wegen dünner Liquidität</span></h2>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-22-um-07.15.44.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Bitcoin crashed on the crypto exchange Kraken over the weekend, but only in its Canadian-dollar markets. Kraken says the trades are valid and will not be reversed.</span><span class="de" lang="de">Bitcoin ist am Wochenende auf der Krypto-Börse Kraken eingebrochen, aber nur in den Märkten mit kanadischem Dollar. Kraken sagt, die Trades seien gültig und würden nicht rückgängig gemacht.</span></p>
+    
+    <ul class="en"><li>Kraken is a crypto exchange, a platform where people trade digital coins. Bitcoin briefly traded at about 27,000 US dollars there.</li><li>Some Kraken data showed a low of about 17,000 US dollars. Elsewhere, Bitcoin traded between 55,000 and 59,000 US dollars at the same time.</li><li>The cause was low liquidity, meaning few buyers were available. Large sell orders emptied the order book (the list of buy and sell offers).</li><li>Ethereum, Solana and stablecoins (crypto tokens tied to a currency) also fell on Kraken. The US dollar to Canadian dollar rate was also distorted there.</li><li>Kraken says heavy selling caused the drop, not a software bug. It reports no hack and no compromised customer accounts.</li><li>Kraken confirmed on its official X support account that all executed trades stand. Buyers at 27,000 dollars or lower keep their Bitcoin.</li><li>Kraken has not yet given a full explanation. Some users claim they bought cheaply and withdrew the coins; this is not independently confirmed.</li><li>The article&#39;s author predicts Bitcoin may fall further, testing 38,000 dollars. This is the author&#39;s own forecast, not a fact.</li></ul>
+    <ul class="de" lang="de"><li>Kraken ist eine Krypto-Börse, eine Plattform, auf der Menschen digitale Coins handeln. Bitcoin wurde dort kurzzeitig für etwa 27’000 US-Dollar gehandelt.</li><li>Einige Kraken-Daten zeigten ein Tief von etwa 17’000 US-Dollar. Anderswo wurde Bitcoin zur gleichen Zeit zwischen 55’000 und 59’000 US-Dollar gehandelt.</li><li>Ursache war geringe Liquidität, also wenige verfügbare Käufer. Grosse Verkaufsaufträge leerten das Orderbuch (die Liste der Kauf- und Verkaufsangebote).</li><li>Auch Ethereum, Solana und Stablecoins (Krypto-Token, die an eine Währung gekoppelt sind) fielen auf Kraken. Auch der Kurs zwischen US-Dollar und kanadischem Dollar wurde dort verzerrt.</li><li>Kraken sagt, der Einbruch sei durch starke Verkäufe verursacht worden, nicht durch einen Software-Fehler. Es werden weder ein Hack noch kompromittierte Kundenkonten gemeldet.</li><li>Kraken bestätigte auf seinem offiziellen Support-Account auf X, dass alle ausgeführten Trades gültig sind. Käufer zu 27’000 Dollar oder weniger behalten ihren Bitcoin.</li><li>Kraken hat noch keine vollständige Erklärung abgegeben. Einige Nutzer behaupten, sie hätten günstig gekauft und die Coins abgezogen; dies ist nicht unabhängig bestätigt.</li><li>Der Autor des Artikels prognostiziert, dass Bitcoin weiter fallen und 38’000 Dollar testen könnte. Dies ist die eigene Prognose des Autors, keine Tatsache.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Crashes on one exchange can hit local prices even when global prices barely move.</span><span class="de" lang="de">Einbrüche an einer einzelnen Börse können lokale Preise treffen, auch wenn sich die globalen Preise kaum bewegen.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://insideparadeplatz.ch/2026/11/22/bitcoin-zum-schnaeppchenpreis-gekauft/" target="_blank" rel="noopener">Inside Paradeplatz</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-0f75502c52" style="--h:152">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">Inside Paradeplatz</span></div>
+    <h2><span class="en">IWC&#39;s 65,000-franc glowing watch draws ridicule</span><span class="de" lang="de">IWC-Uhr für 65’000 Franken mit Leuchteffekt sorgt für Spott</span></h2>
+    <img src="https://insideparadeplatz.ch/wp-content/uploads/2026/11/Bildschirmfoto-2026-11-22-um-07.51.04-1.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Swiss watchmaker IWC launched a 65,000 Swiss franc ceramic watch that glows at night. Critics online and in watch magazines say it is overpriced and impractical.</span><span class="de" lang="de">Die Schweizer Uhrenmarke IWC hat eine Keramikuhr für 65’000 Franken lanciert, die nachts leuchtet. Kritiker online und in Uhrenmagazinen sagen, sie sei überteuert und unpraktisch.</span></p>
+    
+    <ul class="en"><li>IWC (International Watch Company, based in Schaffhausen) promoted the watch at the Las Vegas Grand Prix, a Formula 1 motor race, with two new race suits.</li><li>The ceramic watch looks white by day and glows bluish at night. The article says the glow can bother people trying to sleep or watch films.</li><li>IWC says an apprentice came up with the idea. Online commenters mock it, with one calling it &#39;easily the dumbest thing I&#39;ve seen this year&#39;.</li><li>The article says the dial is hard to read by day, because its outlines are blurry.</li><li>A technically better gold IWC watch costs 48,000 francs. Ceramic breaks like porcelain, while the gold watch can be repaired after a hard knock.</li><li>IWC declined to comment on the questions.</li></ul>
+    <ul class="de" lang="de"><li>IWC (International Watch Company, mit Sitz in Schaffhausen) bewarb die Uhr am Grand Prix von Las Vegas, einem Formel-1-Rennen, zusammen mit zwei neuen Rennanzügen.</li><li>Die Keramikuhr wirkt tagsüber weiss und leuchtet nachts bläulich. Laut Artikel kann das Leuchten Menschen stören, die schlafen oder Filme schauen wollen.</li><li>IWC sagt, ein Lehrling habe die Idee gehabt. Online-Kommentatoren machen sich darüber lustig, einer nennt es «mit Abstand das Dümmste, was ich dieses Jahr gesehen habe».</li><li>Laut Artikel ist das Zifferblatt tagsüber schwer lesbar, weil seine Konturen verschwommen sind.</li><li>Eine technisch bessere Golduhr von IWC kostet 48’000 Franken. Keramik bricht wie Porzellan, während die Golduhr nach einem harten Schlag repariert werden kann.</li><li>IWC lehnte es ab, die Fragen zu kommentieren.</li></ul>
+    
+    
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://insideparadeplatz.ch/2026/11/22/65000-franken-uhr-von-iwc-dumbest-thing-ive-seen/" target="_blank" rel="noopener">Inside Paradeplatz</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-edb4b927ad" style="--h:0">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">SRF News</span></div>
+    <h2><span class="en">SRF investigation finds 169 attempted femicides in Switzerland</span><span class="de" lang="de">SRF-Recherche zählt 169 versuchte Femizide in der Schweiz</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/31eeef.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">SRF Investigativ and SRF Data reviewed court rulings on 169 attempted femicides in Switzerland. A femicide is the killing of a woman by a man, usually a partner or ex-partner. The rulings show how often women were strangled, stabbed or shot.</span><span class="de" lang="de">SRF Investigativ und SRF Data haben Gerichtsurteile zu 169 versuchten Femiziden in der Schweiz geprüft. Ein Femizid ist die Tötung einer Frau durch einen Mann, meist durch einen Partner oder Ex-Partner. Die Urteile zeigen, wie oft Frauen erwürgt, erstochen oder erschossen wurden.</span></p>
+    
+    <ul class="en"><li>The review found 169 convictions for attempts to kill women. Some men were convicted more than once, so the counts overlap.</li><li>Counts: 26 for attempted murder, 68 for attempted intentional killing, 1 for attempted manslaughter, and 78 for endangering life.</li><li>In over 40 percent of cases, the men strangled their victims. Knives or other sharp objects were the second most common weapon.</li><li>Men used firearms in 13 cases. Some shot their victims, and some missed narrowly.</li><li>In 75 percent of cases, the victims were wives, ex-wives, girlfriends or ex-girlfriends. Ten victims were relatives, such as daughters or mothers.</li><li>In 24 cases, the men did not know the women or knew them poorly. Four of those victims were sex workers.</li><li>In about three quarters of cases with a known location, the attack happened at home. In two thirds of partner or family cases, the rulings mention earlier violence.</li><li>Physical and psychological violence each appear in about 60 percent of cases where the couple knew each other. Jealousy appears in almost half the cases.</li></ul>
+    <ul class="de" lang="de"><li>Die Prüfung ergab 169 Verurteilungen wegen versuchter Tötung von Frauen. Einige Männer wurden mehrfach verurteilt, deshalb überschneiden sich die Zahlen.</li><li>Zählung: 26 wegen versuchten Mordes, 68 wegen versuchter vorsätzlicher Tötung, 1 wegen versuchten Totschlags und 78 wegen Gefährdung des Lebens.</li><li>In über 40 Prozent der Fälle erwürgten die Männer ihre Opfer. Messer oder andere spitze Gegenstände waren die zweithäufigste Waffe.</li><li>Männer setzten in 13 Fällen Schusswaffen ein. Einige schossen auf ihre Opfer, andere verfehlten knapp.</li><li>In 75 Prozent der Fälle waren die Opfer Ehefrauen, Ex-Ehefrauen, Freundinnen oder Ex-Freundinnen. Zehn Opfer waren Verwandte, etwa Töchter oder Mütter.</li><li>In 24 Fällen kannten die Männer die Frauen nicht oder kaum. Vier dieser Opfer waren Sexarbeiterinnen.</li><li>In etwa drei Vierteln der Fälle mit bekanntem Tatort geschah der Angriff zu Hause. In zwei Dritteln der Partner- oder Familienfälle erwähnen die Urteile frühere Gewalt.</li><li>Körperliche und psychische Gewalt kommen in je rund 60 Prozent der Fälle vor, in denen sich das Paar kannte. Eifersucht taucht in fast der Hälfte der Fälle auf.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">The review gives the first detailed picture of how these attacks happen and who is affected.</span><span class="de" lang="de">Die Recherche liefert das erste detaillierte Bild davon, wie diese Angriffe ablaufen und wer betroffen ist.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.srf.ch/news/schweiz/exklusive-recherche-169-versuchte-femizide-so-brutal-ist-die-gewalt-gegen-frauen" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-5105929ca7" style="--h:0">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">SRF News</span></div>
+    <h2><span class="en">Democrats win historic US House majority in midterm elections</span><span class="de" lang="de">Demokraten gewinnen historische Mehrheit im US-Repräsentantenhaus bei den Zwischenwahlen</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/0eb750.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">The Democrats won at least 258 of the 435 seats in the US House of Representatives. This is their largest House majority since 1992. They also control the Senate from January, giving them control of both chambers of Congress (the US parliament).</span><span class="de" lang="de">Die Demokraten gewannen mindestens 258 der 435 Sitze im US-Repräsentantenhaus. Es ist ihre grösste Mehrheit im Repräsentantenhaus seit 1992. Ab Januar kontrollieren sie zudem den Senat und damit beide Kammern des Kongresses (des US-Parlaments).</span></p>
+    
+    <ul class="en"><li>The House is the lower chamber of Congress. Democrat Chuck Hubbard won the 258th seat in North Carolina on Sunday, after a recount against Republican Virginia Foxx.</li><li>Democrats gained 44 House seats so far. Four races remain open: one each in Minnesota and Tennessee, and two in Louisiana, which hold runoff votes in December.</li><li>Republicans hold at least 173 House seats. Before the election, they held a narrow 218 to 214 majority.</li><li>From January, Democrats hold 56 of the 100 Senate seats. That is their largest Senate lead in more than ten years.</li><li>South China Morning Post adds that the 44-seat gain beats the 40 Democrats won in Trump&#39;s first midterm election in 2018.</li><li>In the first 100 days, Democrats plan to reverse Medicaid cuts (a US health program for people on low incomes). They also want to restore tax credits under the Affordable Care Act (the 2010 health law).</li><li>They plan many investigations into Trump and his family&#39;s finances since he returned to the White House. House Democratic leader Hakeem Jeffries does not rule out a third impeachment (a formal process to remove a president), according to AP.</li><li>Jeffries is expected to be elected House Speaker on January 3. Democrat Tom Suozzi wants three quarters of House work to focus on the cost of living.</li></ul>
+    <ul class="de" lang="de"><li>Das Repräsentantenhaus ist die untere Kammer des Kongresses. Der Demokrat Chuck Hubbard gewann am Sonntag in North Carolina den 258. Sitz, nach einer Nachzählung gegen den Republikaner Virginia Foxx.</li><li>Die Demokraten haben bisher 44 Sitze im Repräsentantenhaus dazugewonnen. Vier Rennen sind noch offen: je eines in Minnesota und Tennessee sowie zwei in Louisiana, wo im Dezember Stichwahlen stattfinden.</li><li>Die Republikaner halten mindestens 173 Sitze im Repräsentantenhaus. Vor der Wahl hatten sie eine knappe Mehrheit von 218 zu 214.</li><li>Ab Januar halten die Demokraten 56 der 100 Senatssitze. Das ist ihr grösster Vorsprung im Senat seit mehr als zehn Jahren.</li><li>Die South China Morning Post ergänzt, dass der Gewinn von 44 Sitzen die 40 übertrifft, die die Demokraten bei Trumps erster Zwischenwahl 2018 gewannen.</li><li>In den ersten 100 Tagen wollen die Demokraten die Kürzungen bei Medicaid (einem US-Gesundheitsprogramm für Menschen mit tiefem Einkommen) rückgängig machen. Zudem wollen sie die Steuergutschriften nach dem Affordable Care Act (dem Gesundheitsgesetz von 2010) wieder einführen.</li><li>Sie planen zahlreiche Untersuchungen zu Trump und den Finanzen seiner Familie, seit er ins Weisse Haus zurückgekehrt ist. Der demokratische Fraktionsführer im Repräsentantenhaus, Hakeem Jeffries, schliesst laut AP ein drittes Amtsenthebungsverfahren (ein formelles Verfahren zur Absetzung eines Präsidenten) nicht aus.</li><li>Jeffries wird voraussichtlich am 3. Januar zum Sprecher des Repräsentantenhauses gewählt. Der Demokrat Tom Suozzi will, dass sich drei Viertel der Arbeit im Repräsentantenhaus auf die Lebenshaltungskosten konzentrieren.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Democrats can now push their own laws and check Trump&#39;s government more closely.</span><span class="de" lang="de">Die Demokraten können nun eigene Gesetze vorantreiben und Trumps Regierung genauer kontrollieren.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.srf.ch/news/international/usa/us-zwischenwahlen-us-demokraten-sichern-sich-historische-mehrheit-im-kongress" target="_blank" rel="noopener">SRF News</a> · <a href="https://www.scmp.com/news/world/united-states-canada/article/3375405/us-democrats-clinch-historic-house-majority-least-258-seats-largest-1992" target="_blank" rel="noopener">South China Morning Post</a> · <a href="https://www.handelsblatt.com/politik/international/usa-groesste-mehrheit-fuer-us-demokraten-seit-wahl-1992/29669594.html" target="_blank" rel="noopener">Handelsblatt</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-6a7cf30f84" style="--h:0">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">SRF News</span></div>
+    <h2><span class="en">Russian strike on multi-storey house near Kyiv kills several</span><span class="de" lang="de">Russischer Angriff auf mehrstöckiges Wohnhaus bei Kiew fordert mehrere Tote</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/66f22db.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Russian attacks in the Kyiv region (around Ukraine’s capital) killed at least 14 people, Ukraine says. Rescuers searched rubble for people trapped in a partly collapsed apartment block.</span><span class="de" lang="de">Russische Angriffe in der Region Kiew (rund um die ukrainische Hauptstadt) haben laut der Ukraine mindestens 14 Menschen getötet. Rettungskräfte suchten in Trümmern nach Menschen, die in einem teilweise eingestürzten Wohnblock eingeschlossen waren.</span></p>
+    
+    <ul class="en"><li>The South China Morning Post reports at least 14 dead. SRF reports several dead after an attack on a multi-storey house near Kyiv.</li><li>On Monday, rescuers searched rubble for residents trapped in a block of flats that partly collapsed.</li><li>Russia has been hitting Ukraine with air attacks at night. Ukraine is preparing for another winter.</li><li>The full-scale invasion by Russia is in its fifth year.</li><li>Russian President Vladimir Putin vowed a “painful” response to Ukrainian strikes on the Crimea bridge, which links Russia to Crimea. The source was cut off, so details are missing.</li><li>Only short previews were available, so the death toll and other details may change.</li></ul>
+    <ul class="de" lang="de"><li>Die South China Morning Post meldet mindestens 14 Tote. SRF meldet mehrere Tote nach einem Angriff auf ein mehrstöckiges Haus bei Kiew.</li><li>Am Montag suchten Rettungskräfte in Trümmern nach Bewohnern, die in einem teilweise eingestürzten Wohnblock eingeschlossen waren.</li><li>Russland greift die Ukraine nachts mit Luftangriffen an. Die Ukraine bereitet sich auf einen weiteren Winter vor.</li><li>Die vollumfängliche Invasion Russlands geht in ihr fünftes Jahr.</li><li>Der russische Präsident Vladimir Putin kündigte eine «schmerzhafte» Antwort auf ukrainische Angriffe auf die Krim-Brücke an, die Russland mit der Krim verbindet. Die Quelle brach ab, daher fehlen Details.</li><li>Es waren nur kurze Vorschauen verfügbar, daher können sich die Zahl der Toten und weitere Details noch ändern.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.srf.ch/news/international/ukraine/krieg-in-der-ukraine-mehrere-tote-bei-russischem-angriff-auf-ein-haus-bei-kiew" target="_blank" rel="noopener">SRF News</a> · <a href="https://www.scmp.com/news/world/europe/article/3375401/russian-strikes-kill-6-kyiv-region-ukraine-says" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-73c74b5599" style="--h:0">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">SRF News</span></div>
+    <h2><span class="en">Trump says Iranian attacks have increased significantly recently</span><span class="de" lang="de">Trump sagt, iranische Angriffe hätten in letzter Zeit deutlich zugenommen</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/3351e6.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">US President Donald Trump says Iran fired more drones and missiles last week than at any time in the past year. Other attacks and clashes were reported across the region.</span><span class="de" lang="de">US-Präsident Donald Trump sagt, der Iran habe letzte Woche mehr Drohnen und Raketen abgefeuert als in irgendeiner Woche des vergangenen Jahres. In der Region wurden weitere Angriffe und Zusammenstösse gemeldet.</span></p>
+    
+    <ul class="en"><li>Trump posted on Truth Social, his social media platform, that Iran launched more drones and missiles last week than in any week of the past year.</li><li>Bahrain, a Gulf island state, says its air defences stopped several Iranian attacks. One attack caused a fire, and authorities warned of a “possible threat”.</li><li>A US-led or allied coalition shot down a Houthi missile over the Red Sea. The Houthis are an armed group based in Yemen.</li><li>A ticker headline says the US reports that Iran did not attack a US fighter jet.</li><li>Radical Israeli settlers (Israeli civilians living in the occupied West Bank) entered several Palestinian villages and set cars on fire.</li><li>Israel launched a new attack in Gaza. Reports say three people died.</li><li>In Israeli politics, far-right Itamar Ben-Gvir accused Gadi Eisenkot of endangering Israel’s security. Eisenkot then invited Netanyahu’s Likud party to coalition talks.</li></ul>
+    <ul class="de" lang="de"><li>Trump schrieb auf Truth Social, seiner Social-Media-Plattform, der Iran habe letzte Woche mehr Drohnen und Raketen gestartet als in jeder Woche des vergangenen Jahres.</li><li>Bahrain, ein Inselstaat am Golf, sagt, seine Luftabwehr habe mehrere iranische Angriffe gestoppt. Ein Angriff habe einen Brand verursacht, und die Behörden warnten vor einer «möglichen Bedrohung».</li><li>Eine von den USA angeführte oder verbündete Koalition schoss über dem Roten Meer eine Rakete der Huthi ab. Die Huthi sind eine bewaffnete Gruppe mit Sitz im Jemen.</li><li>Eine Laufschrift meldet, die USA erklärten, der Iran habe kein US-Kampfflugzeug angegriffen.</li><li>Radikale israelische Siedler (israelische Zivilisten, die im besetzten Westjordanland leben) drangen in mehrere palästinensische Dörfer ein und setzten Autos in Brand.</li><li>Israel hat in Gaza einen neuen Angriff gestartet. Berichten zufolge kamen drei Menschen ums Leben.</li><li>In der israelischen Politik warf der rechtsextreme Itamar Ben-Gvir Gadi Eisenkot vor, die Sicherheit Israels zu gefährden. Eisenkot lud daraufhin Netanyahus Likud-Partei zu Koalitionsgesprächen ein.</li></ul>
+    
+    
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.srf.ch/news/international/nahost/krieg-im-nahen-osten-trump-irans-angriffe-haben-zuletzt-deutlich-zugenommen" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-275769e8f9" style="--h:0">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">SRF News</span></div>
+    <h2><span class="en">COP31 Antalya ends without deal; Switzerland and EU reject draft</span><span class="de" lang="de">COP31 in Antalya endet ohne Einigung; Schweiz und EU lehnen Entwurf ab</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/cb0904.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">The UN climate summit (COP31) in Antalya, Turkey, ended without a final deal after two weeks. The EU and Switzerland rejected the draft as too weak.</span><span class="de" lang="de">Der UNO-Klimagipfel (COP31) in Antalya in der Türkei endete nach zwei Wochen ohne endgültige Einigung. Die EU und die Schweiz lehnten den Entwurf als zu schwach ab.</span></p>
+    
+    <ul class="en"><li>COP stands for Conference of the Parties, the yearly UN climate summit. Turkey and Australia, the hosts, proposed the “Antalya Pact” as the final text.</li><li>The draft did not mention fossil fuels (coal, oil and gas) once. Deals need consensus, so a single country can block them.</li><li>Oil states led by Saudi Arabia and Russia pushed to undo earlier climate decisions. More than 130 countries, including the EU, resisted.</li><li>Saudi Arabia defended the draft. It said Arab states caused only a small share of historic emissions and promoted carbon capture and storage (CCS, trapping CO2 underground).</li><li>EU climate commissioner Wopke Hoekstra said CCS was wrongly presented as a fix for everything. EU climate minister Darragh O’Brien said the EU will not accept a text that does not name fossil fuels.</li><li>Switzerland also refused the draft. Envoy Felix Wertli said key elements were missing. The Swiss team negotiated 36 hours without sleep.</li><li>UN chief António Guterres was deeply disappointed. The Marshall Islands called the draft the “worst possible answer”. China, Pakistan and African states regretted the failure. Oxfam criticised EU inflexibility on aid for poorer countries.</li><li>Some progress came outside the text. About 30 countries announced plans to phase out coal, oil and gas, with talks in Tuvalu in July. Dozens back raising electricity’s share of final energy use from 23% to 35%. Germany, the EU and 12 others will fight SF6, a very potent greenhouse gas.</li></ul>
+    <ul class="de" lang="de"><li>COP steht für Conference of the Parties, den jährlichen UNO-Klimagipfel. Die Gastgeber Türkei und Australien schlugen den «Antalya-Pakt» als Schlusstext vor.</li><li>Der Entwurf erwähnte fossile Brennstoffe (Kohle, Öl und Gas) mit keinem Wort. Beschlüsse brauchen Konsens, weshalb ein einzelnes Land sie blockieren kann.</li><li>Ölstaaten unter Führung von Saudi-Arabien und Russland drängten darauf, frühere Klimabeschlüsse rückgängig zu machen. Mehr als 130 Länder, darunter die EU, leisteten Widerstand.</li><li>Saudi-Arabien verteidigte den Entwurf. Die arabischen Staaten hätten nur einen kleinen Teil der historischen Emissionen verursacht, und das Land warb für Carbon Capture and Storage (CCS, das unterirdische Speichern von CO2).</li><li>EU-Klimakommissar Wopke Hoekstra sagte, CCS werde fälschlicherweise als Allheilmittel dargestellt. EU-Klimaminister Darragh O’Brien erklärte, die EU werde keinen Text akzeptieren, der fossile Brennstoffe nicht nenne.</li><li>Auch die Schweiz lehnte den Entwurf ab. Der Gesandte Felix Wertli sagte, zentrale Elemente fehlten. Das Schweizer Team verhandelte 36 Stunden ohne Schlaf.</li><li>UNO-Generalsekretär António Guterres zeigte sich tief enttäuscht. Die Marshallinseln bezeichneten den Entwurf als «schlechteste mögliche Antwort». China, Pakistan und afrikanische Staaten bedauerten das Scheitern. Oxfam kritisierte die Unnachgiebigkeit der EU bei der Hilfe für ärmere Länder.</li><li>Ausserhalb des Textes gab es einige Fortschritte. Rund 30 Länder kündigten Pläne an, Kohle, Öl und Gas schrittweise auszuphasen, mit Gesprächen in Tuvalu im Juli. Dutzende unterstützen, den Anteil der Elektrizität am Endenergieverbrauch von 23% auf 35% zu erhöhen. Deutschland, die EU und 12 weitere Länder wollen SF6 bekämpfen, ein sehr wirksames Treibhausgas.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Without a global deal, the 1.5°C target is effectively out of reach.</span><span class="de" lang="de">Ohne globale Einigung ist das 1,5-°C-Ziel faktisch nicht mehr erreichbar.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.srf.ch/news/international/cop31-in-antalya-das-sind-die-reaktionen-auf-die-gescheiterte-klimakonferenz" target="_blank" rel="noopener">SRF News</a> · <a href="https://www.scmp.com/news/world/article/3375393/cop31-climate-talks-collapse-eu-and-others-reject-deal" target="_blank" rel="noopener">South China Morning Post</a> · <a href="https://www.srf.ch/news/international/cop31-in-antalya-die-uno-klimadiplomatie-erreicht-einen-tiefpunkt" target="_blank" rel="noopener">SRF News</a> · <a href="https://www.srf.ch/news/international/klimakonferenz-in-der-tuerkei-keine-einigung-bei-weltklimakonferenz-auch-schweiz-lehnt-ab" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-a55ca8981e" style="--h:0">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">SRF News</span></div>
+    <h2><span class="en">Critics say SVP Federal Council candidates Aeschi and Graber are alike</span><span class="de" lang="de">Kritiker sagen, SVP-Bundesratskandidaten Aeschi und Graber seien sich ähnlich</span></h2>
+    <img src="https://www.srf.ch/static/cms/images//320ws/a48002c.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">The Swiss People’s Party (SVP) nominated Thomas Aeschi and Michael Graber as its two candidates for the Federal Council, Switzerland’s seven-member government.</span><span class="de" lang="de">Die Schweizerische Volkspartei (SVP) hat Thomas Aeschi und Michael Graber als ihre beiden Kandidaten für den Bundesrat, die siebenköpfige Schweizer Regierung, nominiert.</span></p>
+    
+    <ul class="en"><li>Thomas Aeschi (47, canton Zug) is an economist with a Harvard degree. He has sat in the National Council (the lower house of parliament) since 2011.</li><li>Aeschi tried to become a Federal Councillor in 2015 and failed. He has led the SVP group in parliament for nine years.</li><li>Michael Graber (45, canton Valais) is a lawyer focused on environment, energy and climate. He was elected to the National Council in 2021.</li><li>Graber has been a city councillor in Brig-Glis since 2019 and served eight years in the Valais cantonal parliament.</li><li>Political scientist Adrian Vatter (University of Bern) calls them “political twins”. Both oppose the Bilaterals III (a package of agreements between Switzerland and the EU).</li><li>Both also back strict asylum rules and supported the neutrality initiative.</li><li>Vatter sees Aeschi ahead, as he is better known and seen as a strategist on dossiers. Vatter says government experience usually helps, but he cannot say who would be the better Federal Councillor.</li><li>Vatter cites Ueli Maurer, a polarising SVP leader who later became a respected Federal Councillor. The key test is convincing other parties they will respect collegiality, meaning the government decides together.</li></ul>
+    <ul class="de" lang="de"><li>Thomas Aeschi (47, Kanton Zug) ist Ökonom mit einem Harvard-Abschluss. Seit 2011 sitzt er im Nationalrat (der grossen Kammer des Parlaments).</li><li>Aeschi wollte 2015 Bundesrat werden und scheiterte. Seit neun Jahren führt er die SVP-Fraktion im Parlament.</li><li>Michael Graber (45, Kanton Wallis) ist Jurist mit Schwerpunkt Umwelt, Energie und Klima. 2021 wurde er in den Nationalrat gewählt.</li><li>Graber ist seit 2019 Stadtrat in Brig-Glis und war acht Jahre lang im Walliser Grossen Rat.</li><li>Der Politologe Adrian Vatter (Universität Bern) nennt sie «politische Zwillinge». Beide lehnen die Bilateralen III ab (ein Paket von Abkommen zwischen der Schweiz und der EU).</li><li>Beide setzen sich zudem für strenge Asylregeln ein und unterstützten die Neutralitätsinitiative.</li><li>Vatter sieht Aeschi vorne, da er bekannter ist und bei Dossiers als Stratege gilt. Regierungserfahrung helfe in der Regel, sagt Vatter, doch er könne nicht sagen, wer der bessere Bundesrat wäre.</li><li>Vatter verweist auf Ueli Maurer, einen polarisierenden SVP-Politiker, der später ein respektierter Bundesrat wurde. Der entscheidende Test sei, andere Parteien davon zu überzeugen, dass sie die Kollegialität respektieren werden, also dass die Regierung gemeinsam entscheidet.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Both oppose the Bilaterals III, so the choice matters for Switzerland’s EU relations.</span><span class="de" lang="de">Beide lehnen die Bilateralen III ab, daher ist die Wahl für die Beziehungen der Schweiz zur EU wichtig.</span></p>
+    
+    
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.srf.ch/news/schweiz/svp-bundesratsticket-politische-zwillinge-so-aehnlich-sind-sich-aeschi-und-graber" target="_blank" rel="noopener">SRF News</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-f3a3b4c058" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post Business</span></div>
+    <h2><span class="en">China cuts stock margin ratio to 80% from 100% to support markets</span><span class="de" lang="de">China senkt Margenquote für Aktien auf 80% statt 100%, um Märkte zu stützen</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/22/80aae96e-5824-4dab-9f38-fa1a6c5d7c78_632c7f7e.jpg?itok=mwkbyv9W&amp;v=1795352716" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">China&#39;s stock regulator is lowering the cash investors must hold when borrowing to buy shares. It aims to stop a stock market decline.</span><span class="de" lang="de">Chinas Aktienregulator senkt die Barmittel, die Anleger beim Kreditkauf von Aktien halten müssen. Ziel ist es, einen Rückgang am Aktienmarkt zu stoppen.</span></p>
+    
+    <ul class="en"><li>The China Securities Regulatory Commission (CSRC, China&#39;s stock market regulator) approved the change.</li><li>It applies to the Shanghai and Shenzhen stock exchanges, China&#39;s two main markets.</li><li>The margin ratio is the cash investors must have on hand when borrowing to buy securities.</li><li>The ratio falls from 100% to 80%, effective November 30.</li><li>The change was announced in a notice on Sunday evening.</li><li>It is part of a wider set of measures to make stock trading easier and more active.</li><li>The decline comes amid a global market rout, a sharp sell-off across markets.</li><li>This is a preview only; other measures in the package are not visible.</li></ul>
+    <ul class="de" lang="de"><li>Die China Securities Regulatory Commission (CSRC, Chinas Aufsichtsbehörde für den Aktienmarkt) hat die Änderung genehmigt.</li><li>Sie betrifft die Börsen Shanghai und Shenzhen, die beiden wichtigsten Märkte Chinas.</li><li>Die Margenquote ist das Bargeld, das Anleger haben müssen, wenn sie Wertpapiere auf Kredit kaufen.</li><li>Die Quote sinkt von 100% auf 80%, gültig ab 30. November.</li><li>Die Änderung wurde am Sonntagabend in einer Mitteilung bekannt gegeben.</li><li>Sie ist Teil eines umfassenderen Massnahmenpakets, um den Aktienhandel einfacher und lebhafter zu machen.</li><li>Der Rückgang fällt in einen globalen Marktabsturz, einen starken Ausverkauf an den Märkten.</li><li>Dies ist nur eine Vorschau; andere Massnahmen des Pakets sind nicht ersichtlich.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Investors may find it easier to borrow money to buy Chinese shares.</span><span class="de" lang="de">Anlegern könnte es leichter fallen, sich Geld für den Kauf chinesischer Aktien zu leihen.</span></p>
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/business/markets/article/3375388/mainland-china-stock-exchanges-make-moves-raise-liquidity-and-activity-stem-decline" target="_blank" rel="noopener">South China Morning Post Business</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-80b2ce7066" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post Business</span></div>
+    <h2><span class="en">New World seeks HK$50bn debt cut after HK$24.9bn rights issue</span><span class="de" lang="de">New World will Schulden um bis zu HK$50 Mrd. senken nach Bezugsrechtsemission über HK$24,9 Mrd.</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/21/c7f09c41-1137-409b-89fa-1dbf012eab7c_2f97cf39.jpg?itok=aT0ysulU&amp;v=1795247972" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Property developer New World Development plans a HK$24.9 billion share sale to cut its debt. Its shares fell 41% when trading resumed.</span><span class="de" lang="de">Der Immobilienentwickler New World Development plant eine Bezugsrechtsemission über HK$24,9 Mrd., um seine Schulden zu senken. Nach Wiederaufnahme des Handels fielen die Aktien um 41%.</span></p>
+    
+    <ul class="en"><li>New World Development is a Hong Kong property developer under heavy debt pressure.</li><li>The proposed rights issue (new shares offered to existing shareholders) raises HK$24.9 billion.</li><li>Its shares plunged 41% when trading resumed after the announcement.</li><li>The plan has drawn a sharp backlash; the preview cuts off the minority shareholders&#39; reaction.</li><li>The company aims to cut up to HK$50 billion (US$6.4 billion) of borrowings by the end of 2031.</li><li>Its tools include property sales, mainland China real estate investment trusts (REITs, funds that own property), and strategic investors.</li><li>This is a preview only; full details are not available.</li></ul>
+    <ul class="de" lang="de"><li>New World Development ist ein Immobilienentwickler aus Hongkong, der stark verschuldet ist.</li><li>Die geplante Bezugsrechtsemission (neue Aktien, die bestehenden Aktionären angeboten werden) bringt HK$24,9 Mrd. ein.</li><li>Die Aktien stürzten nach Wiederaufnahme des Handels nach der Ankündigung um 41% ab.</li><li>Der Plan stösst auf heftige Kritik; die Vorschau bricht die Reaktion der Minderheitsaktionäre ab.</li><li>Das Unternehmen will Kredite von bis zu HK$50 Mrd. (US$6,4 Mrd.) bis Ende 2031 abbauen.</li><li>Dazu dienen Immobilienverkäufe, REITs (Fonds, die Immobilien halten) auf dem chinesischen Festland und strategische Investoren.</li><li>Dies ist nur eine Vorschau; vollständige Details sind nicht verfügbar.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/business/banking-finance/article/3375322/what-tools-does-new-world-have-slash-debts-after-its-hk249-billion-rights-issue" target="_blank" rel="noopener">South China Morning Post Business</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-100d2c308a" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post</span></div>
+    <h2><span class="en">Weekend roundup: Princeton student detained by ICE, China space mining plan</span><span class="de" lang="de">Wochenrückblick: Princeton-Student von ICE festgehalten, Chinas Pläne für Weltraumbergbau</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/23/86b1c9c1-28f3-4baf-ab2b-6f1cdb3fdf48_75c89503.jpg?itok=UwPwbeZs&amp;v=1795401365" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">The South China Morning Post (SCMP) weekend roundup lists several stories. Only headlines are visible in the preview.</span><span class="de" lang="de">Der Wochenrückblick der South China Morning Post (SCMP) enthält mehrere Geschichten. In der Vorschau sind nur die Schlagzeilen sichtbar.</span></p>
+    
+    <ul class="en"><li>A Princeton PhD student from China was detained by ICE (US Immigration and Customs Enforcement) after a US academic conference.</li><li>China unveiled a space mining road map, with a major moon move planned within 4 years.</li><li>Residents of the Tai Po fire in Hong Kong describe coping with loss a year later.</li><li>Nvidia, the US chipmaker, faces a further blow after a shock US export-related move; details are cut off.</li><li>This is a preview of headlines only; the stories&#39; full details are not visible.</li></ul>
+    <ul class="de" lang="de"><li>Ein chinesischer Doktorand aus Princeton wurde nach einer akademischen Konferenz in den USA von ICE (US Immigration and Customs Enforcement, die US-Einwanderungs- und Zollbehörde) festgehalten.</li><li>China stellte einen Fahrplan für den Bergbau im Weltraum vor, mit einem grossen Mondvorstoss innerhalb von 4 Jahren.</li><li>Bewohner des Brandes in Tai Po in Hongkong berichten, wie sie ein Jahr später mit dem Verlust umgehen.</li><li>Nvidia, der US-Chiphersteller, erleidet einen weiteren Rückschlag nach einer überraschenden US-Massnahme im Zusammenhang mit Exporten; Details sind abgeschnitten.</li><li>Dies ist nur eine Vorschau der Schlagzeilen; die vollständigen Details der Artikel sind nicht sichtbar.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/news/world/article/3375414/us-detains-chinese-princeton-student-chinas-space-mining-road-map-5-weekend-reads-you-missed" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-a0b3532840" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post</span></div>
+    <h2><span class="en">Tai Po fire survivors struggle with grief and trauma as anniversary nears</span><span class="de" lang="de">Überlebende des Brandes in Tai Po kämpfen mit Trauer und Trauma vor dem Jahrestag</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/23/1c307afb-53f1-4c0e-b54b-44f86c247674_0c257697.jpg?itok=wKj-ay8P&amp;v=1795392427" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">A year after the deadly Wang Fuk Court fire in Hong Kong, survivors still struggle with grief and fear. The preview profiles one resident, Hilary Lau.</span><span class="de" lang="de">Ein Jahr nach dem tödlichen Brand in der Wang Fuk Court in Hongkong kämpfen Überlebende immer noch mit Trauer und Angst. Die Vorschau porträtiert einen Bewohner, Hilary Lau.</span></p>
+    
+    <ul class="en"><li>The Wang Fuk Court blaze in Tai Po, Hong Kong, was deadly; the preview gives no death toll.</li><li>Hilary Lau, 49, lost both parents in the tragedy.</li><li>He sleeps only under a fire-resistant blanket and keeps extra fire extinguishers at home.</li><li>He lives in Kong Ha Wai Village, a transitional housing project (temporary housing) in Yuen Long.</li><li>His fear of fire makes him reluctant to eat hotpot, a reaction he cannot fully explain.</li><li>He was not at home when the fire broke out.</li><li>This is a preview only; the article continues beyond the visible text.</li></ul>
+    <ul class="de" lang="de"><li>Der Brand in der Wang Fuk Court in Tai Po, Hongkong, war tödlich; die Vorschau nennt keine Zahl der Todesopfer.</li><li>Hilary Lau, 49, verlor beide Eltern bei der Tragödie.</li><li>Er schläft nur unter einer feuerfesten Decke und bewahrt zu Hause zusätzliche Feuerlöscher auf.</li><li>Er wohnt im Kong Ha Wai Village, einem Übergangswohnprojekt (vorübergehende Unterkunft) in Yuen Long.</li><li>Seine Angst vor Feuer lässt ihn zögern, Hotpot zu essen; diese Reaktion kann er nicht ganz erklären.</li><li>Er war nicht zu Hause, als der Brand ausbrach.</li><li>Dies ist nur eine Vorschau; der Artikel geht über den sichtbaren Text hinaus.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/news/hong-kong/society/article/3375408/tai-po-fire-survivors-battle-grief-fear-and-trauma-first-anniversary-nears" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-c79a9e89a6" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post</span></div>
+    <h2><span class="en">Beijing praises Hong Kong Election Committee poll as &#39;patriots-only&#39; model succeeds</span><span class="de" lang="de">Peking lobt Wahl des Hongkonger Wahlkomitees: «Nur Patrioten»-Modell funktioniert</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/23/afdf949a-a607-4682-bf5c-b5ef31e59a55_c4bb0cf6.jpg?itok=iSDOarm2&amp;v=1795403612" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Beijing praised a Hong Kong Election Committee poll as proof that its &#34;patriots-only&#34; system works. The poll drew a record turnout.</span><span class="de" lang="de">Peking lobte eine Wahl des Hongkonger Wahlkomitees als Beweis dafür, dass sein System «nur Patrioten» funktioniert. Die Wahl verzeichnete eine Rekordbeteiligung.</span></p>
+    
+    <ul class="en"><li>The Hong Kong and Macau Affairs Office, Beijing&#39;s body for the two cities, issued the statement on Monday.</li><li>The Election Committee is the body that votes for some of Hong Kong&#39;s leaders.</li><li>Beijing said the poll showed broad representation, political inclusiveness and fair competition.</li><li>Under the &#34;patriots-only&#34; system, only people Beijing sees as loyal can hold office.</li><li>Turnout was nearly 99 per cent, or 5,640 registered voters.</li><li>This is a preview only, so other details of the poll are not available.</li></ul>
+    <ul class="de" lang="de"><li>Das Büro für Hongkong- und Macau-Angelegenheiten, die Pekinger Stelle für die beiden Städte, gab die Erklärung am Montag ab.</li><li>Das Wahlkomitee ist das Gremium, das einige von Hongkongs Führungspersonen wählt.</li><li>Peking sagte, die Wahl habe breite Vertretung, politische Inklusion und einen fairen Wettbewerb gezeigt.</li><li>Im System «nur Patrioten» können nur Personen ein Amt bekleiden, die Peking als loyal ansieht.</li><li>Die Beteiligung betrug fast 99 Prozent, das heisst 5&#39;640 registrierte Wählende.</li><li>Dies ist nur eine Vorschau, daher sind keine weiteren Details zur Wahl verfügbar.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/news/hong-kong/politics/article/3375417/beijing-hails-election-committee-poll-affirming-patriots-only-system-hong-kong" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-61aca8728e" style="--h:275">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">South China Morning Post</span></div>
+    <h2><span class="en">China&#39;s memory chipmakers close gap with industry leaders; demand cools</span><span class="de" lang="de">Chinas Speicherchip-Hersteller holen auf Branchenführer auf; Nachfrage kühlt ab</span></h2>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2026/11/22/0bc86f92-1b70-499d-a188-2a540875f3a3_c1023abe.jpg?itok=TlkA9XZg&amp;v=1795330553" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">China&#39;s memory chipmakers are growing fast on an AI boom. Early signs of a market slowdown may now test that growth.</span><span class="de" lang="de">Chinas Speicherchip-Hersteller wachsen dank eines KI-Booms rasch. Erste Anzeichen einer Marktverlangsamung könnten dieses Wachstum nun auf die Probe stellen.</span></p>
+    
+    <ul class="en"><li>The two main firms are ChangXin Memory Technologies (CXMT) and Yangtze Memory Technologies (YMTC).</li><li>Memory chips store data in devices such as phones, computers and servers.</li><li>Both firms have state backing, new factories and advancing technology.</li><li>Their growth rides a two-year boom in demand for artificial intelligence (AI).</li><li>China wants self-sufficiency, meaning it makes its own memory chips instead of relying on imports.</li><li>The article was first published by The Korea Times and shared by the South China Morning Post; only a preview was readable.</li></ul>
+    <ul class="de" lang="de"><li>Die beiden wichtigsten Firmen sind ChangXin Memory Technologies (CXMT) und Yangtze Memory Technologies (YMTC).</li><li>Speicherchips speichern Daten in Geräten wie Telefonen, Computern und Servern.</li><li>Beide Firmen werden staatlich unterstützt, bauen neue Fabriken und setzen auf fortschrittliche Technologie.</li><li>Ihr Wachstum profitiert von einem zweijährigen Boom bei der Nachfrage nach künstlicher Intelligenz (KI).</li><li>China strebt Selbstversorgung an, das heisst, es will seine Speicherchips selbst herstellen statt sie zu importieren.</li><li>Der Artikel wurde zuerst von The Korea Times veröffentlicht und von der South China Morning Post geteilt; nur eine Vorschau war lesbar.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Memory chips go into most electronics, so their supply and prices affect buyers worldwide.</span><span class="de" lang="de">Speicherchips stecken in den meisten Elektronikgeräten, daher beeinflussen ihr Angebot und ihre Preise Käuferinnen und Käufer weltweit.</span></p>
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://www.scmp.com/tech/big-tech/article/3375363/chinas-memory-chipmakers-are-catching-industry-leaders-what-happens-when-they-do" target="_blank" rel="noopener">South China Morning Post</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-eb57ed09ac" style="--h:350">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">BelTA</span></div>
+    <h2><span class="en">Belarus revises 2027 list of professions open to foreign workers</span><span class="de" lang="de">Belarus überarbeitet Liste der Berufe für ausländische Arbeitskräfte 2027</span></h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795380589_189307_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">A Belarusian labour official said which jobs were dropped from and added to the 2027 list for foreign workers.</span><span class="de" lang="de">Ein belarussischer Arbeitsbeamter sagte, welche Berufe von der Liste 2027 für ausländische Arbeitskräfte gestrichen und welche hinzugefügt wurden.</span></p>
+    
+    <ul class="en"><li>Maksim Florinsky heads employment policy at Belarus&#39;s Ministry of Labor and Social Protection.</li><li>He spoke on STV, a Belarusian TV channel.</li><li>The list sets which occupations are open to foreign workers in Belarus.</li><li>The preview does not name the professions added or removed.</li><li>Only a short teaser was readable, so further details are unknown.</li></ul>
+    <ul class="de" lang="de"><li>Maksim Florinsky leitet die Beschäftigungspolitik im Ministerium für Arbeit und soziale Sicherung von Belarus.</li><li>Er sprach auf STV, einem belarussischen Fernsehsender.</li><li>Die Liste legt fest, welche Berufe in Belarus für ausländische Arbeitskräfte offen sind.</li><li>Die Vorschau nennt die hinzugefügten oder gestrichenen Berufe nicht.</li><li>Nur ein kurzer Anreisser war lesbar, weshalb weitere Details unbekannt sind.</li></ul>
+    
+    <p class="why"><b><span class="en">Why it matters:</span><span class="de" lang="de">Warum es wichtig ist:</span></b> <span class="en">Foreign workers wanting jobs in Belarus can check which occupations are open to them.</span><span class="de" lang="de">Ausländische Arbeitskräfte, die in Belarus eine Stelle suchen, können prüfen, welche Berufe ihnen offenstehen.</span></p>
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://eng.belta.by/society/view/expert-details-2027-list-of-eligible-professions-for-foreign-workers-in-belarus-189307-2026/" target="_blank" rel="noopener">BelTA</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-72a756d4a2" style="--h:350">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">BelTA</span></div>
+    <h2><span class="en">Belarus foreign minister outlines new formats of India cooperation</span><span class="de" lang="de">Aussenminister von Belarus skizziert neue Formen der Zusammenarbeit mit Indien</span></h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000020_1795375534_189304_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Belarus&#39;s foreign minister and its ambassador to India described new cooperation plans with India.</span><span class="de" lang="de">Der Aussenminister von Belarus und sein Botschafter in Indien beschrieben neue Kooperationspläne mit Indien.</span></p>
+    
+    <ul class="en"><li>Foreign Minister Maxim Ryzhenkov spoke about new partnership formats between Belarus and India, on STV.</li><li>Ambassador Mikhail Kasko outlined what underpins the Belarus–India partnership.</li><li>Kasko also spoke about projects set to launch in the near future.</li><li>Neither preview names the formats or projects.</li><li>Both items are short previews, so no further details are available.</li></ul>
+    <ul class="de" lang="de"><li>Aussenminister Maxim Ryzhenkov sprach auf STV über neue Partnerschaftsformen zwischen Belarus und Indien.</li><li>Botschafter Mikhail Kasko skizzierte, worauf die Partnerschaft zwischen Belarus und Indien beruht.</li><li>Kasko sprach auch über Projekte, die demnächst starten sollen.</li><li>Keine der beiden Vorschauen nennt die Formen oder Projekte.</li><li>Beide Beiträge sind kurze Vorschauen, daher sind keine weiteren Details verfügbar.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://eng.belta.by/politics/view/fm-outlines-new-formats-of-minsknew-delhi-cooperation-189304-2026/" target="_blank" rel="noopener">BelTA</a> · <a href="https://eng.belta.by/politics/view/ambassador-outlines-key-pillars-of-belarusindia-relations-189302-2026/" target="_blank" rel="noopener">BelTA</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-773e14b47e" style="--h:350">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">BelTA</span></div>
+    <h2><span class="en">Chagall painting unseen for 50 years heads to Munich auction</span><span class="de" lang="de">Chagall-Gemälde, seit 50 Jahren nicht gezeigt, kommt zur Auktion in München</span></h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795359369_189297_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">A Marc Chagall painting that has not been seen for 50 years is going up for auction. The sale is in Munich, Germany.</span><span class="de" lang="de">Ein Gemälde von Marc Chagall, das seit 50 Jahren nicht gezeigt wurde, kommt zur Auktion. Die Versteigerung findet in München, Deutschland, statt.</span></p>
+    
+    <ul class="en"><li>The painting is called &#34;Mystère du Matin&#34; (&#34;Morning Mystery&#34;), by the artist Marc Chagall.</li><li>It will be sold at the Ketterer Kunst evening sale, run by the Munich auction house Ketterer Kunst.</li><li>The auction takes place on 4 December.</li><li>The source is a short preview, so the sale price and buyer details are not yet known.</li></ul>
+    <ul class="de" lang="de"><li>Das Gemälde heisst «Mystère du Matin» («Morgenmysterium») und stammt vom Künstler Marc Chagall.</li><li>Es wird bei der Abendauktion von Ketterer Kunst verkauft, die vom Münchner Auktionshaus Ketterer Kunst veranstaltet wird.</li><li>Die Auktion findet am 4. Dezember statt.</li><li>Die Quelle ist eine kurze Vorschau, daher sind der Verkaufspreis und die Angaben zur Käuferschaft noch nicht bekannt.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://eng.belta.by/society/view/chagalls-painting-unseen-for-50-years-heads-to-auction-189297-2026/" target="_blank" rel="noopener">BelTA</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-57cd03074a" style="--h:350">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">BelTA</span></div>
+    <h2><span class="en">Minsk to host exhibition marking Patriarch Kirill&#39;s 80th birthday</span><span class="de" lang="de">Minsk richtet Ausstellung zum 80. Geburtstag von Patriarch Kirill aus</span></h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000022_1795366513_189300_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">A photo exhibition honouring Patriarch Kirill of Moscow will open in Minsk, Belarus. Kirill turns 80.</span><span class="de" lang="de">In Minsk, Belarus, wird eine Fotoausstellung zu Ehren von Patriarch Kirill von Moskau eröffnet. Kirill wird 80.</span></p>
+    
+    <ul class="en"><li>The exhibition is called &#34;A Life of Service&#34; and marks Patriarch Kirill&#39;s 80th birthday.</li><li>Patriarch Kirill leads the Russian Orthodox Church, the largest Orthodox church in the world.</li><li>The photos show Kirill&#39;s visits to Belarus.</li><li>The source is a short preview and does not give an opening date.</li></ul>
+    <ul class="de" lang="de"><li>Die Ausstellung heisst «Ein Leben im Dienst» und markiert den 80. Geburtstag von Patriarch Kirill.</li><li>Patriarch Kirill leitet die Russisch-Orthodoxe Kirche, die grösste orthodoxe Kirche der Welt.</li><li>Die Fotos zeigen Kirills Besuche in Belarus.</li><li>Die Quelle ist eine kurze Vorschau und nennt kein Eröffnungsdatum.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://eng.belta.by/society/view/minsk-to-host-photo-exhibition-marking-patriarch-kirills-80th-birthday-189300-2026/" target="_blank" rel="noopener">BelTA</a>
+    </div>
+  </div>
+</article>
+
+<article class="story" id="s-0135040282" style="--h:350">
+  <div class="in">
+    <div class="bar"><a class="back" href="#" onclick="if(history.length>1){history.back();return false}"><span class="en">← Back</span><span class="de" lang="de">← Zurück</span></a><label class="lang" for="de" title="English / Deutsch"><b class="le">EN</b><b class="ld">DE</b></label></div>
+    <div><span class="tag">BelTA</span></div>
+    <h2><span class="en">Belarus ranks among top three flaxseed oil exporters globally</span><span class="de" lang="de">Belarus gehört zu den drei grössten Leinöl-Exporteuren weltweit</span></h2>
+    <img src="https://eng.belta.by/images/storage/news/with_archive/2026/000021_1795378219_189306_big.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+    
+    <p class="gist"><span class="en">Belarus is now among the top three flaxseed oil exporters in the world. Flaxseed oil is pressed from flax seeds.</span><span class="de" lang="de">Belarus gehört inzwischen zu den drei grössten Leinöl-Exporteuren der Welt. Leinöl wird aus Leinsamen gepresst.</span></p>
+    
+    <ul class="en"><li>Unnamed global analysts updated their ranking of flaxseed oil exporters and placed Belarus in the top three.</li><li>Over six months, Belarus sold more than $11 million worth of flaxseed oil.</li><li>This beat sales from the Netherlands and Germany over the same period.</li><li>The headline says Belarus&#39;s flaxseed oil output rose 25-fold in 20 years.</li><li>The STV TV channel reported on how the oil is produced in Belarus.</li><li>The source is a short preview, so the exact six-month period and the analysts&#39; names are unclear.</li></ul>
+    <ul class="de" lang="de"><li>Nicht namentlich genannte globale Analysten aktualisierten ihre Rangliste der Leinöl-Exporteure und platzierten Belarus unter den ersten drei.</li><li>In sechs Monaten verkaufte Belarus Leinöl im Wert von mehr als 11 Millionen Dollar.</li><li>Damit übertraf Belarus die Verkäufe der Niederlande und Deutschlands im selben Zeitraum.</li><li>Die Schlagzeile besagt, dass die Leinölproduktion in Belarus in 20 Jahren um das 25-Fache gestiegen ist.</li><li>Der TV-Sender STV berichtete darüber, wie das Öl in Belarus hergestellt wird.</li><li>Die Quelle ist eine kurze Vorschau, daher sind der genaue Sechsmonatszeitraum und die Namen der Analysten unklar.</li></ul>
+    
+    
+    
+    <p class="note"><span class="en">Based on the preview only: the full article could not be read (paywall or blocked).</span><span class="de" lang="de">Nur aus der Vorschau: Der ganze Artikel war nicht lesbar (Paywall oder gesperrt).</span></p>
+    <div class="srcs"><span class="en">Sources:</span><span class="de" lang="de">Quellen:</span>
+      <a href="https://eng.belta.by/economics/view/belarus-homegrown-superfood-how-flaxseed-oil-output-jumped-25-fold-in-20-years-189306-2026/" target="_blank" rel="noopener">BelTA</a>
+    </div>
+  </div>
+</article>
+
+</body>
+</html>
